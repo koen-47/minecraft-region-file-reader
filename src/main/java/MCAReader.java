@@ -17,6 +17,8 @@ public class MCAReader {
 
     public MCAFile readMCAFile() {
         byte[] locations = this.readChunkLocations();
+        System.out.println(Arrays.toString(locations));
+
         ChunkLocationTable chunkLocationTable = new ChunkLocationTable(locations);
         return new MCAFile(chunkLocationTable);
     }

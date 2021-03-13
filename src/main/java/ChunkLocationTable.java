@@ -1,13 +1,24 @@
 import java.util.Arrays;
 
 public class ChunkLocationTable {
-    private byte[] table;
+    private ChunkLocation[] locations;
 
-    public ChunkLocationTable(byte[] table) {
-        this.table = table;
+    private final int NUMBER_OF_LOCATIONS = 1024;
+    private final int BYTES_PER_LOCATION = 4;
+
+    public ChunkLocationTable(byte[] bytes) {
+        this.locations = new ChunkLocation[NUMBER_OF_LOCATIONS];
+        for (int i = 0, j = 0; i < NUMBER_OF_LOCATIONS; i++, j += BYTES_PER_LOCATION) {
+            byte[] locationBytes = Arrays.copyOfRange(bytes, j, j + BYTES_PER_LOCATION);
+            this.locations[i] = new ChunkLocation(locationBytes);
+        }
     }
 
     public String toString() {
-        return Arrays.toString(this.table);
+        String ret = "";
+        for (int i = 1; i <= NUMBER_OF_LOCATIONS; i++)
+            ret += "Chunk location " + i + ") " + this.locations[i-1].toString() + " \n";
+
+        return ret;
     }
 }
