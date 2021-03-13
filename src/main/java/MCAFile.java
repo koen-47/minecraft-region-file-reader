@@ -10,4 +10,8 @@ public class MCAFile {
         fileData += chunkLocationTable.toString();
         return fileData;
     }
+
+    public ChunkLocationTable getChunkLocationTable() {
+        return this.chunkLocationTable;
+    }
 }

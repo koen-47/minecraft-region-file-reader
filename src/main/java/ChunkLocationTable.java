@@ -14,6 +14,14 @@ public class ChunkLocationTable {
         }
     }
 
+    public int getNumberOfChunkLocations() {
+        return this.locations.length;
+    }
+
+    public ChunkLocation getChunkLocationAtIndex(int i) {
+        return this.locations[i];
+    }
+
     public String toString() {
         String ret = "";
         for (int i = 1; i <= NUMBER_OF_LOCATIONS; i++)

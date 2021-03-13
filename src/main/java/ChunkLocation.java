@@ -7,6 +7,14 @@ public class ChunkLocation {
         this.sectorCount = location[3];
     }
 
+    public int getOffset() {
+        return this.offset;
+    }
+
+    public int getSectorCount() {
+        return this.sectorCount;
+    }
+
     public String toString() {
         return "offset: " + this.offset + ", sector count: " + this.sectorCount;
     }

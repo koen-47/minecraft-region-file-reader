@@ -17,9 +17,10 @@ public class MCAReader {
 
     public MCAFile readMCAFile() {
         byte[] locations = this.readChunkLocations();
-        System.out.println(Arrays.toString(locations));
-
         ChunkLocationTable chunkLocationTable = new ChunkLocationTable(locations);
+
+        byte[] timestamps = this.readChunkTimestamps();
+
         return new MCAFile(chunkLocationTable);
     }
 
@@ -33,5 +34,17 @@ public class MCAReader {
         }
 
         return chunkLocations;
+    }
+
+    private byte[] readChunkTimestamps() {
+        byte[] chunkTimestamps = new byte[4096];
+
+        try {
+            this.reader.read(chunkTimestamps);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return chunkTimestamps;
     }
 }
