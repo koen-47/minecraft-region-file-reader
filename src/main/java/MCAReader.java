@@ -16,12 +16,13 @@ public class MCAReader {
     }
 
     public MCAFile readMCAFile() {
-        byte[] locations = this.readChunkLocations();
-        ChunkLocationTable chunkLocationTable = new ChunkLocationTable(locations);
+        byte[] locationBytes = this.readChunkLocations();
+        ChunkLocationTable chunkLocationTable = new ChunkLocationTable(locationBytes);
 
-        byte[] timestamps = this.readChunkTimestamps();
+        byte[] timestampBytes = this.readChunkTimestamps();
+        ChunkTimestampTable chunkTimestampTable = new ChunkTimestampTable(timestampBytes);
 
-        return new MCAFile(chunkLocationTable);
+        return new MCAFile(chunkLocationTable, chunkTimestampTable);
     }
 
     private byte[] readChunkLocations() {

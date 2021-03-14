@@ -1,17 +1,17 @@
 public class MCAFile {
     private ChunkLocationTable chunkLocationTable;
+    private ChunkTimestampTable chunkTimestampTable;
 
-    public MCAFile(ChunkLocationTable chunkLocationTable) {
+    public MCAFile(ChunkLocationTable chunkLocationTable, ChunkTimestampTable chunkTimestampTable) {
         this.chunkLocationTable = chunkLocationTable;
-    }
-
-    public String toString() {
-        String fileData = "";
-        fileData += chunkLocationTable.toString();
-        return fileData;
+        this.chunkTimestampTable = chunkTimestampTable;
     }
 
     public ChunkLocationTable getChunkLocationTable() {
         return this.chunkLocationTable;
+    }
+
+    public ChunkTimestampTable getChunkTimestampTable() {
+        return this.chunkTimestampTable;
     }
 }
