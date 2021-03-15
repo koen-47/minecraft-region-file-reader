@@ -1,9 +1,7 @@
-ChunkLocation.java
- ChunkLocation
 ChunkTimestamp.java
  ChunkTimestamp
-MCAFile.java
- MCAFile
+Main.java
+ Main
 MCAReader.java
  MCAReader
 ChunkLocationTable.java
@@ -12,7 +10,11 @@ ChunkTimestampTable.java
  ChunkTimestampTable
 MCAFilePrinter.java
  MCAFilePrinter
-ChunkTable.java
- ChunkTable
-Main.java
- Main
+ChunkData.java
+ ChunkData
+ChunkLocation.java
+ ChunkLocation
+ChunkDataReader.java
+ ChunkDataReader
+MCAFile.java
+ MCAFile

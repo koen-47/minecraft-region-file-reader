@@ -1,12 +1,15 @@
+import java.util.Date;
+
 public class ChunkTimestamp {
-    private long timestamp;
+    private Date timestamp;
 
     public ChunkTimestamp(byte[] timestampBytes) {
-        this.timestamp = (timestampBytes[3] & 0xff) | ((timestampBytes[2] & 0xff) << 8) |
-                         ((timestampBytes[1] & 0xff) << 16) | ((timestampBytes[0] & 0xff) << 24);
+        long secondsSinceEpoch = (timestampBytes[3] & 0xff) | ((timestampBytes[2] & 0xff) << 8) |
+                                 ((timestampBytes[1] & 0xff) << 16) | ((long) (timestampBytes[0] & 0xff) << 24);
+        this.timestamp = new Date(secondsSinceEpoch * 1000);
     }
 
-    public long getTimestamp() {
+    public Date getTimestamp() {
         return this.timestamp;
     }
 }

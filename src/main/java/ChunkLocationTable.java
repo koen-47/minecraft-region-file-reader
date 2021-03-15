@@ -1,12 +1,15 @@
 import java.util.Arrays;
 
-public class ChunkLocationTable extends ChunkTable {
+public class ChunkLocationTable {
     private ChunkLocation[] locations;
 
+    private final int NUMBER_OF_LOCATIONS = 1024;
+    private final int BYTES_PER_LOCATION = 4;
+
     public ChunkLocationTable(byte[] bytes) {
-        this.locations = new ChunkLocation[NUMBER_OF_ENTRIES];
-        for (int i = 0, j = 0; i < NUMBER_OF_ENTRIES; i++, j += BYTES_PER_ENTRY) {
-            byte[] locationBytes = Arrays.copyOfRange(bytes, j, j + BYTES_PER_ENTRY);
+        this.locations = new ChunkLocation[NUMBER_OF_LOCATIONS];
+        for (int i = 0, j = 0; i < NUMBER_OF_LOCATIONS; i++, j += BYTES_PER_LOCATION) {
+            byte[] locationBytes = Arrays.copyOfRange(bytes, j, j + BYTES_PER_LOCATION);
             this.locations[i] = new ChunkLocation(locationBytes);
         }
     }
@@ -19,11 +22,4 @@ public class ChunkLocationTable extends ChunkTable {
         return this.locations[i];
     }
 
-    public String toString() {
-        String ret = "";
-        for (int i = 1; i <= NUMBER_OF_ENTRIES; i++)
-            ret += "Chunk location " + i + ") " + this.locations[i-1].toString() + " \n";
-
-        return ret;
-    }
 }

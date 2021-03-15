@@ -31,7 +31,8 @@ public class MCAFilePrinter {
         String[][] stringTable = new String[numberOfChunkTimestamps][1];
         for (int i = 0; i < numberOfChunkTimestamps; i++) {
             ChunkTimestamp currentChunkTimestamp = chunkTimestampTable.getChunkTimestampAtIndex(i);
-            String timestamp = String.valueOf(currentChunkTimestamp.getTimestamp());
+            String timestamp = (currentChunkTimestamp.getTimestamp().getTime() != 0) ?
+                                currentChunkTimestamp.getTimestamp().toString() : null;
             stringTable[i] = new String[] { timestamp };
         }
 

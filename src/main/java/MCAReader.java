@@ -22,7 +22,7 @@ public class MCAReader {
         byte[] timestampBytes = this.readChunkTimestamps();
         ChunkTimestampTable chunkTimestampTable = new ChunkTimestampTable(timestampBytes);
 
-        return new MCAFile(chunkLocationTable, chunkTimestampTable);
+        return new MCAFile(this.fileName, chunkLocationTable, chunkTimestampTable);
     }
 
     private byte[] readChunkLocations() {
