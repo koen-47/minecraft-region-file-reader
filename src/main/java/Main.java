@@ -4,10 +4,7 @@ public class Main {
         MCAFile mcaFile = reader.readMCAFile();
 
         MCAFilePrinter printer = new MCAFilePrinter(mcaFile);
-        printer.printChunkLocationTable();
-        printer.printChunkTimestampTable();
-
-        mcaFile.getChunkAtCoordinates(32);
+        mcaFile.getChunkAtCoordinates(3);
 
         //System.out.println(4 * ((30 & 31) + (-3 & 31) * 32));
     }

@@ -28,6 +28,7 @@ public class MCAFile {
         ChunkLocation location = this.chunkLocationTable.getChunkLocationAtIndex(chunkNumber);
         ChunkDataReader chunkDataReader = new ChunkDataReader(this.fileName);
         ChunkData compressedChunkData = chunkDataReader.readCompressedChunkData(location);
+        compressedChunkData.decompress();
     }
 
 }
