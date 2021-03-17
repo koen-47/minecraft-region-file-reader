@@ -1,5 +1,7 @@
 package util;
 
+import nbt.Tag;
+
 import java.util.Arrays;
 
 public class ByteArrayBuilder {
@@ -50,6 +52,10 @@ public class ByteArrayBuilder {
         }
 
         this.append(byteArray);
+    }
+    
+    public void append(Tag other) {
+        // TBD
     }
 
     public byte[] getByteArray() {

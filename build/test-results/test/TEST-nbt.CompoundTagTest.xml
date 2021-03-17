@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="nbt.CompoundTagTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-03-17T23:02:29" hostname="KOEN-PC" time="0.044">
+  <properties/>
+  <testcase name="testBasicCompoundTag()" classname="nbt.CompoundTagTest" time="0.022"/>
+  <testcase name="testCompoundTagByteArray()" classname="nbt.CompoundTagTest" time="0.021"/>
+  <system-out><![CDATA[TAG_Compound('testCompoundTag'): 3 entries
+{
+    TAG_Int('testIntTag1'): 1
+    TAG_Int('testIntTag2'): 2
+    TAG_Compound('testNestedCompoundTag'): 2 entries
+    {
+        TAG_Int('testNestedIntTag1'): 3
+        TAG_Int('testNestedIntTag2'): 4
+    }
+}
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

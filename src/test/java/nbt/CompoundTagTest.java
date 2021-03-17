@@ -4,8 +4,32 @@ import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class CompoundTagTest {
+
+    @Test
+    public void testCompoundTagByteArray() throws IOException {
+        ArrayList<Tag> containedTagsOuter = new ArrayList<Tag>();
+        containedTagsOuter.add(new IntTag("testIntTag1", 1));
+        containedTagsOuter.add(new IntTag("testIntTag2", 2));
+
+        ArrayList<Tag> containedTagsInner = new ArrayList<Tag>();
+        containedTagsInner.add(new IntTag("testNestedIntTag1", 3));
+        containedTagsInner.add(new IntTag("testNestedIntTag2", 4));
+        containedTagsInner.add(new EndTag());
+
+        containedTagsOuter.add(new CompoundTag("testNestedCompoundTag", containedTagsInner));
+        containedTagsOuter.add(new EndTag());
+        byte[] testByteArray = new CompoundTag("testCompoundTag", containedTagsOuter).toByteArray();
+
+        ByteArrayInputStream testByteStream = new ByteArrayInputStream(testByteArray);
+        NBTFileInputStream nbtReader = new NBTFileInputStream(testByteStream);
+
+        CompoundTag testTag = (CompoundTag) nbtReader.readTag();
+        System.out.println(testTag.toString());
+    }
 
     @Test
     public void testBasicCompoundTag() throws IOException {
@@ -16,6 +40,6 @@ public class CompoundTagTest {
         NBTFileInputStream nbtReader = new NBTFileInputStream(testByteStream);
 
         CompoundTag testTag = (CompoundTag) nbtReader.readTag();
-        System.out.println(testTag.toString());
+        //System.out.println(testTag.toString());
     }
 }

@@ -22,11 +22,11 @@ util/ByteArrayBuilder.java
  util.ByteArrayBuilder
 nbt/Tag.java
  nbt.Tag
-nbt/CompoundTag.java
- nbt.CompoundTag
-nbt/EndTag.java
- nbt.EndTag
 nbt/IntTag.java
  nbt.IntTag
+nbt/EndTag.java
+ nbt.EndTag
+nbt/CompoundTag.java
+ nbt.CompoundTag
 nbt/NBTFileInputStream.java
  nbt.NBTFileInputStream

@@ -15,7 +15,7 @@ public class EndTag extends Tag {
 
     @Override
     public byte[] toByteArray() {
-        return new byte[0];
+        return new byte[] { 0 };
     }
 
 }

@@ -1,5 +1,7 @@
 package nbt;
 
+import util.ByteArrayBuilder;
+
 import java.util.ArrayList;
 
 public class CompoundTag extends Tag {
@@ -27,7 +29,17 @@ public class CompoundTag extends Tag {
 
     @Override
     public byte[] toByteArray() {
-        return new byte[0];
+        ByteArrayBuilder byteArrayBuilder = new ByteArrayBuilder();
+        byteArrayBuilder.append(this.TAG_ID);
+        byteArrayBuilder.append((byte) ((this.name.length() >> 8) & 0xff));
+        byteArrayBuilder.append((byte) (this.name.length() & 0xff));
+        byteArrayBuilder.append(this.name.getBytes());
+
+        for (Tag containedTag : this.containedTags) {
+            byteArrayBuilder.append(containedTag.toByteArray());
+        }
+
+        return byteArrayBuilder.getByteArray();
     }
 
     public String toString() {
