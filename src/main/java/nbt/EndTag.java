@@ -5,13 +5,12 @@ public class EndTag extends Tag {
 
     public EndTag() {}
 
-    @Override
     public int getTagID() {
         return this.TAG_ID;
     }
-
-    @Override
     public String getName() {
         return null;
     }
+    public String getValue() { return null; }
+
 }

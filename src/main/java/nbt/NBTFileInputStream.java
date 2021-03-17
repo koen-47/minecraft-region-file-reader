@@ -66,9 +66,8 @@ public class NBTFileInputStream {
 
         while (true) {
             Tag newTag = this.readTag();
-            if (!(newTag instanceof EndTag)) {
-                containedTags.add(newTag);
-            } else {
+            containedTags.add(newTag);
+            if (newTag instanceof EndTag) {
                 break;
             }
         }

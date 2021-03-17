@@ -1,8 +1,8 @@
+nbt/NBTTagPrinter.java
+ nbt.NBTTagPrinter
 nbt/NBTTestUtil.java
  nbt.NBTTestUtil
 nbt/IntTagTest.java
  nbt.IntTagTest
-nbt/NBTTagPrinter.java
- nbt.NBTTagPrinter
 nbt/CompoundTagTest.java
  nbt.CompoundTagTest

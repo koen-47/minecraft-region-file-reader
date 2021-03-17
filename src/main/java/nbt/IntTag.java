@@ -26,7 +26,8 @@ public class IntTag extends Tag {
         return this.name;
     }
 
-    public int getValue() {
+    @Override
+    public Integer getValue() {
         return this.value;
     }
 
@@ -35,6 +36,6 @@ public class IntTag extends Tag {
     }
 
     public String toString() {
-        return "TAG_Int('" + this.name + "'): " + this.value;
+        return "TAG_Int('" + this.name + "'): " + this.value + "\n";
     }
 }

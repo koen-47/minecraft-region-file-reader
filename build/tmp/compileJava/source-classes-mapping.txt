@@ -20,10 +20,10 @@ mca/ChunkTimestamp.java
  mca.ChunkTimestamp
 mca/ChunkLocationTable.java
  mca.ChunkLocationTable
-nbt/EndTag.java
- nbt.EndTag
 mca/ChunkDataReader.java
  mca.ChunkDataReader
+nbt/EndTag.java
+ nbt.EndTag
 nbt/CompoundTag.java
  nbt.CompoundTag
 nbt/NBTFileInputStream.java

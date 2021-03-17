@@ -1,5 +1,5 @@
-TAG_Compound('tt')
-    TAG_Int('test'): 10
-TAG_Compound('tt')
-    TAG_Int('test'): 10
-    TAG_Compound('tt')
+(TAG_Compound('testCompound'): 1 entries
+{
+    TAG_Int('testInt'): 10
+}
+
