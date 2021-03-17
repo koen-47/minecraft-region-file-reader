@@ -21,4 +21,16 @@ public class IntTagTest {
 
         assertTrue(testTag.equals(correctTag));
     }
+
+    @Test
+    public void testUnnamedIntTag() throws IOException {
+        byte[] testChunkData = new byte[] {3, 0, 0, 0, 0, 0, 15};
+        ByteArrayInputStream testByteStream = new ByteArrayInputStream(testChunkData);
+        NBTFileInputStream nbtReader = new NBTFileInputStream(testByteStream);
+
+        IntTag testTag = (IntTag) nbtReader.readTag();
+        IntTag correctTag = new IntTag(15);
+
+        assertTrue(testTag.equals(correctTag));
+    }
 }

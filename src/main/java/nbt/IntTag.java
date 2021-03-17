@@ -35,6 +35,6 @@ public class IntTag extends Tag {
     }
 
     public String toString() {
-        return "TAG_Int(" + this.name + "): " + this.value;
+        return "TAG_Int('" + this.name + "'): " + this.value;
     }
 }

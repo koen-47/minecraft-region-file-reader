@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="nbt.IntTagTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-16T16:43:38" hostname="KOEN-PC" time="0.04">
-  <properties/>
-  <testcase name="testIntTag()" classname="nbt.IntTagTest" time="0.04"/>
-  <system-out><![CDATA[TAG_Int(test): 10
-TAG_Int(test): 10
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

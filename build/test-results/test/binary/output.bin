@@ -1,2 +1,5 @@
-TAG_Int(test): 10
-TAG_Int(test): 10
+TAG_Compound('tt')
+    TAG_Int('test'): 10
+TAG_Compound('tt')
+    TAG_Int('test'): 10
+    TAG_Compound('tt')

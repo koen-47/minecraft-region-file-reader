@@ -1,26 +1,30 @@
 mca/ChunkTimestampTable.java
  mca.ChunkTimestampTable
-mca/ChunkLocation.java
- mca.ChunkLocation
-mca/ChunkLocationTable.java
- mca.ChunkLocationTable
-mca/ChunkTimestamp.java
- mca.ChunkTimestamp
-nbt/Tag.java
- nbt.Tag
-mca/MCAFile.java
- mca.MCAFile
 mca/ChunkData.java
  mca.ChunkData
-Main.java
- Main
-mca/ChunkDataReader.java
- mca.ChunkDataReader
-mca/MCAFilePrinter.java
- mca.MCAFilePrinter
-mca/MCAReader.java
- mca.MCAReader
 nbt/IntTag.java
  nbt.IntTag
+mca/ChunkLocation.java
+ mca.ChunkLocation
+mca/MCAReader.java
+ mca.MCAReader
+mca/MCAFile.java
+ mca.MCAFile
+mca/MCAFilePrinter.java
+ mca.MCAFilePrinter
+nbt/Tag.java
+ nbt.Tag
+Main.java
+ Main
+mca/ChunkTimestamp.java
+ mca.ChunkTimestamp
+mca/ChunkLocationTable.java
+ mca.ChunkLocationTable
+nbt/EndTag.java
+ nbt.EndTag
+mca/ChunkDataReader.java
+ mca.ChunkDataReader
+nbt/CompoundTag.java
+ nbt.CompoundTag
 nbt/NBTFileInputStream.java
  nbt.NBTFileInputStream
