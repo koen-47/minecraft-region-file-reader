@@ -50,7 +50,8 @@ public class CompoundTag extends Tag {
         String whiteSpaces = this.getWhitespaces(depth);
 
         int numberOfValidEntries = this.containedTags.size()-1;
-        String finalString = "TAG_Compound('" + this.name + "'): " + numberOfValidEntries + " entries\n";
+        String pluralEntries = (numberOfValidEntries == 1) ? "entry" : "entries";
+        String finalString = "TAG_Compound('" + this.name + "'): " + numberOfValidEntries + " " + pluralEntries + "\n";
         finalString += this.getWhitespaces(depth-1) + "{\n";
 
         for (Tag containedTag : this.containedTags) {

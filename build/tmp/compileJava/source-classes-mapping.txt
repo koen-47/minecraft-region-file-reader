@@ -18,14 +18,14 @@ Main.java
  Main
 mca/ChunkTimestamp.java
  mca.ChunkTimestamp
-util/ByteArrayBuilder.java
- util.ByteArrayBuilder
+nbt/EndTag.java
+ nbt.EndTag
 nbt/Tag.java
  nbt.Tag
 nbt/IntTag.java
  nbt.IntTag
-nbt/EndTag.java
- nbt.EndTag
+util/ByteArrayBuilder.java
+ util.ByteArrayBuilder
 nbt/CompoundTag.java
  nbt.CompoundTag
 nbt/NBTFileInputStream.java

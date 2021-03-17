@@ -22,6 +22,7 @@ public class CompoundTagTest {
 
         containedTagsOuter.add(new CompoundTag("testNestedCompoundTag", containedTagsInner));
         containedTagsOuter.add(new EndTag());
+
         byte[] testByteArray = new CompoundTag("testCompoundTag", containedTagsOuter).toByteArray();
 
         ByteArrayInputStream testByteStream = new ByteArrayInputStream(testByteArray);
@@ -32,7 +33,7 @@ public class CompoundTagTest {
     }
 
     @Test
-    public void testBasicCompoundTag() throws IOException {
+    public void testBasicCompoundTag1() throws IOException {
         byte[] testChunkData = new byte[] {10, 0, 12, 116, 101, 115, 116, 67, 111, 109, 112, 111, 117, 110, 100,
                                                 3, 0, 7, 116, 101, 115, 116, 73, 110, 116, 0, 0, 0, 10,
                                             0};
@@ -41,5 +42,19 @@ public class CompoundTagTest {
 
         CompoundTag testTag = (CompoundTag) nbtReader.readTag();
         //System.out.println(testTag.toString());
+    }
+
+    @Test
+    public void testBasicCompoundTag2() throws IOException {
+        ArrayList<Tag> containedTags = new ArrayList<Tag>();
+        containedTags.add(new IntTag("testIntTag", 1));
+        containedTags.add(new EndTag());
+
+        byte[] testCompoundTag = new CompoundTag("testCompoundTag", containedTags).toByteArray();
+        ByteArrayInputStream testByteStream = new ByteArrayInputStream(testCompoundTag);
+        NBTFileInputStream nbtReader = new NBTFileInputStream(testByteStream);
+
+        CompoundTag testTag = (CompoundTag) nbtReader.readTag();
+        System.out.println(testTag.toString());
     }
 }

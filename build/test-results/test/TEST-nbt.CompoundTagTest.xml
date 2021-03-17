@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="nbt.CompoundTagTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-03-17T23:02:29" hostname="KOEN-PC" time="0.044">
+<testsuite name="nbt.CompoundTagTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-03-17T23:31:00" hostname="KOEN-PC" time="0.086">
   <properties/>
-  <testcase name="testBasicCompoundTag()" classname="nbt.CompoundTagTest" time="0.022"/>
-  <testcase name="testCompoundTagByteArray()" classname="nbt.CompoundTagTest" time="0.021"/>
+  <testcase name="testCompoundTagByteArray()" classname="nbt.CompoundTagTest" time="0.08"/>
+  <testcase name="testBasicCompoundTag1()" classname="nbt.CompoundTagTest" time="0.001"/>
+  <testcase name="testBasicCompoundTag2()" classname="nbt.CompoundTagTest" time="0.002"/>
   <system-out><![CDATA[TAG_Compound('testCompoundTag'): 3 entries
 {
     TAG_Int('testIntTag1'): 1
@@ -12,6 +13,11 @@
         TAG_Int('testNestedIntTag1'): 3
         TAG_Int('testNestedIntTag2'): 4
     }
+}
+
+TAG_Compound('testCompoundTag'): 1 entry
+{
+    TAG_Int('testIntTag'): 1
 }
 
 ]]></system-out>

@@ -53,7 +53,7 @@ public class ByteArrayBuilder {
 
         this.append(byteArray);
     }
-    
+
     public void append(Tag other) {
         // TBD
     }
