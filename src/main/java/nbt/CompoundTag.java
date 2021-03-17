@@ -6,14 +6,14 @@ public class CompoundTag extends Tag {
     private String name;
     private ArrayList<Tag> containedTags;
 
-    private final int TAG_ID = 10;
+    private final byte TAG_ID = 10;
 
     public CompoundTag(String name, ArrayList<Tag> containedTags) {
         this.name = name;
         this.containedTags = containedTags;
     }
 
-    public int getTagID() {
+    public byte getTagID() {
         return this.TAG_ID;
     }
 
@@ -23,6 +23,11 @@ public class CompoundTag extends Tag {
 
     public ArrayList<Tag> getValue() {
         return this.containedTags;
+    }
+
+    @Override
+    public byte[] toByteArray() {
+        return new byte[0];
     }
 
     public String toString() {

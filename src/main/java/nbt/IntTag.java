@@ -1,7 +1,11 @@
 package nbt;
 
+import util.ByteArrayBuilder;
+
+import java.util.Arrays;
+
 public class IntTag extends Tag {
-    private final int TAG_ID = 3;
+    private final byte TAG_ID = 3;
 
     private String name;
     private int value;
@@ -17,7 +21,7 @@ public class IntTag extends Tag {
     }
 
     @Override
-    public int getTagID() {
+    public byte getTagID() {
         return this.TAG_ID;
     }
 
@@ -29,6 +33,18 @@ public class IntTag extends Tag {
     @Override
     public Integer getValue() {
         return this.value;
+    }
+
+    @Override
+    public byte[] toByteArray() {
+        ByteArrayBuilder byteArrayBuilder = new ByteArrayBuilder();
+        byteArrayBuilder.append(this.TAG_ID);
+        byteArrayBuilder.append((byte) ((this.name.length() >> 8) & 0xff));
+        byteArrayBuilder.append((byte) (this.name.length() & 0xff));
+        byteArrayBuilder.append(this.name.getBytes());
+        byteArrayBuilder.append(this.value);
+
+        return byteArrayBuilder.getByteArray();
     }
 
     public boolean equals(IntTag other) {

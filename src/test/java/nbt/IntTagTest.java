@@ -4,11 +4,21 @@ import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.util.Arrays;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class IntTagTest {
+    @Test
+    public void testIntTagToByteArray() {
+        byte[] testByteArray = new IntTag("testIntTag", 5).toByteArray();
+        byte[] correctByteArray = new byte[] {3, 0, 10, 116, 101, 115, 116, 73, 110, 116, 84, 97, 103, 0, 0, 0, 5};
+
+        System.out.println(Arrays.toString(testByteArray));
+        System.out.println(Arrays.toString(correctByteArray));
+
+        assertArrayEquals(testByteArray, correctByteArray);
+    }
 
     @Test
     public void testIntTag() throws IOException {
