@@ -41,17 +41,25 @@ public class CompoundTagParsingTest {
         NBTFileInputStream nbtReader = new NBTFileInputStream(testByteStream);
 
         CompoundTag testTag = (CompoundTag) nbtReader.readTag();
-        //System.out.println(testTag.toString());
+        System.out.println(testTag.toString());
     }
 
     @Test
     public void testBasicCompoundTag2() throws IOException {
-        ArrayList<Tag> containedTags = new ArrayList<Tag>();
-        containedTags.add(new IntTag("testIntTag", 1));
-        containedTags.add(new EndTag());
+        ArrayList<Tag> containedTagsOuter = new ArrayList<Tag>();
+        containedTagsOuter.add(new IntTag("testIntTag1", 1));
+        containedTagsOuter.add(new IntTag("testIntTag2", 2));
 
-        byte[] testCompoundTag = new CompoundTag("testCompoundTag", containedTags).toByteArray();
-        ByteArrayInputStream testByteStream = new ByteArrayInputStream(testCompoundTag);
+        ArrayList<Tag> containedTagsInner = new ArrayList<Tag>();
+        containedTagsInner.add(new IntTag("testNestedIntTag1", 3));
+        containedTagsInner.add(new EndTag());
+
+        containedTagsOuter.add(new CompoundTag("testNestedCompoundTag", containedTagsInner));
+        containedTagsOuter.add(new EndTag());
+
+        byte[] testByteArray = new CompoundTag("testCompoundTag", containedTagsOuter).toByteArray();
+
+        ByteArrayInputStream testByteStream = new ByteArrayInputStream(testByteArray);
         NBTFileInputStream nbtReader = new NBTFileInputStream(testByteStream);
 
         CompoundTag testTag = (CompoundTag) nbtReader.readTag();
