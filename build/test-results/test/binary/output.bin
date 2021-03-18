@@ -9,8 +9,3 @@
     }
 }
 
-)TAG_Compound('testCompoundTag'): 1 entry
-{
-    TAG_Int('testIntTag'): 1
-}
-

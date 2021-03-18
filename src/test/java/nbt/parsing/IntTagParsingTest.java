@@ -1,5 +1,7 @@
-package nbt;
+package nbt.parsing;
 
+import nbt.IntTag;
+import nbt.NBTFileInputStream;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
@@ -8,7 +10,7 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class IntTagTest {
+public class IntTagParsingTest {
     @Test
     public void testIntTagToByteArray() {
         byte[] testByteArray = new IntTag("testIntTag", 5).toByteArray();

@@ -3,6 +3,7 @@ package nbt;
 import util.ByteArrayBuilder;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class CompoundTag extends Tag {
     private String name;
@@ -13,6 +14,12 @@ public class CompoundTag extends Tag {
     public CompoundTag(String name, ArrayList<Tag> containedTags) {
         this.name = name;
         this.containedTags = containedTags;
+    }
+
+    public CompoundTag(String name, Tag ...tags) {
+        this.name = name;
+        this.containedTags = new ArrayList<>();
+        this.containedTags.addAll(Arrays.asList(tags));
     }
 
     public byte getTagID() {

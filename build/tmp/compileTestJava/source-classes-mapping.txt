@@ -1,6 +1,8 @@
 util/ByteArrayBuilderTest.java
  util.ByteArrayBuilderTest
-nbt/IntTagTest.java
- nbt.IntTagTest
-nbt/CompoundTagTest.java
- nbt.CompoundTagTest
+nbt/tag/CompoundTagTest.java
+ nbt.tag.CompoundTagTest
+nbt/parsing/CompoundTagParsingTest.java
+ nbt.parsing.CompoundTagParsingTest
+nbt/parsing/IntTagParsingTest.java
+ nbt.parsing.IntTagParsingTest

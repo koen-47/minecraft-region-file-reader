@@ -1,13 +1,13 @@
-package nbt;
+package nbt.parsing;
 
+import nbt.*;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
-public class CompoundTagTest {
+public class CompoundTagParsingTest {
 
     @Test
     public void testCompoundTagByteArray() throws IOException {
@@ -55,6 +55,6 @@ public class CompoundTagTest {
         NBTFileInputStream nbtReader = new NBTFileInputStream(testByteStream);
 
         CompoundTag testTag = (CompoundTag) nbtReader.readTag();
-        System.out.println(testTag.toString());
+        //System.out.println(testTag.toString());
     }
 }
