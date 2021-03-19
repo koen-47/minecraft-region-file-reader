@@ -5,9 +5,12 @@ import nbt.EndTag;
 import nbt.IntTag;
 import org.junit.jupiter.api.Test;
 
+import java.util.Random;
+
+// this is not really a test class :) this is only really used to see if stuff is printed correctly
 public class CompoundTagPrinterTest {
 
-    @Test
+    @Test 
     public void testBasicCompoundTagPrinter() {
         CompoundTag testCompoundTag = new CompoundTag("testCompoundTag", new IntTag("testIntTag", 1), new EndTag());
         CompoundTagPrinter testCompoundTagPrinter = new CompoundTagPrinter(testCompoundTag);
@@ -53,6 +56,12 @@ public class CompoundTagPrinterTest {
 
         CompoundTagPrinter compoundTagPrinter = new CompoundTagPrinter(testCompoundTagOuter);
         System.out.println(compoundTagPrinter.stringify());
+    }
+    
+    @Test
+    public void testRandomCompoundTagPrinter() {
+        Random rng = new Random();
+
     }
 
 }
