@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="util.CompoundTagPrinterTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-03-19T00:05:27" hostname="LAPTOP-0SVKOBM1" time="0.222">
+  <properties/>
+  <testcase name="testDoubleNestedCompoundTagPrinter()" classname="util.CompoundTagPrinterTest" time="0.206"/>
+  <testcase name="testNestedCompoundTagPrinter()" classname="util.CompoundTagPrinterTest" time="0.006"/>
+  <testcase name="testBasicCompoundTagPrinter()" classname="util.CompoundTagPrinterTest" time="0.005"/>
+  <system-out><![CDATA[TAG_Compound('testCompoundTagOuter'): 3 entries
+{
+    TAG_Int('testIntTagOuter1'): 4
+    TAG_Int('testIntTagOuter2'): 5
+    TAG_Compound('testCompoundTagInner'): 3 entries
+    {
+        TAG_Int('testIntTagInner1'): 2
+        TAG_Int('testIntTagInner2'): 3
+        TAG_Compound('testCompoundTagDoubleInner'): 2 entries
+        {
+            TAG_Int('testIntTagDoubleInner1'): 0
+            TAG_Int('testIntTagDoubleInner2'): 1
+        }
+    }
+}
+
+TAG_Compound('testCompoundTagOuter'): 3 entries
+{
+    TAG_Int('testIntTagOuter1'): 3
+    TAG_Int('testIntTagOuter2'): 4
+    TAG_Compound('testCompoundTagInner'): 2 entries
+    {
+        TAG_Int('testIntTagInner1'): 1
+        TAG_Int('testIntTagInner2'): 2
+    }
+}
+
+TAG_Compound('testCompoundTag'): 1 entry
+{
+    TAG_Int('testIntTag'): 1
+}
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

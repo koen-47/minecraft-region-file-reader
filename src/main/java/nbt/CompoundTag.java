@@ -50,37 +50,8 @@ public class CompoundTag extends Tag {
     }
 
     public String toString() {
-        return this.toString(1);
-    }
-
-    private String toString(int depth) {
-        String whiteSpaces = this.getWhitespaces(depth);
-
-        int numberOfValidEntries = this.containedTags.size()-1;
-        String pluralEntries = (numberOfValidEntries == 1) ? "entry" : "entries";
-        String finalString = "TAG_Compound('" + this.name + "'): " + numberOfValidEntries + " " + pluralEntries + "\n";
-        finalString += this.getWhitespaces(depth-1) + "{\n";
-
-        for (Tag containedTag : this.containedTags) {
-            if (containedTag instanceof CompoundTag) {
-                finalString += whiteSpaces + ((CompoundTag) containedTag).toString(depth + 1);
-            } else if (containedTag instanceof EndTag) {
-                finalString += this.getWhitespaces(depth-1) + "}\n";
-            } else {
-                finalString += whiteSpaces + containedTag.toString();
-            }
-
-        }
-
-        return finalString;
-    }
-
-    private String getWhitespaces(int amount) {
-        String whiteSpaces = "";
-        for (int i = 0; i < amount * 4; i++) {
-            whiteSpaces += " ";
-        }
-
-        return whiteSpaces;
+        int numberOfEntries = this.containedTags.size()-1;
+        String pluralOfEntry = (numberOfEntries == 1) ? "entry" : "entries";
+        return "TAG_Compound('" + this.name + "'): " + numberOfEntries + " " + pluralOfEntry + "\n";
     }
 }
