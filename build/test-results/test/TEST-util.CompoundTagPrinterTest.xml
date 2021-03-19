@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="util.CompoundTagPrinterTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-03-19T00:05:27" hostname="LAPTOP-0SVKOBM1" time="0.222">
+<testsuite name="util.CompoundTagPrinterTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-03-19T01:00:05" hostname="LAPTOP-0SVKOBM1" time="0.223">
   <properties/>
   <testcase name="testDoubleNestedCompoundTagPrinter()" classname="util.CompoundTagPrinterTest" time="0.206"/>
-  <testcase name="testNestedCompoundTagPrinter()" classname="util.CompoundTagPrinterTest" time="0.006"/>
-  <testcase name="testBasicCompoundTagPrinter()" classname="util.CompoundTagPrinterTest" time="0.005"/>
+  <testcase name="testRandomCompoundTagPrinter()" classname="util.CompoundTagPrinterTest" time="0.002"/>
+  <testcase name="testNestedCompoundTagPrinter()" classname="util.CompoundTagPrinterTest" time="0.004"/>
+  <testcase name="testBasicCompoundTagPrinter()" classname="util.CompoundTagPrinterTest" time="0.003"/>
   <system-out><![CDATA[TAG_Compound('testCompoundTagOuter'): 3 entries
 {
     TAG_Int('testIntTagOuter1'): 4

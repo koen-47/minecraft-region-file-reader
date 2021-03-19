@@ -7,12 +7,17 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Random;
 
-// this is not really a test class :) this is only really used to see if stuff is printed correctly
+// this is not really a test class, this is only really used to see if stuff is printed correctly when i try
+// to convert a Tag to a String without having to call main :) thank god for junit
+
 public class CompoundTagPrinterTest {
 
-    @Test 
+    @Test
     public void testBasicCompoundTagPrinter() {
-        CompoundTag testCompoundTag = new CompoundTag("testCompoundTag", new IntTag("testIntTag", 1), new EndTag());
+        CompoundTag testCompoundTag = new CompoundTag("testCompoundTag",
+                                                             new IntTag("testIntTag", 1),
+                                                             new EndTag());
+
         CompoundTagPrinter testCompoundTagPrinter = new CompoundTagPrinter(testCompoundTag);
         System.out.println(testCompoundTagPrinter.stringify());
     }
