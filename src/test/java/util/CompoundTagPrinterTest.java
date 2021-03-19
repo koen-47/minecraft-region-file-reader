@@ -15,8 +15,8 @@ public class CompoundTagPrinterTest {
     @Test
     public void testBasicCompoundTagPrinter() {
         CompoundTag testCompoundTag = new CompoundTag("testCompoundTag",
-                                                             new IntTag("testIntTag", 1),
-                                                             new EndTag());
+                                                       new IntTag("testIntTag", 1),
+                                                       new EndTag());
 
         CompoundTagPrinter testCompoundTagPrinter = new CompoundTagPrinter(testCompoundTag);
         System.out.println(testCompoundTagPrinter.stringify());
