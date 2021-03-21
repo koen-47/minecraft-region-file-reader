@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="util.CompoundTagStringTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-03-21T16:34:14" hostname="KOEN-PC" time="0.086">
+  <properties/>
+  <testcase name="testDoubleNestedCompoundTagPrinter()" classname="util.CompoundTagStringTest" time="0.071"/>
+  <testcase name="testRandomCompoundTagPrinter()" classname="util.CompoundTagStringTest" time="0.008"/>
+  <testcase name="testNestedCompoundTagPrinter()" classname="util.CompoundTagStringTest" time="0.002"/>
+  <testcase name="testBasicCompoundTagPrinter()" classname="util.CompoundTagStringTest" time="0.001"/>
+  <system-out><![CDATA[TAG_Compound('testCompoundTagOuter'): 3 entries
+{
+    TAG_Int('testIntTagOuter1'): 4
+    TAG_Int('testIntTagOuter2'): 5
+    TAG_Compound('testCompoundTagInner'): 3 entries
+    {
+        TAG_Int('testIntTagInner1'): 2
+        TAG_Int('testIntTagInner2'): 3
+        TAG_Compound('testCompoundTagDoubleInner'): 2 entries
+        {
+            TAG_Int('testIntTagDoubleInner1'): 0
+            TAG_Int('testIntTagDoubleInner2'): 1
+        }
+    }
+}
+
+TAG_Compound('testCompoundTag8'): 1 entry
+{
+    TAG_Compound('testCompoundTag7'): 3 entries
+    {
+        TAG_Int('testIntTag'): 88
+        TAG_Int('testIntTag'): 38
+        TAG_Compound('testCompoundTag6'): 4 entries
+        {
+            TAG_Int('testIntTag'): 37
+            TAG_Int('testIntTag'): 45
+            TAG_Int('testIntTag'): 54
+            TAG_Compound('testCompoundTag5'): 2 entries
+            {
+                TAG_Int('testIntTag'): 63
+                TAG_Compound('testCompoundTag4'): 3 entries
+                {
+                    TAG_Int('testIntTag'): 100
+                    TAG_Int('testIntTag'): 2
+                    TAG_Compound('testCompoundTag3'): 2 entries
+                    {
+                        TAG_Int('testIntTag'): 54
+                        TAG_Compound('testCompoundTag2'): 3 entries
+                        {
+                            TAG_Int('testIntTag'): 27
+                            TAG_Int('testIntTag'): 8
+                            TAG_Compound('testCompoundTag1'): 2 entries
+                            {
+                                TAG_Int('testIntTag'): 29
+                                TAG_Compound('testCompoundTag0'): 2 entries
+                                {
+                                    TAG_Int('testIntTag'): 35
+                                    TAG_Compound('testCompoundTagOuter'): 1 entry
+                                    {
+                                        TAG_Int('testIntTag'): 42
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+TAG_Compound('testCompoundTagOuter'): 3 entries
+{
+    TAG_Int('testIntTagOuter1'): 3
+    TAG_Int('testIntTagOuter2'): 4
+    TAG_Compound('testCompoundTagInner'): 2 entries
+    {
+        TAG_Int('testIntTagInner1'): 1
+        TAG_Int('testIntTagInner2'): 2
+    }
+}
+
+TAG_Compound('testCompoundTag'): 1 entry
+{
+    TAG_Int('testIntTag'): 1
+}
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

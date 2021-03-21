@@ -1,25 +1,23 @@
 package util;
 
 import nbt.CompoundTag;
-import nbt.EndTag;
 import nbt.IntTag;
 import org.junit.jupiter.api.Test;
 
-import javax.swing.plaf.ComponentUI;
 import java.util.Random;
 
 // this is not really a test class, this is only really used to see if stuff is printed correctly when i try
 // to convert a Tag to a String without having to call main :)
 
-public class CompoundTagPrinterTest {
+public class CompoundTagStringTest {
 
     @Test
     public void testBasicCompoundTagPrinter() {
         CompoundTag testCompoundTag = new CompoundTag("testCompoundTag",
                                                        new IntTag("testIntTag", 1));
 
-        CompoundTagPrinter testCompoundTagPrinter = new CompoundTagPrinter(testCompoundTag);
-        System.out.println(testCompoundTagPrinter.stringify());
+        CompoundTagString testCompoundTagString = new CompoundTagString(testCompoundTag);
+        System.out.println(testCompoundTagString.getString());
     }
 
     @Test
@@ -33,8 +31,8 @@ public class CompoundTagPrinterTest {
                                                             new IntTag("testIntTagOuter2", 4),
                                                             testCompoundTagInner);
 
-        CompoundTagPrinter testCompoundTagPrinter = new CompoundTagPrinter(testCompoundTagOuter);
-        System.out.println(testCompoundTagPrinter.stringify());
+        CompoundTagString testCompoundTagString = new CompoundTagString(testCompoundTagOuter);
+        System.out.println(testCompoundTagString.getString());
 
     }
 
@@ -54,15 +52,15 @@ public class CompoundTagPrinterTest {
                                                             new IntTag("testIntTagOuter2", 5),
                                                             testCompoundTagInner);
 
-        CompoundTagPrinter compoundTagPrinter = new CompoundTagPrinter(testCompoundTagOuter);
-        System.out.println(compoundTagPrinter.stringify());
+        CompoundTagString compoundTagString = new CompoundTagString(testCompoundTagOuter);
+        System.out.println(compoundTagString.getString());
     }
     
     @Test
     public void testRandomCompoundTagPrinter() {
         CompoundTag testCompoundTagOuter = new CompoundTag("testCompoundTagOuter");
         CompoundTag testCompleteCompoundTag = this.generateNestedCompoundTag(testCompoundTagOuter, 0);
-        System.out.println(new CompoundTagPrinter(testCompleteCompoundTag).stringify());
+        System.out.println(new CompoundTagString(testCompleteCompoundTag).getString());
     }
 
     private CompoundTag generateNestedCompoundTag(CompoundTag currentCompoundTag, int depth) {

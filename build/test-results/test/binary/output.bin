@@ -18,45 +18,39 @@
 
 *TAG_Compound('testCompoundTag8'): 1 entry
 {
-0    TAG_Compound('testCompoundTag7'): 2 entries
+0    TAG_Compound('testCompoundTag7'): 3 entries
     {
-"        TAG_Int('testIntTag'): 13
-4        TAG_Compound('testCompoundTag6'): 3 entries
+"        TAG_Int('testIntTag'): 88
+"        TAG_Int('testIntTag'): 38
+4        TAG_Compound('testCompoundTag6'): 4 entries
 
         {
-&            TAG_Int('testIntTag'): 92
-&            TAG_Int('testIntTag'): 43
-8            TAG_Compound('testCompoundTag5'): 3 entries
+&            TAG_Int('testIntTag'): 37
+&            TAG_Int('testIntTag'): 45
+&            TAG_Int('testIntTag'): 54
+8            TAG_Compound('testCompoundTag5'): 2 entries
             {
-*                TAG_Int('testIntTag'): 24
-*                TAG_Int('testIntTag'): 55
-<                TAG_Compound('testCompoundTag4'): 4 entries
+*                TAG_Int('testIntTag'): 63
+<                TAG_Compound('testCompoundTag4'): 3 entries
                 {
-.                    TAG_Int('testIntTag'): 94
-.                    TAG_Int('testIntTag'): 22
-.                    TAG_Int('testIntTag'): 33
-@                    TAG_Compound('testCompoundTag3'): 3 entries
+/                    TAG_Int('testIntTag'): 100
+-                    TAG_Int('testIntTag'): 2
+@                    TAG_Compound('testCompoundTag3'): 2 entries
                     {
-2                        TAG_Int('testIntTag'): 21
-2                        TAG_Int('testIntTag'): 48
+2                        TAG_Int('testIntTag'): 54
 D                        TAG_Compound('testCompoundTag2'): 3 entries
                         {
-6                            TAG_Int('testIntTag'): 60
-6                            TAG_Int('testIntTag'): 48
-H                            TAG_Compound('testCompoundTag1'): 4 entries
+6                            TAG_Int('testIntTag'): 27
+5                            TAG_Int('testIntTag'): 8
+H                            TAG_Compound('testCompoundTag1'): 2 entries
                             {
-9                                TAG_Int('testIntTag'): 6
-:                                TAG_Int('testIntTag'): 36
-:                                TAG_Int('testIntTag'): 62
-L                                TAG_Compound('testCompoundTag0'): 3 entries
+:                                TAG_Int('testIntTag'): 29
+L                                TAG_Compound('testCompoundTag0'): 2 entries
 "                                {
->                                    TAG_Int('testIntTag'): 12
->                                    TAG_Int('testIntTag'): 53
-T                                    TAG_Compound('testCompoundTagOuter'): 3 entries
+>                                    TAG_Int('testIntTag'): 35
+R                                    TAG_Compound('testCompoundTagOuter'): 1 entry
 &                                    {
-B                                        TAG_Int('testIntTag'): 75
-B                                        TAG_Int('testIntTag'): 37
-B                                        TAG_Int('testIntTag'): 73
+B                                        TAG_Int('testIntTag'): 42
 &                                    }
 "                                }
                             }

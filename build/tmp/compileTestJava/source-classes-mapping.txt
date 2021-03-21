@@ -1,10 +1,10 @@
-util/ByteArrayBuilderTest.java
- util.ByteArrayBuilderTest
 nbt/tag/CompoundTagTest.java
  nbt.tag.CompoundTagTest
+util/ByteArrayBuilderTest.java
+ util.ByteArrayBuilderTest
 nbt/parsing/CompoundTagParsingTest.java
  nbt.parsing.CompoundTagParsingTest
 nbt/parsing/IntTagParsingTest.java
  nbt.parsing.IntTagParsingTest
-util/CompoundTagPrinterTest.java
- util.CompoundTagPrinterTest
+util/CompoundTagStringTest.java
+ util.CompoundTagStringTest

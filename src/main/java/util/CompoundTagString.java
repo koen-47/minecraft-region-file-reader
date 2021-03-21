@@ -4,14 +4,20 @@ import nbt.CompoundTag;
 import nbt.EndTag;
 import nbt.Tag;
 
-public class CompoundTagPrinter {
+public class CompoundTagString {
     private CompoundTag compoundTag;
+    private String compoundTagString;
 
-    public CompoundTagPrinter(CompoundTag compoundTag) {
+    public CompoundTagString(CompoundTag compoundTag) {
         this.compoundTag = compoundTag;
+        this.compoundTagString = this.stringify();
     }
 
-    public String stringify() {
+    public String getString() {
+        return this.compoundTagString;
+    }
+
+    private String stringify() {
         int depth = 1;
         String whitespaces = this.getWhitespacesBasedOnDepth(depth);
         String finalString = this.compoundTag.toString() + this.getWhitespacesBasedOnDepth(depth - 1) + "{\n";
@@ -53,9 +59,5 @@ public class CompoundTagPrinter {
         }
 
         return whitespaces;
-    }
-
-    public void print() {
-        // TBD
     }
 }
