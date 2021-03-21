@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="nbt.parsing.CompoundTagParsingTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-03-21T16:25:34" hostname="KOEN-PC" time="0.142">
+  <properties/>
+  <testcase name="testCompoundTagByteArray()" classname="nbt.parsing.CompoundTagParsingTest" time="0.139"/>
+  <testcase name="testBasicCompoundTag1()" classname="nbt.parsing.CompoundTagParsingTest" time="0.001"/>
+  <testcase name="testBasicCompoundTag2()" classname="nbt.parsing.CompoundTagParsingTest" time="0.0"/>
+  <system-out><![CDATA[TAG_Compound('testCompoundTag'): 3 entries
+
+TAG_Compound('testCompound'): 1 entry
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
