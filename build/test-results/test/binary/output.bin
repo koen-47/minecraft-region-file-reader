@@ -16,6 +16,59 @@
     }
 }
 
+*TAG_Compound('testCompoundTag8'): 1 entry
+{
+0    TAG_Compound('testCompoundTag7'): 2 entries
+    {
+"        TAG_Int('testIntTag'): 13
+4        TAG_Compound('testCompoundTag6'): 3 entries
+
+        {
+&            TAG_Int('testIntTag'): 92
+&            TAG_Int('testIntTag'): 43
+8            TAG_Compound('testCompoundTag5'): 3 entries
+            {
+*                TAG_Int('testIntTag'): 24
+*                TAG_Int('testIntTag'): 55
+<                TAG_Compound('testCompoundTag4'): 4 entries
+                {
+.                    TAG_Int('testIntTag'): 94
+.                    TAG_Int('testIntTag'): 22
+.                    TAG_Int('testIntTag'): 33
+@                    TAG_Compound('testCompoundTag3'): 3 entries
+                    {
+2                        TAG_Int('testIntTag'): 21
+2                        TAG_Int('testIntTag'): 48
+D                        TAG_Compound('testCompoundTag2'): 3 entries
+                        {
+6                            TAG_Int('testIntTag'): 60
+6                            TAG_Int('testIntTag'): 48
+H                            TAG_Compound('testCompoundTag1'): 4 entries
+                            {
+9                                TAG_Int('testIntTag'): 6
+:                                TAG_Int('testIntTag'): 36
+:                                TAG_Int('testIntTag'): 62
+L                                TAG_Compound('testCompoundTag0'): 3 entries
+"                                {
+>                                    TAG_Int('testIntTag'): 12
+>                                    TAG_Int('testIntTag'): 53
+T                                    TAG_Compound('testCompoundTagOuter'): 3 entries
+&                                    {
+B                                        TAG_Int('testIntTag'): 75
+B                                        TAG_Int('testIntTag'): 37
+B                                        TAG_Int('testIntTag'): 73
+&                                    }
+"                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
 0TAG_Compound('testCompoundTagOuter'): 3 entries
 {
 #    TAG_Int('testIntTagOuter1'): 3

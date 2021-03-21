@@ -18,10 +18,8 @@ public class CompoundTagParsingTest {
         ArrayList<Tag> containedTagsInner = new ArrayList<Tag>();
         containedTagsInner.add(new IntTag("testNestedIntTag1", 3));
         containedTagsInner.add(new IntTag("testNestedIntTag2", 4));
-        containedTagsInner.add(new EndTag());
 
         containedTagsOuter.add(new CompoundTag("testNestedCompoundTag", containedTagsInner));
-        containedTagsOuter.add(new EndTag());
 
         byte[] testByteArray = new CompoundTag("testCompoundTag", containedTagsOuter).toByteArray();
 

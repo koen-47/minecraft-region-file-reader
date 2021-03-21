@@ -14,12 +14,14 @@ public class CompoundTag extends Tag {
     public CompoundTag(String name, ArrayList<Tag> containedTags) {
         this.name = name;
         this.containedTags = containedTags;
+        this.containedTags.add( new EndTag() ) ;
     }
 
     public CompoundTag(String name, Tag ...tags) {
         this.name = name;
         this.containedTags = new ArrayList<>();
         this.containedTags.addAll(Arrays.asList(tags));
+        this.containedTags.add( new EndTag() );
     }
 
     public byte getTagID() {
@@ -32,6 +34,18 @@ public class CompoundTag extends Tag {
 
     public ArrayList<Tag> getValue() {
         return this.containedTags;
+    }
+
+    public void prepend(Tag tag) {
+        this.containedTags.add(0, tag);
+    }
+
+    public void append(Tag tag) {
+        if (this.containedTags.size() == 1) {
+            this.containedTags.add(0, tag);
+        } else {
+            this.containedTags.add(this.containedTags.size()-2, tag);
+        }
     }
 
     @Override

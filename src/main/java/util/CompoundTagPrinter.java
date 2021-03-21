@@ -37,7 +37,7 @@ public class CompoundTagPrinter {
             if (currentTag instanceof EndTag) {
                 finalString += this.getWhitespacesBasedOnDepth(depth-1) + "}\n";
             } else if (currentTag instanceof CompoundTag) {
-                finalString += this.getWhitespacesBasedOnDepth(depth-2) + this.stringifyCompoundTag((CompoundTag) currentTag, depth + 1);
+                finalString += this.stringifyCompoundTag((CompoundTag) currentTag, depth + 1);
             } else {
                 finalString += this.getWhitespacesBasedOnDepth(depth) + currentTag.toString();
             }

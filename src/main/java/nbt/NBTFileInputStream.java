@@ -66,10 +66,11 @@ public class NBTFileInputStream {
 
         while (true) {
             Tag newTag = this.readTag();
-            containedTags.add(newTag);
-            if (newTag instanceof EndTag) {
+            if (newTag instanceof EndTag)
                 break;
-            }
+
+            containedTags.add(newTag);
+
         }
 
         return new CompoundTag(tagName, containedTags);
