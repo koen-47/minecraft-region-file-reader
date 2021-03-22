@@ -2,6 +2,7 @@ package util;
 
 import nbt.tag.CompoundTag;
 import nbt.tag.IntTag;
+import nbt.tag.StringTag;
 import org.junit.jupiter.api.Test;
 
 // this is not really a test class, this is only really used to see if stuff is printed correctly when i try
@@ -26,7 +27,7 @@ public class CompoundTagStringTest {
 
         CompoundTag testCompoundTagOuter = new CompoundTag("testCompoundTagOuter",
                                                             new IntTag("testIntTagOuter1", 3),
-                                                            new IntTag("testIntTagOuter2", 4),
+                                                            new StringTag("testStringTagOuter2", "s1"),
                                                             testCompoundTagInner);
 
         CompoundTagString testCompoundTagString = new CompoundTagString(testCompoundTagOuter);

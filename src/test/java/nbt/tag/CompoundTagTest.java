@@ -3,6 +3,7 @@ package nbt.tag;
 import org.junit.jupiter.api.Test;
 import util.CompoundTagRandomizer;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
@@ -11,7 +12,21 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class CompoundTagTest {
 
     @Test
-    public void testCompoundTagConstructor1() {
+    public void testCompoundTagConstructors() {
+        ArrayList<Tag> containedTags = new ArrayList<>();
+        containedTags.add(new IntTag("testIntTag", 1));
+        containedTags.add(new StringTag("testStringTag", "abc"));
+        CompoundTag testCompoundTagConstructor1 = new CompoundTag("testCompoundTag", containedTags);
+
+        CompoundTag testCompoundTagConstructor2 = new CompoundTag("testCompoundTag",
+                                                                        new IntTag("testIntTag", 1),
+                                                                        new StringTag("testStringTag", "abc"));
+
+        assertTrue(testCompoundTagConstructor1.equals(testCompoundTagConstructor2));
+    }
+
+    @Test
+    public void testCompoundTagToByteArray1() {
         ArrayList<Tag> containedTags = new ArrayList<>();
         containedTags.add(new IntTag("testIntTag", 1));
         CompoundTag testCompoundTag = new CompoundTag("testCompoundTag", containedTags);
@@ -24,7 +39,7 @@ public class CompoundTagTest {
     }
 
     @Test
-    public void testCompoundTagConstructor2() {
+    public void testCompoundTagToByteArray2() {
         CompoundTag testCompoundTag = new CompoundTag("testCompoundTag", new IntTag("testIntTag", 1));
 
         byte[] correctCompoundTagBytes = new byte[] {10, 0, 15, 116, 101, 115, 116, 67, 111, 109, 112, 111, 117, 110, 100, 84, 97, 103,

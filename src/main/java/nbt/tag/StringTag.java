@@ -28,8 +28,15 @@ public class StringTag extends Tag {
     public byte[] toByteArray() {
         ByteArrayBuilder byteArrayBuilder = new ByteArrayBuilder();
         byteArrayBuilder.appendTagHeader(this);
+
+        byteArrayBuilder.append((byte) ((this.value.length() >> 8) & 0xff));
+        byteArrayBuilder.append((byte) (this.value.length() & 0xff));
         byteArrayBuilder.append(this.value.getBytes());
 
         return byteArrayBuilder.getByteArray();
+    }
+
+    public String toString() {
+        return "TAG_String('" + this.name + "'): '" + this.value + "'\n";
     }
 }
