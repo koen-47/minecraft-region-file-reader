@@ -1,8 +1,8 @@
 package util;
 
-import nbt.CompoundTag;
-import nbt.EndTag;
-import nbt.Tag;
+import nbt.tag.CompoundTag;
+import nbt.tag.EndTag;
+import nbt.tag.Tag;
 
 public class CompoundTagString {
     private CompoundTag compoundTag;
@@ -15,6 +15,10 @@ public class CompoundTagString {
 
     public String getString() {
         return this.compoundTagString;
+    }
+
+    public void print() {
+        System.out.println(this.compoundTagString);
     }
 
     private String stringify() {

@@ -1,10 +1,8 @@
 package util;
 
-import nbt.CompoundTag;
-import nbt.IntTag;
+import nbt.tag.CompoundTag;
+import nbt.tag.IntTag;
 import org.junit.jupiter.api.Test;
-
-import java.util.Random;
 
 // this is not really a test class, this is only really used to see if stuff is printed correctly when i try
 // to convert a Tag to a String without having to call main :)
@@ -12,7 +10,7 @@ import java.util.Random;
 public class CompoundTagStringTest {
 
     @Test
-    public void testBasicCompoundTagPrinter() {
+    public void testBasicCompoundTagString() {
         CompoundTag testCompoundTag = new CompoundTag("testCompoundTag",
                                                        new IntTag("testIntTag", 1));
 
@@ -21,7 +19,7 @@ public class CompoundTagStringTest {
     }
 
     @Test
-    public void testNestedCompoundTagPrinter() {
+    public void testNestedCompoundTagString() {
         CompoundTag testCompoundTagInner = new CompoundTag("testCompoundTagInner",
                                                             new IntTag("testIntTagInner1", 1),
                                                             new IntTag("testIntTagInner2", 2));
@@ -37,7 +35,7 @@ public class CompoundTagStringTest {
     }
 
     @Test
-    public void testDoubleNestedCompoundTagPrinter() {
+    public void testDoubleCompoundTagString() {
         CompoundTag testCompoundTagDoubleInner = new CompoundTag("testCompoundTagDoubleInner",
                                                                  new IntTag("testIntTagDoubleInner1", 0),
                                                                  new IntTag("testIntTagDoubleInner2", 1));
@@ -57,23 +55,13 @@ public class CompoundTagStringTest {
     }
     
     @Test
-    public void testRandomCompoundTagPrinter() {
-        CompoundTag testCompoundTagOuter = new CompoundTag("testCompoundTagOuter");
-        CompoundTag testCompleteCompoundTag = this.generateNestedCompoundTag(testCompoundTagOuter, 0);
+    public void testRandomCompoundTagString() {
+        final int MAX_NUMBER_OF_NESTED_COMPOUND_TAGS = 10;
+        final int MAX_NUMBER_OF_TAGS_IN_COMPOUND_TAG = 10;
+        CompoundTag testCompleteCompoundTag = new CompoundTagRandomizer(MAX_NUMBER_OF_NESTED_COMPOUND_TAGS,
+                                                                        MAX_NUMBER_OF_TAGS_IN_COMPOUND_TAG).generate();
+
         System.out.println(new CompoundTagString(testCompleteCompoundTag).getString());
-    }
-
-    private CompoundTag generateNestedCompoundTag(CompoundTag currentCompoundTag, int depth) {
-        Random rng = new Random();
-        for (int i = 0; i < rng.nextInt(3)+1; i++)
-            currentCompoundTag.prepend(new IntTag("testIntTag", rng.nextInt(100)+1));
-
-        CompoundTag nestedCompoundTag = new CompoundTag("testCompoundTag" + depth, currentCompoundTag);
-
-        if (depth == 8)
-            return nestedCompoundTag;
-
-        return this.generateNestedCompoundTag(nestedCompoundTag, depth + 1);
     }
 
 }

@@ -1,11 +1,7 @@
 package nbt.tag;
 
-import nbt.CompoundTag;
-import nbt.EndTag;
-import nbt.IntTag;
-import nbt.Tag;
 import org.junit.jupiter.api.Test;
-import util.CompoundTagString;
+import util.CompoundTagRandomizer;
 
 import java.util.ArrayList;
 
@@ -71,5 +67,15 @@ public class CompoundTagTest {
                                                                         new IntTag("testIntTagInner2", 2)));
 
         assertTrue(testCompoundTagOuter.equals(correctCompoundTag));
+    }
+
+    @Test
+    public void testCompoundTagEqualsBig() {
+        final int MAX_NUMBER_OF_NESTED_COMPOUND_TAGS = 5;
+        final int MAX_NUMBER_OF_TAGS_IN_COMPOUND_TAG = 2048;
+        CompoundTag testCompleteCompoundTag = new CompoundTagRandomizer(MAX_NUMBER_OF_NESTED_COMPOUND_TAGS,
+                                                                        MAX_NUMBER_OF_TAGS_IN_COMPOUND_TAG).generate();
+
+        assertTrue(testCompleteCompoundTag.equals(testCompleteCompoundTag));
     }
 }

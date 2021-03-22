@@ -1,6 +1,6 @@
 package util;
 
-import nbt.Tag;
+import nbt.tag.Tag;
 
 import java.util.Arrays;
 

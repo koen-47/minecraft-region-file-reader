@@ -1,4 +1,4 @@
-package nbt;
+package nbt.tag;
 
 public class EndTag extends Tag {
     private final byte TAG_ID = 0;

@@ -1,4 +1,4 @@
-package nbt;
+package nbt.tag;
 
 import java.util.Arrays;
 

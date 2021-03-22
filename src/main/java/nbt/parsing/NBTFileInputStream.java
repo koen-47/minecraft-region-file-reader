@@ -1,9 +1,12 @@
-package nbt;
+package nbt.parsing;
 
 import mca.MCAFile;
+import nbt.tag.CompoundTag;
+import nbt.tag.EndTag;
+import nbt.tag.IntTag;
+import nbt.tag.Tag;
 
 import java.io.*;
-import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 

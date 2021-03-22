@@ -1,7 +1,6 @@
 package nbt.parsing;
 
-import nbt.IntTag;
-import nbt.NBTFileInputStream;
+import nbt.tag.IntTag;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;

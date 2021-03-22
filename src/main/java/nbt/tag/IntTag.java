@@ -1,8 +1,6 @@
-package nbt;
+package nbt.tag;
 
 import util.ByteArrayBuilder;
-
-import java.util.Arrays;
 
 public class IntTag extends Tag {
     private final byte TAG_ID = 3;

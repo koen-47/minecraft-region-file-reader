@@ -20,15 +20,15 @@ Main.java
  Main
 nbt/Tag.java
  nbt.Tag
-nbt/CompoundTag.java
- nbt.CompoundTag
+util/ByteArrayBuilder.java
+ util.ByteArrayBuilder
 nbt/EndTag.java
  nbt.EndTag
+nbt/CompoundTag.java
+ nbt.CompoundTag
 nbt/IntTag.java
  nbt.IntTag
 nbt/NBTFileInputStream.java
  nbt.NBTFileInputStream
 util/CompoundTagString.java
  util.CompoundTagString
-util/ByteArrayBuilder.java
- util.ByteArrayBuilder

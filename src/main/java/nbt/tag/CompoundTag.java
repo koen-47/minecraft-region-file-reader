@@ -1,7 +1,6 @@
-package nbt;
+package nbt.tag;
 
 import util.ByteArrayBuilder;
-import util.CompoundTagString;
 
 import java.util.ArrayList;
 import java.util.Arrays;
