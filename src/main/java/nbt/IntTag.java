@@ -38,10 +38,7 @@ public class IntTag extends Tag {
     @Override
     public byte[] toByteArray() {
         ByteArrayBuilder byteArrayBuilder = new ByteArrayBuilder();
-        byteArrayBuilder.append(this.TAG_ID);
-        byteArrayBuilder.append((byte) ((this.name.length() >> 8) & 0xff));
-        byteArrayBuilder.append((byte) (this.name.length() & 0xff));
-        byteArrayBuilder.append(this.name.getBytes());
+        byteArrayBuilder.appendTagHeader(this);
         byteArrayBuilder.append(this.value);
 
         return byteArrayBuilder.getByteArray();

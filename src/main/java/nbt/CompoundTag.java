@@ -1,6 +1,7 @@
 package nbt;
 
 import util.ByteArrayBuilder;
+import util.CompoundTagString;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -41,20 +42,13 @@ public class CompoundTag extends Tag {
     }
 
     public void append(Tag tag) {
-        if (this.containedTags.size() == 1) {
-            this.containedTags.add(0, tag);
-        } else {
-            this.containedTags.add(this.containedTags.size()-2, tag);
-        }
+        this.containedTags.add( Math.max(0, this.containedTags.size()-1), tag );
     }
 
     @Override
     public byte[] toByteArray() {
         ByteArrayBuilder byteArrayBuilder = new ByteArrayBuilder();
-        byteArrayBuilder.append(this.TAG_ID);
-        byteArrayBuilder.append((byte) ((this.name.length() >> 8) & 0xff));
-        byteArrayBuilder.append((byte) (this.name.length() & 0xff));
-        byteArrayBuilder.append(this.name.getBytes());
+        byteArrayBuilder.appendTagHeader(this);
 
         for (Tag containedTag : this.containedTags) {
             byteArrayBuilder.append(containedTag.toByteArray());
@@ -62,6 +56,7 @@ public class CompoundTag extends Tag {
 
         return byteArrayBuilder.getByteArray();
     }
+
 
     public String toString() {
         int numberOfEntries = this.containedTags.size()-1;

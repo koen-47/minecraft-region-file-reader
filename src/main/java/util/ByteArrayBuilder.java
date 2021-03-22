@@ -54,8 +54,11 @@ public class ByteArrayBuilder {
         this.append(byteArray);
     }
 
-    public void append(Tag other) {
-        // TBD
+    public void appendTagHeader(Tag other) {
+        this.append(other.getTagID());
+        this.append((byte) ((other.getName().length() >> 8) & 0xff));
+        this.append((byte) (other.getName().length() & 0xff));
+        this.append(other.getName().getBytes());
     }
 
     public byte[] getByteArray() {

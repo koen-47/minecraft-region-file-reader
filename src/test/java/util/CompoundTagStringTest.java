@@ -66,7 +66,7 @@ public class CompoundTagStringTest {
     private CompoundTag generateNestedCompoundTag(CompoundTag currentCompoundTag, int depth) {
         Random rng = new Random();
         for (int i = 0; i < rng.nextInt(3)+1; i++)
-            currentCompoundTag.append(new IntTag("testIntTag", rng.nextInt(100)+1));
+            currentCompoundTag.prepend(new IntTag("testIntTag", rng.nextInt(100)+1));
 
         CompoundTag nestedCompoundTag = new CompoundTag("testCompoundTag" + depth, currentCompoundTag);
 

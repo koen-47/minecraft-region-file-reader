@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="nbt.tag.CompoundTagTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-03-22T14:02:24" hostname="KOEN-PC" time="0.066">
+  <properties/>
+  <testcase name="testCompoundTagAppend()" classname="nbt.tag.CompoundTagTest" time="0.021"/>
+  <testcase name="testCompoundTagEquals()" classname="nbt.tag.CompoundTagTest" time="0.041"/>
+  <testcase name="testCompoundTagConstructor1()" classname="nbt.tag.CompoundTagTest" time="0.001"/>
+  <testcase name="testCompoundTagConstructor2()" classname="nbt.tag.CompoundTagTest" time="0.001"/>
+  <system-out><![CDATA[TAG_Compound('testCompoundTagOuter'): 3 entries
+{
+    TAG_Int('testIntTagOuter1'): 3
+    TAG_Int('testIntTagOuter2'): 4
+    TAG_Compound('testCompoundTagInner'): 2 entries
+    {
+        TAG_Int('testIntTagInner1'): 1
+        TAG_Int('testIntTagInner2'): 2
+    }
+}
+
+TAG_Compound('testCompoundTagOuter'): 3 entries
+{
+    TAG_Int('testIntTagOuter1'): 3
+    TAG_Int('testIntTagOuter2'): 4
+    TAG_Compound('testCompoundTagInner'): 2 entries
+    {
+        TAG_Int('testIntTagInner1'): 1
+        TAG_Int('testIntTagInner2'): 2
+    }
+}
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
