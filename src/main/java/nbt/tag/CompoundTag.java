@@ -32,7 +32,7 @@ public class CompoundTag extends Tag {
         return this.name;
     }
 
-    public ArrayList<Tag> getValue() {
+    public ArrayList<Tag> getPayload() {
         return this.containedTags;
     }
 

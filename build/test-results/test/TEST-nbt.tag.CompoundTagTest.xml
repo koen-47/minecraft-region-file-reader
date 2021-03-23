@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="nbt.tag.CompoundTagTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-03-22T23:34:57" hostname="LAPTOP-0SVKOBM1" time="0.366">
+<testsuite name="nbt.tag.CompoundTagTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-03-23T13:45:17" hostname="KOEN-PC" time="0.183">
   <properties/>
-  <testcase name="testCompoundTagAppend()" classname="nbt.tag.CompoundTagTest" time="0.054"/>
-  <testcase name="testCompoundTagEquals()" classname="nbt.tag.CompoundTagTest" time="0.002"/>
-  <testcase name="testCompoundTagToByteArray1()" classname="nbt.tag.CompoundTagTest" time="0.003"/>
+  <testcase name="testCompoundTagAppend()" classname="nbt.tag.CompoundTagTest" time="0.019"/>
+  <testcase name="testCompoundTagEquals()" classname="nbt.tag.CompoundTagTest" time="0.007"/>
+  <testcase name="testCompoundTagToByteArray1()" classname="nbt.tag.CompoundTagTest" time="0.002"/>
   <testcase name="testCompoundTagToByteArray2()" classname="nbt.tag.CompoundTagTest" time="0.001"/>
-  <testcase name="testCompoundTagConstructors()" classname="nbt.tag.CompoundTagTest" time="0.003"/>
-  <testcase name="testCompoundTagEqualsBig()" classname="nbt.tag.CompoundTagTest" time="0.298"/>
+  <testcase name="testCompoundTagConstructors()" classname="nbt.tag.CompoundTagTest" time="0.002"/>
+  <testcase name="testCompoundTagEqualsBig()" classname="nbt.tag.CompoundTagTest" time="0.148"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

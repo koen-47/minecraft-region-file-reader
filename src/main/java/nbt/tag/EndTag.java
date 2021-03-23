@@ -11,7 +11,7 @@ public class EndTag extends Tag {
         return null;
     }
 
-    public String getValue() {
+    public String getPayload() {
         return null;
     }
 

@@ -21,7 +21,7 @@ public class StringTag extends Tag {
         return this.name;
     }
 
-    public String getValue() {
+    public String getPayload() {
         return this.value;
     }
 

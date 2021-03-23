@@ -29,7 +29,7 @@ public class IntTag extends Tag {
     }
 
     @Override
-    public Integer getValue() {
+    public Integer getPayload() {
         return this.value;
     }
 
@@ -43,7 +43,7 @@ public class IntTag extends Tag {
     }
 
     public boolean equals(IntTag other) {
-        return (this.name.equals(other.getName()) && this.value == other.getValue());
+        return (this.name.equals(other.getName()) && this.value == other.getPayload());
     }
 
     public String toString() {
