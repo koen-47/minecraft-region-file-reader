@@ -11,6 +11,11 @@ public class CompoundTag extends Tag {
 
     private final byte TAG_ID = 10;
 
+    public CompoundTag(ArrayList<Tag> containedTags) {
+        this.name = "";
+        this.containedTags = containedTags;
+    }
+
     public CompoundTag(String name, ArrayList<Tag> containedTags) {
         this.name = name;
         this.containedTags = containedTags;

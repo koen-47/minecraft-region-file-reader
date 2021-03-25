@@ -27,33 +27,45 @@ public class NBTFileInputStream {
         this.reader = new DataInputStream(data);
     }
 
-    public Tag readTag() throws IOException {
+    public Tag readNamedTag() throws IOException {
         int tagID = this.reader.read();
+        String tagName = (tagID != 0) ? this.readTagName() : "";
 
         switch (tagID) {
             case 0:
                 return new EndTag();
 
             case 3:
-                return this.readIntTag();
+                return new IntTag(tagName, this.readIntTag().getPayload());
 
             case 10:
-                return this.readCompoundTag();
+                return new CompoundTag(tagName, this.readCompoundTag().getPayload());
+        }
+
+        return null;
+    }
+
+    public Tag readUnnamedTag(int tagID) throws IOException {
+        switch (tagID) {
+            case 0:
+                return new EndTag();
+
+            case 3:
+                return this.readIntTag();
         }
 
         return null;
     }
 
     private IntTag readIntTag() throws IOException {
-        String tagName = this.readTagName();
         int tagValue = this.reader.readInt();
-        return (tagName != null) ? new IntTag(tagName, tagValue) : new IntTag(tagValue);
+        return new IntTag(tagValue);
     }
 
     private String readTagName() throws IOException {
         short nameLength = (short) this.reader.readUnsignedShort();
         if (nameLength == 0)
-            return null;
+            return "";
 
         byte[] nameBytes = new byte[nameLength];
         for (int i = 0; i < nameLength; i++) {
@@ -64,19 +76,17 @@ public class NBTFileInputStream {
     }
 
     private CompoundTag readCompoundTag() throws IOException {
-        String tagName = this.readTagName();
         ArrayList<Tag> containedTags = new ArrayList<>();
 
         while (true) {
-            Tag newTag = this.readTag();
+            Tag newTag = this.readNamedTag();
             if (newTag instanceof EndTag)
                 break;
 
             containedTags.add(newTag);
-
         }
 
-        return new CompoundTag(tagName, containedTags);
+        return new CompoundTag(containedTags);
     }
 
 }
