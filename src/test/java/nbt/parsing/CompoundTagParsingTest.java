@@ -5,10 +5,14 @@ import nbt.tag.EndTag;
 import nbt.tag.IntTag;
 import nbt.tag.Tag;
 import org.junit.jupiter.api.Test;
+import util.CompoundTagString;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CompoundTagParsingTest {
 
@@ -29,7 +33,7 @@ public class CompoundTagParsingTest {
         ByteArrayInputStream testByteStream = new ByteArrayInputStream(testByteArray);
         NBTFileInputStream nbtReader = new NBTFileInputStream(testByteStream);
 
-        CompoundTag testTag = (CompoundTag) nbtReader.readTag();
+        CompoundTag testTag = (CompoundTag) nbtReader.readNamedTag();
         System.out.println(testTag.toString());
     }
 
@@ -41,29 +45,46 @@ public class CompoundTagParsingTest {
         ByteArrayInputStream testByteStream = new ByteArrayInputStream(testChunkData);
         NBTFileInputStream nbtReader = new NBTFileInputStream(testByteStream);
 
-        CompoundTag testTag = (CompoundTag) nbtReader.readTag();
-        System.out.println(testTag.toString());
+        CompoundTag testTag = (CompoundTag) nbtReader.readNamedTag();
+        System.out.println(new CompoundTagString(testTag).getString());
     }
 
     @Test
     public void testBasicCompoundTag2() throws IOException {
-        ArrayList<Tag> containedTagsOuter = new ArrayList<Tag>();
-        containedTagsOuter.add(new IntTag("testIntTag1", 1));
-        containedTagsOuter.add(new IntTag("testIntTag2", 2));
+        CompoundTag correctCompoundTag = new CompoundTag("testCompoundTag",
+                                                            new IntTag("testIntTag1", 1),
+                                                            new IntTag("testIntTag2", 2),
+                                                            new CompoundTag("testNestedCompoundTag",
+                                                                    new IntTag("testNestedIntTag1", 3)));
 
-        ArrayList<Tag> containedTagsInner = new ArrayList<Tag>();
-        containedTagsInner.add(new IntTag("testNestedIntTag1", 3));
-        containedTagsInner.add(new EndTag());
+        byte[] testCompoundTagByteArray = correctCompoundTag.toByteArray();
 
-        containedTagsOuter.add(new CompoundTag("testNestedCompoundTag", containedTagsInner));
-        containedTagsOuter.add(new EndTag());
-
-        byte[] testByteArray = new CompoundTag("testCompoundTag", containedTagsOuter).toByteArray();
-
-        ByteArrayInputStream testByteStream = new ByteArrayInputStream(testByteArray);
+        ByteArrayInputStream testByteStream = new ByteArrayInputStream(testCompoundTagByteArray);
         NBTFileInputStream nbtReader = new NBTFileInputStream(testByteStream);
+        CompoundTag testCompoundTag = (CompoundTag) nbtReader.readNamedTag();
 
-        CompoundTag testTag = (CompoundTag) nbtReader.readTag();
-        //System.out.println(testTag.toString());
+        assertArrayEquals(testCompoundTag.toByteArray(), correctCompoundTag.toByteArray());
     }
+
+    @Test
+    public void testBasicCompoundTag3() throws IOException {
+        ArrayList<Tag> correctInnerTags = new ArrayList<Tag>();
+        correctInnerTags.add(new IntTag("testNestedIntTag1", 3));
+        CompoundTag correctInnerTag = new CompoundTag("testNestedCompoundTag", correctInnerTags);
+
+        ArrayList<Tag> correctOuterTags = new ArrayList<Tag>();
+        correctOuterTags.add(new IntTag("testIntTag1", 1));
+        correctOuterTags.add(new IntTag("testIntTag2", 2));
+        correctOuterTags.add(correctInnerTag);
+
+        CompoundTag correctCompoundTag = new CompoundTag("testCompoundTag", correctOuterTags);
+        byte[] testCompoundTagByteArray = correctCompoundTag.toByteArray();
+
+        ByteArrayInputStream testByteStream = new ByteArrayInputStream(testCompoundTagByteArray);
+        NBTFileInputStream nbtReader = new NBTFileInputStream(testByteStream);
+        CompoundTag testCompoundTag = (CompoundTag) nbtReader.readNamedTag();
+
+        assertArrayEquals(testCompoundTag.toByteArray(), correctCompoundTag.toByteArray());
+    }
+
 }

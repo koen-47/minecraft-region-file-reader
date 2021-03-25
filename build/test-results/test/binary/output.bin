@@ -1,0 +1,7 @@
++TAG_Compound('testCompoundTag'): 3 entries
+
+&TAG_Compound('testCompound'): 1 entry
+{
+    TAG_Int('testInt'): 10
+}
+

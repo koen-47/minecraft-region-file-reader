@@ -2,28 +2,29 @@ package nbt.tag;
 
 import util.ByteArrayBuilder;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class CompoundTag extends Tag {
+public class ListTag extends Tag {
     private String name;
     private ArrayList<Tag> containedTags;
 
-    private final byte TAG_ID = 10;
+    private final byte TAG_ID = 9;
 
-    public CompoundTag(ArrayList<Tag> containedTags) {
+    public ListTag(ArrayList<Tag> containedTags) {
         this.name = "";
         this.containedTags = containedTags;
         this.containedTags.add( new EndTag() );
     }
 
-    public CompoundTag(String name, ArrayList<Tag> containedTags) {
+    public ListTag(String name, ArrayList<Tag> containedTags) {
         this.name = name;
         this.containedTags = containedTags;
         this.containedTags.add( new EndTag() ) ;
     }
 
-    public CompoundTag(String name, Tag ...tags) {
+    public ListTag(String name, Tag ...tags) {
         this.name = name;
         this.containedTags = new ArrayList<>();
         this.containedTags.addAll(Arrays.asList(tags));
@@ -66,6 +67,6 @@ public class CompoundTag extends Tag {
     public String toString() {
         int numberOfEntries = this.containedTags.size()-1;
         String pluralOfEntry = (numberOfEntries == 1) ? "entry" : "entries";
-        return "TAG_Compound('" + this.name + "'): " + numberOfEntries + " " + pluralOfEntry + "\n";
+        return "TAG_List('" + this.name + "'): " + numberOfEntries + " " + pluralOfEntry + "\n";
     }
 }

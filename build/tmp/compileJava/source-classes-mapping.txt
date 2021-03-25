@@ -2,6 +2,8 @@ mca/ChunkTimestampTable.java
  mca.ChunkTimestampTable
 mca/ChunkData.java
  mca.ChunkData
+nbt/tag/ListTag.java
+ nbt.tag.ListTag
 nbt/parsing/NBTFileInputStream.java
  nbt.parsing.NBTFileInputStream
 nbt/tag/Tag.java

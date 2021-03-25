@@ -6,11 +6,16 @@ public class StringTag extends Tag {
     private final byte TAG_ID = 8;
 
     private String name;
-    private String value;
+    private String payload;
 
-    public StringTag(String name, String value) {
+    public StringTag(String payload) {
+        this.name = "";
+        this.payload = payload;
+    }
+
+    public StringTag(String name, String payload) {
         this.name = name;
-        this.value = value;
+        this.payload = payload;
     }
 
     public byte getTagID() {
@@ -22,21 +27,21 @@ public class StringTag extends Tag {
     }
 
     public String getPayload() {
-        return this.value;
+        return this.payload;
     }
 
     public byte[] toByteArray() {
         ByteArrayBuilder byteArrayBuilder = new ByteArrayBuilder();
         byteArrayBuilder.appendTagHeader(this);
 
-        byteArrayBuilder.append((byte) ((this.value.length() >> 8) & 0xff));
-        byteArrayBuilder.append((byte) (this.value.length() & 0xff));
-        byteArrayBuilder.append(this.value.getBytes());
+        byteArrayBuilder.append((byte) ((this.payload.length() >> 8) & 0xff));
+        byteArrayBuilder.append((byte) (this.payload.length() & 0xff));
+        byteArrayBuilder.append(this.payload.getBytes());
 
         return byteArrayBuilder.getByteArray();
     }
 
     public String toString() {
-        return "TAG_String('" + this.name + "'): '" + this.value + "'\n";
+        return "TAG_String('" + this.name + "'): '" + this.payload + "'\n";
     }
 }

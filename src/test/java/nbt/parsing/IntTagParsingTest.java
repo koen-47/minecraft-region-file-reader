@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,7 +16,7 @@ public class IntTagParsingTest {
         ByteArrayInputStream testByteStream = new ByteArrayInputStream(testChunkData);
         NBTFileInputStream nbtReader = new NBTFileInputStream(testByteStream);
 
-        IntTag testTag = (IntTag) nbtReader.readTag();
+        IntTag testTag = (IntTag) nbtReader.readNamedTag();
         IntTag correctTag = new IntTag("test", 10);
 
         assertTrue(testTag.equals(correctTag));
@@ -29,7 +28,7 @@ public class IntTagParsingTest {
         ByteArrayInputStream testByteStream = new ByteArrayInputStream(testChunkData);
         NBTFileInputStream nbtReader = new NBTFileInputStream(testByteStream);
 
-        IntTag testTag = (IntTag) nbtReader.readTag();
+        IntTag testTag = (IntTag) nbtReader.readNamedTag();
         IntTag correctTag = new IntTag(15);
 
         assertTrue(testTag.equals(correctTag));
