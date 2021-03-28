@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="nbt.tag.ListTagTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-03-27T23:58:52" hostname="LAPTOP-0SVKOBM1" time="0.045">
-  <properties/>
-  <testcase name="testIllegalListTag()" classname="nbt.tag.ListTagTest" time="0.043"/>
-  <testcase name="testListTagConstructorNamed()" classname="nbt.tag.ListTagTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

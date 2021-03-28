@@ -47,9 +47,17 @@ public class ByteArrayBuilder {
 
     public void append(int other) {
         byte[] byteArray = new byte[4];
-        for (int i = 0; i < byteArray.length; i++) {
+        for (int i = 0; i < byteArray.length; i++)
             byteArray[i] = (byte) ((other & 0xff) >> (24 - (i*8)));
-        }
+
+        this.append(byteArray);
+    }
+
+    public void append(double other) {
+        long temp = Double.doubleToLongBits(other);
+        byte[] byteArray = new byte[8];
+        for (int i = 0; i < byteArray.length; i++)
+            byteArray[i] = (byte)((temp >> ((7 - i) * 8)) & 0xff);
 
         this.append(byteArray);
     }
