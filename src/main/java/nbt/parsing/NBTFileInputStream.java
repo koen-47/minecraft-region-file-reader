@@ -39,16 +39,20 @@ public class NBTFileInputStream {
                 return new StringTag(tagName, this.readStringTagPayload());
 
             case 9:
-                return new ListTag(tagName, this.readListTagPayload(tagID));
+                byte containedTagID = (byte) this.reader.read();
+                return new ListTag<>(tagName, containedTagID, this.readListTagPayload(containedTagID));
 
             case 10:
                 return new CompoundTag(tagName, this.readCompoundTagPayload());
+
+            case 11:
+                return new IntArrayTag(tagName, this.readIntArrayTagPayload());
         }
 
         return null;
     }
 
-    public Tag readUnnamedTag(int tagID) throws IOException {
+    public Tag<?> readUnnamedTag(int tagID) throws IOException {
         switch (tagID) {
             case 0:
                 return new EndTag();
@@ -60,10 +64,14 @@ public class NBTFileInputStream {
                 return new StringTag(this.readStringTagPayload());
 
             case 9:
-                return new ListTag(this.readListTagPayload(tagID));
+                byte containedTagID = (byte) this.reader.read();
+                return new ListTag(containedTagID, this.readListTagPayload(containedTagID));
 
             case 10:
                 return new CompoundTag(this.readCompoundTagPayload());
+
+            case 11:
+                return new IntArrayTag(this.readIntArrayTagPayload());
         }
 
         return null;
@@ -86,12 +94,12 @@ public class NBTFileInputStream {
         return new String(nameBytes, StandardCharsets.UTF_8);
     }
 
-    private ArrayList<Tag> readListTagPayload(int tagID) throws IOException {
-        ArrayList<Tag> containedTags = new ArrayList<>();
+    private Tag[] readListTagPayload(int tagID) throws IOException {
         int numberOfTags = this.readIntTagPayload();
+        Tag[] containedTags = new Tag[numberOfTags];
 
         for (int i = 0; i < numberOfTags; i++)
-            containedTags.add( this.readUnnamedTag(tagID) );
+            containedTags[i] = this.readUnnamedTag(tagID);
 
         return containedTags;
     }
@@ -108,6 +116,16 @@ public class NBTFileInputStream {
         }
 
         return containedTags;
+    }
+
+    private int[] readIntArrayTagPayload() throws IOException {
+        int numberOfInts = this.readIntTagPayload();
+        int[] payload = new int[numberOfInts];
+
+        for (int i = 0; i < numberOfInts; i++)
+            payload[i] = this.readIntTagPayload();
+
+        return payload;
     }
 
 }

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="nbt.parsing.IntTagParsingTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-03-23T23:53:24" hostname="LAPTOP-0SVKOBM1" time="0.008">
-  <properties/>
-  <testcase name="testUnnamedIntTag()" classname="nbt.parsing.IntTagParsingTest" time="0.006"/>
-  <testcase name="testIntTag()" classname="nbt.parsing.IntTagParsingTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

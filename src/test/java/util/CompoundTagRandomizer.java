@@ -2,6 +2,7 @@ package util;
 
 import nbt.tag.CompoundTag;
 import nbt.tag.IntTag;
+import nbt.tag.ListTag;
 
 import java.util.Random;
 
@@ -20,8 +21,10 @@ public class CompoundTagRandomizer {
 
     private CompoundTag generateHelper(CompoundTag currentCompoundTag, int depth) {
         Random rng = new Random();
-        for (int i = 0; i < numberOfTagsInCompoundTag; i++)
+        for (int i = 0; i < numberOfTagsInCompoundTag; i++) {
             currentCompoundTag.prepend(new IntTag("testIntTag", rng.nextInt(100)+1));
+            currentCompoundTag.prepend(new ListTag<IntTag>("testListTag", new IntTag(1)));
+        }
 
         CompoundTag nestedCompoundTag = new CompoundTag("testCompoundTag" + depth, currentCompoundTag);
 

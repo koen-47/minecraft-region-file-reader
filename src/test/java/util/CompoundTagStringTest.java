@@ -2,6 +2,7 @@ package util;
 
 import nbt.tag.CompoundTag;
 import nbt.tag.IntTag;
+import nbt.tag.ListTag;
 import nbt.tag.StringTag;
 import org.junit.jupiter.api.Test;
 
@@ -63,6 +64,19 @@ public class CompoundTagStringTest {
                                                                         MAX_NUMBER_OF_TAGS_IN_COMPOUND_TAG).generate();
 
         System.out.println(new CompoundTagString(testCompleteCompoundTag).getString());
+    }
+
+    @Test
+    public void testCompoundTagWithListTag() {
+        CompoundTag testCompoundTag = new CompoundTag("testCompoundTag",
+                                                            new IntTag("testIntTag1", 1),
+                                                            new CompoundTag("testCompoundTag2",
+                                                                    new IntTag("testIntTag2", 2),
+                                                                    new ListTag<IntTag>("testListTag",
+                                                                            new IntTag(3),
+                                                                            new IntTag(3))));
+
+        System.out.println(new CompoundTagString(testCompoundTag).getString());
     }
 
 }

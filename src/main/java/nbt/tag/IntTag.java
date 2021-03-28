@@ -2,7 +2,7 @@ package nbt.tag;
 
 import util.ByteArrayBuilder;
 
-public class IntTag extends Tag {
+public class IntTag extends Tag<Integer> {
     private final byte TAG_ID = 3;
 
     private String name;

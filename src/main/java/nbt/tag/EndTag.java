@@ -1,6 +1,6 @@
 package nbt.tag;
 
-public class EndTag extends Tag {
+public class EndTag extends Tag<EndTag> {
     private final byte TAG_ID = 0;
 
     public byte getTagID() {
@@ -11,7 +11,7 @@ public class EndTag extends Tag {
         return null;
     }
 
-    public String getPayload() {
+    public EndTag getPayload() {
         return null;
     }
 

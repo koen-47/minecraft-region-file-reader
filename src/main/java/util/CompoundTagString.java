@@ -2,6 +2,7 @@ package util;
 
 import nbt.tag.CompoundTag;
 import nbt.tag.EndTag;
+import nbt.tag.ListTag;
 import nbt.tag.Tag;
 
 public class CompoundTagString {
@@ -30,7 +31,9 @@ public class CompoundTagString {
             if (currentTag instanceof CompoundTag) {
                 finalString += this.stringifyCompoundTag((CompoundTag) currentTag, depth + 1);
             } else if (currentTag instanceof EndTag) {
-                finalString += this.getWhitespacesBasedOnDepth(depth-1) + "}\n";
+                finalString += this.getWhitespacesBasedOnDepth(depth - 1) + "}\n";
+            } else if (currentTag instanceof ListTag) {
+                finalString += this.stringifyListTag((ListTag) currentTag, depth + 1);
             } else {
                 finalString += whitespaces + currentTag.toString();
             }
@@ -48,12 +51,25 @@ public class CompoundTagString {
                 finalString += this.getWhitespacesBasedOnDepth(depth-1) + "}\n";
             } else if (currentTag instanceof CompoundTag) {
                 finalString += this.stringifyCompoundTag((CompoundTag) currentTag, depth + 1);
+            } else if (currentTag instanceof ListTag) {
+                finalString += this.stringifyListTag((ListTag) currentTag, depth + 1);
             } else {
                 finalString += this.getWhitespacesBasedOnDepth(depth) + currentTag.toString();
             }
         }
 
         return finalString;
+    }
+
+    private String stringifyListTag(ListTag<?> listTag, int depth) {
+        String whitespaces = this.getWhitespacesBasedOnDepth(depth-1);
+        String finalString = whitespaces + listTag.toString() + whitespaces + "{\n";
+
+        for (int i = 0; i < listTag.getPayload().length; i++) {
+            finalString += this.getWhitespacesBasedOnDepth(depth) + listTag.getPayload()[i].toString();
+        }
+
+        return finalString + this.getWhitespacesBasedOnDepth(depth-1) + "}\n";
     }
 
     private String getWhitespacesBasedOnDepth(int depth) {

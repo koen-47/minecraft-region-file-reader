@@ -54,11 +54,28 @@ public class ByteArrayBuilder {
         this.append(byteArray);
     }
 
+    public void append(String other) {
+        this.append(other.length());
+        this.append(other.getBytes());
+    }
+
     public void appendTagHeader(Tag other) {
         this.append(other.getTagID());
         this.append((byte) ((other.getName().length() >> 8) & 0xff));
         this.append((byte) (other.getName().length() & 0xff));
         this.append(other.getName().getBytes());
+    }
+
+    public void appendTagPayload(Tag other) {
+        switch (other.getTagID()) {
+            case 3:
+                this.append((int) other.getPayload());
+                break;
+
+            case 8:
+                this.append((String) other.getPayload());
+                break;
+        }
     }
 
     public byte[] getByteArray() {
