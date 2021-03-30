@@ -35,6 +35,7 @@ public class IntArrayTag extends Tag {
     public byte[] toByteArray() {
         ByteArrayBuilder byteArrayBuilder = new ByteArrayBuilder();
         byteArrayBuilder.appendTagHeader(this);
+        byteArrayBuilder.append(this.payload.length);
 
         for (int num : this.payload)
             byteArrayBuilder.append(num);

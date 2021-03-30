@@ -41,4 +41,8 @@ public class DoubleTag extends Tag<Double> {
         byteArrayBuilder.append(this.payload);
         return byteArrayBuilder.getByteArray();
     }
+
+    public String toString() {
+        return "TAG_Double('" + this.name + "'): " + this.payload + "\n";
+    }
 }

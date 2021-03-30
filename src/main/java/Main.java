@@ -1,15 +1,32 @@
 import mca.MCAFile;
 import mca.MCAFilePrinter;
 import mca.MCAReader;
+import nbt.parsing.NBTFileInputStream;
+import nbt.tag.*;
+import util.CompoundTagString;
+import util.ListTagString;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
-        MCAReader reader = new MCAReader("r.0.-1.mca");
+    public static void main(String[] args) throws IOException {
+        MCAReader reader = new MCAReader("r.0.0.mca");
         MCAFile mcaFile = reader.readMCAFile();
 
         MCAFilePrinter printer = new MCAFilePrinter(mcaFile);
-        mcaFile.getChunk(1);
+        //printer.printChunkLocationTable();
+        //printer.printChunkTimestampTable();
 
-        //System.out.println(4 * ((30 & 31) + (-3 & 31) * 32));
+        CompoundTag root = mcaFile.getChunk(6, 8);
+        System.out.println(new CompoundTagString(root).getString());
+
+        ListTag<?> sections = (ListTag<?>) root.find("Sections");
+        LongArrayTag blockStates = (LongArrayTag) root.find("BlockStates");
+        //System.out.println(Arrays.toString(blockStates.getPayload()));
+
+
     }
 }

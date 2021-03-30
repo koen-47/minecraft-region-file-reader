@@ -15,9 +15,6 @@ public class ChunkData {
                      ((chunkHeaderBytes[1] & 0xff) << 16) |  ((chunkHeaderBytes[0] & 0xff) << 24);
         this.compressionType = chunkHeaderBytes[4];
         this.uncompressedData = this.decompress(chunkDataBytes);
-
-        System.out.println(Arrays.toString(chunkHeaderBytes));
-        System.out.println(Arrays.toString(this.uncompressedData));
     }
 
     private byte[] decompress(byte[] compressedChunkDataBytes) {

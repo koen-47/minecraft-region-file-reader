@@ -7,8 +7,7 @@ import util.CompoundTagString;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CompoundTagTest {
 
@@ -93,5 +92,54 @@ public class CompoundTagTest {
                                                                         MAX_NUMBER_OF_TAGS_IN_COMPOUND_TAG).generate();
 
         assertTrue(testCompleteCompoundTag.equals(testCompleteCompoundTag));
+    }
+
+    @Test
+    public void testCompoundTagFind() {
+        CompoundTag testCompoundTag = new CompoundTag("testCompoundTag",
+                                                        new IntTag("testIntTag1", 1),
+                                                        new IntTag("testIntTag2", 2),
+                                                        new IntTag("testIntTag3", 3),
+                                                        new CompoundTag("testCompoundTag2",
+                                                                new IntTag("testIntTag4", 4),
+                                                                new IntTag("testIntTag5", 5)),
+                                                        new IntTag("testIntTag6", 6));
+
+        Tag target = testCompoundTag.find("testIntTag6");
+        assertEquals(target.getName(), new IntTag("testIntTag6", 6).getName());
+    }
+
+    @Test
+    public void testCompoundTagGetParent() {
+        CompoundTag testCompoundTag = new CompoundTag("testCompoundTag",
+                                                        new IntTag("testIntTag1", 1),
+                                                        new IntTag("testIntTag2", 2),
+                                                        new IntTag("testIntTag3", 3),
+                                                        new CompoundTag("testCompoundTag2",
+                                                                new IntTag("testIntTag4", 4),
+                                                                new IntTag("testIntTag5", 5)),
+                                                        new IntTag("testIntTag6", 6));
+
+        Tag targetTestIntTag1 = testCompoundTag.find("testIntTag1");
+        assertEquals(targetTestIntTag1.getParent().getName(), new CompoundTag("testCompoundTag").getName());
+
+        Tag targetTestIntTag5 = testCompoundTag.find("testIntTag5");
+        assertEquals(targetTestIntTag5.getParent().getName(), new CompoundTag("testCompoundTag2").getName());
+    }
+
+    @Test
+    public void testCompoundTagEquals1() {
+        CompoundTag testCompoundTag1 = new CompoundTag("testCompoundTag",
+                                                        new IntTag("testIntTag1", 1),
+                                                        new IntTag("testIntTag2", 2),
+                                                        new IntTag("testIntTag3", 3));
+
+        CompoundTag testCompoundTag2 = new CompoundTag("testCompoundTag",
+                                                        new IntTag("testIntTag1", 1),
+                                                        new IntTag("testIntTag2", 2),
+                                                        new IntTag("testIntTag3", 3));
+
+
+        assertEquals(testCompoundTag1, testCompoundTag2);
     }
 }

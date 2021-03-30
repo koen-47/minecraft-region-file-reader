@@ -22,7 +22,7 @@ public class MCAFilePrinter {
         System.out.format("%-15s%-15s%-15s\n", "Chunk number", "Offset", "Sector count");
         for (int i = 0; i < stringTable.length; i++) {
             String[] row = stringTable[i];
-            System.out.format("%-15s%-15s%-15s\n", i+1, row[0], row[1]);
+            System.out.format("%-15s%-15s%-15s\n", i, row[0], row[1]);
         }
     }
 
@@ -41,7 +41,7 @@ public class MCAFilePrinter {
         System.out.format("%-15s%-15s\n", "Chunk number", "Last modified");
         for (int i = 0; i < stringTable.length; i++) {
             String[] row = stringTable[i];
-            System.out.format("%-15s%-15s\n", i+1, row[0]);
+            System.out.format("%-15s%-15s\n", i, row[0]);
         }
     }
 }

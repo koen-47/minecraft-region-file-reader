@@ -1,5 +1,10 @@
 package mca;
 
+import nbt.parsing.NBTFileInputStream;
+import nbt.tag.CompoundTag;
+
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.net.URL;
 
 public class MCAFile {
@@ -21,10 +26,25 @@ public class MCAFile {
         return this.chunkTimestampTable;
     }
 
-    public ChunkData getChunk(int chunkNumber) {
+    public ChunkData getRawChunk(int chunkNumber) throws IOException {
         ChunkLocation location = this.chunkLocationTable.getChunkLocationAtIndex(chunkNumber);
         ChunkDataReader chunkDataReader = new ChunkDataReader(this.fileName);
         return chunkDataReader.readChunkData(location);
+    }
+
+    public CompoundTag getChunk(int chunkNumber) throws IOException {
+        ChunkData rawChunk = this.getRawChunk(chunkNumber);
+        ByteArrayInputStream chunkData = new ByteArrayInputStream(rawChunk.getUncompressedData());
+        NBTFileInputStream nbtParser = new NBTFileInputStream(chunkData);
+        return (CompoundTag) nbtParser.readNamedTag();
+    }
+
+    public CompoundTag getChunk(int chunkNumberX, int chunkNumberZ) throws IOException {
+        int chunkNumberIndex = (chunkNumberZ * 32) + chunkNumberX;
+        ChunkData rawChunk = this.getRawChunk(chunkNumberIndex);
+        ByteArrayInputStream chunkData = new ByteArrayInputStream(rawChunk.getUncompressedData());
+        NBTFileInputStream nbtParser = new NBTFileInputStream(chunkData);
+        return (CompoundTag) nbtParser.readNamedTag();
     }
 
     public URL getFileName() {

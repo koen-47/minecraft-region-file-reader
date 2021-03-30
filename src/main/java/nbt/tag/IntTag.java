@@ -6,16 +6,16 @@ public class IntTag extends Tag<Integer> {
     private final byte TAG_ID = 3;
 
     private String name;
-    private int value;
+    private int payload;
 
-    public IntTag(String name, int value) {
+    public IntTag(String name, int payload) {
         this.name = name;
-        this.value = value;
+        this.payload = payload;
     }
 
-    public IntTag(int value) {
+    public IntTag(int payload) {
         this.name = "";
-        this.value = value;
+        this.payload = payload;
     }
 
     @Override
@@ -30,23 +30,23 @@ public class IntTag extends Tag<Integer> {
 
     @Override
     public Integer getPayload() {
-        return this.value;
+        return this.payload;
     }
 
     @Override
     public byte[] toByteArray() {
         ByteArrayBuilder byteArrayBuilder = new ByteArrayBuilder();
         byteArrayBuilder.appendTagHeader(this);
-        byteArrayBuilder.append(this.value);
+        byteArrayBuilder.append(this.payload);
 
         return byteArrayBuilder.getByteArray();
     }
 
     public boolean equals(IntTag other) {
-        return (this.name.equals(other.getName()) && this.value == other.getPayload());
+        return (this.name.equals(other.getName()) && this.payload == other.getPayload());
     }
 
     public String toString() {
-        return "TAG_Int('" + this.name + "'): " + this.value + "\n";
+        return "TAG_Int('" + this.name + "'): " + this.payload + "\n";
     }
 }

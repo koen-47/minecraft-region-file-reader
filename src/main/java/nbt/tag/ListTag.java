@@ -19,6 +19,7 @@ public class ListTag<T extends Tag> extends Tag {
         this.containedTagID = containedTagID;
         this.containedTags = tags;
         this.verifyTagTypes();
+        for (Tag currentTag : containedTags) currentTag.setParent(this);
     }
 
     @SafeVarargs
@@ -27,6 +28,7 @@ public class ListTag<T extends Tag> extends Tag {
         this.containedTagID = tags[0].getTagID();
         this.containedTags = tags;
         this.verifyTagTypes();
+        for (Tag currentTag : containedTags) currentTag.setParent(this);
     }
 
     @SafeVarargs
@@ -35,6 +37,7 @@ public class ListTag<T extends Tag> extends Tag {
         this.containedTagID = containedTagID;
         this.containedTags = tags;
         this.verifyTagTypes();
+        for (Tag currentTag : containedTags) currentTag.setParent(this);
     }
 
     private void verifyTagTypes() {

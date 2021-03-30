@@ -19,7 +19,10 @@ public class ChunkDataReader {
         }
     }
 
-    public ChunkData readChunkData(ChunkLocation location) {
+    public ChunkData readChunkData(ChunkLocation location) throws IOException {
+        if (location.getOffset() == 0 && location.getSectorCount() == 0)
+            throw new IOException("Chunk has not been loaded yet...");
+
         int offset = location.getOffset() * 4096;
 
         try {
@@ -29,7 +32,7 @@ public class ChunkDataReader {
             int chunkDataLength = (chunkDataHeader[3] & 0xff) | ((chunkDataHeader[2] & 0xff) << 8) |
                                   ((chunkDataHeader[1] & 0xff) << 16) |  ((chunkDataHeader[0] & 0xff) << 24);
 
-            byte[] compressedChunkData = new byte[chunkDataLength];
+            byte[] compressedChunkData = new byte[chunkDataLength * location.getSectorCount()];
             this.reader.read(compressedChunkData);
             return new ChunkData(chunkDataHeader, compressedChunkData);
         } catch (IOException e) {

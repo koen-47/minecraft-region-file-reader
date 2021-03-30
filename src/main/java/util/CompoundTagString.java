@@ -65,8 +65,14 @@ public class CompoundTagString {
         String whitespaces = this.getWhitespacesBasedOnDepth(depth-1);
         String finalString = whitespaces + listTag.toString() + whitespaces + "{\n";
 
-        for (int i = 0; i < listTag.getPayload().length; i++) {
-            finalString += this.getWhitespacesBasedOnDepth(depth) + listTag.getPayload()[i].toString();
+        for (Tag currentTag : listTag.getPayload()) {
+            if (currentTag instanceof CompoundTag) {
+                finalString += this.stringifyCompoundTag((CompoundTag) currentTag, depth + 1);
+            } else if (currentTag instanceof ListTag) {
+                finalString += this.stringifyListTag((ListTag) currentTag, depth + 1);
+            } else {
+                finalString += this.getWhitespacesBasedOnDepth(depth) + currentTag.toString();
+            }
         }
 
         return finalString + this.getWhitespacesBasedOnDepth(depth-1) + "}\n";

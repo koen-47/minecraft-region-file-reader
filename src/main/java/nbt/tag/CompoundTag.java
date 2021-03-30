@@ -4,6 +4,7 @@ import util.ByteArrayBuilder;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class CompoundTag extends Tag {
     private String name;
@@ -15,12 +16,14 @@ public class CompoundTag extends Tag {
         this.name = "";
         this.containedTags = containedTags;
         this.containedTags.add( new EndTag() );
+        for (Tag currentTag : containedTags) currentTag.setParent(this);
     }
 
     public CompoundTag(String name, ArrayList<Tag> containedTags) {
         this.name = name;
         this.containedTags = containedTags;
         this.containedTags.add( new EndTag() ) ;
+        for (Tag currentTag : containedTags) currentTag.setParent(this);
     }
 
     public CompoundTag(String name, Tag ...tags) {
@@ -28,6 +31,7 @@ public class CompoundTag extends Tag {
         this.containedTags = new ArrayList<>();
         this.containedTags.addAll(Arrays.asList(tags));
         this.containedTags.add( new EndTag() );
+        for (Tag currentTag : containedTags) currentTag.setParent(this);
     }
 
     public byte getTagID() {
@@ -60,6 +64,50 @@ public class CompoundTag extends Tag {
         }
 
         return byteArrayBuilder.getByteArray();
+    }
+
+    public Tag find(String tagName) { return this.find(this, tagName); }
+
+    private Tag find(Tag currentTag, String tagName) {
+        if (currentTag.getName() != null && currentTag.getName().equals(tagName))
+            return currentTag;
+
+        if (currentTag instanceof CompoundTag) {
+            for (Tag tag : ((CompoundTag) currentTag).containedTags) {
+                Tag target = this.find(tag, tagName);
+                if (target != null) {
+                    return target;
+                }
+            }
+        } else if (currentTag instanceof ListTag) {
+            for (Tag tag : ((ListTag) currentTag).getPayload()) {
+                Tag target = this.find(tag, tagName);
+                if (target != null) {
+                    return target;
+                }
+            }
+        }
+
+        return null;
+    }
+
+    public boolean contains(String tagName) {
+        return this.find(this, tagName) != null;
+    }
+
+    public boolean equals(CompoundTag other) {
+        if (this.getName() != other.getName())
+            return false;
+
+        if (this.containedTags.size() == other.getPayload().size())
+            return false;
+
+        for (int i = 0; i < this.containedTags.size(); i++) {
+            if (!this.containedTags.get(i).equals(other.getPayload().get(i)))
+                return false;
+        }
+
+        return true;
     }
 
 

@@ -1,5 +1,6 @@
 package util;
 
+import nbt.tag.FloatTag;
 import nbt.tag.Tag;
 
 import java.util.Arrays;
@@ -13,19 +14,6 @@ public class ByteArrayBuilder {
 
     public ByteArrayBuilder(byte[] array) {
         this.array = array;
-    }
-
-    public void append(byte other) {
-        byte[] appendedArray = new byte[this.array.length + 1];
-        int i = 0;
-
-        for (byte currentByte : this.array) {
-            appendedArray[i] = currentByte;
-            i += 1;
-        }
-
-        appendedArray[this.array.length] = other;
-        this.array = appendedArray;
     }
 
     public void append(byte[] other) {
@@ -45,10 +33,48 @@ public class ByteArrayBuilder {
         this.array = appendedArray;
     }
 
+    public void append(byte other) {
+        byte[] appendedArray = new byte[this.array.length + 1];
+        int i = 0;
+
+        for (byte currentByte : this.array) {
+            appendedArray[i] = currentByte;
+            i += 1;
+        }
+
+        appendedArray[this.array.length] = other;
+        this.array = appendedArray;
+    }
+
+    public void append(short other) {
+        byte[] byteArray = new byte[2];
+        for (int i = 0; i < byteArray.length; i++)
+            byteArray[i] = (byte) ((other & 0xff) >> (8 - (i*8)));
+
+        this.append(byteArray);
+    }
+
     public void append(int other) {
         byte[] byteArray = new byte[4];
         for (int i = 0; i < byteArray.length; i++)
             byteArray[i] = (byte) ((other & 0xff) >> (24 - (i*8)));
+
+        this.append(byteArray);
+    }
+
+    public void append(long other) {
+        byte[] byteArray = new byte[8];
+        for (int i = 0; i < byteArray.length; i++)
+            byteArray[i] = (byte) ((other & 0xff) >> (56 - (i*8)));
+
+        this.append(byteArray);
+    }
+
+    public void append(float other) {
+        long temp = Float.floatToIntBits(other);
+        byte[] byteArray = new byte[4];
+        for (int i = 0; i < byteArray.length; i++)
+            byteArray[i] = (byte) ((temp >> ((3 - i) * 8)) & 0xff);
 
         this.append(byteArray);
     }
