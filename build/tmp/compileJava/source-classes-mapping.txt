@@ -8,8 +8,8 @@ nbt/tag/FloatTag.java
  nbt.tag.FloatTag
 util/CompoundTagString.java
  util.CompoundTagString
-Main.java
- Main
+util/ListTagString.java
+ util.ListTagString
 nbt/tag/DoubleTag.java
  nbt.tag.DoubleTag
 mca/ChunkTimestamp.java
@@ -52,5 +52,5 @@ mca/MCAFilePrinter.java
  mca.MCAFilePrinter
 nbt/tag/StringTag.java
  nbt.tag.StringTag
-util/ListTagString.java
- util.ListTagString
+Main.java
+ Main

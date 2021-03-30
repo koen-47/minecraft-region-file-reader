@@ -66,22 +66,22 @@ public class CompoundTag extends Tag {
         return byteArrayBuilder.getByteArray();
     }
 
-    public Tag find(String tagName) { return this.find(this, tagName); }
+    public Tag find(Tag targetTag) { return this.find(this, targetTag); }
 
-    private Tag find(Tag currentTag, String tagName) {
-        if (currentTag.getName() != null && currentTag.getName().equals(tagName))
+    private Tag find(Tag currentTag, Tag targetTag) {
+        if (currentTag != null && currentTag.equals(targetTag))
             return currentTag;
 
         if (currentTag instanceof CompoundTag) {
             for (Tag tag : ((CompoundTag) currentTag).containedTags) {
-                Tag target = this.find(tag, tagName);
+                Tag target = this.find(tag, targetTag);
                 if (target != null) {
                     return target;
                 }
             }
         } else if (currentTag instanceof ListTag) {
             for (Tag tag : ((ListTag) currentTag).getPayload()) {
-                Tag target = this.find(tag, tagName);
+                Tag target = this.find(tag, targetTag);
                 if (target != null) {
                     return target;
                 }
@@ -91,21 +91,22 @@ public class CompoundTag extends Tag {
         return null;
     }
 
-    public boolean contains(String tagName) {
-        return this.find(this, tagName) != null;
+    public boolean contains(Tag targetTag) {
+        return this.find(this, targetTag) != null;
     }
 
-    public boolean equals(CompoundTag other) {
-        if (this.getName() != other.getName())
+    public boolean equals(Tag other) {
+        if (!(other instanceof CompoundTag))
             return false;
 
-        if (this.containedTags.size() == other.getPayload().size())
+        if (!this.getName().equals(other.getName()))
             return false;
 
-        for (int i = 0; i < this.containedTags.size(); i++) {
-            if (!this.containedTags.get(i).equals(other.getPayload().get(i)))
-                return false;
-        }
+        if (this.containedTags.size() != ((CompoundTag) other).getPayload().size())
+            return false;
+
+        for (int i = 0; i < this.containedTags.size(); i++)
+            if (!this.containedTags.get(i).equals(((CompoundTag) other).getPayload().get(i))) return false;
 
         return true;
     }

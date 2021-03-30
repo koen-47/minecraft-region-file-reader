@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ListTagTest {
 
@@ -39,6 +40,21 @@ public class ListTagTest {
         } catch (IllegalArgumentException e) {
             assertEquals(e.getMessage(), "All tags in a ListTag must all be of the same type...");
         }
+    }
+
+    @Test
+    public void testListTagEquals() {
+        ListTag testListTag1 = new ListTag("testListTag1",
+                                                new IntTag(1),
+                                                new IntTag(2),
+                                                new IntTag(3));
+
+        ListTag testListTag2 = new ListTag("testListTag1",
+                                                new IntTag(1),
+                                                new IntTag(2),
+                                                new IntTag(3));
+
+        assertTrue(testListTag1.equals(testListTag2));
     }
 
 }

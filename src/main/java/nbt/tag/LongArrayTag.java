@@ -45,6 +45,23 @@ public class LongArrayTag extends Tag<long[]> {
         return byteArrayBuilder.getByteArray();
     }
 
+    @Override
+    public boolean equals(Tag other) {
+        if (!(other instanceof LongArrayTag))
+            return false;
+
+        if (!this.getName().equals(other.getName()))
+            return false;
+
+        if (this.payload.length != ((LongArrayTag) other).getPayload().length)
+            return false;
+
+        for (int i = 0; i < this.payload.length; i++)
+            if (this.payload[i] != ((LongArrayTag) other).getPayload()[i]) return false;
+
+        return true;
+    }
+
     public String toString() {
         return "TAG_Long_Array('" + this.name + "'): [" + this.payload.length + " longs]\n";
     }

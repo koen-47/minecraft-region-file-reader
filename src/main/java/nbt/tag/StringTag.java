@@ -41,6 +41,14 @@ public class StringTag extends Tag {
         return byteArrayBuilder.getByteArray();
     }
 
+    @Override
+    public boolean equals(Tag other) {
+        if (!(other instanceof StringTag))
+            return false;
+
+        return (this.name.equals(other.getName()) && this.payload.equals(((StringTag) other).getPayload()));
+    }
+
     public String toString() {
         return "TAG_String('" + this.name + "'): '" + this.payload + "'\n";
     }

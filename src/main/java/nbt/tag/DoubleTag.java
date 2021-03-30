@@ -42,6 +42,14 @@ public class DoubleTag extends Tag<Double> {
         return byteArrayBuilder.getByteArray();
     }
 
+    @Override
+    public boolean equals(Tag other) {
+        if (!(other instanceof DoubleTag))
+            return false;
+
+        return (this.name.equals(other.getName()) && this.payload == ((DoubleTag) other).getPayload());
+    }
+
     public String toString() {
         return "TAG_Double('" + this.name + "'): " + this.payload + "\n";
     }

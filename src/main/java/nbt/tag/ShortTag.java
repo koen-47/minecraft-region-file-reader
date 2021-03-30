@@ -41,6 +41,14 @@ public class ShortTag extends Tag<Short> {
         return byteArrayBuilder.getByteArray();
     }
 
+    @Override
+    public boolean equals(Tag other) {
+        if (!(other instanceof ShortTag))
+            return false;
+
+        return (this.name.equals(other.getName()) && this.payload == ((ShortTag) other).getPayload());
+    }
+
     public String toString() {
         return "TAG_Short('" + this.name + "'): " + this.payload + "\n";
     }

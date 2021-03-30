@@ -5,6 +5,7 @@ import util.ByteArrayBuilder;
 import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class ListTag<T extends Tag> extends Tag {
     private String name;
@@ -76,6 +77,24 @@ public class ListTag<T extends Tag> extends Tag {
         }
 
         return byteArrayBuilder.getByteArray();
+    }
+
+    @Override
+    public boolean equals(Tag other) {
+        if (!(other instanceof ListTag))
+            return false;
+
+        if (!this.getName().equals(other.getName()))
+            return false;
+
+        if (this.containedTags.length != ((ListTag) other).getPayload().length)
+            return false;
+
+        for (int i = 0; i < this.containedTags.length; i++) {
+            if (!this.containedTags[i].equals(((ListTag) other).getPayload()[i])) return false;
+        }
+
+        return true;
     }
 
     public String toString() {

@@ -105,7 +105,7 @@ public class CompoundTagTest {
                                                                 new IntTag("testIntTag5", 5)),
                                                         new IntTag("testIntTag6", 6));
 
-        Tag target = testCompoundTag.find("testIntTag6");
+        Tag target = testCompoundTag.find(new IntTag("testIntTag6", 6));
         assertEquals(target.getName(), new IntTag("testIntTag6", 6).getName());
     }
 
@@ -120,15 +120,15 @@ public class CompoundTagTest {
                                                                 new IntTag("testIntTag5", 5)),
                                                         new IntTag("testIntTag6", 6));
 
-        Tag targetTestIntTag1 = testCompoundTag.find("testIntTag1");
+        Tag targetTestIntTag1 = testCompoundTag.find(new IntTag("testIntTag1", 1));
         assertEquals(targetTestIntTag1.getParent().getName(), new CompoundTag("testCompoundTag").getName());
 
-        Tag targetTestIntTag5 = testCompoundTag.find("testIntTag5");
+        Tag targetTestIntTag5 = testCompoundTag.find(new IntTag("testIntTag5", 5));
         assertEquals(targetTestIntTag5.getParent().getName(), new CompoundTag("testCompoundTag2").getName());
     }
 
     @Test
-    public void testCompoundTagEquals1() {
+    public void testCompoundTagEqualsBasic() {
         CompoundTag testCompoundTag1 = new CompoundTag("testCompoundTag",
                                                         new IntTag("testIntTag1", 1),
                                                         new IntTag("testIntTag2", 2),
@@ -139,7 +139,21 @@ public class CompoundTagTest {
                                                         new IntTag("testIntTag2", 2),
                                                         new IntTag("testIntTag3", 3));
 
+        assertTrue(testCompoundTag1.equals(testCompoundTag2));
+    }
 
-        assertEquals(testCompoundTag1, testCompoundTag2);
+    @Test
+    public void testCompoundTagEqualsNested() {
+        CompoundTag testCompoundTag1 = new CompoundTag("testCompoundTag",
+                                                        new IntTag("testIntTag1", 1),
+                                                        new CompoundTag("testCompoundTag2",
+                                                            new IntTag("testIntTag2", 2)));
+
+        CompoundTag testCompoundTag2 = new CompoundTag("testCompoundTag",
+                                                        new IntTag("testIntTag1", 1),
+                                                        new CompoundTag("testCompoundTag2",
+                                                                new IntTag("testIntTag2", 2)));
+
+        assertTrue(testCompoundTag1.equals(testCompoundTag2));
     }
 }

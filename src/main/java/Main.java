@@ -23,8 +23,10 @@ public class Main {
         CompoundTag root = mcaFile.getChunk(6, 8);
         System.out.println(new CompoundTagString(root).getString());
 
-        ListTag<?> sections = (ListTag<?>) root.find("Sections");
-        LongArrayTag blockStates = (LongArrayTag) root.find("BlockStates");
+        CompoundTag sections = (CompoundTag) root.find(new StringTag("id", "minecraft:sign")).getParent();
+        System.out.println(new CompoundTagString(sections).getString());
+
+        //LongArrayTag blockStates = (LongArrayTag) root.find("BlockStates");
         //System.out.println(Arrays.toString(blockStates.getPayload()));
 
 

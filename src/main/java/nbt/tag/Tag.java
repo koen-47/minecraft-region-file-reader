@@ -18,7 +18,5 @@ abstract public class Tag<T> {
         this.parent = parent;
     }
 
-    public boolean equals(Tag other) {
-        return Arrays.equals(this.toByteArray(), other.toByteArray());
-    }
+    abstract public boolean equals(Tag other);
 }

@@ -41,6 +41,14 @@ public class LongTag extends Tag<Long> {
         return byteArrayBuilder.getByteArray();
     }
 
+    @Override
+    public boolean equals(Tag other) {
+        if (!(other instanceof LongTag))
+            return false;
+
+        return (this.name.equals(other.getName()) && this.payload == ((LongTag) other).getPayload());
+    }
+
     public String toString() {
         return "TAG_Long('" + this.name + "'): " + this.payload + "\n";
     }

@@ -20,4 +20,9 @@ public class EndTag extends Tag<EndTag> {
         return new byte[] { 0 };
     }
 
+    @Override
+    public boolean equals(Tag other) {
+        return other instanceof EndTag;
+    }
+
 }

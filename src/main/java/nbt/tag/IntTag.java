@@ -42,8 +42,12 @@ public class IntTag extends Tag<Integer> {
         return byteArrayBuilder.getByteArray();
     }
 
-    public boolean equals(IntTag other) {
-        return (this.name.equals(other.getName()) && this.payload == other.getPayload());
+    @Override
+    public boolean equals(Tag other) {
+        if (!(other instanceof IntTag))
+            return false;
+
+        return (this.name.equals(other.getName()) && this.payload == ((IntTag) other).getPayload());
     }
 
     public String toString() {

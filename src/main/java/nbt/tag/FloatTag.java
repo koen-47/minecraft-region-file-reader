@@ -41,6 +41,14 @@ public class FloatTag extends Tag<Float> {
         return byteArrayBuilder.getByteArray();
     }
 
+    @Override
+    public boolean equals(Tag other) {
+        if (!(other instanceof FloatTag))
+            return false;
+
+        return (this.name.equals(other.getName()) && this.payload == ((FloatTag) other).getPayload());
+    }
+
     public String toString() {
         return "TAG_Double('" + this.name + "'): " + this.payload + "\n";
     }
