@@ -91,6 +91,22 @@ public class CompoundTag extends Tag {
         return null;
     }
 
+    public ArrayList<? extends Tag> findAll(Tag targetTag) {
+        ArrayList<Tag> foundTags = new ArrayList<>();
+        Tag foundTag = this.find(targetTag);
+
+        while (foundTag != null) {
+            for (Tag currentTag : foundTags) {
+                if (currentTag.equals(foundTag))
+                    foundTags.add(foundTag);
+            }
+
+            foundTag = this.find(targetTag);
+        }
+
+        return foundTags;
+    }
+
     public boolean contains(Tag targetTag) {
         return this.find(this, targetTag) != null;
     }

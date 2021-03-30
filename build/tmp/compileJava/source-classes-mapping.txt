@@ -2,14 +2,14 @@ mca/ChunkData.java
  mca.ChunkData
 nbt/tag/Tag.java
  nbt.tag.Tag
-nbt/tag/CompoundTag.java
- nbt.tag.CompoundTag
+nbt/tag/LongArrayTag.java
+ nbt.tag.LongArrayTag
 nbt/tag/FloatTag.java
  nbt.tag.FloatTag
-util/CompoundTagString.java
- util.CompoundTagString
-util/ListTagString.java
- util.ListTagString
+nbt/tag/EndTag.java
+ nbt.tag.EndTag
+mca/ChunkLocation.java
+ mca.ChunkLocation
 nbt/tag/DoubleTag.java
  nbt.tag.DoubleTag
 mca/ChunkTimestamp.java
@@ -34,23 +34,23 @@ nbt/tag/ByteArrayTag.java
  nbt.tag.ByteArrayTag
 nbt/tag/ListTag.java
  nbt.tag.ListTag
-nbt/parsing/NBTFileInputStream.java
- nbt.parsing.NBTFileInputStream
+nbt/tag/StringTag.java
+ nbt.tag.StringTag
 nbt/tag/ShortTag.java
  nbt.tag.ShortTag
-nbt/tag/LongArrayTag.java
- nbt.tag.LongArrayTag
-mca/ChunkLocation.java
- mca.ChunkLocation
+Main.java
+ Main
+nbt/parsing/NBTFileInputStream.java
+ nbt.parsing.NBTFileInputStream
+nbt/tag/CompoundTag.java
+ nbt.tag.CompoundTag
 mca/MCAReader.java
  mca.MCAReader
-nbt/tag/EndTag.java
- nbt.tag.EndTag
+util/CompoundTagString.java
+ util.CompoundTagString
+util/ListTagString.java
+ util.ListTagString
 mca/MCAFile.java
  mca.MCAFile
 mca/MCAFilePrinter.java
  mca.MCAFilePrinter
-nbt/tag/StringTag.java
- nbt.tag.StringTag
-Main.java
- Main
