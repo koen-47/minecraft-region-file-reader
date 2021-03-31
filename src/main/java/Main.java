@@ -26,8 +26,8 @@ public class Main {
         CompoundTag sections = (CompoundTag) root.find(new StringTag("id", "minecraft:sign")).getParent();
         System.out.println(new CompoundTagString(sections).getString());
 
-        ArrayList<Tag> testSigns = (ArrayList<Tag>) root.findAll(new StringTag("id", "minecraft:sign"));
-        System.out.println(testSigns);
+        //ArrayList<Tag> testSigns = (ArrayList<Tag>) root.findAll(new StringTag("id", "minecraft:sign"));
+        //System.out.println(testSigns);
 
         //LongArrayTag blockStates = (LongArrayTag) root.find("BlockStates");
         //System.out.println(Arrays.toString(blockStates.getPayload()));
