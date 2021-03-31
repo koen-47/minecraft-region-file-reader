@@ -40,6 +40,8 @@ nbt/tag/ShortTag.java
  nbt.tag.ShortTag
 Main.java
  Main
+nbt/tag/CompoundTagOperation.java
+ nbt.tag.CompoundTagOperation
 nbt/parsing/NBTFileInputStream.java
  nbt.parsing.NBTFileInputStream
 nbt/tag/CompoundTag.java

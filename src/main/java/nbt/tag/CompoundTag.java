@@ -69,49 +69,16 @@ public class CompoundTag extends Tag {
         return byteArrayBuilder.getByteArray();
     }
 
-    public Tag find(Tag targetTag) { return this.find(this, targetTag); }
+    //public Tag find(Tag targetTag) { return this.find(this, targetTag); }
 
-    private Tag find(Tag currentTag, Tag targetTag) {
-        if (currentTag != null && currentTag.equals(targetTag))
-            return currentTag;
-
-        if (currentTag instanceof CompoundTag) {
-            for (Tag tag : ((CompoundTag) currentTag).containedTags) {
-                Tag target = this.find(tag, targetTag);
-                if (target != null) {
-                    return target;
-                }
-            }
-        } else if (currentTag instanceof ListTag) {
-            for (Tag tag : ((ListTag) currentTag).getPayload()) {
-                Tag target = this.find(tag, targetTag);
-                if (target != null) {
-                    return target;
-                }
+    public Tag find(CompoundTagOperation operation) {
+        for (Tag currentTag : containedTags) {
+            if (operation.findTag(currentTag)) {
+                return currentTag;
             }
         }
 
         return null;
-    }
-
-    public ArrayList<? extends Tag> findAll(Tag targetTag) {
-        ArrayList<Tag> foundTags = new ArrayList<>();
-        Tag foundTag = this.find(targetTag);
-
-        while (foundTag != null) {
-            for (Tag currentTag : foundTags) {
-                if (currentTag.equals(foundTag))
-                    foundTags.add(foundTag);
-            }
-
-            foundTag = this.find(targetTag);
-        }
-
-        return foundTags;
-    }
-
-    public boolean contains(Tag targetTag) {
-        return this.find(this, targetTag) != null;
     }
 
     public boolean equals(Tag other) {

@@ -49,7 +49,8 @@ public class CompoundTagPredicateTest {
                                                         new CompoundTag("testCompoundTag2",
                                                                 new IntTag("testIntTag", 2),
                                                                 new IntTag("testIntTag", 3)));
-        
+
+        CompoundTagOperation operation = (tag -> tag.getName().equals("testIntTag"));
 
     }
 
