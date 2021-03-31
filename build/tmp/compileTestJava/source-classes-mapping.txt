@@ -1,15 +1,13 @@
 nbt/tag/IntArrayTagTest.java
  nbt.tag.IntArrayTagTest
-nbt/tag/StringTagTest.java
- nbt.tag.StringTagTest
-nbt/tag/ListTagTest.java
- nbt.tag.ListTagTest
-nbt/tag/DoubleTagTest.java
- nbt.tag.DoubleTagTest
-nbt/tag/IntTagTest.java
- nbt.tag.IntTagTest
 util/ByteArrayBuilderTest.java
  util.ByteArrayBuilderTest
+nbt/tag/IntTagTest.java
+ nbt.tag.IntTagTest
+nbt/tag/StringTagTest.java
+ nbt.tag.StringTagTest
+nbt/tag/DoubleTagTest.java
+ nbt.tag.DoubleTagTest
 util/CompoundTagStringTest.java
  util.CompoundTagStringTest
 nbt/parsing/IntTagParsingTest.java
@@ -20,6 +18,8 @@ nbt/predicate/CompoundTagPredicateTest.java
  nbt.predicate.CompoundTagPredicateTest
 nbt/parsing/ListTagParsingTest.java
  nbt.parsing.ListTagParsingTest
+nbt/tag/ListTagTest.java
+ nbt.tag.ListTagTest
 nbt/parsing/CompoundTagParsingTest.java
  nbt.parsing.CompoundTagParsingTest
 nbt/parsing/IntArrayTagParsingTest.java

@@ -79,6 +79,24 @@ public class ListTag<T extends Tag> extends Tag {
         return byteArrayBuilder.getByteArray();
     }
 
+    public Tag find(Class<? extends Tag> targetTagClass, CompoundTagOperation operation) {
+        //if (this.getClass().equals(targetTagClass) && operation.findTag(this)) return this;
+        for (Tag currentTag : containedTags) {
+
+            if (currentTag instanceof CompoundTag) {
+                return ((CompoundTag) currentTag).find(targetTagClass, operation);
+            } else if (currentTag instanceof ListTag) {
+                return ((ListTag) currentTag).find(targetTagClass, operation);
+            }
+
+            if (currentTag.getClass().equals(targetTagClass) && operation.findTag(currentTag)) {
+                return currentTag;
+            }
+        }
+
+        return null;
+    }
+
     @Override
     public boolean equals(Tag other) {
         if (!(other instanceof ListTag))

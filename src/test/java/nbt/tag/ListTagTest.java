@@ -43,6 +43,20 @@ public class ListTagTest {
     }
 
     @Test
+    public void testListTagFind() {
+        ListTag testListTag1 = new ListTag("testListTag1",
+                                            new CompoundTag(
+                                                    new IntTag("testIntTag1", 1),
+                                                    new IntTag("testIntTag2", 2)),
+                                            new CompoundTag(
+                                                    new IntTag("testIntTag3", 3),
+                                                    new IntTag("testIntTag4", 4)));
+
+        IntTag targetTag = (IntTag) testListTag1.find(IntTag.class, tag -> ((IntTag) tag).getPayload() == 3);
+        System.out.println(targetTag.toString());
+    }
+
+    @Test
     public void testListTagEquals() {
         ListTag testListTag1 = new ListTag("testListTag1",
                                                 new IntTag(1),

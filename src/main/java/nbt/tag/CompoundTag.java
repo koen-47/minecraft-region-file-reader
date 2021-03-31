@@ -22,6 +22,14 @@ public class CompoundTag extends Tag {
         for (Tag currentTag : containedTags) currentTag.setParent(this);
     }
 
+    public CompoundTag(Tag ...tags) {
+        this.name = "";
+        this.containedTags = new ArrayList<>();
+        this.containedTags.addAll(Arrays.asList(tags));
+        this.containedTags.add( new EndTag() );
+        for (Tag currentTag : containedTags) currentTag.setParent(this);
+    }
+
     public CompoundTag(String name, ArrayList<Tag> containedTags) {
         this.name = name;
         this.containedTags = containedTags;
@@ -71,9 +79,17 @@ public class CompoundTag extends Tag {
 
     //public Tag find(Tag targetTag) { return this.find(this, targetTag); }
 
-    public Tag find(CompoundTagOperation operation) {
-        for (Tag currentTag : containedTags) {
-            if (operation.findTag(currentTag)) {
+    public Tag find(Class<? extends Tag> targetTagClass, CompoundTagOperation operation) {
+        System.out.println("method called..");
+        for (Tag currentTag : this.containedTags) {
+            //System.out.println(currentTag.toString());
+
+            if (currentTag instanceof CompoundTag) {
+                System.out.println(currentTag);
+                return ((CompoundTag) currentTag).find(targetTagClass, operation);
+            }
+
+            if (currentTag.getClass().equals(targetTagClass) && operation.findTag(currentTag)) {
                 return currentTag;
             }
         }

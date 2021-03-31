@@ -95,17 +95,45 @@ public class CompoundTagTest {
     }
 
     @Test
-    public void testCompoundTagFind() {
+    public void testCompoundTagFind1() {
         CompoundTag testCompoundTag = new CompoundTag("testCompoundTag",
                                                         new IntTag("testIntTag1", 1),
                                                         new IntTag("testIntTag2", 2),
                                                         new IntTag("testIntTag3", 3),
-                                                        new CompoundTag("testCompoundTag",
-                                                                new IntTag("testIntTag6", 4),
-                                                                new IntTag("testIntTag", 5)),
-                                                        new IntTag("testIntTag6", 6));
+                                                        new StringTag("testStringTag1", "test"),
+                                                        new LongTag("testLongTag1", 6000),
+                                                        new CompoundTag("testCompoundTag2",
+                                                                new IntTag("testIntTag6", 6),
+                                                                new IntTag("testIntTag7", 7),
+                                                                new CompoundTag("testCompoundTag3",
+                                                                        new IntTag("testIntTag8", 8),
+                                                                        new ListTag("testListTag", new IntTag(9)))),
+                                                        new IntTag("testIntTag7", 7));
 
-        IntTag targetTag = (IntTag) testCompoundTag.find(tag -> ((IntTag) tag).getPayload() == 6);
+
+        IntTag targetTag = (IntTag) testCompoundTag.find(IntTag.class, tag -> ((IntTag) tag).getPayload() == 9);
+        IntTag correctTag = new IntTag(9);
+
+        assertTrue(targetTag.equals(correctTag));
+    }
+
+    @Test
+    public void testCompoundTagFind2() {
+        CompoundTag testCompoundTag = new CompoundTag("testCompoundTag1",
+                                                    new CompoundTag("testCompoundTag2",
+                                                            new IntTag("testIntTag1", 1),
+                                                            new IntTag("testIntTag2", 2)),
+                                                    new CompoundTag("testCompoundTag3",
+                                                            new IntTag("testIntTag3", 3),
+                                                            new IntTag("testIntTag4", 4),
+                                                            new CompoundTag("testCompoundTag4",
+                                                                    new IntTag("testIntTag5", 5),
+                                                                    new IntTag("testIntTag6", 6)),
+                                                            new CompoundTag("testCompoundTag5",
+                                                                    new IntTag("testIntTag7", 7),
+                                                                    new IntTag("testIntTag8", 8))));
+
+        IntTag targetTag = (IntTag) testCompoundTag.find(IntTag.class, tag -> ((IntTag) tag).getPayload() == 8);
         System.out.println(targetTag.toString());
     }
 

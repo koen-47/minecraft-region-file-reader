@@ -23,8 +23,9 @@ public class Main {
         //printer.printChunkTimestampTable();
 
         CompoundTag root = mcaFile.getChunk(6, 8);
-        //System.out.println(new CompoundTagString(root).getString());
+        System.out.println(new CompoundTagString(root).getString());
 
-
+        StringTag signId = (StringTag) root.find(StringTag.class, tag -> ((StringTag) tag).getPayload() == "minecraft:sign");
+        System.out.println(signId.toString());
     }
 }

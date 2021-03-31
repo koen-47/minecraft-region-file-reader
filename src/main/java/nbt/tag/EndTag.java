@@ -20,6 +20,10 @@ public class EndTag extends Tag<EndTag> {
         return new byte[] { 0 };
     }
 
+    public String toString() {
+        return "TAG_End() of " + this.getParent().getName() + "\n";
+    }
+
     @Override
     public boolean equals(Tag other) {
         return other instanceof EndTag;

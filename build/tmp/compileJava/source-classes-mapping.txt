@@ -2,20 +2,26 @@ mca/ChunkData.java
  mca.ChunkData
 nbt/tag/Tag.java
  nbt.tag.Tag
-nbt/tag/LongArrayTag.java
- nbt.tag.LongArrayTag
-nbt/tag/FloatTag.java
- nbt.tag.FloatTag
+nbt/tag/ShortTag.java
+ nbt.tag.ShortTag
 nbt/tag/EndTag.java
  nbt.tag.EndTag
-mca/ChunkLocation.java
- mca.ChunkLocation
+nbt/tag/FloatTag.java
+ nbt.tag.FloatTag
+nbt/tag/LongArrayTag.java
+ nbt.tag.LongArrayTag
+nbt/tag/StringTag.java
+ nbt.tag.StringTag
 nbt/tag/DoubleTag.java
  nbt.tag.DoubleTag
+nbt/tag/CompoundTagOperation.java
+ nbt.tag.CompoundTagOperation
 mca/ChunkTimestamp.java
  mca.ChunkTimestamp
 mca/ChunkLocationTable.java
  mca.ChunkLocationTable
+mca/ChunkLocation.java
+ mca.ChunkLocation
 mca/ChunkDataReader.java
  mca.ChunkDataReader
 nbt/tag/LongTag.java
@@ -34,14 +40,8 @@ nbt/tag/ByteArrayTag.java
  nbt.tag.ByteArrayTag
 nbt/tag/ListTag.java
  nbt.tag.ListTag
-nbt/tag/StringTag.java
- nbt.tag.StringTag
-nbt/tag/ShortTag.java
- nbt.tag.ShortTag
 Main.java
  Main
-nbt/tag/CompoundTagOperation.java
- nbt.tag.CompoundTagOperation
 nbt/parsing/NBTFileInputStream.java
  nbt.parsing.NBTFileInputStream
 nbt/tag/CompoundTag.java
