@@ -5,6 +5,9 @@ import util.ByteArrayBuilder;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.function.UnaryOperator;
+import java.util.stream.Stream;
 
 public class CompoundTag extends Tag {
     private String name;

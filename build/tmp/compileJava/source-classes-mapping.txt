@@ -38,12 +38,16 @@ nbt/tag/StringTag.java
  nbt.tag.StringTag
 nbt/tag/ShortTag.java
  nbt.tag.ShortTag
-mca/MCAFilePrinter.java
- mca.MCAFilePrinter
+Main.java
+ Main
 nbt/parsing/NBTFileInputStream.java
  nbt.parsing.NBTFileInputStream
 nbt/tag/CompoundTag.java
  nbt.tag.CompoundTag
+dat/DATReader.java
+ dat.DATReader
+dat/DATFile.java
+ dat.DATFile
 mca/MCAReader.java
  mca.MCAReader
 util/CompoundTagString.java
@@ -52,5 +56,5 @@ util/ListTagString.java
  util.ListTagString
 mca/MCAFile.java
  mca.MCAFile
-Main.java
- Main
+mca/MCAFilePrinter.java
+ mca.MCAFilePrinter
