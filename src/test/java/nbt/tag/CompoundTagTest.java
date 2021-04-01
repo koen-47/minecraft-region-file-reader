@@ -6,6 +6,7 @@ import util.CompoundTagString;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -107,7 +108,9 @@ public class CompoundTagTest {
                                                                 new IntTag("testIntTag7", 7),
                                                                 new CompoundTag("testCompoundTag3",
                                                                         new IntTag("testIntTag8", 8),
-                                                                        new ListTag("testListTag", new IntTag(9)))),
+                                                                        new ListTag("testListTag1",
+                                                                                new IntTag(9),
+                                                                                new IntTag(10)))),
                                                         new IntTag("testIntTag7", 7));
 
 
@@ -130,8 +133,24 @@ public class CompoundTagTest {
                                                                     new IntTag("testIntTag5", 5),
                                                                     new IntTag("testIntTag6", 6)),
                                                             new CompoundTag("testCompoundTag5",
-                                                                    new IntTag("testIntTag7", 7),
-                                                                    new IntTag("testIntTag8", 8))));
+                                                                    new StringTag("testStringTag1", "test1"),
+                                                                    new StringTag("testStringTag2", "test2"))));
+
+        StringTag targetTag = (StringTag) testCompoundTag.find(StringTag.class, tag -> ((StringTag) tag).getPayload() == "test1");
+        System.out.println(targetTag.toString());
+    }
+
+    @Test
+    public void testCompoundTagFind3() {
+        CompoundTag testCompoundTag = new CompoundTag("testCompoundTag1",
+                                                        new ListTag("testListTag1",
+                                                                new IntTag(1),
+                                                                new IntTag(2)),
+                                                        new ListTag("testListTag2",
+                                                                new ListTag("testListTag3", (byte) 3),
+                                                                new ListTag("testListTag4",
+                                                                        new IntTag(7),
+                                                                        new IntTag(8))));
 
         IntTag targetTag = (IntTag) testCompoundTag.find(IntTag.class, tag -> ((IntTag) tag).getPayload() == 8);
         System.out.println(targetTag.toString());
@@ -185,5 +204,34 @@ public class CompoundTagTest {
                                                                 new IntTag("testIntTag2", 2)));
 
         assertTrue(testCompoundTag1.equals(testCompoundTag2));
+    }
+
+    @Test
+    public void testCompoundTagToList1() {
+        CompoundTag testCompoundTag = new CompoundTag("testCompoundTag",
+                                                        new IntTag("testIntTag1", 1),
+                                                        new StringTag("testStringTag1", "test123"),
+                                                        new ByteTag("testByteTag1", (byte) 1));
+
+        List<Tag> testCompoundTagList = testCompoundTag.toList();
+        System.out.println(testCompoundTagList);
+    }
+
+    @Test
+    public void testCompoundTagToList2() {
+        CompoundTag testCompoundTag = new CompoundTag("testCompoundTag",
+                                                        new IntTag("testIntTag1", 1),
+                                                        new StringTag("testStringTag1", "test123"),
+                                                        new ByteTag("testByteTag1", (byte) 1),
+                                                        new CompoundTag("testCompoundTag2",
+                                                                new IntTag("testIntTag2", 2)),
+                                                                new CompoundTag("testCompoundTag3",
+                                                                        new IntTag("testIntTag3", 3),
+                                                                        new StringTag("testIntTag4", "test1234")),
+                                                                        new ListTag("testListTag1",
+                                                                                new IntTag(1)));
+
+        List<Tag> testCompoundTagList = testCompoundTag.toList();
+        System.out.println(testCompoundTagList);
     }
 }

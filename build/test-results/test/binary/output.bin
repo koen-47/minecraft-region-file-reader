@@ -1,11 +1,15 @@
-method called..
-,TAG_Compound('testCompoundTag2'): 3 entries
-
-method called..
-,TAG_Compound('testCompoundTag3'): 2 entries
-
-method called..
-method called..
-,TAG_Compound('testCompoundTag2'): 2 entries
+&TAG_String('testStringTag1'): 'test1'
 
-method called..
+TAG_Int(''): 8
+
+[TAG_Int('testIntTag1'): 1
+*, TAG_String('testStringTag1'): 'test123'
+, TAG_Byte('testByteTag1'): 1
+]
+[TAG_Int('testIntTag1'): 1
+*, TAG_String('testStringTag1'): 'test123'
+, TAG_Byte('testByteTag1'): 1
+, TAG_Int('testIntTag2'): 2
+, TAG_Int('testIntTag3'): 3
+(, TAG_String('testIntTag4'): 'test1234'
+]

@@ -25,7 +25,7 @@ public class Main {
         CompoundTag root = mcaFile.getChunk(6, 8);
         System.out.println(new CompoundTagString(root).getString());
 
-        StringTag signId = (StringTag) root.find(StringTag.class, tag -> ((StringTag) tag).getPayload() == "minecraft:sign");
+        StringTag signId = (StringTag) root.find(StringTag.class, tag -> ((StringTag) tag).getPayload().equals("minecraft:sign"));
         System.out.println(signId.toString());
     }
 }

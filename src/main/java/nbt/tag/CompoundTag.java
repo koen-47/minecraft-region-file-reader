@@ -4,12 +4,10 @@ import util.ByteArrayBuilder;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
-import java.util.function.Predicate;
-import java.util.function.UnaryOperator;
-import java.util.stream.Stream;
 
-public class CompoundTag extends Tag {
+public class CompoundTag extends Tag implements Iterable<Tag> {
     private String name;
     private ArrayList<Tag> containedTags;
 
@@ -77,22 +75,37 @@ public class CompoundTag extends Tag {
         return byteArrayBuilder.getByteArray();
     }
 
-    //public Tag find(Tag targetTag) { return this.find(this, targetTag); }
+    public ArrayList<Tag> findAll(Class<? extends Tag> targetTagClass, CompoundTagOperation operation) {
+        return this.findAll(targetTagClass, operation, this, new ArrayList<Tag>());
+    }
+
+    private ArrayList<Tag> findAll(Class<? extends Tag> targetTagClass, CompoundTagOperation operation, Tag targetTag, ArrayList<Tag> currentlyFoundTags) {
+        return null;
+    }
 
     public Tag find(Class<? extends Tag> targetTagClass, CompoundTagOperation operation) {
-        System.out.println("method called..");
-        for (Tag currentTag : this.containedTags) {
-            //System.out.println(currentTag.toString());
+        return this.find(targetTagClass, operation, this);
+    }
 
-            if (currentTag instanceof CompoundTag) {
-                System.out.println(currentTag);
-                return ((CompoundTag) currentTag).find(targetTagClass, operation);
+    private Tag find(Class<? extends Tag> targetTagClass, CompoundTagOperation operation, Tag targetTag) {
+        if (targetTag.getClass().equals(targetTagClass) && operation.findTag(targetTag)) {
+            return targetTag;
+        }
+
+        if (targetTag instanceof CompoundTag) {
+            for (Tag currentTag : ((CompoundTag) targetTag).getPayload()) {
+                Tag foundTag = this.find(targetTagClass, operation, currentTag);
+                if (foundTag != null) {
+                    return foundTag;
+                }
             }
-
-            if (currentTag.getClass().equals(targetTagClass) && operation.findTag(currentTag)) {
-                return currentTag;
+        } else if (targetTag instanceof ListTag) {
+            for (Tag currentTag : ((ListTag) targetTag).getPayload()) {
+                Tag foundTag = this.find(targetTagClass, operation, currentTag);
+                if (foundTag != null) return foundTag;
             }
         }
+
 
         return null;
     }
@@ -118,5 +131,33 @@ public class CompoundTag extends Tag {
         int numberOfEntries = this.containedTags.size()-1;
         String pluralOfEntry = (numberOfEntries == 1) ? "entry" : "entries";
         return "TAG_Compound('" + this.name + "'): " + numberOfEntries + " " + pluralOfEntry + "\n";
+    }
+
+    @Override
+    public Iterator<Tag> iterator() {
+        return null;
+    }
+
+    public List<Tag> toList() {
+        return this.toList(this);
+    }
+
+    private List<Tag> toList(Tag tag) {
+        List<Tag> compoundedTagList = new ArrayList<>();
+        if (tag instanceof CompoundTag) {
+            for (Tag currentTag : ((CompoundTag) tag).getPayload()) {
+                if (currentTag instanceof CompoundTag) {
+                    List<Tag> nestedList = this.toList(currentTag);
+                    compoundedTagList.addAll(nestedList);
+                } else if (currentTag instanceof ListTag) {
+                    List<Tag> nestedList = this.toList(currentTag);
+                    compoundedTagList.addAll(nestedList);
+                } else if (!(currentTag instanceof EndTag)) {
+                    compoundedTagList.add(currentTag);
+                }
+            }
+        }
+
+        return compoundedTagList;
     }
 }

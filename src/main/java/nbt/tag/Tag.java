@@ -1,6 +1,7 @@
 package nbt.tag;
 
 import java.util.Arrays;
+import java.util.List;
 
 abstract public class Tag<T> {
     private Tag parent;

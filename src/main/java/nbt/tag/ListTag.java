@@ -80,19 +80,26 @@ public class ListTag<T extends Tag> extends Tag {
     }
 
     public Tag find(Class<? extends Tag> targetTagClass, CompoundTagOperation operation) {
-        //if (this.getClass().equals(targetTagClass) && operation.findTag(this)) return this;
-        for (Tag currentTag : containedTags) {
+        return this.find(targetTagClass, operation, this);
+    }
 
-            if (currentTag instanceof CompoundTag) {
-                return ((CompoundTag) currentTag).find(targetTagClass, operation);
-            } else if (currentTag instanceof ListTag) {
-                return ((ListTag) currentTag).find(targetTagClass, operation);
+    public Tag find(Class<? extends Tag> targetTagClass, CompoundTagOperation operation, Tag targetTag) {
+        if (targetTag.getClass().equals(targetTagClass) && operation.findTag(targetTag)) {
+            return targetTag;
+        }
+
+        if (targetTag instanceof CompoundTag) {
+            for (Tag currentTag : ((CompoundTag) targetTag).getPayload()) {
+                Tag foundTag = this.find(targetTagClass, operation, currentTag);
+                if (foundTag != null) return foundTag;
             }
-
-            if (currentTag.getClass().equals(targetTagClass) && operation.findTag(currentTag)) {
-                return currentTag;
+        } else if (targetTag instanceof ListTag) {
+            for (Tag currentTag : ((ListTag) targetTag).getPayload()) {
+                Tag foundTag = this.find(targetTagClass, operation, currentTag);
+                if (foundTag != null) return foundTag;
             }
         }
+
 
         return null;
     }

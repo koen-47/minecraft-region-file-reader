@@ -43,7 +43,7 @@ public class ListTagTest {
     }
 
     @Test
-    public void testListTagFind() {
+    public void testListTagFind1() {
         ListTag testListTag1 = new ListTag("testListTag1",
                                             new CompoundTag(
                                                     new IntTag("testIntTag1", 1),
@@ -53,6 +53,24 @@ public class ListTagTest {
                                                     new IntTag("testIntTag4", 4)));
 
         IntTag targetTag = (IntTag) testListTag1.find(IntTag.class, tag -> ((IntTag) tag).getPayload() == 3);
+        System.out.println(targetTag.toString());
+    }
+
+    @Test
+    public void testListTagFind3() {
+        ListTag testCompoundTag = new ListTag("testCompoundTag1",
+                                                        new ListTag("testCompoundTag2",
+                                                                new IntTag(1),
+                                                                new IntTag(2)),
+                                                        new ListTag("testCompoundTag3",
+                                                                new ListTag("testCompoundTag4",
+                                                                        new IntTag(5),
+                                                                        new IntTag(6)),
+                                                                new ListTag("testCompoundTag5",
+                                                                        new IntTag(7),
+                                                                        new IntTag(8))));
+
+        IntTag targetTag = (IntTag) testCompoundTag.find(IntTag.class, tag -> ((IntTag) tag).getPayload() == 8);
         System.out.println(targetTag.toString());
     }
 
