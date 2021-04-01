@@ -15,6 +15,15 @@ public class ListTag<T extends Tag> extends Tag {
     private final byte TAG_ID = 9;
 
     @SafeVarargs
+    public ListTag(T ...tags) {
+        this.name = "";
+        this.containedTagID = tags[0].getTagID();
+        this.containedTags = tags;
+        this.verifyTagTypes();
+        for (Tag currentTag : containedTags) currentTag.setParent(this);
+    }
+
+    @SafeVarargs
     public ListTag(byte containedTagID, T ...tags) {
         this.name = "";
         this.containedTagID = containedTagID;

@@ -6,6 +6,7 @@ import util.CompoundTagString;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -207,7 +208,56 @@ public class CompoundTagTest {
     }
 
     @Test
-    public void testCompoundTagToList1() {
+    public void testCompoundTagIterator() {
+        CompoundTag testCompoundTag = new CompoundTag("testCompoundTag",
+                                                        new IntTag("testIntTag1", 1),
+                                                        new StringTag("testStringTag1", "test123"));
+
+        Iterator<Tag> it = testCompoundTag.iterator();
+        System.out.println(it.next());
+        System.out.println(it.next());
+    }
+
+    @Test
+    public void testCompoundTagIteratorNested() {
+        CompoundTag testCompoundTag = new CompoundTag("testCompoundTag",
+                                                        new IntTag("testIntTag1", 1),
+                                                        new CompoundTag("testCompoundTag2",
+                                                                new IntTag("testIntTag2", 2),
+                                                                new CompoundTag("testCompoundTag3",
+                                                                        new IntTag("testIntTag3", 3),
+                                                                new CompoundTag("testCompoundTag4",
+                                                                        new IntTag("testIntTag4", 4),
+                                                                        new CompoundTag("testCompoundTag5",
+                                                                                new IntTag("testIntTag5", 5))),
+                                                                        new CompoundTag("testCompoundTag6",
+                                                                                new IntTag("testIntTag6", 6),
+                                                                                new IntTag("testIntTag7", 7)))),
+                                                        new CompoundTag("testCompoundTag7",
+                                                                new IntTag("testIntTag8", 8)));
+
+        Iterator<Tag> it = testCompoundTag.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
+    }
+
+    @Test
+    public void testCompoundTagIteratorListTag() {
+        CompoundTag testCompoundTag = new CompoundTag("testCompoundTag",
+                                                        new IntTag("testIntTag1", 1),
+                                                        new StringTag("testStringTag1", "test123"),
+                                                        new ListTag("testListTag",
+                                                                new IntTag(2),
+                                                                new IntTag(3)));
+
+        Iterator<Tag> it = testCompoundTag.iterator();
+        System.out.println(it.next());
+        System.out.println(it.next());
+    }
+
+    @Test
+    public void testCompoundTagToList() {
         CompoundTag testCompoundTag = new CompoundTag("testCompoundTag",
                                                         new IntTag("testIntTag1", 1),
                                                         new StringTag("testStringTag1", "test123"),
@@ -218,7 +268,7 @@ public class CompoundTagTest {
     }
 
     @Test
-    public void testCompoundTagToList2() {
+    public void testCompoundTagToListNested() {
         CompoundTag testCompoundTag = new CompoundTag("testCompoundTag",
                                                         new IntTag("testIntTag1", 1),
                                                         new StringTag("testStringTag1", "test123"),

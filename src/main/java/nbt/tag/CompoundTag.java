@@ -135,7 +135,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
 
     @Override
     public Iterator<Tag> iterator() {
-        return null;
+        return new CompoundTagIterator(this);
     }
 
     public List<Tag> toList() {

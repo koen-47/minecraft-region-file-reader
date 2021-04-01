@@ -89,4 +89,31 @@ public class ListTagTest {
         assertTrue(testListTag1.equals(testListTag2));
     }
 
+    @Test
+    public void testListTagIterator1() {
+        ListTag testListTag = new ListTag("testListTag",
+                                            new IntTag(1),
+                                            new IntTag(2));
+
+        ListTagIterator it = new ListTagIterator(testListTag);
+        System.out.println(it.next().toString());
+    }
+
+    @Test
+    public void testListTagIterator2() {
+        ListTag testListTag = new ListTag("testListTag",
+                                                new ListTag(
+                                                        new IntTag(1),
+                                                        new IntTag(2)),
+                                                new ListTag(
+                                                        new IntTag(3),
+                                                        new IntTag(4)));
+
+        ListTagIterator it = new ListTagIterator(testListTag);
+        System.out.println(it.next().toString());
+        System.out.println(it.next().toString());
+        System.out.println(it.next().toString());
+        System.out.println(it.next().toString());
+    }
+
 }
