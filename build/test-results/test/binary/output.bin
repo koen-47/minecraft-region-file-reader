@@ -1,23 +1,69 @@
-0
 TAG_Int(''): 1
 
-0
+TAG_Int(''): 2
+
 TAG_List(''): 2 entries
 
-0
 TAG_Int(''): 1
 
-1
-TAG_List(''): 2 entries
-
 TAG_Int(''): 2
 
-1
 TAG_List(''): 2 entries
 
-TAG_Int(''): 2
+TAG_Int(''): 3
 
-TAG_Int('testIntTag3'): 3
-
-TAG_Int(''): 8
+TAG_Int(''): 4
+
+Current index 0
+TAG_Compound(''): 5 entries
+
+Current index 0
+TAG_Int('testIntTag1'): 1
+
+Current index 1
+TAG_Int('testIntTag2'): 2
+
+Current index 2
+(TAG_List('testEmptyListTag'): 0 entries
+
+Current index 0
+TAG_String('id'): 'abc'
+
+Current index 4
+0TAG_Compound('testEmptyCompoundTag'): 0 entries
+
+Current index 0
+"TAG_End() of testEmptyCompoundTag
+
+Current index 5
+TAG_End() of 
+
+Current index 1
+TAG_Compound(''): 5 entries
+
+Current index 0
+TAG_Int('testIntTag1'): 1
+
+Current index 1
+TAG_Int('testIntTag2'): 2
+
+Current index 2
+(TAG_List('testEmptyListTag'): 0 entries
+
+Current index 0
+TAG_String('id'): 'abc'
+
+Current index 4
+0TAG_Compound('testEmptyCompoundTag'): 0 entries
+
+Current index 0
+"TAG_End() of testEmptyCompoundTag
+
+Current index 5
+TAG_End() of 
+
+Current index 2
+TAG_Int('testIntTag3'): 3
 
+	TAG_Int(''): 8
+	

@@ -5,9 +5,10 @@ import util.ByteArrayBuilder;
 import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
-public class ListTag<T extends Tag> extends Tag {
+public class ListTag<T extends Tag> extends Tag implements Iterable<Tag> {
     private String name;
     private byte containedTagID;
     private T[] containedTags;
@@ -135,5 +136,10 @@ public class ListTag<T extends Tag> extends Tag {
         int numberOfEntries = this.containedTags.length;
         String pluralOfEntry = (numberOfEntries == 1) ? "entry" : "entries";
         return "TAG_List('" + this.name + "'): " + numberOfEntries + " " + pluralOfEntry + "\n";
+    }
+
+    @Override
+    public Iterator<Tag> iterator() {
+        return new TagIterator(this);
     }
 }

@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import util.ListTagString;
 
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -97,6 +98,7 @@ public class ListTagTest {
 
         ListTagIterator it = new ListTagIterator(testListTag);
         System.out.println(it.next().toString());
+        System.out.println(it.next().toString());
     }
 
     @Test
@@ -114,6 +116,30 @@ public class ListTagTest {
         System.out.println(it.next().toString());
         System.out.println(it.next().toString());
         System.out.println(it.next().toString());
+        System.out.println(it.next().toString());
+        System.out.println(it.next().toString());
+    }
+
+    @Test
+    public void testListTagIterator3() {
+        ListTag testListTag = new ListTag("testListTag",
+                                                new CompoundTag(
+                                                        new IntTag("testIntTag1", 1),
+                                                        new IntTag("testIntTag2", 2),
+                                                        new ListTag("testEmptyListTag", (byte) 10),
+                                                        new StringTag("id", "abc"),
+                                                        new CompoundTag("testEmptyCompoundTag")),
+                                                new CompoundTag(
+                                                        new IntTag("testIntTag1", 1),
+                                                        new IntTag("testIntTag2", 2),
+                                                        new ListTag("testEmptyListTag", (byte) 10),
+                                                        new StringTag("id", "abc"),
+                                                        new CompoundTag("testEmptyCompoundTag")));
+
+        Iterator<Tag> it = testListTag.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
     }
 
 }

@@ -5,7 +5,7 @@ import java.util.Stack;
 
 public class ListTagIterator implements Iterator<Tag> {
     private ListTag currentListTag;
-    private int currentIndex = 0;
+    private int currentIndex;
     private Stack<Integer> indexStack;
 
     public ListTagIterator(ListTag currentListTag) {
@@ -21,22 +21,22 @@ public class ListTagIterator implements Iterator<Tag> {
 
     @Override
     public Tag next() {
-        System.out.println(this.currentIndex);
         Tag nextTag = this.currentListTag.getPayload()[currentIndex++];
 
         if (nextTag instanceof ListTag) {
             this.indexStack.push(this.currentIndex);
             this.currentIndex = 0;
             this.currentListTag = (ListTag) nextTag;
-        } else if (currentIndex == this.currentListTag.getPayload().length) {
-            this.currentListTag = (ListTag) nextTag.getParent();
+        } else if (this.currentIndex > this.currentListTag.getPayload().length-1) {
+            this.currentListTag = (ListTag) this.currentListTag.getParent();
             if (!this.indexStack.isEmpty()) {
-                this.currentIndex = this.indexStack.pop();
+                this.currentIndex = indexStack.pop();
             }
-
-            System.out.println(currentListTag.toString());
+        } else if (nextTag instanceof CompoundTag) {
+            System.out.println("compound tag reached");
+            CompoundTagIterator it = new CompoundTagIterator((CompoundTag) nextTag);
+            nextTag = it.next();
         }
-
 
         return nextTag;
     }

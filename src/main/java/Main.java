@@ -11,6 +11,7 @@ import util.ListTagString;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class Main {
@@ -27,5 +28,10 @@ public class Main {
 
         StringTag signId = (StringTag) root.find(StringTag.class, tag -> ((StringTag) tag).getPayload().equals("minecraft:sign"));
         System.out.println(signId.toString());
+
+        Iterator<Tag> it = root.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next().toString());
+        }
     }
 }

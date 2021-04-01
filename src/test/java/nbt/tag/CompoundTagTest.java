@@ -254,6 +254,38 @@ public class CompoundTagTest {
         Iterator<Tag> it = testCompoundTag.iterator();
         System.out.println(it.next());
         System.out.println(it.next());
+        System.out.println(it.next());
+        System.out.println(it.next());
+        System.out.println(it.next());
+    }
+
+    @Test
+    public void testCompoundTagIteratorEmptyListTag() {
+        CompoundTag testCompoundTag = new CompoundTag("testCompoundTag",
+                                                        new IntTag("testIntTag1", 1),
+                                                        new StringTag("testStringTag1", "test123"),
+                                                        new ListTag("testEmptyListTag", (byte) 10),
+                                                        new StringTag("id", "abc"),
+                                                        new CompoundTag("testEmptyCompoundTag"));
+
+        Iterator<Tag> it = testCompoundTag.iterator();
+        System.out.println(it.next());
+        System.out.println(it.next());
+        System.out.println(it.next());
+        System.out.println(it.next());
+        System.out.println(it.next());
+        System.out.println(it.next());
+    }
+
+    @Test
+    public void testCompoundTagIteratorGeneric() {
+        CompoundTag testCompoundTag = new CompoundTag("testCompoundTag",
+                                                        new IntTag("testIntTag1", 1),
+                                                        new StringTag("testStringTag1", "test123"));
+
+        Iterator<Tag> it = testCompoundTag.iterator();
+        System.out.println(it.next());
+        System.out.println(it.next());
     }
 
     @Test

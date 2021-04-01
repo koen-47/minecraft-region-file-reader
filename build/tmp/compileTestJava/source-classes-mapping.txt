@@ -18,13 +18,13 @@ nbt/predicate/CompoundTagPredicateTest.java
  nbt.predicate.CompoundTagPredicateTest
 nbt/parsing/ListTagParsingTest.java
  nbt.parsing.ListTagParsingTest
-nbt/parsing/IntTagParsingTest.java
- nbt.parsing.IntTagParsingTest
+nbt/tag/ListTagTest.java
+ nbt.tag.ListTagTest
 nbt/parsing/CompoundTagParsingTest.java
  nbt.parsing.CompoundTagParsingTest
 nbt/parsing/IntArrayTagParsingTest.java
  nbt.parsing.IntArrayTagParsingTest
 nbt/predicate/CompoundTagOperation.java
  nbt.predicate.CompoundTagOperation
-nbt/tag/ListTagTest.java
- nbt.tag.ListTagTest
+nbt/parsing/IntTagParsingTest.java
+ nbt.parsing.IntTagParsingTest

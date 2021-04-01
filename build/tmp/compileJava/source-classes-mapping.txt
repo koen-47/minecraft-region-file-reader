@@ -4,14 +4,14 @@ nbt/tag/Tag.java
  nbt.tag.Tag
 nbt/tag/EndTag.java
  nbt.tag.EndTag
-dat/DATReader.java
- dat.DATReader
+nbt/tag/ShortTag.java
+ nbt.tag.ShortTag
 nbt/tag/FloatTag.java
  nbt.tag.FloatTag
 nbt/tag/StringTag.java
  nbt.tag.StringTag
-Main.java
- Main
+mca/ChunkLocation.java
+ mca.ChunkLocation
 nbt/tag/DoubleTag.java
  nbt.tag.DoubleTag
 nbt/tag/CompoundTagOperation.java
@@ -20,8 +20,8 @@ mca/ChunkTimestamp.java
  mca.ChunkTimestamp
 mca/ChunkLocationTable.java
  mca.ChunkLocationTable
-dat/DATFile.java
- dat.DATFile
+nbt/tag/LongArrayTag.java
+ nbt.tag.LongArrayTag
 mca/ChunkDataReader.java
  mca.ChunkDataReader
 nbt/tag/LongTag.java
@@ -38,29 +38,31 @@ mca/ChunkTimestampTable.java
  mca.ChunkTimestampTable
 nbt/tag/ByteArrayTag.java
  nbt.tag.ByteArrayTag
-mca/MCAFile.java
- mca.MCAFile
+dat/DATFile.java
+ dat.DATFile
+Main.java
+ Main
 mca/MCAFilePrinter.java
  mca.MCAFilePrinter
-nbt/tag/ShortTag.java
- nbt.tag.ShortTag
-nbt/tag/LongArrayTag.java
- nbt.tag.LongArrayTag
-mca/ChunkLocation.java
- mca.ChunkLocation
+mca/MCAFile.java
+ mca.MCAFile
+dat/DATReader.java
+ dat.DATReader
 mca/MCAReader.java
  mca.MCAReader
-nbt/tag/ListTag.java
- nbt.tag.ListTag
-nbt/parsing/NBTFileInputStream.java
- nbt.parsing.NBTFileInputStream
-nbt/tag/CompoundTag.java
- nbt.tag.CompoundTag
-util/CompoundTagString.java
- util.CompoundTagString
-nbt/tag/CompoundTagIterator.java
- nbt.tag.CompoundTagIterator
 util/ListTagString.java
  util.ListTagString
 nbt/tag/ListTagIterator.java
  nbt.tag.ListTagIterator
+nbt/parsing/NBTFileInputStream.java
+ nbt.parsing.NBTFileInputStream
+nbt/tag/CompoundTagIterator.java
+ nbt.tag.CompoundTagIterator
+util/CompoundTagString.java
+ util.CompoundTagString
+nbt/tag/ListTag.java
+ nbt.tag.ListTag
+nbt/tag/TagIterator.java
+ nbt.tag.TagIterator
+nbt/tag/CompoundTag.java
+ nbt.tag.CompoundTag
