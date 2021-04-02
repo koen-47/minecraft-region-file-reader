@@ -2,67 +2,63 @@ mca/ChunkData.java
  mca.ChunkData
 nbt/tag/Tag.java
  nbt.tag.Tag
-nbt/tag/CompoundTagIterator.java
- nbt.tag.CompoundTagIterator
-dat/DATReader.java
- dat.DATReader
+nbt/tag/StringTag.java
+ nbt.tag.StringTag
+mca/ChunkLocation.java
+ mca.ChunkLocation
 nbt/tag/FloatTag.java
  nbt.tag.FloatTag
-util/CompoundTagString.java
- util.CompoundTagString
-Main.java
- Main
+nbt/tag/EndTag.java
+ nbt.tag.EndTag
+nbt/tag/ShortTag.java
+ nbt.tag.ShortTag
 nbt/tag/DoubleTag.java
  nbt.tag.DoubleTag
-nbt/tag/CompoundTagOperation.java
- nbt.tag.CompoundTagOperation
+mca/ChunkTimestampTable.java
+ mca.ChunkTimestampTable
 mca/ChunkTimestamp.java
  mca.ChunkTimestamp
 mca/ChunkLocationTable.java
  mca.ChunkLocationTable
-dat/DATFile.java
- dat.DATFile
+nbt/tag/LongArrayTag.java
+ nbt.tag.LongArrayTag
 mca/ChunkDataReader.java
  mca.ChunkDataReader
 nbt/tag/LongTag.java
  nbt.tag.LongTag
 nbt/tag/IntTag.java
  nbt.tag.IntTag
-nbt/tag/ListTagIterator.java
- nbt.tag.ListTagIterator
+nbt/tag/ByteArrayTag.java
+ nbt.tag.ByteArrayTag
 util/ByteArrayBuilder.java
  util.ByteArrayBuilder
 nbt/tag/ByteTag.java
  nbt.tag.ByteTag
 nbt/tag/IntArrayTag.java
  nbt.tag.IntArrayTag
-mca/ChunkTimestampTable.java
- mca.ChunkTimestampTable
-nbt/tag/ByteArrayTag.java
- nbt.tag.ByteArrayTag
-util/ListTagString.java
- util.ListTagString
-nbt/tag/StringTag.java
- nbt.tag.StringTag
-nbt/parsing/NBTFileInputStream.java
- nbt.parsing.NBTFileInputStream
-nbt/tag/ShortTag.java
- nbt.tag.ShortTag
-nbt/tag/LongArrayTag.java
- nbt.tag.LongArrayTag
-mca/ChunkLocation.java
- mca.ChunkLocation
-mca/MCAReader.java
- mca.MCAReader
-nbt/tag/EndTag.java
- nbt.tag.EndTag
-mca/MCAFile.java
- mca.MCAFile
-mca/MCAFilePrinter.java
- mca.MCAFilePrinter
 nbt/tag/ListTag.java
  nbt.tag.ListTag
 nbt/tag/TagIterator.java
  nbt.tag.TagIterator
+nbt/parsing/NBTFileInputStream.java
+ nbt.parsing.NBTFileInputStream
 nbt/tag/CompoundTag.java
  nbt.tag.CompoundTag
+dat/DATReader.java
+ dat.DATReader
+mca/MCAReader.java
+ mca.MCAReader
+util/CompoundTagString.java
+ util.CompoundTagString
+mca/MCAFile.java
+ mca.MCAFile
+mca/MCAFilePrinter.java
+ mca.MCAFilePrinter
+util/ListTagString.java
+ util.ListTagString
+nbt/tag/TagOperation.java
+ nbt.tag.TagOperation
+dat/DATFile.java
+ dat.DATFile
+Main.java
+ Main

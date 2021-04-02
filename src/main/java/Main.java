@@ -26,12 +26,22 @@ public class Main {
         CompoundTag root = mcaFile.getChunk(6, 8);
         System.out.println(new CompoundTagString(root).getString());
 
-        StringTag signId = (StringTag) root.find(StringTag.class, tag -> ((StringTag) tag).getPayload().equals("minecraft:sign"));
-        System.out.println(signId.toString());
+        //StringTag signId = (StringTag) root.find(StringTag.class, tag -> ((StringTag) tag).getPayload().equals("minecraft:sign"));
+        //System.out.println(signId.toString());
 
-        Iterator<Tag> it = root.iterator();
-        while (it.hasNext()) {
-            System.out.println(it.next().toString());
-        }
+        //ArrayList<Tag> sections = root.findAll(StringTag.class, tag -> ((StringTag) tag).getPayload().equals("minecraft:sign"));
+        //System.out.println(sections);
+
+        CompoundTag section4 = (CompoundTag) (root.find(ByteTag.class, tag -> ((ByteTag) tag).getName().equals("Y") &&
+                                                                              ((ByteTag) tag).getPayload().equals((byte) 4)))
+                                                                              .getParent();
+
+        LongArrayTag blockStatesSection4 = (LongArrayTag) section4.find(LongArrayTag.class, tag -> tag.getName().equals("BlockStates"));
+
+        System.out.println(new CompoundTagString(section4).getString());
+        System.out.println(Arrays.toString(blockStatesSection4.getPayload()));
+
+        ListTag sections = (ListTag) root.find(ListTag.class, tag -> tag.getName().equals("Sections"));
+        System.out.println(new ListTagString(sections).getString());
     }
 }

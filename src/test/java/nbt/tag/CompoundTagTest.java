@@ -284,33 +284,4 @@ public class CompoundTagTest {
         System.out.println(it.next());
         System.out.println(it.next());
     }
-
-    @Test
-    public void testCompoundTagToList() {
-        CompoundTag testCompoundTag = new CompoundTag("testCompoundTag",
-                                                        new IntTag("testIntTag1", 1),
-                                                        new StringTag("testStringTag1", "test123"),
-                                                        new ByteTag("testByteTag1", (byte) 1));
-
-        List<Tag> testCompoundTagList = testCompoundTag.toList();
-        System.out.println(testCompoundTagList);
-    }
-
-    @Test
-    public void testCompoundTagToListNested() {
-        CompoundTag testCompoundTag = new CompoundTag("testCompoundTag",
-                                                        new IntTag("testIntTag1", 1),
-                                                        new StringTag("testStringTag1", "test123"),
-                                                        new ByteTag("testByteTag1", (byte) 1),
-                                                        new CompoundTag("testCompoundTag2",
-                                                                new IntTag("testIntTag2", 2)),
-                                                                new CompoundTag("testCompoundTag3",
-                                                                        new IntTag("testIntTag3", 3),
-                                                                        new StringTag("testIntTag4", "test1234")),
-                                                                        new ListTag("testListTag1",
-                                                                                new IntTag(1)));
-
-        List<Tag> testCompoundTagList = testCompoundTag.toList();
-        System.out.println(testCompoundTagList);
-    }
 }

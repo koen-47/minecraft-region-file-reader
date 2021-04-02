@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="nbt.tag.ListTagTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2021-04-02T14:42:48" hostname="KOEN-PC" time="0.085">
+<testsuite name="nbt.tag.ListTagTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2021-04-02T18:53:44" hostname="LAPTOP-0SVKOBM1" time="0.195">
   <properties/>
-  <testcase name="testListTagIterator1()" classname="nbt.tag.ListTagTest" time="0.033"/>
-  <testcase name="testListTagIterator2()" classname="nbt.tag.ListTagTest" time="0.013"/>
-  <testcase name="testListTagIterator3()" classname="nbt.tag.ListTagTest" time="0.018"/>
-  <testcase name="testListTagIterator4()" classname="nbt.tag.ListTagTest" time="0.002"/>
-  <testcase name="testListTagEquals()" classname="nbt.tag.ListTagTest" time="0.006"/>
-  <testcase name="testIllegalListTag()" classname="nbt.tag.ListTagTest" time="0.003"/>
+  <testcase name="testListTagIterator1()" classname="nbt.tag.ListTagTest" time="0.076"/>
+  <testcase name="testListTagIterator2()" classname="nbt.tag.ListTagTest" time="0.026"/>
+  <testcase name="testListTagIterator3()" classname="nbt.tag.ListTagTest" time="0.037"/>
+  <testcase name="testListTagIterator4()" classname="nbt.tag.ListTagTest" time="0.008"/>
+  <testcase name="testListTagIterator5()" classname="nbt.tag.ListTagTest" time="0.012"/>
+  <testcase name="testListTagEquals()" classname="nbt.tag.ListTagTest" time="0.007"/>
+  <testcase name="testIllegalListTag()" classname="nbt.tag.ListTagTest" time="0.008"/>
   <testcase name="testListTagConstructorNamed()" classname="nbt.tag.ListTagTest" time="0.001"/>
-  <testcase name="testListTagFind1()" classname="nbt.tag.ListTagTest" time="0.002"/>
-  <testcase name="testListTagFind3()" classname="nbt.tag.ListTagTest" time="0.002"/>
+  <testcase name="testListTagFind1()" classname="nbt.tag.ListTagTest" time="0.006"/>
+  <testcase name="testListTagFind3()" classname="nbt.tag.ListTagTest" time="0.003"/>
   <system-out><![CDATA[TAG_Int(''): 1
 
 TAG_Int(''): 2
@@ -100,6 +101,7 @@ class nbt.tag.IntTag
 TAG_Int('testIntTag1'): 1
 
 class nbt.tag.EndTag
+this tag is an end tag of a compound tag in a list tag
 TAG_End() of 
 
 class nbt.tag.CompoundTag
@@ -124,6 +126,38 @@ class nbt.tag.EndTag
 TAG_End() of testEmptyCompoundTag
 
 class nbt.tag.EndTag
+this tag is an end tag of a compound tag in a list tag
+TAG_End() of 
+
+class nbt.tag.CompoundTag
+TAG_Compound(''): 3 entries
+
+class nbt.tag.ByteTag
+TAG_Byte('Slot'): 0
+
+class nbt.tag.StringTag
+TAG_String('id'): 'minecraft:lapis_ore'
+
+class nbt.tag.ByteTag
+TAG_Byte('Count'): 8
+
+class nbt.tag.EndTag
+TAG_End() of 
+
+class nbt.tag.CompoundTag
+TAG_Compound(''): 3 entries
+
+class nbt.tag.ByteTag
+TAG_Byte('Slot'): 0
+
+class nbt.tag.StringTag
+TAG_String('id'): 'minecraft:lapis_ore'
+
+class nbt.tag.ByteTag
+TAG_Byte('Count'): 8
+
+class nbt.tag.EndTag
+this tag is an end tag of a compound tag in a list tag
 TAG_End() of 
 
 TAG_Int('testIntTag3'): 3

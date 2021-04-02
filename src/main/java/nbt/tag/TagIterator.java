@@ -30,18 +30,20 @@ public class TagIterator implements Iterator<Tag> {
     @Override
     public Tag next() {
         Tag nextTag = this.currentIterator.next();
-        System.out.println(nextTag.getClass());
 
         if (nextTag instanceof CompoundTag && ((CompoundTag) nextTag).getPayload().size() > 0) {
             this.iteratorStack.push(this.currentIterator);
             this.currentIterator = ((CompoundTag) nextTag).getPayload().iterator();
         } else if (nextTag instanceof EndTag) {
+            if (nextTag.getParent().getParent() instanceof ListTag && !this.iteratorStack.peek().hasNext()) {
+                this.currentIterator = this.iteratorStack.pop();
+            }
+
             this.currentIterator = this.iteratorStack.pop();
         } else if (nextTag instanceof ListTag && ((ListTag) nextTag).getPayload().length > 0) {
             this.iteratorStack.push(this.currentIterator);
             this.currentIterator = Arrays.asList(((ListTag) nextTag).getPayload()).iterator();
         } else if (nextTag.getParent() instanceof ListTag && !this.currentIterator.hasNext()) {
-            System.out.println("end of list tag reached");
             this.currentIterator = this.iteratorStack.pop();
         }
 

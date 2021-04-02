@@ -2,11 +2,8 @@ package nbt.tag;
 
 import util.ByteArrayBuilder;
 
-import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
-import java.util.List;
 
 public class ListTag<T extends Tag> extends Tag implements Iterable<Tag> {
     private String name;
@@ -89,27 +86,25 @@ public class ListTag<T extends Tag> extends Tag implements Iterable<Tag> {
         return byteArrayBuilder.getByteArray();
     }
 
-    public Tag find(Class<? extends Tag> targetTagClass, CompoundTagOperation operation) {
-        return this.find(targetTagClass, operation, this);
+    private ArrayList<Tag> findAll(Class<? extends Tag> targetTagClass, TagOperation operation, Tag targetTag, ArrayList<Tag> currentlyFoundTags) {
+        ArrayList<Tag> foundTags = new ArrayList<>();
+        Iterator<Tag> it = this.iterator();
+        while (it.hasNext()) {
+            Tag nextTag = it.next();
+            if (nextTag.getClass().equals(targetTagClass) && operation.findTag(nextTag))
+                foundTags.add(nextTag);
+        }
+
+        return foundTags;
     }
 
-    public Tag find(Class<? extends Tag> targetTagClass, CompoundTagOperation operation, Tag targetTag) {
-        if (targetTag.getClass().equals(targetTagClass) && operation.findTag(targetTag)) {
-            return targetTag;
+    public Tag find(Class<? extends Tag> targetTagClass, TagOperation operation) {
+        Iterator<Tag> it = this.iterator();
+        while (it.hasNext()) {
+            Tag nextTag = it.next();
+            if (nextTag.getClass().equals(targetTagClass) && operation.findTag(nextTag))
+                return nextTag;
         }
-
-        if (targetTag instanceof CompoundTag) {
-            for (Tag currentTag : ((CompoundTag) targetTag).getPayload()) {
-                Tag foundTag = this.find(targetTagClass, operation, currentTag);
-                if (foundTag != null) return foundTag;
-            }
-        } else if (targetTag instanceof ListTag) {
-            for (Tag currentTag : ((ListTag) targetTag).getPayload()) {
-                Tag foundTag = this.find(targetTagClass, operation, currentTag);
-                if (foundTag != null) return foundTag;
-            }
-        }
-
 
         return null;
     }

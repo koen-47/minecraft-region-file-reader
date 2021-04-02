@@ -88,6 +88,7 @@
 TAG_Int('testIntTag1'): 1
 
 class nbt.tag.EndTag
+8this tag is an end tag of a compound tag in a list tag
 TAG_End() of 
 
 class nbt.tag.CompoundTag
@@ -112,11 +113,43 @@
 "TAG_End() of testEmptyCompoundTag
 
 class nbt.tag.EndTag
+8this tag is an end tag of a compound tag in a list tag
 TAG_End() of 
 
-	TAG_Int('testIntTag3'): 3
-	
+class nbt.tag.CompoundTag
+TAG_Compound(''): 3 entries
+
+class nbt.tag.ByteTag
+TAG_Byte('Slot'): 0
+
+class nbt.tag.StringTag
+(TAG_String('id'): 'minecraft:lapis_ore'
+
+class nbt.tag.ByteTag
+TAG_Byte('Count'): 8
+
+class nbt.tag.EndTag
+TAG_End() of 
+
+class nbt.tag.CompoundTag
+TAG_Compound(''): 3 entries
+
+class nbt.tag.ByteTag
+TAG_Byte('Slot'): 0
+
+class nbt.tag.StringTag
+(TAG_String('id'): 'minecraft:lapis_ore'
+
+class nbt.tag.ByteTag
+TAG_Byte('Count'): 8
+
+class nbt.tag.EndTag
+8this tag is an end tag of a compound tag in a list tag
+TAG_End() of 
+
 
-TAG_Int(''): 8
+TAG_Int('testIntTag3'): 3
 
 
+TAG_Int(''): 8
+

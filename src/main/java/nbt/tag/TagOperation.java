@@ -1,6 +1,6 @@
 package nbt.tag;
 
 @FunctionalInterface
-public interface CompoundTagOperation {
+public interface TagOperation {
     boolean findTag(Tag tag);
 }

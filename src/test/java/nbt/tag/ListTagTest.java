@@ -96,7 +96,7 @@ public class ListTagTest {
                                             new IntTag(1),
                                             new IntTag(2));
 
-        ListTagIterator it = new ListTagIterator(testListTag);
+        Iterator<Tag> it = testListTag.iterator();
         System.out.println(it.next().toString());
         System.out.println(it.next().toString());
     }
@@ -111,7 +111,7 @@ public class ListTagTest {
                                                         new IntTag(3),
                                                         new IntTag(4)));
 
-        ListTagIterator it = new ListTagIterator(testListTag);
+        Iterator<Tag> it = testListTag.iterator();
         System.out.println(it.next().toString());
         System.out.println(it.next().toString());
         System.out.println(it.next().toString());
@@ -159,6 +159,25 @@ public class ListTagTest {
                                                         new ListTag("testEmptyListTag", (byte) 10),
                                                         new StringTag("id", "abc"),
                                                         new CompoundTag("testEmptyCompoundTag")));
+
+
+        Iterator<Tag> it = testListTag.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
+    }
+
+    @Test
+    public void testListTagIterator5() {
+        ListTag testListTag = new ListTag("Items",
+                                                new CompoundTag(
+                                                        new ByteTag("Slot", (byte) 0),
+                                                        new StringTag("id", "minecraft:lapis_ore"),
+                                                        new ByteTag("Count", (byte) 8)),
+                                                new CompoundTag(
+                                                        new ByteTag("Slot", (byte) 0),
+                                                        new StringTag("id", "minecraft:lapis_ore"),
+                                                        new ByteTag("Count", (byte) 8)));
 
 
         Iterator<Tag> it = testListTag.iterator();
