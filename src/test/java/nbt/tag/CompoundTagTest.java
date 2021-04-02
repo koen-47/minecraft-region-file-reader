@@ -269,12 +269,9 @@ public class CompoundTagTest {
                                                         new CompoundTag("testEmptyCompoundTag"));
 
         Iterator<Tag> it = testCompoundTag.iterator();
-        System.out.println(it.next());
-        System.out.println(it.next());
-        System.out.println(it.next());
-        System.out.println(it.next());
-        System.out.println(it.next());
-        System.out.println(it.next());
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
     }
 
     @Test

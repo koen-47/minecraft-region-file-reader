@@ -14,95 +14,106 @@
 
 TAG_Int(''): 4
 
-Current index 0
+class nbt.tag.CompoundTag
 TAG_Compound(''): 5 entries
 
-Current index 0
+class nbt.tag.IntTag
 TAG_Int('testIntTag1'): 1
 
-Current index 1
+class nbt.tag.IntTag
 TAG_Int('testIntTag2'): 2
 
-Current index 2
+class nbt.tag.ListTag
 (TAG_List('testEmptyListTag'): 0 entries
 
-Current index 0
+class nbt.tag.StringTag
 TAG_String('id'): 'abc'
 
-Current index 4
+class nbt.tag.CompoundTag
 0TAG_Compound('testEmptyCompoundTag'): 0 entries
 
-Current index 0
+class nbt.tag.EndTag
 "TAG_End() of testEmptyCompoundTag
 
-Current index 5
+class nbt.tag.EndTag
 TAG_End() of 
 
-Current index 1
+class nbt.tag.CompoundTag
 TAG_Compound(''): 6 entries
 
-Current index 0
+class nbt.tag.IntTag
 TAG_Int('testIntTag1'): 1
 
-Current index 1
+class nbt.tag.IntTag
 TAG_Int('testIntTag2'): 2
 
-Current index 2
+class nbt.tag.ListTag
 (TAG_List('testEmptyListTag'): 0 entries
 
-Current index 0
+class nbt.tag.StringTag
 TAG_String('id'): 'abc'
 
-Current index 4
+class nbt.tag.CompoundTag
 0TAG_Compound('testEmptyCompoundTag'): 0 entries
 
-Current index 0
+class nbt.tag.EndTag
 "TAG_End() of testEmptyCompoundTag
 
-Current index 5
+class nbt.tag.ListTag
 &TAG_List('testIntTagList'): 5 entries
 
-Current index 0
+class nbt.tag.IntTag
 TAG_Int(''): 10
 
-Current index 1
+class nbt.tag.IntTag
 TAG_Int(''): 11
 
-Current index 2
+class nbt.tag.IntTag
 TAG_Int(''): 12
 
-Current index 3
+class nbt.tag.IntTag
 TAG_Int(''): 13
 
-Current index 4
-;End of listtagcurrent index is larger than payload length
+class nbt.tag.IntTag
+end of list tag reached
 TAG_Int(''): 14
 
-Current index 0
+class nbt.tag.EndTag
+TAG_End() of 
+
+class nbt.tag.CompoundTag
+TAG_Compound(''): 1 entry
+
+class nbt.tag.IntTag
+TAG_Int('testIntTag1'): 1
+
+class nbt.tag.EndTag
+TAG_End() of 
+
+class nbt.tag.CompoundTag
 TAG_Compound(''): 5 entries
 
-Current index 0
+class nbt.tag.IntTag
 TAG_Int('testIntTag1'): 1
 
-Current index 1
+class nbt.tag.IntTag
 TAG_Int('testIntTag2'): 2
 
-Current index 2
+class nbt.tag.ListTag
 (TAG_List('testEmptyListTag'): 0 entries
 
-Current index 0
+class nbt.tag.StringTag
 TAG_String('id'): 'abc'
 
-Current index 4
+class nbt.tag.CompoundTag
 0TAG_Compound('testEmptyCompoundTag'): 0 entries
 
-Current index 0
+class nbt.tag.EndTag
 "TAG_End() of testEmptyCompoundTag
 
-Current index 5
+class nbt.tag.EndTag
 TAG_End() of 
 
-Current index 1
 	TAG_Int('testIntTag3'): 3
 	
 

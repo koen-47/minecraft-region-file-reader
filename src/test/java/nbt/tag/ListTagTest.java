@@ -140,7 +140,9 @@ public class ListTagTest {
                                                                 new IntTag(11),
                                                                 new IntTag(12),
                                                                 new IntTag(13),
-                                                                new IntTag(14))));
+                                                                new IntTag(14))),
+                                                new CompoundTag(
+                                                        new IntTag("testIntTag1", 1)));
 
         Iterator<Tag> it = testListTag.iterator();
         while (it.hasNext()) {

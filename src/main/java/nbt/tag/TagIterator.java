@@ -1,64 +1,48 @@
 package nbt.tag;
 
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Stack;
 
 public class TagIterator implements Iterator<Tag> {
     private Tag currentTag;
-    private int currentIndex;
-    private boolean hasNext;
-    private Stack<Integer> indexStack;
+    private Iterator<Tag> currentIterator;
+    private Stack<Iterator<Tag>> iteratorStack;
 
     public TagIterator(Tag currentTag) {
         this.currentTag = currentTag;
-        this.currentIndex = 0;
-        this.indexStack = new Stack<>();
-        this.indexStack.push(this.currentIndex);
+        if (this.currentTag instanceof CompoundTag) {
+            this.currentIterator = ((CompoundTag) this.currentTag).getPayload().iterator();
+        } else {
+            this.currentIterator = Arrays.asList(((ListTag) this.currentTag).getPayload()).iterator();
+        }
+
+        this.iteratorStack = new Stack<>();
+        this.iteratorStack.push(this.currentIterator);
     }
 
     @Override
     public boolean hasNext() {
-        return this.currentTag != null;
+        return this.currentIterator.hasNext();
     }
 
     @Override
     public Tag next() {
-        System.out.println("Current index " + this.currentIndex);
-        if (this.currentTag instanceof ListTag && ((ListTag) this.currentTag).getPayload().length == 0) {
-            this.currentTag = this.currentTag.getParent();
-            this.currentIndex = this.indexStack.pop();
-        } else if (this.currentTag instanceof CompoundTag && ((CompoundTag) this.currentTag).getPayload().size() == 0) {
-            this.currentTag = this.currentTag.getParent();
-            this.currentIndex = this.indexStack.pop();
-        }
+        Tag nextTag = this.currentIterator.next();
+        System.out.println(nextTag.getClass());
 
-        Tag nextTag = (this.currentTag instanceof CompoundTag) ?
-                        ((CompoundTag) this.currentTag).getPayload().get(currentIndex++) :
-                        ((ListTag) this.currentTag).getPayload()[currentIndex++];
-
-        if (nextTag instanceof CompoundTag) {
-            this.indexStack.push(this.currentIndex);
-            this.currentIndex = 0;
-            this.currentTag = nextTag;
+        if (nextTag instanceof CompoundTag && ((CompoundTag) nextTag).getPayload().size() > 0) {
+            this.iteratorStack.push(this.currentIterator);
+            this.currentIterator = ((CompoundTag) nextTag).getPayload().iterator();
         } else if (nextTag instanceof EndTag) {
-            this.currentTag = this.currentTag.getParent();
-            if (!this.indexStack.isEmpty()) {
-                this.currentIndex = this.indexStack.pop();
-            }
-        } else if (nextTag instanceof ListTag) {
-            this.indexStack.push(this.currentIndex);
-            this.currentIndex = 0;
-            this.currentTag = nextTag;
-        } else if (nextTag.getParent() instanceof ListTag && this.currentIndex >= ((ListTag) this.currentTag).getPayload().length) {
-            System.out.print("End of listtag");
-            this.currentTag = nextTag.getParent();
-            this.currentIndex = indexStack.pop();
-
-            if (this.currentIndex >= ((ListTag) this.currentTag).getPayload().length) {
-                System.out.println("current index is larger than payload length");
-                this.currentTag = null;
-            }
+            this.currentIterator = this.iteratorStack.pop();
+        } else if (nextTag instanceof ListTag && ((ListTag) nextTag).getPayload().length > 0) {
+            this.iteratorStack.push(this.currentIterator);
+            this.currentIterator = Arrays.asList(((ListTag) nextTag).getPayload()).iterator();
+        } else if (nextTag.getParent() instanceof ListTag && !this.currentIterator.hasNext()) {
+            System.out.println("end of list tag reached");
+            this.currentIterator = this.iteratorStack.pop();
         }
 
         return nextTag;
