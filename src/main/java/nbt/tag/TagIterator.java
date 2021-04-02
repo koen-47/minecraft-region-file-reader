@@ -7,13 +7,14 @@ import java.util.Stack;
 public class TagIterator implements Iterator<Tag> {
     private Tag currentTag;
     private int currentIndex;
-    private int currentTagLength;
+    private boolean hasNext;
     private Stack<Integer> indexStack;
 
     public TagIterator(Tag currentTag) {
         this.currentTag = currentTag;
         this.currentIndex = 0;
         this.indexStack = new Stack<>();
+        this.indexStack.push(this.currentIndex);
     }
 
     @Override
@@ -49,10 +50,14 @@ public class TagIterator implements Iterator<Tag> {
             this.indexStack.push(this.currentIndex);
             this.currentIndex = 0;
             this.currentTag = nextTag;
-        } else if (nextTag.getParent() instanceof ListTag && this.currentIndex > ((ListTag) this.currentTag).getPayload().length) {
-            this.currentTag = this.currentTag.getParent();
-            if (!this.indexStack.isEmpty()) {
-                this.currentIndex = indexStack.pop();
+        } else if (nextTag.getParent() instanceof ListTag && this.currentIndex >= ((ListTag) this.currentTag).getPayload().length) {
+            System.out.print("End of listtag");
+            this.currentTag = nextTag.getParent();
+            this.currentIndex = indexStack.pop();
+
+            if (this.currentIndex >= ((ListTag) this.currentTag).getPayload().length) {
+                System.out.println("current index is larger than payload length");
+                this.currentTag = null;
             }
         }
 

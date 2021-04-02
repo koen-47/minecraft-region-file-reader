@@ -134,7 +134,30 @@ public class ListTagTest {
                                                         new IntTag("testIntTag2", 2),
                                                         new ListTag("testEmptyListTag", (byte) 10),
                                                         new StringTag("id", "abc"),
+                                                        new CompoundTag("testEmptyCompoundTag"),
+                                                        new ListTag("testIntTagList",
+                                                                new IntTag(10),
+                                                                new IntTag(11),
+                                                                new IntTag(12),
+                                                                new IntTag(13),
+                                                                new IntTag(14))));
+
+        Iterator<Tag> it = testListTag.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
+    }
+
+    @Test
+    public void testListTagIterator4() {
+        ListTag testListTag = new ListTag("testListTag",
+                                                new CompoundTag(
+                                                        new IntTag("testIntTag1", 1),
+                                                        new IntTag("testIntTag2", 2),
+                                                        new ListTag("testEmptyListTag", (byte) 10),
+                                                        new StringTag("id", "abc"),
                                                         new CompoundTag("testEmptyCompoundTag")));
+
 
         Iterator<Tag> it = testListTag.iterator();
         while (it.hasNext()) {
