@@ -1,15 +1,12 @@
-package nbt.parsing;
+package nbt.io;
 
-import nbt.tag.CompoundTag;
 import nbt.tag.IntTag;
 import nbt.tag.ListTag;
 import nbt.tag.Tag;
 import org.junit.jupiter.api.Test;
-import util.ListTagString;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 

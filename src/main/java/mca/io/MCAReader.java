@@ -1,4 +1,6 @@
-package mca;
+package mca.io;
+
+import mca.MCAFile;
 
 import java.io.*;
 import java.net.URL;

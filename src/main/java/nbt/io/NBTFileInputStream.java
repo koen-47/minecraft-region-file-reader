@@ -1,4 +1,4 @@
-package nbt.parsing;
+package nbt.io;
 
 import mca.MCAFile;
 import nbt.tag.*;

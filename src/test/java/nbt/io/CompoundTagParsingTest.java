@@ -1,7 +1,6 @@
-package nbt.parsing;
+package nbt.io;
 
 import nbt.tag.CompoundTag;
-import nbt.tag.EndTag;
 import nbt.tag.IntTag;
 import nbt.tag.Tag;
 import org.junit.jupiter.api.Test;

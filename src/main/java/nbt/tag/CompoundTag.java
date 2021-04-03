@@ -74,11 +74,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
         return byteArrayBuilder.getByteArray();
     }
 
-    public ArrayList<Tag> findAll(Class<? extends Tag> targetTagClass, TagOperation operation) {
-        return this.findAll(targetTagClass, operation, this, new ArrayList<Tag>());
-    }
-
-    private ArrayList<Tag> findAll(Class<? extends Tag> targetTagClass, TagOperation operation, Tag targetTag, ArrayList<Tag> currentlyFoundTags) {
+    private ArrayList<Tag> findAll(Class<? extends Tag> targetTagClass, TagOperation operation) {
         ArrayList<Tag> foundTags = new ArrayList<>();
         Iterator<Tag> it = this.iterator();
         while (it.hasNext()) {

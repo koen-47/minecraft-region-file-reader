@@ -20,6 +20,7 @@ public class TagIterator implements Iterator<Tag> {
 
         this.iteratorStack = new Stack<>();
         this.iteratorStack.push(this.currentIterator);
+        //this.iteratorStack.push(this.currentIterator);
     }
 
     @Override
@@ -36,15 +37,15 @@ public class TagIterator implements Iterator<Tag> {
             this.currentIterator = ((CompoundTag) nextTag).getPayload().iterator();
         } else if (nextTag instanceof EndTag) {
             if (nextTag.getParent().getParent() instanceof ListTag && !this.iteratorStack.peek().hasNext()) {
-                this.currentIterator = this.iteratorStack.pop();
+                if (!this.iteratorStack.isEmpty()) this.currentIterator = this.iteratorStack.pop();
             }
 
-            this.currentIterator = this.iteratorStack.pop();
+            if (!this.iteratorStack.isEmpty()) this.currentIterator = this.iteratorStack.pop();
         } else if (nextTag instanceof ListTag && ((ListTag) nextTag).getPayload().length > 0) {
             this.iteratorStack.push(this.currentIterator);
             this.currentIterator = Arrays.asList(((ListTag) nextTag).getPayload()).iterator();
         } else if (nextTag.getParent() instanceof ListTag && !this.currentIterator.hasNext()) {
-            this.currentIterator = this.iteratorStack.pop();
+            if (!this.iteratorStack.isEmpty()) this.currentIterator = this.iteratorStack.pop();
         }
 
         return nextTag;

@@ -1,4 +1,4 @@
-package nbt.parsing;
+package nbt.io;
 
 import nbt.tag.IntTag;
 import org.junit.jupiter.api.Test;

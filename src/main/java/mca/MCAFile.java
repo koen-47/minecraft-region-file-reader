@@ -1,6 +1,8 @@
 package mca;
 
-import nbt.parsing.NBTFileInputStream;
+import mca.io.*;
+import mca.parsing.Chunk;
+import nbt.io.NBTFileInputStream;
 import nbt.tag.CompoundTag;
 
 import java.io.ByteArrayInputStream;
@@ -26,24 +28,16 @@ public class MCAFile {
         return this.chunkTimestampTable;
     }
 
-    public ChunkData getRawChunk(int chunkNumber) throws IOException {
+    public Chunk getChunk(int chunkNumberX, int chunkNumberZ) throws IOException {
+        int chunkNumber = (chunkNumberZ * 32) + chunkNumberX;
         ChunkLocation location = this.chunkLocationTable.getChunkLocationAtIndex(chunkNumber);
-        ChunkDataReader chunkDataReader = new ChunkDataReader(this.fileName);
-        return chunkDataReader.readChunkData(location);
+        RawChunkData rawChunkData = new RawChunkDataReader(this.fileName).readChunkData(location);
+        return new Chunk(this.processRawChunkData(rawChunkData));
     }
 
-    public CompoundTag getChunk(int chunkNumber) throws IOException {
-        ChunkData rawChunk = this.getRawChunk(chunkNumber);
-        ByteArrayInputStream chunkData = new ByteArrayInputStream(rawChunk.getUncompressedData());
-        NBTFileInputStream nbtParser = new NBTFileInputStream(chunkData);
-        return (CompoundTag) nbtParser.readNamedTag();
-    }
-
-    public CompoundTag getChunk(int chunkNumberX, int chunkNumberZ) throws IOException {
-        int chunkNumberIndex = (chunkNumberZ * 32) + chunkNumberX;
-        ChunkData rawChunk = this.getRawChunk(chunkNumberIndex);
-        ByteArrayInputStream chunkData = new ByteArrayInputStream(rawChunk.getUncompressedData());
-        NBTFileInputStream nbtParser = new NBTFileInputStream(chunkData);
+    private CompoundTag processRawChunkData(RawChunkData rawChunkData) throws IOException {
+        ByteArrayInputStream rawChunkBytes = new ByteArrayInputStream(rawChunkData.getUncompressedData());
+        NBTFileInputStream nbtParser = new NBTFileInputStream(rawChunkBytes);
         return (CompoundTag) nbtParser.readNamedTag();
     }
 

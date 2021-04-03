@@ -1,4 +1,4 @@
-package mca;
+package mca.io;
 
 public class ChunkLocation {
     private int offset;

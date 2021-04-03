@@ -8,11 +8,11 @@ public class EndTag extends Tag<EndTag> {
     }
 
     public String getName() {
-        return null;
+        return "";
     }
 
     public EndTag getPayload() {
-        return null;
+        return this;
     }
 
     @Override

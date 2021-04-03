@@ -1,4 +1,4 @@
-package mca;
+package mca.io;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -6,11 +6,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
-public class ChunkDataReader {
+public class RawChunkDataReader {
     private URL fileName;
     private InputStream reader;
 
-    public ChunkDataReader(URL fileName) {
+    public RawChunkDataReader(URL fileName) {
         try {
             this.fileName = fileName;
             this.reader = new FileInputStream(this.fileName.getFile());
@@ -19,7 +19,7 @@ public class ChunkDataReader {
         }
     }
 
-    public ChunkData readChunkData(ChunkLocation location) throws IOException {
+    public RawChunkData readChunkData(ChunkLocation location) throws IOException {
         if (location.getOffset() == 0 && location.getSectorCount() == 0)
             throw new IOException("Chunk has not been loaded yet...");
 
@@ -34,7 +34,7 @@ public class ChunkDataReader {
 
             byte[] compressedChunkData = new byte[chunkDataLength * location.getSectorCount()];
             this.reader.read(compressedChunkData);
-            return new ChunkData(chunkDataHeader, compressedChunkData);
+            return new RawChunkData(chunkDataHeader, compressedChunkData);
         } catch (IOException e) {
             e.printStackTrace();
         }

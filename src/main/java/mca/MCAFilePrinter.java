@@ -1,5 +1,12 @@
 package mca;
 
+import mca.io.ChunkLocation;
+import mca.io.ChunkLocationTable;
+import mca.io.ChunkTimestamp;
+import mca.io.ChunkTimestampTable;
+import mca.parsing.Chunk;
+import util.CompoundTagString;
+
 public class MCAFilePrinter {
     private MCAFile mcaFile;
 
@@ -43,5 +50,9 @@ public class MCAFilePrinter {
             String[] row = stringTable[i];
             System.out.format("%-15s%-15s\n", i, row[0]);
         }
+    }
+
+    public void printChunk(Chunk chunk) {
+        System.out.println(new CompoundTagString(chunk.toNBTTag()).getString());
     }
 }

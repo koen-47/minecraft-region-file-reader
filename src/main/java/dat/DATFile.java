@@ -1,13 +1,12 @@
 package dat;
 
-import nbt.parsing.NBTFileInputStream;
+import nbt.io.NBTFileInputStream;
 import nbt.tag.CompoundTag;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.zip.GZIPInputStream;
-import java.util.zip.InflaterInputStream;
 
 public class DATFile {
     private URL fileName;
