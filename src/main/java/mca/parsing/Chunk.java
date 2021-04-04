@@ -3,6 +3,7 @@ package mca.parsing;
 import mca.io.RawChunkData;
 import nbt.tag.CompoundTag;
 import nbt.tag.ListTag;
+import nbt.tag.StringTag;
 import util.CompoundTagString;
 import util.ListTagString;
 
@@ -28,4 +29,5 @@ public class Chunk {
     public Section getSectionNumber(int i) {
         return this.sections[i];
     }
+
 }

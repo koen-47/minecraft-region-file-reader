@@ -20,8 +20,14 @@ public class Main {
         //printer.printChunkTimestampTable();
 
         Chunk chunk = mcaFile.getChunk(6, 8);
-        Section section4 = chunk.getSectionNumber(4);
-        section4.getBlockStateAtIndex(1);
+        printer.printChunk(chunk);
+
+        Section section = chunk.getSectionNumber(4);
+        CompoundTag block = section.getBlockStateAtIndex(10, 15, 5);
+        System.out.println(new CompoundTagString(block).getString());
+
+        //Section section4 = chunk.getSectionNumber(4);
+        //section4.getBlockStateAtIndex(1);
 
         //StringTag signId = (StringTag) root.find(StringTag.class, tag -> ((StringTag) tag).getPayload().equals("minecraft:sign"));
         //System.out.println(signId.toString());

@@ -3,6 +3,7 @@ package mca.parsing;
 import nbt.tag.*;
 import util.CompoundTagString;
 
+import java.util.Arrays;
 import java.util.Iterator;
 
 public class Section {
@@ -34,25 +35,34 @@ public class Section {
         }
     }
 
-    public StringTag getBlockStateAtIndex(int blockStateIndex) {
-        long blockState = this.blockStates.getPayload()[blockStateIndex];
-        int bitsPerBlock = this.blockStates.getPayload().length >> 6;
-        int blockStateLength = 0;
-        System.out.println(Long.toBinaryString(blockState));
-        System.out.println(Long.toBinaryString(this.extractBitString(blockState, 0, 4)));
-        System.out.println(Long.toBinaryString(this.extractBitString(blockState, 5, 8)));
+    public CompoundTag getBlockStateAtIndex(int x, int y, int z) {
+        System.out.println(Arrays.toString(this.blockStates.getPayload()));
 
-        while (blockStateLength < 63) {
-            long extractedBitString = this.extractBitString(blockState, blockStateLength, blockStateLength + bitsPerBlock);
-            //System.out.println(extractedBitString);
+        int blockNumber = (((y * 16) + z) * 16) + x;
+        long blockState = this.blockStates.getPayload()[z];
+        int bitsPerBlock = this.blockStates.getPayload().length / 64;
+        int startLong = ((blockNumber * bitsPerBlock) / 64);
+        int startOffset = (blockNumber * bitsPerBlock) % 64;
+        int endLong = ((blockNumber + 1) * bitsPerBlock - 1)/ 64;
+        System.out.println("Block state string: " + Long.toBinaryString(blockState) + " (" + blockState + ")");
+        System.out.println("Length of block states array: " + this.blockStates.getPayload().length + ", bits per block: " + bitsPerBlock );
+        System.out.println("Block number: " + blockNumber + ", start long: " + startLong);
+        System.out.println("blockState[startLong] = " + this.blockStates.getPayload()[startLong]);
+        System.out.println("blockState[endLong] = " + this.blockStates.getPayload()[endLong]);
 
-            blockStateLength += bitsPerBlock;
+        long data;
+        if (startLong == endLong) {
+            data = (this.blockStates.getPayload()[startLong] >> startOffset);
+        } else {
+            data = (this.blockStates.getPayload()[startLong] >> startOffset | this.blockStates.getPayload()[endLong] << (64 - startOffset));
         }
 
-        return null;
+        data &= ((1L << bitsPerBlock) - 1);
+
+        return (CompoundTag) this.palette.getPayload()[(int) data];
     }
 
-    private long extractBitString(long totalBit, long startPos, long endPos) {
-        return (totalBit >> startPos) & ((1L << (endPos)) - 1L);
+    private long extractBitString(long totalBit, int startPos, int endPos) {
+        return (totalBit >> startPos) & ((1L << (Math.abs(endPos - startPos))) - 1L);
     }
 }

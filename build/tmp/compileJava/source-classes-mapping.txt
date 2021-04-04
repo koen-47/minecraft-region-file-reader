@@ -1,7 +1,7 @@
 nbt/tag/Tag.java
  nbt.tag.Tag
-nbt/tag/ListTag.java
- nbt.tag.ListTag
+nbt/tag/CompoundTag.java
+ nbt.tag.CompoundTag
 dat/DATReader.java
  dat.DATReader
 nbt/tag/FloatTag.java
@@ -14,8 +14,8 @@ mca/io/ChunkLocationTable.java
  mca.io.ChunkLocationTable
 mca/io/ChunkTimestampTable.java
  mca.io.ChunkTimestampTable
-nbt/tag/CompoundTag.java
- nbt.tag.CompoundTag
+util/ListTagString.java
+ util.ListTagString
 nbt/tag/StringTag.java
  nbt.tag.StringTag
 nbt/tag/DoubleTag.java
@@ -38,10 +38,10 @@ nbt/tag/IntArrayTag.java
  nbt.tag.IntArrayTag
 nbt/tag/ByteArrayTag.java
  nbt.tag.ByteArrayTag
-nbt/tag/EndTag.java
- nbt.tag.EndTag
-util/ListTagString.java
- util.ListTagString
+nbt/tag/ListTag.java
+ nbt.tag.ListTag
+nbt/tag/TagIterator.java
+ nbt.tag.TagIterator
 nbt/tag/ShortTag.java
  nbt.tag.ShortTag
 nbt/tag/LongArrayTag.java
@@ -50,10 +50,10 @@ mca/io/ChunkLocation.java
  mca.io.ChunkLocation
 mca/io/ChunkTimestamp.java
  mca.io.ChunkTimestamp
-nbt/tag/TagIterator.java
- nbt.tag.TagIterator
-Main.java
- Main
+nbt/tag/EndTag.java
+ nbt.tag.EndTag
+mca/MCAFilePrinter.java
+ mca.MCAFilePrinter
 mca/io/MCAReader.java
  mca.io.MCAReader
 mca/parsing/Section.java
@@ -64,5 +64,5 @@ nbt/io/NBTFileInputStream.java
  nbt.io.NBTFileInputStream
 mca/MCAFile.java
  mca.MCAFile
-mca/MCAFilePrinter.java
- mca.MCAFilePrinter
+Main.java
+ Main
