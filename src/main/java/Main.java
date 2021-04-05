@@ -7,33 +7,42 @@ import nbt.tag.*;
 import util.CompoundTagString;
 import util.ListTagString;
 
+import javax.swing.filechooser.FileSystemView;
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        MCAReader mcaReader = new MCAReader("r.0.0.mca");
-        MCAFile mcaFile = mcaReader.readMCAFile();
+        URL regionDirURL = Main.class.getResource("/mca/2b2t");
+        File regionDir = new File(regionDirURL.getFile());
 
-        MCAFilePrinter printer = new MCAFilePrinter(mcaFile);
-        //printer.printChunkLocationTable();
-        //printer.printChunkTimestampTable();
+        for (File regionFile : regionDir.listFiles()) {
+            MCAReader mcaReader = new MCAReader(regionFile.getName());
+            MCAFile mcaFile = mcaReader.readMCAFile();
 
-        Chunk chunk = mcaFile.getChunk(6, 8);
-        printer.printChunk(chunk);
+            ArrayList<Tag> allSigns = findAllSigns(mcaFile);
+            for (Tag tag : allSigns) {
+                System.out.println(new CompoundTagString((CompoundTag) tag).getString());
+            }
+        }
 
-        Section section = chunk.getSectionNumber(4);
-        CompoundTag block = section.getBlockStateAtIndex(10, 15, 5);
-        System.out.println(new CompoundTagString(block).getString());
 
-        //Section section4 = chunk.getSectionNumber(4);
-        //section4.getBlockStateAtIndex(1);
+    }
 
-        //StringTag signId = (StringTag) root.find(StringTag.class, tag -> ((StringTag) tag).getPayload().equals("minecraft:sign"));
-        //System.out.println(signId.toString());
+    public static ArrayList<Tag> findAllSigns(MCAFile mcaFile) throws IOException {
+        ArrayList<Tag> allSigns = new ArrayList<>();
+        for (int y = 0; y < 32; y++) {
+            for (int x = 0; x < 32; x++) {
+                Chunk currentChunk = mcaFile.getChunk(x, y);
+                ArrayList<Tag> signs = currentChunk.toNBTTag().findAllParents(ListTag.class,
+                        tag -> ((ListTag) tag).getPayload().length > 0 && tag.getName().equals("Items"));
+                allSigns.addAll(signs);
+            }
+        }
 
-        //ArrayList<Tag> sections = root.findAll(StringTag.class, tag -> ((StringTag) tag).getPayload().equals("minecraft:sign"));
-        //System.out.println(sections);
-
+        return allSigns;
     }
 }

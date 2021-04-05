@@ -15,11 +15,6 @@ public class Chunk {
     public Chunk(CompoundTag chunkData) {
         this.chunkData = chunkData;
         this.sections = new Section[16];
-        ListTag sectionsListTag = (ListTag) chunkData.find(ListTag.class, tag -> tag.getName().equals("Sections"));
-        for (int i = 0; i < this.sections.length; i++) {
-            //System.out.println(new CompoundTagString((CompoundTag) sectionsListTag.getPayload()[i]).getString());
-            sections[i] = new Section((CompoundTag) sectionsListTag.getPayload()[i]);
-        }
     }
 
     public CompoundTag toNBTTag() {

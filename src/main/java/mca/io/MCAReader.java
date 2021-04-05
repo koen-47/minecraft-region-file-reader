@@ -11,7 +11,7 @@ public class MCAReader {
 
     public MCAReader(String fileName) {
         try {
-            this.fileName = this.getClass().getResource("/mca/" + fileName);
+            this.fileName = this.getClass().getResource("/mca/2b2t/" + fileName);
             this.reader = new FileInputStream(this.fileName.getFile());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
