@@ -1,9 +1,7 @@
 package util;
 
-import nbt.tag.FloatTag;
-import nbt.tag.Tag;
-
 import java.util.Arrays;
+import nbt.tag.Tag;
 
 public class ByteArrayBuilder {
     private byte[] array;
@@ -12,7 +10,7 @@ public class ByteArrayBuilder {
         this.array = new byte[0];
     }
 
-    public ByteArrayBuilder(byte[] array) {
+    public ByteArrayBuilder(final byte[] array) {
         this.array = array;
     }
 

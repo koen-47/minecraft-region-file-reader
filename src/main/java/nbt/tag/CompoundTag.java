@@ -6,44 +6,56 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 
+/**
+ * Tag that is used to store other named tags.
+ * @author Killerkoen
+ */
 public class CompoundTag extends Tag implements Iterable<Tag> {
     private String name;
     private ArrayList<Tag> containedTags;
 
-    private final byte TAG_ID = 10;
+    private final byte tagID = 10;
 
     public CompoundTag(ArrayList<Tag> containedTags) {
         this.name = "";
         this.containedTags = containedTags;
-        this.containedTags.add( new EndTag() );
-        for (Tag currentTag : containedTags) currentTag.setParent(this);
+        this.containedTags.add(new EndTag());
+        for (Tag currentTag : containedTags) {
+            currentTag.setParent(this);
+        }
     }
 
     public CompoundTag(Tag ...tags) {
         this.name = "";
         this.containedTags = new ArrayList<>();
         this.containedTags.addAll(Arrays.asList(tags));
-        this.containedTags.add( new EndTag() );
-        for (Tag currentTag : containedTags) currentTag.setParent(this);
+        this.containedTags.add(new EndTag());
+        for (Tag currentTag : containedTags) {
+            currentTag.setParent(this);
+        }
     }
 
     public CompoundTag(String name, ArrayList<Tag> containedTags) {
         this.name = name;
         this.containedTags = containedTags;
-        this.containedTags.add( new EndTag() ) ;
-        for (Tag currentTag : containedTags) currentTag.setParent(this);
+        this.containedTags.add(new EndTag());
+        for (Tag currentTag : containedTags) {
+            currentTag.setParent(this);
+        }
     }
 
     public CompoundTag(String name, Tag ...tags) {
         this.name = name;
         this.containedTags = new ArrayList<>();
         this.containedTags.addAll(Arrays.asList(tags));
-        this.containedTags.add( new EndTag() );
-        for (Tag currentTag : containedTags) currentTag.setParent(this);
+        this.containedTags.add(new EndTag());
+        for (Tag currentTag : containedTags) {
+            currentTag.setParent(this);
+        }
     }
 
     public byte getTagID() {
-        return this.TAG_ID;
+        return this.tagID;
     }
 
     public String getName() {
@@ -59,7 +71,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
 
     public void append(Tag tag) {
-        this.containedTags.add( Math.max(0, this.containedTags.size()-1), tag );
+        this.containedTags.add(Math.max(0, this.containedTags.size() - 1), tag);
     }
 
     @Override
@@ -79,8 +91,9 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
         Iterator<Tag> it = this.iterator();
         while (it.hasNext()) {
             Tag nextTag = it.next();
-            if (nextTag.getClass().equals(targetTagClass) && operation.findTag(nextTag))
+            if (nextTag.getClass().equals(targetTagClass) && operation.findTag(nextTag)) {
                 foundTags.add(nextTag);
+            }
         }
 
         return foundTags;
@@ -91,8 +104,9 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
         Iterator<Tag> it = this.iterator();
         while (it.hasNext()) {
             Tag nextTag = it.next();
-            if (nextTag.getClass().equals(targetTagClass) && operation.findTag(nextTag))
+            if (nextTag.getClass().equals(targetTagClass) && operation.findTag(nextTag)) {
                 foundTags.add(nextTag.getParent());
+            }
         }
 
         return foundTags;
@@ -102,8 +116,9 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
         Iterator<Tag> it = this.iterator();
         while (it.hasNext()) {
             Tag nextTag = it.next();
-            if (nextTag.getClass().equals(targetTagClass) && operation.findTag(nextTag))
+            if (nextTag.getClass().equals(targetTagClass) && operation.findTag(nextTag)) {
                 return nextTag;
+            }
         }
 
         return null;
@@ -114,24 +129,30 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
 
     public boolean equals(Tag other) {
-        if (!(other instanceof CompoundTag))
+        if (!(other instanceof CompoundTag)) {
             return false;
+        }
 
-        if (!this.getName().equals(other.getName()))
+        if (!this.getName().equals(other.getName())) {
             return false;
+        }
 
-        if (this.containedTags.size() != ((CompoundTag) other).getPayload().size())
+        if (this.containedTags.size() != ((CompoundTag) other).getPayload().size()) {
             return false;
+        }
 
-        for (int i = 0; i < this.containedTags.size(); i++)
-            if (!this.containedTags.get(i).equals(((CompoundTag) other).getPayload().get(i))) return false;
+        for (int i = 0; i < this.containedTags.size(); i++) {
+            if (!this.containedTags.get(i).equals(((CompoundTag) other).getPayload().get(i))) {
+                return false;
+            }
+        }
 
         return true;
     }
 
 
     public String toString() {
-        int numberOfEntries = this.containedTags.size()-1;
+        int numberOfEntries = this.containedTags.size() - 1;
         String pluralOfEntry = (numberOfEntries == 1) ? "entry" : "entries";
         return "TAG_Compound('" + this.name + "'): " + numberOfEntries + " " + pluralOfEntry + "\n";
     }
