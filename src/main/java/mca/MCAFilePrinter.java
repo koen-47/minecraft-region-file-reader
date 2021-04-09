@@ -7,13 +7,27 @@ import mca.io.ChunkTimestampTable;
 import mca.parsing.Chunk;
 import util.CompoundTagString;
 
+/**
+ * Class that prints or returns a string of specific parts of a .mca file.
+ * @author Killerkoen
+ */
 public class MCAFilePrinter {
+    /**
+     * The .mca file to print from
+     */
     private MCAFile mcaFile;
 
+    /**
+     * Constructor for the MCAFilePrinter class.
+     * @param mcaFile - the .mca file to print from
+     */
     public MCAFilePrinter(MCAFile mcaFile) {
         this.mcaFile = mcaFile;
     }
 
+    /**
+     * Prints the chunk location table of the assigned .mca file.
+     */
     public void printChunkLocationTable() {
         ChunkLocationTable chunkLocationTable = this.mcaFile.getChunkLocationTable();
         int numberOfChunkLocations = chunkLocationTable.getNumberOfChunkLocations();
@@ -33,6 +47,9 @@ public class MCAFilePrinter {
         }
     }
 
+    /**
+     * Prints the timestamp table of the assigned .mca file.
+     */
     public void printChunkTimestampTable() {
         ChunkTimestampTable chunkTimestampTable = this.mcaFile.getChunkTimestampTable();
         int numberOfChunkTimestamps = chunkTimestampTable.getNumberOfChunkTimestamps();
@@ -52,7 +69,12 @@ public class MCAFilePrinter {
         }
     }
 
-    public void printChunk(Chunk chunk) {
-        System.out.println(new CompoundTagString(chunk.toNBTTag()).getString());
+    /**
+     * Gets a string of the root compound tag of the assigned .mca file.
+     * @param chunk - the chunk to convert to a string
+     * @return String of the root compound tag of the assigned .mca file
+     */
+    public String getChunkString(Chunk chunk) {
+        return new CompoundTagString(chunk.toNBTTag()).getString();
     }
 }

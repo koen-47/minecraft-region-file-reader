@@ -2,24 +2,44 @@ package mca.io;
 
 import java.util.Arrays;
 
+/**
+ * Class the contains the timestamps of all chunks.
+ * @author Killerkoen
+ */
 public class ChunkTimestampTable {
-    private ChunkTimestamp[] chunkTimestamps;
+    /**
+     * Array of chunk timestamps.
+     */
+    private final ChunkTimestamp[] chunkTimestamps;
 
-    private final int NUMBER_OF_TIMESTAMPS = 1024;
-    private final int BYTES_PER_TIMESTAMP = 4;
-
+    /**
+     * Constructor for the ChunkTimestamp class.
+     * @param bytes - array of bytes to convert to chunk timestamps
+     */
     public ChunkTimestampTable(byte[] bytes) {
-        this.chunkTimestamps = new ChunkTimestamp[NUMBER_OF_TIMESTAMPS];
-        for (int i = 0, j = 0; i < NUMBER_OF_TIMESTAMPS; i++, j += BYTES_PER_TIMESTAMP) {
-            byte[] timestampBytes = Arrays.copyOfRange(bytes, j, j + BYTES_PER_TIMESTAMP);
+        final int numberOfTimestamps = 1024;
+        final int bytesPerTimestamp = 4;
+        this.chunkTimestamps = new ChunkTimestamp[numberOfTimestamps];
+
+        for (int i = 0, j = 0; i < numberOfTimestamps; i++, j += bytesPerTimestamp) {
+            byte[] timestampBytes = Arrays.copyOfRange(bytes, j, j + bytesPerTimestamp);
             this.chunkTimestamps[i] = new ChunkTimestamp(timestampBytes);
         }
     }
 
+    /**
+     * Get the number of timestamps in this table.
+     * @return The number of timestamps in this table
+     */
     public int getNumberOfChunkTimestamps() {
         return this.chunkTimestamps.length;
     }
 
+    /**
+     * Get a chunk timestamp at the given index.
+     * @param i - index of the target chunk timestamp
+     * @return The chunk timestamp that was found at the given index
+     */
     public ChunkTimestamp getChunkTimestampAtIndex(int i) {
         return this.chunkTimestamps[i];
     }
