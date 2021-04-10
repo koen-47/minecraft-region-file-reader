@@ -27,7 +27,7 @@ public class DATReader {
      * @throws FileNotFoundException - exception for when the URL of the file cannot be found
      */
     public DATReader(String fileName) throws FileNotFoundException {
-        this.fileName = this.getClass().getResource("/dat/" + fileName);
+        this.fileName = this.getClass().getResource(fileName);
         this.reader = new FileInputStream(this.fileName.getFile());
     }
 

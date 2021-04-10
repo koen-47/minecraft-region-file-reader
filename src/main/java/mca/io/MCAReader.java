@@ -30,7 +30,7 @@ public class MCAReader {
      * @throws IOException - exception for when an error occurs during IO operation
      */
     public MCAReader(String fileName) throws FileNotFoundException {
-        this.fileName = this.getClass().getResource("/mca/2b2t/" + fileName);
+        this.fileName = this.getClass().getResource(fileName);
         this.reader = new FileInputStream(this.fileName.getFile());
     }
 
