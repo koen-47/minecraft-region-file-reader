@@ -1,64 +1,64 @@
-nbt/tag/Tag.java
- nbt.tag.Tag
-nbt/tag/StringTag.java
- nbt.tag.StringTag
-mca/io/ChunkLocation.java
- mca.io.ChunkLocation
-nbt/tag/FloatTag.java
- nbt.tag.FloatTag
-mca/io/RawChunkDataReader.java
- mca.io.RawChunkDataReader
-nbt/tag/LongArrayTag.java
- nbt.tag.LongArrayTag
 mca/io/ChunkLocationTable.java
  mca.io.ChunkLocationTable
 mca/io/ChunkTimestampTable.java
  mca.io.ChunkTimestampTable
-mca/io/MCAReader.java
- mca.io.MCAReader
-mca/MCAFile.java
- mca.MCAFile
-nbt/tag/TagOperation.java
- nbt.tag.TagOperation
-mca/io/RawChunkData.java
- mca.io.RawChunkData
-nbt/tag/LongTag.java
- nbt.tag.LongTag
-nbt/tag/IntTag.java
- nbt.tag.IntTag
-util/ByteArrayBuilder.java
- util.ByteArrayBuilder
-nbt/tag/ShortTag.java
- nbt.tag.ShortTag
-nbt/tag/IntArrayTag.java
- nbt.tag.IntArrayTag
+mca/io/ChunkLocation.java
+ mca.io.ChunkLocation
 mca/io/ChunkTimestamp.java
  mca.io.ChunkTimestamp
-nbt/tag/ListTag.java
- nbt.tag.ListTag
-nbt/tag/ByteTag.java
- nbt.tag.ByteTag
-mca/MCAFilePrinter.java
- mca.MCAFilePrinter
-nbt/tag/ByteArrayTag.java
- nbt.tag.ByteArrayTag
-nbt/tag/DoubleTag.java
- nbt.tag.DoubleTag
-dat/DATReader.java
- dat.DATReader
+mca/io/RawChunkDataReader.java
+ mca.io.RawChunkDataReader
+mca/io/RawChunkData.java
+ mca.io.RawChunkData
+nbt/tag/Tag.java
+ nbt.tag.Tag
+nbt/io/NBTFileInputStream.java
+ nbt.io.NBTFileInputStream
+nbt/tag/StringTag.java
+ nbt.tag.StringTag
 dat/DATFile.java
  dat.DATFile
 mca/parsing/Chunk.java
  mca.parsing.Chunk
 nbt/tag/TagIterator.java
  nbt.tag.TagIterator
-nbt/tag/CompoundTag.java
- nbt.tag.CompoundTag
-util/CompoundTagString.java
- util.CompoundTagString
-nbt/io/NBTFileInputStream.java
- nbt.io.NBTFileInputStream
+nbt/tag/TagOperation.java
+ nbt.tag.TagOperation
+nbt/tag/ByteTag.java
+ nbt.tag.ByteTag
 nbt/tag/EndTag.java
  nbt.tag.EndTag
+dat/DATReader.java
+ dat.DATReader
+nbt/tag/IntArrayTag.java
+ nbt.tag.IntArrayTag
+mca/io/MCAReader.java
+ mca.io.MCAReader
+mca/MCAFile.java
+ mca.MCAFile
+nbt/tag/ByteArrayTag.java
+ nbt.tag.ByteArrayTag
+nbt/tag/ListTag.java
+ nbt.tag.ListTag
+nbt/tag/ShortTag.java
+ nbt.tag.ShortTag
+nbt/tag/CompoundTag.java
+ nbt.tag.CompoundTag
+nbt/tag/LongArrayTag.java
+ nbt.tag.LongArrayTag
+nbt/tag/FloatTag.java
+ nbt.tag.FloatTag
+nbt/tag/DoubleTag.java
+ nbt.tag.DoubleTag
+nbt/tag/LongTag.java
+ nbt.tag.LongTag
+nbt/tag/IntTag.java
+ nbt.tag.IntTag
+util/ByteArrayBuilder.java
+ util.ByteArrayBuilder
+mca/MCAFilePrinter.java
+ mca.MCAFilePrinter
+util/CompoundTagString.java
+ util.CompoundTagString
 util/ListTagString.java
  util.ListTagString

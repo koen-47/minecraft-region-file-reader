@@ -107,7 +107,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
 
     /**
      * Get the payload of this tag.
-     * @return A string with this tag's payload as it's value
+     * @return An instance of an ArrayList containing the tags held within this compound tag
      */
     @Override
     public ArrayList<Tag> getPayload() {

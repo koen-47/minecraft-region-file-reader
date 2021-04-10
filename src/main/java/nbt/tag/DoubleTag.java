@@ -85,7 +85,7 @@ public class DoubleTag extends Tag<Double> {
     /**
      * Compares this instance of a DoubleTag object to that of another to see if contain equal values.
      * @param other the other instance of a DoubleTag object to compare to
-     * @return {@code true} if this list contains the specified element; {@code false} if otherwise
+     * @return {@code true} if this tag equals the specified parameter tag; {@code false} if otherwise
      */
     @Override
     public boolean equals(Tag other) {

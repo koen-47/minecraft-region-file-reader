@@ -27,12 +27,9 @@ test {
 checkstyle {
     toolVersion '7.8.1'
     configFile file("config/checkstyle/checkstyle.xml")
+    checkstyleTest.enabled = false
 }
 
 checkstyleMain {
     source ='src/main/java'
-}
-
-checkstyleTest {
-    source ='src/test/java'
 }
