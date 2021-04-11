@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'checkstyle'
+    id 'maven'
+}
+
+apply plugin: 'java';
+apply plugin: 'application'
+apply plugin: 'checkstyle'
+apply plugin: 'maven'
+
+group 'com.github.killerkoen'
+version '0.1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+checkstyle {
+    toolVersion '7.8.1'
+    configFile file("config/checkstyle/checkstyle.xml")
+    checkstyleTest.enabled = false
+}
+
+checkstyleMain {
+    source ='src/main/java'
+}
