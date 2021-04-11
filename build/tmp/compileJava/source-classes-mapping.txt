@@ -32,8 +32,8 @@ dat/DATReader.java
  dat.DATReader
 nbt/tag/IntArrayTag.java
  nbt.tag.IntArrayTag
-mca/io/MCAReader.java
- mca.io.MCAReader
+util/ListTagString.java
+ util.ListTagString
 mca/MCAFile.java
  mca.MCAFile
 nbt/tag/ByteArrayTag.java
@@ -60,5 +60,5 @@ mca/MCAFilePrinter.java
  mca.MCAFilePrinter
 util/CompoundTagString.java
  util.CompoundTagString
-util/ListTagString.java
- util.ListTagString
+mca/io/MCAReader.java
+ mca.io.MCAReader

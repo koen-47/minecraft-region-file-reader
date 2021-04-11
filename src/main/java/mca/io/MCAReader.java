@@ -27,7 +27,6 @@ public class MCAReader {
      * Constructor for the MCAReader class.
      * @param fileName - URL of the .mca file
      * @throws FileNotFoundException - exception for when the URL of the file cannot be found
-     * @throws IOException - exception for when an error occurs during IO operation
      */
     public MCAReader(String fileName) throws FileNotFoundException {
         this.fileName = this.getClass().getResource(fileName);
