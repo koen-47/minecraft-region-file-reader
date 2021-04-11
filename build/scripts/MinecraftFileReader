@@ -80,7 +80,7 @@ case "`uname`" in
     ;;
 esac
 
-CLASSPATH=$APP_HOME/lib/MinecraftFileReader-1.0-SNAPSHOT.jar
+CLASSPATH=$APP_HOME/lib/MinecraftFileReader-0.1.0.jar
 
 
 # Determine the Java command to use to start the JVM.
