@@ -67,7 +67,7 @@ goto fail
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\MinecraftFileReader-1.0-SNAPSHOT.jar
+set CLASSPATH=%APP_HOME%\lib\MinecraftFileReader-0.1.0.jar
 
 
 @rem Execute MinecraftFileReader

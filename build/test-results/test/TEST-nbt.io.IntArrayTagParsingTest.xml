@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="nbt.io.IntArrayTagParsingTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-04-11T14:09:44" hostname="LAPTOP-0SVKOBM1" time="0.006">
+  <properties/>
+  <testcase name="testBasicIntArrayTagParsing()" classname="nbt.io.IntArrayTagParsingTest" time="0.006"/>
+  <system-out><![CDATA[TAG_Int_Array('testIntArrayTag'): [5 ints]
+
+[11, 0, 15, 116, 101, 115, 116, 73, 110, 116, 65, 114, 114, 97, 121, 84, 97, 103, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 3, 0, 0, 0, 4, 0, 0, 0, 5]
+TAG_Int_Array('testIntArrayTag'): [5 ints]
+
+[11, 0, 15, 116, 101, 115, 116, 73, 110, 116, 65, 114, 114, 97, 121, 84, 97, 103, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 3, 0, 0, 0, 4, 0, 0, 0, 5]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

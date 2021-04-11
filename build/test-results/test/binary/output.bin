@@ -1,122 +1,860 @@
-&TAG_String('testStringTag1'): 'test1'
++TAG_Compound('testCompoundTag'): 3 entries
+
+&TAG_Compound('testCompound'): 1 entry
+{
+    TAG_Int('testInt'): 10
+}
 
-TAG_Int(''): 8
-
-%TAG_String('FINDME'): 'the real one'
-
-TAG_Int('testIntTag1'): 1
-
-(TAG_String('testStringTag1'): 'test123'
-
-	TAG_Int('testIntTag1'): 1
-	
-	(TAG_String('testStringTag1'): 'test123'
-	
-	#TAG_List('testListTag'): 2 entries
-	
-	TAG_Int(''): 2
-	
-	TAG_Int(''): 3
-	
-
-TAG_Int('testIntTag1'): 1
-
-
-
-,TAG_Compound('testCompoundTag2'): 2 entries
-
-
-
-TAG_Int('testIntTag2'): 2
-
-
-
-,TAG_Compound('testCompoundTag3'): 3 entries
-
-
-
-TAG_Int('testIntTag3'): 3
-
-
-
-,TAG_Compound('testCompoundTag4'): 2 entries
-
-
-
-TAG_Int('testIntTag4'): 4
-
-
-
-*TAG_Compound('testCompoundTag5'): 1 entry
-
-
-
-TAG_Int('testIntTag5'): 5
-
-
-
-TAG_End() of testCompoundTag5
-
-
-
-TAG_End() of testCompoundTag4
-
-
-
-,TAG_Compound('testCompoundTag6'): 2 entries
-
-
-
-TAG_Int('testIntTag6'): 6
-
-
-
-TAG_Int('testIntTag7'): 7
-
-
-
-TAG_End() of testCompoundTag6
-
-
-
-TAG_End() of testCompoundTag3
-
-
-
-TAG_End() of testCompoundTag2
-
-
-
-*TAG_Compound('testCompoundTag7'): 1 entry
-
-
-
-TAG_Int('testIntTag8'): 8
-
-
-
-TAG_End() of testCompoundTag7
-
-
-
-TAG_End() of testCompoundTag
-
-
-TAG_Int('testIntTag1'): 1
-
-(TAG_String('testStringTag1'): 'test123'
-
-(TAG_List('testEmptyListTag'): 0 entries
-
-TAG_String('id'): 'abc'
-
-0TAG_Compound('testEmptyCompoundTag'): 0 entries
-
-"TAG_End() of testEmptyCompoundTag
-
-TAG_End() of testCompoundTag
-
-TAG_Int('testIntTag1'): 1
-
-(TAG_String('testStringTag1'): 'test123'
-
++TAG_Int_Array('testIntArrayTag'): [5 ints]
+
+›[11, 0, 15, 116, 101, 115, 116, 73, 110, 116, 65, 114, 114, 97, 121, 84, 97, 103, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 3, 0, 0, 0, 4, 0, 0, 0, 5]
++TAG_Int_Array('testIntArrayTag'): [5 ints]
+
+›[11, 0, 15, 116, 101, 115, 116, 73, 110, 116, 65, 114, 114, 97, 121, 84, 97, 103, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 3, 0, 0, 0, 4, 0, 0, 0, 5]
+&TAG_String('testStringTag1'): 'test1'
+
+TAG_Int(''): 8
+
+%TAG_String('FINDME'): 'the real one'
+
+TAG_Int('testIntTag1'): 1
+
+(TAG_String('testStringTag1'): 'test123'
+
+TAG_Int('testIntTag1'): 1
+
+(TAG_String('testStringTag1'): 'test123'
+
+#TAG_List('testListTag'): 2 entries
+
+TAG_Int(''): 2
+
+TAG_Int(''): 3
+
+TAG_Int('testIntTag1'): 1
+
+,TAG_Compound('testCompoundTag2'): 2 entries
+
+TAG_Int('testIntTag2'): 2
+
+,TAG_Compound('testCompoundTag3'): 3 entries
+
+TAG_Int('testIntTag3'): 3
+
+,TAG_Compound('testCompoundTag4'): 2 entries
+
+TAG_Int('testIntTag4'): 4
+
+*TAG_Compound('testCompoundTag5'): 1 entry
+
+TAG_Int('testIntTag5'): 5
+
+TAG_End() of testCompoundTag5
+
+TAG_End() of testCompoundTag4
+
+,TAG_Compound('testCompoundTag6'): 2 entries
+
+TAG_Int('testIntTag6'): 6
+
+TAG_Int('testIntTag7'): 7
+
+TAG_End() of testCompoundTag6
+
+TAG_End() of testCompoundTag3
+
+TAG_End() of testCompoundTag2
+
+*TAG_Compound('testCompoundTag7'): 1 entry
+
+TAG_Int('testIntTag8'): 8
+
+TAG_End() of testCompoundTag7
+
+TAG_End() of testCompoundTag
+
+TAG_Int('testIntTag1'): 1
+
+(TAG_String('testStringTag1'): 'test123'
+
+(TAG_List('testEmptyListTag'): 0 entries
+
+TAG_String('id'): 'abc'
+
+0TAG_Compound('testEmptyCompoundTag'): 0 entries
+
+"TAG_End() of testEmptyCompoundTag
+
+TAG_End() of testCompoundTag
+
+TAG_Int('testIntTag1'): 1
+
+(TAG_String('testStringTag1'): 'test123'
+
+! p[6, 0, 13, 116, 101, 115, 116, 68, 111, 117, 98, 108, 101, 84, 97, 103, -65, -15, -99, -68, -87, 105, 26, 118]
+! 2[6, 0, 0, -65, -15, -99, -68, -87, 105, 26, 118]
+('TAG_Int(''): 1
+('
+('TAG_Int(''): 2
+('
+()TAG_List(''): 2 entries
+()
+()TAG_Int(''): 1
+()
+()TAG_Int(''): 2
+()
+()TAG_List(''): 2 entries
+()
+()TAG_Int(''): 3
+()
+()TAG_Int(''): 4
+()
+(*TAG_Compound(''): 5 entries
+(*
+(*TAG_Int('testIntTag1'): 1
+(*
+(*TAG_Int('testIntTag2'): 2
+(*
+(*(TAG_List('testEmptyListTag'): 0 entries
+(*
+(*TAG_String('id'): 'abc'
+(*
+(*0TAG_Compound('testEmptyCompoundTag'): 0 entries
+(*
+(*"TAG_End() of testEmptyCompoundTag
+(*
+(*TAG_End() of 
+(*
+(*TAG_Compound(''): 6 entries
+(*
+(*TAG_Int('testIntTag1'): 1
+(*
+(*TAG_Int('testIntTag2'): 2
+(*
+(*(TAG_List('testEmptyListTag'): 0 entries
+(*
+(*TAG_String('id'): 'abc'
+(*
+(*0TAG_Compound('testEmptyCompoundTag'): 0 entries
+(*
+(*"TAG_End() of testEmptyCompoundTag
+(*
+(*&TAG_List('testIntTagList'): 5 entries
+(*
+(*TAG_Int(''): 10
+(*
+(*TAG_Int(''): 11
+(*
+(*TAG_Int(''): 12
+(*
+(*TAG_Int(''): 13
+(*
+(*TAG_Int(''): 14
+(*
+(*TAG_End() of 
+(*
+(*TAG_Compound(''): 1 entry
+(*
+(*TAG_Int('testIntTag1'): 1
+(*
+(*TAG_End() of 
+(*
+(+TAG_Compound(''): 5 entries
+(+
+(+TAG_Int('testIntTag1'): 1
+(+
+(+TAG_Int('testIntTag2'): 2
+(+
+(+(TAG_List('testEmptyListTag'): 0 entries
+(+
+(+TAG_String('id'): 'abc'
+(+
+(+0TAG_Compound('testEmptyCompoundTag'): 0 entries
+(+
+(+"TAG_End() of testEmptyCompoundTag
+(+
+(+TAG_End() of 
+(+
+(,TAG_Compound(''): 3 entries
+(,
+(,TAG_Byte('Slot'): 0
+(,
+(,(TAG_String('id'): 'minecraft:lapis_ore'
+(,
+(,TAG_Byte('Count'): 8
+(,
+(,TAG_End() of 
+(,
+(,TAG_Compound(''): 3 entries
+(,
+(,TAG_Byte('Slot'): 0
+(,
+(,(TAG_String('id'): 'minecraft:lapis_ore'
+(,
+(,TAG_Byte('Count'): 8
+(,
+(,TAG_End() of 
+(,
+(0TAG_Int('testIntTag3'): 3
+(0
+(1TAG_Int(''): 8
+(1
+;:0TAG_Compound('testCompoundTagOuter'): 3 entries
+;:{
+;:#    TAG_Int('testIntTagOuter1'): 3
+;:,    TAG_String('testStringTagOuter2'): 's1'
+;:4    TAG_Compound('testCompoundTagInner'): 2 entries
+;:    {
+;:'        TAG_Int('testIntTagInner1'): 1
+;:'        TAG_Int('testIntTagInner2'): 2
+;:    }
+;:}
+;:
+;<)TAG_Compound('testCompoundTag'): 1 entry
+;<{
+;<    TAG_Int('testIntTag'): 1
+;<}
+;<
+;=+TAG_Compound('testCompoundTag10'): 1 entry
+;={
+;=1    TAG_Compound('testCompoundTag9'): 21 entries
+;=    {
+;=)        TAG_List('testListTag'): 1 entry
+;=
+        {
+;=            TAG_Int(''): 1
+;=
+        }
+;="        TAG_Int('testIntTag'): 15
+;=)        TAG_List('testListTag'): 1 entry
+;=
+        {
+;=            TAG_Int(''): 1
+;=
+        }
+;="        TAG_Int('testIntTag'): 42
+;=)        TAG_List('testListTag'): 1 entry
+;=
+        {
+;=            TAG_Int(''): 1
+;=
+        }
+;="        TAG_Int('testIntTag'): 19
+;=)        TAG_List('testListTag'): 1 entry
+;=
+        {
+;=            TAG_Int(''): 1
+;=
+        }
+;="        TAG_Int('testIntTag'): 59
+;=)        TAG_List('testListTag'): 1 entry
+;=
+        {
+;=            TAG_Int(''): 1
+;=
+        }
+;=!        TAG_Int('testIntTag'): 7
+;=)        TAG_List('testListTag'): 1 entry
+;=
+        {
+;=            TAG_Int(''): 1
+;=
+        }
+;="        TAG_Int('testIntTag'): 13
+;=)        TAG_List('testListTag'): 1 entry
+;=
+        {
+;=            TAG_Int(''): 1
+;=
+        }
+;="        TAG_Int('testIntTag'): 52
+;=)        TAG_List('testListTag'): 1 entry
+;=
+        {
+;=            TAG_Int(''): 1
+;=
+        }
+;=#        TAG_Int('testIntTag'): 100
+;=)        TAG_List('testListTag'): 1 entry
+;=
+        {
+;=            TAG_Int(''): 1
+;=
+        }
+;=!        TAG_Int('testIntTag'): 3
+;=)        TAG_List('testListTag'): 1 entry
+;=
+        {
+;=            TAG_Int(''): 1
+;=
+        }
+;="        TAG_Int('testIntTag'): 50
+;=5        TAG_Compound('testCompoundTag8'): 21 entries
+;=
+        {
+;=-            TAG_List('testListTag'): 1 entry
+;=            {
+;=                TAG_Int(''): 1
+;=            }
+;=&            TAG_Int('testIntTag'): 34
+;=-            TAG_List('testListTag'): 1 entry
+;=            {
+;=                TAG_Int(''): 1
+;=            }
+;=%            TAG_Int('testIntTag'): 1
+;=-            TAG_List('testListTag'): 1 entry
+;=            {
+;=                TAG_Int(''): 1
+;=            }
+;=&            TAG_Int('testIntTag'): 95
+;=-            TAG_List('testListTag'): 1 entry
+;=            {
+;=                TAG_Int(''): 1
+;=            }
+;=&            TAG_Int('testIntTag'): 40
+;=-            TAG_List('testListTag'): 1 entry
+;=            {
+;=                TAG_Int(''): 1
+;=            }
+;=&            TAG_Int('testIntTag'): 88
+;=-            TAG_List('testListTag'): 1 entry
+;=            {
+;=                TAG_Int(''): 1
+;=            }
+;=&            TAG_Int('testIntTag'): 80
+;=-            TAG_List('testListTag'): 1 entry
+;=            {
+;=                TAG_Int(''): 1
+;=            }
+;=%            TAG_Int('testIntTag'): 7
+;=-            TAG_List('testListTag'): 1 entry
+;=            {
+;=                TAG_Int(''): 1
+;=            }
+;=&            TAG_Int('testIntTag'): 43
+;=-            TAG_List('testListTag'): 1 entry
+;=            {
+;=                TAG_Int(''): 1
+;=            }
+;=&            TAG_Int('testIntTag'): 84
+;=-            TAG_List('testListTag'): 1 entry
+;=            {
+;=                TAG_Int(''): 1
+;=            }
+;=&            TAG_Int('testIntTag'): 96
+;=9            TAG_Compound('testCompoundTag7'): 21 entries
+;=            {
+;=1                TAG_List('testListTag'): 1 entry
+;=                {
+;=#                    TAG_Int(''): 1
+;=                }
+;=*                TAG_Int('testIntTag'): 66
+;=1                TAG_List('testListTag'): 1 entry
+;=                {
+;=#                    TAG_Int(''): 1
+;=                }
+;=)                TAG_Int('testIntTag'): 8
+;=1                TAG_List('testListTag'): 1 entry
+;=                {
+;=#                    TAG_Int(''): 1
+;=                }
+;=*                TAG_Int('testIntTag'): 28
+;=1                TAG_List('testListTag'): 1 entry
+;=                {
+;=#                    TAG_Int(''): 1
+;=                }
+;=*                TAG_Int('testIntTag'): 77
+;=1                TAG_List('testListTag'): 1 entry
+;=                {
+;=#                    TAG_Int(''): 1
+;=                }
+;=*                TAG_Int('testIntTag'): 22
+;=1                TAG_List('testListTag'): 1 entry
+;=                {
+;=#                    TAG_Int(''): 1
+;=                }
+;=*                TAG_Int('testIntTag'): 54
+;=1                TAG_List('testListTag'): 1 entry
+;=                {
+;=#                    TAG_Int(''): 1
+;=                }
+;=*                TAG_Int('testIntTag'): 36
+;=1                TAG_List('testListTag'): 1 entry
+;=                {
+;=#                    TAG_Int(''): 1
+;=                }
+;=*                TAG_Int('testIntTag'): 43
+;=1                TAG_List('testListTag'): 1 entry
+;=                {
+;=#                    TAG_Int(''): 1
+;=                }
+;=*                TAG_Int('testIntTag'): 91
+;=1                TAG_List('testListTag'): 1 entry
+;=                {
+;=#                    TAG_Int(''): 1
+;=                }
+;=*                TAG_Int('testIntTag'): 19
+;==                TAG_Compound('testCompoundTag6'): 21 entries
+;=                {
+;=5                    TAG_List('testListTag'): 1 entry
+;=                    {
+;='                        TAG_Int(''): 1
+;=                    }
+;=-                    TAG_Int('testIntTag'): 6
+;=5                    TAG_List('testListTag'): 1 entry
+;=                    {
+;='                        TAG_Int(''): 1
+;=                    }
+;=.                    TAG_Int('testIntTag'): 59
+;=5                    TAG_List('testListTag'): 1 entry
+;=                    {
+;='                        TAG_Int(''): 1
+;=                    }
+;=.                    TAG_Int('testIntTag'): 21
+;=5                    TAG_List('testListTag'): 1 entry
+;=                    {
+;='                        TAG_Int(''): 1
+;=                    }
+;=.                    TAG_Int('testIntTag'): 61
+;=5                    TAG_List('testListTag'): 1 entry
+;=                    {
+;='                        TAG_Int(''): 1
+;=                    }
+;=.                    TAG_Int('testIntTag'): 19
+;=5                    TAG_List('testListTag'): 1 entry
+;=                    {
+;='                        TAG_Int(''): 1
+;=                    }
+;=.                    TAG_Int('testIntTag'): 85
+;=5                    TAG_List('testListTag'): 1 entry
+;=                    {
+;='                        TAG_Int(''): 1
+;=                    }
+;=.                    TAG_Int('testIntTag'): 75
+;=5                    TAG_List('testListTag'): 1 entry
+;=                    {
+;='                        TAG_Int(''): 1
+;=                    }
+;=-                    TAG_Int('testIntTag'): 8
+;=5                    TAG_List('testListTag'): 1 entry
+;=                    {
+;='                        TAG_Int(''): 1
+;=                    }
+;=.                    TAG_Int('testIntTag'): 78
+;=5                    TAG_List('testListTag'): 1 entry
+;=                    {
+;='                        TAG_Int(''): 1
+;=                    }
+;=.                    TAG_Int('testIntTag'): 37
+;=A                    TAG_Compound('testCompoundTag5'): 21 entries
+;=                    {
+;=9                        TAG_List('testListTag'): 1 entry
+;=                        {
+;=+                            TAG_Int(''): 1
+;=                        }
+;=2                        TAG_Int('testIntTag'): 87
+;=9                        TAG_List('testListTag'): 1 entry
+;=                        {
+;=+                            TAG_Int(''): 1
+;=                        }
+;=2                        TAG_Int('testIntTag'): 53
+;=9                        TAG_List('testListTag'): 1 entry
+;=                        {
+;=+                            TAG_Int(''): 1
+;=                        }
+;=2                        TAG_Int('testIntTag'): 47
+;=9                        TAG_List('testListTag'): 1 entry
+;=                        {
+;=+                            TAG_Int(''): 1
+;=                        }
+;=2                        TAG_Int('testIntTag'): 81
+;=9                        TAG_List('testListTag'): 1 entry
+;=                        {
+;=+                            TAG_Int(''): 1
+;=                        }
+;=2                        TAG_Int('testIntTag'): 97
+;=9                        TAG_List('testListTag'): 1 entry
+;=                        {
+;=+                            TAG_Int(''): 1
+;=                        }
+;=2                        TAG_Int('testIntTag'): 96
+;=9                        TAG_List('testListTag'): 1 entry
+;=                        {
+;=+                            TAG_Int(''): 1
+;=                        }
+;=2                        TAG_Int('testIntTag'): 48
+;=9                        TAG_List('testListTag'): 1 entry
+;=                        {
+;=+                            TAG_Int(''): 1
+;=                        }
+;=2                        TAG_Int('testIntTag'): 63
+;=9                        TAG_List('testListTag'): 1 entry
+;=                        {
+;=+                            TAG_Int(''): 1
+;=                        }
+;=2                        TAG_Int('testIntTag'): 57
+;=9                        TAG_List('testListTag'): 1 entry
+;=                        {
+;=+                            TAG_Int(''): 1
+;=                        }
+;=2                        TAG_Int('testIntTag'): 80
+;=E                        TAG_Compound('testCompoundTag4'): 21 entries
+;=                        {
+;==                            TAG_List('testListTag'): 1 entry
+;=                            {
+;=/                                TAG_Int(''): 1
+;=                            }
+;=6                            TAG_Int('testIntTag'): 41
+;==                            TAG_List('testListTag'): 1 entry
+;=                            {
+;=/                                TAG_Int(''): 1
+;=                            }
+;=6                            TAG_Int('testIntTag'): 96
+;==                            TAG_List('testListTag'): 1 entry
+;=                            {
+;=/                                TAG_Int(''): 1
+;=                            }
+;=5                            TAG_Int('testIntTag'): 9
+;==                            TAG_List('testListTag'): 1 entry
+;=                            {
+;=/                                TAG_Int(''): 1
+;=                            }
+;=6                            TAG_Int('testIntTag'): 23
+;==                            TAG_List('testListTag'): 1 entry
+;=                            {
+;=/                                TAG_Int(''): 1
+;=                            }
+;=5                            TAG_Int('testIntTag'): 1
+;==                            TAG_List('testListTag'): 1 entry
+;=                            {
+;=/                                TAG_Int(''): 1
+;=                            }
+;=6                            TAG_Int('testIntTag'): 61
+;==                            TAG_List('testListTag'): 1 entry
+;=                            {
+;=/                                TAG_Int(''): 1
+;=                            }
+;=6                            TAG_Int('testIntTag'): 27
+;==                            TAG_List('testListTag'): 1 entry
+;=                            {
+;=/                                TAG_Int(''): 1
+;=                            }
+;=6                            TAG_Int('testIntTag'): 94
+;==                            TAG_List('testListTag'): 1 entry
+;=                            {
+;=/                                TAG_Int(''): 1
+;=                            }
+;=6                            TAG_Int('testIntTag'): 34
+;==                            TAG_List('testListTag'): 1 entry
+;=                            {
+;=/                                TAG_Int(''): 1
+;=                            }
+;=6                            TAG_Int('testIntTag'): 38
+;=I                            TAG_Compound('testCompoundTag3'): 21 entries
+;=                            {
+;=A                                TAG_List('testListTag'): 1 entry
+;="                                {
+;=3                                    TAG_Int(''): 1
+;="                                }
+;=:                                TAG_Int('testIntTag'): 93
+;=A                                TAG_List('testListTag'): 1 entry
+;="                                {
+;=3                                    TAG_Int(''): 1
+;="                                }
+;=:                                TAG_Int('testIntTag'): 91
+;=A                                TAG_List('testListTag'): 1 entry
+;="                                {
+;=3                                    TAG_Int(''): 1
+;="                                }
+;=:                                TAG_Int('testIntTag'): 43
+;=A                                TAG_List('testListTag'): 1 entry
+;="                                {
+;=3                                    TAG_Int(''): 1
+;="                                }
+;=:                                TAG_Int('testIntTag'): 49
+;=A                                TAG_List('testListTag'): 1 entry
+;="                                {
+;=3                                    TAG_Int(''): 1
+;="                                }
+;=:                                TAG_Int('testIntTag'): 90
+;=A                                TAG_List('testListTag'): 1 entry
+;="                                {
+;=3                                    TAG_Int(''): 1
+;="                                }
+;=:                                TAG_Int('testIntTag'): 63
+;=A                                TAG_List('testListTag'): 1 entry
+;="                                {
+;=3                                    TAG_Int(''): 1
+;="                                }
+;=9                                TAG_Int('testIntTag'): 1
+;=A                                TAG_List('testListTag'): 1 entry
+;="                                {
+;=3                                    TAG_Int(''): 1
+;="                                }
+;=:                                TAG_Int('testIntTag'): 77
+;=A                                TAG_List('testListTag'): 1 entry
+;="                                {
+;=3                                    TAG_Int(''): 1
+;="                                }
+;=9                                TAG_Int('testIntTag'): 4
+;=A                                TAG_List('testListTag'): 1 entry
+;="                                {
+;=3                                    TAG_Int(''): 1
+;="                                }
+;=:                                TAG_Int('testIntTag'): 37
+;=M                                TAG_Compound('testCompoundTag2'): 21 entries
+;="                                {
+;=E                                    TAG_List('testListTag'): 1 entry
+;=&                                    {
+;=7                                        TAG_Int(''): 1
+;=&                                    }
+;=>                                    TAG_Int('testIntTag'): 97
+;=E                                    TAG_List('testListTag'): 1 entry
+;=&                                    {
+;=7                                        TAG_Int(''): 1
+;=&                                    }
+;=?                                    TAG_Int('testIntTag'): 100
+;=E                                    TAG_List('testListTag'): 1 entry
+;=&                                    {
+;=7                                        TAG_Int(''): 1
+;=&                                    }
+;=>                                    TAG_Int('testIntTag'): 99
+;=E                                    TAG_List('testListTag'): 1 entry
+;=&                                    {
+;=7                                        TAG_Int(''): 1
+;=&                                    }
+;=>                                    TAG_Int('testIntTag'): 18
+;=E                                    TAG_List('testListTag'): 1 entry
+;=&                                    {
+;=7                                        TAG_Int(''): 1
+;=&                                    }
+;=>                                    TAG_Int('testIntTag'): 26
+;=E                                    TAG_List('testListTag'): 1 entry
+;=&                                    {
+;=7                                        TAG_Int(''): 1
+;=&                                    }
+;=>                                    TAG_Int('testIntTag'): 35
+;=E                                    TAG_List('testListTag'): 1 entry
+;=&                                    {
+;=7                                        TAG_Int(''): 1
+;=&                                    }
+;=>                                    TAG_Int('testIntTag'): 26
+;=E                                    TAG_List('testListTag'): 1 entry
+;=&                                    {
+;=7                                        TAG_Int(''): 1
+;=&                                    }
+;=>                                    TAG_Int('testIntTag'): 22
+;=E                                    TAG_List('testListTag'): 1 entry
+;=&                                    {
+;=7                                        TAG_Int(''): 1
+;=&                                    }
+;=>                                    TAG_Int('testIntTag'): 42
+;=E                                    TAG_List('testListTag'): 1 entry
+;=&                                    {
+;=7                                        TAG_Int(''): 1
+;=&                                    }
+;=>                                    TAG_Int('testIntTag'): 10
+;=Q                                    TAG_Compound('testCompoundTag1'): 21 entries
+;=&                                    {
+;=I                                        TAG_List('testListTag'): 1 entry
+;=*                                        {
+;=;                                            TAG_Int(''): 1
+;=*                                        }
+;=A                                        TAG_Int('testIntTag'): 3
+;=I                                        TAG_List('testListTag'): 1 entry
+;=*                                        {
+;=;                                            TAG_Int(''): 1
+;=*                                        }
+;=B                                        TAG_Int('testIntTag'): 54
+;=I                                        TAG_List('testListTag'): 1 entry
+;=*                                        {
+;=;                                            TAG_Int(''): 1
+;=*                                        }
+;=B                                        TAG_Int('testIntTag'): 67
+;=I                                        TAG_List('testListTag'): 1 entry
+;=*                                        {
+;=;                                            TAG_Int(''): 1
+;=*                                        }
+;=B                                        TAG_Int('testIntTag'): 71
+;=I                                        TAG_List('testListTag'): 1 entry
+;=*                                        {
+;=;                                            TAG_Int(''): 1
+;=*                                        }
+;=B                                        TAG_Int('testIntTag'): 79
+;=I                                        TAG_List('testListTag'): 1 entry
+;=*                                        {
+;=;                                            TAG_Int(''): 1
+;=*                                        }
+;=B                                        TAG_Int('testIntTag'): 29
+;=I                                        TAG_List('testListTag'): 1 entry
+;=*                                        {
+;=;                                            TAG_Int(''): 1
+;=*                                        }
+;=B                                        TAG_Int('testIntTag'): 21
+;=I                                        TAG_List('testListTag'): 1 entry
+;=*                                        {
+;=;                                            TAG_Int(''): 1
+;=*                                        }
+;=B                                        TAG_Int('testIntTag'): 66
+;=I                                        TAG_List('testListTag'): 1 entry
+;=*                                        {
+;=;                                            TAG_Int(''): 1
+;=*                                        }
+;=B                                        TAG_Int('testIntTag'): 16
+;=I                                        TAG_List('testListTag'): 1 entry
+;=*                                        {
+;=;                                            TAG_Int(''): 1
+;=*                                        }
+;=C                                        TAG_Int('testIntTag'): 100
+;=U                                        TAG_Compound('testCompoundTag0'): 21 entries
+;=*                                        {
+;=M                                            TAG_List('testListTag'): 1 entry
+;=.                                            {
+;=?                                                TAG_Int(''): 1
+;=.                                            }
+;=F                                            TAG_Int('testIntTag'): 21
+;=M                                            TAG_List('testListTag'): 1 entry
+;=.                                            {
+;=?                                                TAG_Int(''): 1
+;=.                                            }
+;=F                                            TAG_Int('testIntTag'): 87
+;=M                                            TAG_List('testListTag'): 1 entry
+;=.                                            {
+;=?                                                TAG_Int(''): 1
+;=.                                            }
+;=F                                            TAG_Int('testIntTag'): 81
+;=M                                            TAG_List('testListTag'): 1 entry
+;=.                                            {
+;=?                                                TAG_Int(''): 1
+;=.                                            }
+;=F                                            TAG_Int('testIntTag'): 12
+;=M                                            TAG_List('testListTag'): 1 entry
+;=.                                            {
+;=?                                                TAG_Int(''): 1
+;=.                                            }
+;=F                                            TAG_Int('testIntTag'): 61
+;=M                                            TAG_List('testListTag'): 1 entry
+;=.                                            {
+;=?                                                TAG_Int(''): 1
+;=.                                            }
+;=E                                            TAG_Int('testIntTag'): 6
+;=M                                            TAG_List('testListTag'): 1 entry
+;=.                                            {
+;=?                                                TAG_Int(''): 1
+;=.                                            }
+;=F                                            TAG_Int('testIntTag'): 82
+;=M                                            TAG_List('testListTag'): 1 entry
+;=.                                            {
+;=?                                                TAG_Int(''): 1
+;=.                                            }
+;=F                                            TAG_Int('testIntTag'): 11
+;=M                                            TAG_List('testListTag'): 1 entry
+;=.                                            {
+;=?                                                TAG_Int(''): 1
+;=.                                            }
+;=F                                            TAG_Int('testIntTag'): 45
+;=M                                            TAG_List('testListTag'): 1 entry
+;=.                                            {
+;=?                                                TAG_Int(''): 1
+;=.                                            }
+;=F                                            TAG_Int('testIntTag'): 32
+;=X                                            TAG_Compound('testCompoundTag'): 20 entries
+;=.                                            {
+;=Q                                                TAG_List('testListTag'): 1 entry
+;=2                                                {
+;=C                                                    TAG_Int(''): 1
+;=2                                                }
+;=J                                                TAG_Int('testIntTag'): 27
+;=Q                                                TAG_List('testListTag'): 1 entry
+;=2                                                {
+;=C                                                    TAG_Int(''): 1
+;=2                                                }
+;=J                                                TAG_Int('testIntTag'): 93
+;=Q                                                TAG_List('testListTag'): 1 entry
+;=2                                                {
+;=C                                                    TAG_Int(''): 1
+;=2                                                }
+;=J                                                TAG_Int('testIntTag'): 38
+;=Q                                                TAG_List('testListTag'): 1 entry
+;=2                                                {
+;=C                                                    TAG_Int(''): 1
+;=2                                                }
+;=J                                                TAG_Int('testIntTag'): 22
+;=Q                                                TAG_List('testListTag'): 1 entry
+;=2                                                {
+;=C                                                    TAG_Int(''): 1
+;=2                                                }
+;=J                                                TAG_Int('testIntTag'): 32
+;=Q                                                TAG_List('testListTag'): 1 entry
+;=2                                                {
+;=C                                                    TAG_Int(''): 1
+;=2                                                }
+;=J                                                TAG_Int('testIntTag'): 71
+;=Q                                                TAG_List('testListTag'): 1 entry
+;=2                                                {
+;=C                                                    TAG_Int(''): 1
+;=2                                                }
+;=J                                                TAG_Int('testIntTag'): 32
+;=Q                                                TAG_List('testListTag'): 1 entry
+;=2                                                {
+;=C                                                    TAG_Int(''): 1
+;=2                                                }
+;=J                                                TAG_Int('testIntTag'): 98
+;=Q                                                TAG_List('testListTag'): 1 entry
+;=2                                                {
+;=C                                                    TAG_Int(''): 1
+;=2                                                }
+;=J                                                TAG_Int('testIntTag'): 92
+;=Q                                                TAG_List('testListTag'): 1 entry
+;=2                                                {
+;=C                                                    TAG_Int(''): 1
+;=2                                                }
+;=J                                                TAG_Int('testIntTag'): 76
+;=.                                            }
+;=*                                        }
+;=&                                    }
+;="                                }
+;=                            }
+;=                        }
+;=                    }
+;=                }
+;=            }
+;=
+        }
+;=    }
+;=}
+;=
+;>0TAG_Compound('testCompoundTagOuter'): 3 entries
+;>{
+;>#    TAG_Int('testIntTagOuter1'): 4
+;>#    TAG_Int('testIntTagOuter2'): 5
+;>4    TAG_Compound('testCompoundTagInner'): 3 entries
+;>    {
+;>'        TAG_Int('testIntTagInner1'): 2
+;>'        TAG_Int('testIntTagInner2'): 3
+;>>        TAG_Compound('testCompoundTagDoubleInner'): 2 entries
+;>
+        {
+;>1            TAG_Int('testIntTagDoubleInner1'): 0
+;>1            TAG_Int('testIntTagDoubleInner2'): 1
+;>
+        }
+;>    }
+;>}
+;>
+;?+TAG_Compound('testCompoundTag'): 2 entries
+;?{
+;?    TAG_Int('testIntTag1'): 1
+;?0    TAG_Compound('testCompoundTag2'): 2 entries
+;?    {
+;?"        TAG_Int('testIntTag2'): 2
+;?+        TAG_List('testListTag'): 2 entries
+;?
+        {
+;?            TAG_Int(''): 3
+;?            TAG_Int(''): 3
+;?
+        }
+;?    }
+;?}
+;?
