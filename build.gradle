@@ -10,7 +10,7 @@ apply plugin: 'application'
 apply plugin: 'checkstyle'
 apply plugin: 'maven'
 
-group 'com.github.killerkoen'
+group 'com.github.Killerkoen'
 version '0.1.0'
 
 repositories {

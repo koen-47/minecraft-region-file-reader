@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module version="4">
-  <component name="ExternalSystem" externalSystem="GRADLE" externalSystemModuleGroup="com.github.killerkoen" externalSystemModuleVersion="0.1.0" linkedProjectId="MinecraftFileReader" linkedProjectPath="$MODULE_DIR$/../.." rootProjectPath="$MODULE_DIR$/../.." />
+  <component name="ExternalSystem" externalSystem="GRADLE" externalSystemModuleGroup="com.github.Killerkoen" externalSystemModuleVersion="0.1.0" linkedProjectId="MinecraftFileReader" linkedProjectPath="$MODULE_DIR$/../.." rootProjectPath="$MODULE_DIR$/../.." />
 </module>
