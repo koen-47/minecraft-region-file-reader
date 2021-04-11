@@ -1,9 +1,9 @@
 # Minecraft Region File Reader
-A basic implementation of the NBT format used by Minecraft to store information about 
-the state of a generated world. It currently only supports reading functionality
-and is mainly used to retrieve information, rather than write it. Additionally, this 
-library does not yet support the conversion from NBT to SNBT and vice versa. These
-features may be implemented at a later date.
+A basic implementation of the NBT file format used by Minecraft to store information about 
+the state of a generated world. It is currently only capable of reading such files,
+rather than write to them. Additionally, this library does not yet support the 
+conversion from NBT to SNBT and vice versa. These features may be implemented at a 
+later date.
 
 JDK 11 is required to run this library.
 
@@ -16,15 +16,15 @@ Minecraft.
 #### My modfications to these rules
 Below is a list of modifications that deviate from the protocols above in an effort to
 provide deeper functionality in how these tags can be used:
-* Each tag contains a reference to it's parent tag for any tag that is capable of
+* Each tag contains a reference to it's parent tag which is any tag that is capable of
 holding other tags. In this case, that would only be compound and list tags.
     * The parent of the root tag is ``null``.
     
-* Each tag can be converted back into an array of bytes using ``toByteArray()`` method. 
+* Each tag can be converted back into an array of bytes using the ``toByteArray()`` method. 
     * The conversion follows the same protocols laid out in the specification above.
     
 * The ``CompoundTag`` and ``ListTag`` class contain methods that can be used to search it's
-sub-tags that fit certain condition. Examples of how this method is used can be seen further below. 
+sub-tags that fit certain conditions. Examples of how this method is used can be seen below. 
 At this moment in time, the currently supported search methods are:
     * ``find`` - finds the first instance of the target tag
     * ``findAll`` - finds all instances of the target tag
@@ -71,15 +71,15 @@ a method to retrieve it. The rule above is followed by all tags, including
 compound and list tags.
 
 #### Compound tags
-This block of code shows the first of two possible ways to create a ```CompoundTag``` object containing
-a named IntTag and StringTag object:
+This block of code shows an example of the first of two possible ways to create a 
+```CompoundTag``` object containing a named IntTag and StringTag object:
 ```java
 ArrayList<Tag> containedTags = new ArrayList<>();
 containedTags.add(new IntTag("testIntTag", 1));
 containedTags.add(new StringTag("testStringTag", "abc"));
 CompoundTag testCompoundTag1 = new CompoundTag("testCompoundTag1", containedTags);
 ```
-The second version uses variable arguments to produce the same result:
+The second version utilizes variable arguments to produce the same result:
 ```java
 CompoundTag testCompoundTag2 = new CompoundTag("testCompoundTag2",
                                                 new IntTag("testIntTag", 1),
@@ -116,5 +116,6 @@ in this case would be ``the real one``). The query in this case would be:
 ```java
 StringTag stringTagFindMe = (StringTag) ct.find(StringTag.class, tag -> ((StringTag) tag).getPayload().equals("the real one"));
 ```
+The two examples above apply to the other search methods as well (`findAll`, `findAllParents`, `contains`).
 The same also applies to the methods found in the ``ListTag`` class. More information
 can be found in the documentation (in the /docs folder).
