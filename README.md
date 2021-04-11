@@ -116,6 +116,11 @@ in this case would be ``the real one``). The query in this case would be:
 ```java
 StringTag stringTagFindMe = (StringTag) ct.find(StringTag.class, tag -> ((StringTag) tag).getPayload().equals("the real one"));
 ```
-The two examples above apply to the other search methods as well (`findAll`, `findAllParents`, `contains`).
+Combining these two examples results in the following query:
+```java
+StringTag stringTagFindMe = (StringTag) ct.find(StringTag.class, tag -> tag.getName().equals("FINDME") && 
+                                                                        ((StringTag) tag).getPayload().equals("the real one"));
+```
+These examples apply to the other search methods as well (`findAll`, `findAllParents`, `contains`).
 The same also applies to the methods found in the ``ListTag`` class. More information
 can be found in the documentation (in the /docs folder).
