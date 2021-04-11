@@ -5,6 +5,8 @@ and is mainly used to retrieve information, rather than write it. Additionally, 
 library does not yet support the conversion from NBT to SNBT and vice versa. These
 features may be implemented at a later date.
 
+JDK 11 is required to run this library.
+
 ### Specification
 The NBT format is a tag-based information system that is capable of storing different
 data types from Java. <a href="https://minecraft.fandom.com/wiki/NBT_format#:~:text=The%20Named%20Binary%20Tag%20(NBT,an%20ID%20and%20a%20name." target="_blank">This</a> 
@@ -33,6 +35,26 @@ At this moment in time, the currently supported search methods are:
 TBD
 
 ## Examples
+### Reading .mca and .dat files
+Below is an example of how to read .mca and .dat files.
+```java
+// .mca files
+MCAReader mcaReader = new MCAReader("/r.0.0.mca");
+MCAFile mcaFile = mcaReader.readMCAFile();
+
+Chunk chunk00 = mcaFile.getChunk(0, 0);
+CompoundTag root = chunk00.toNBTTag();
+
+// .dat files
+DATReader datReader = new DATReader("/level.dat");
+DATFile datFile = datReader.readDATFile();
+
+CompoundTag root = datFile.getData();
+```
+It is important to note that the `MCAReader` and `DATReader` class requires that
+.mca and .dat files must be placed in the /resources folder in order to find them.
+
+### NBT tags
 All tags must have a payload corresponding to the tag type and may optionally
 have a name. Below is an example using the ``IntTag`` and ``StringTag`` classes:
 ```java

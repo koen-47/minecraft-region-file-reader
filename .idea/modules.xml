@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
-=======
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/MinecraftFileReader.iml" filepath="$PROJECT_DIR$/.idea/modules/MinecraftFileReader.iml" />
->>>>>>> main
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/MinecraftFileReader.main.iml" filepath="$PROJECT_DIR$/.idea/modules/MinecraftFileReader.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/MinecraftFileReader.test.iml" filepath="$PROJECT_DIR$/.idea/modules/MinecraftFileReader.test.iml" />
     </modules>
