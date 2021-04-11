@@ -2,11 +2,13 @@ plugins {
     id 'java'
     id 'application'
     id 'checkstyle'
+    id 'maven'
 }
 
 apply plugin: 'java';
 apply plugin: 'application'
 apply plugin: 'checkstyle'
+apply plugin: 'maven'
 
 group 'org.example'
 version '1.0-SNAPSHOT'

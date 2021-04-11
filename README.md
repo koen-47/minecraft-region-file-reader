@@ -35,7 +35,7 @@ TBD
 ## Examples
 All tags must have a payload corresponding to the tag type and may optionally
 have a name. Below is an example using the ``IntTag`` and ``StringTag`` classes:
-```
+```java
 // Unnamed
 IntTag testIntTag1 = new IntTag(1);
 StringTag testStringTag1 = new StringTag("test123");
@@ -51,14 +51,14 @@ compound and list tags.
 #### Compound tags
 This block of code shows the first of two possible ways to create a ```CompoundTag``` object containing
 a named IntTag and StringTag object:
-```
+```java
 ArrayList<Tag> containedTags = new ArrayList<>();
 containedTags.add(new IntTag("testIntTag", 1));
 containedTags.add(new StringTag("testStringTag", "abc"));
 CompoundTag testCompoundTag1 = new CompoundTag("testCompoundTag1", containedTags);
 ```
 The second version uses variable arguments to produce the same result:
-```
+```java
 CompoundTag testCompoundTag2 = new CompoundTag("testCompoundTag2",
                                                 new IntTag("testIntTag", 1),
                                                 new StringTag("testStringTag", "abc"));
@@ -66,7 +66,7 @@ CompoundTag testCompoundTag2 = new CompoundTag("testCompoundTag2",
 
 #### List tags
 The ``ListTag`` object follows similar rules but with some slight changes:
-```
+```java
 ListTag<IntTag> testListTagInteger = new ListTag<IntTag>("testListTagIntTag",
                                                              new IntTag(1),
                                                              new IntTag(2),
@@ -79,7 +79,7 @@ same type, an``IllegalArgumentException`` is thrown.
 Let's say we want to search for an instance of a ``StringTag`` object that has the name
 ``FINDME``. Below is an example of how to complete such an operation using the ``find``
 method:
-```
+```java
 // Compound tag to be searched in
 CompoundTag ct = new CompoundTag("ct",
                                     new IntTag("testIntTag", 1),
@@ -91,7 +91,7 @@ StringTag stringTagFindMe = (StringTag) ct.find(StringTag.class, tag -> tag.getN
 ```
 Now let's say we want to search for that same tag, but based on it's payload (which 
 in this case would be ``the real one``). The query in this case would be:
-```
+```java
 StringTag stringTagFindMe = (StringTag) ct.find(StringTag.class, tag -> ((StringTag) tag).getPayload().equals("the real one"));
 ```
 The same also applies to the methods found in the ``ListTag`` class. More information
