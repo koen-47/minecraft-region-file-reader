@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="7.8.1">
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\dat\DATFile.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\dat\DATReader.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\mca\MCAFile.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\mca\MCAFilePrinter.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\mca\io\ChunkLocation.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\mca\io\ChunkLocationTable.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\mca\io\ChunkTimestamp.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\mca\io\ChunkTimestampTable.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\mca\io\MCAReader.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\mca\io\RawChunkData.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\mca\io\RawChunkDataReader.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\mca\parsing\Chunk.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\nbt\io\NBTFileInputStream.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\nbt\tag\ByteArrayTag.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\nbt\tag\ByteTag.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\nbt\tag\CompoundTag.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\nbt\tag\DoubleTag.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\nbt\tag\EndTag.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\nbt\tag\FloatTag.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\nbt\tag\IntArrayTag.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\nbt\tag\IntTag.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\nbt\tag\ListTag.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\nbt\tag\LongArrayTag.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\nbt\tag\LongTag.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\nbt\tag\ShortTag.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\nbt\tag\StringTag.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\nbt\tag\Tag.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\nbt\tag\TagIterator.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\nbt\tag\TagOperation.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\util\ByteArrayBuilder.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\util\CompoundTagString.java">
+</file>
+<file name="C:\Users\koenk\OneDrive\Documents\mc-region-file-reader\src\main\java\util\ListTagString.java">
+</file>
+</checkstyle>
