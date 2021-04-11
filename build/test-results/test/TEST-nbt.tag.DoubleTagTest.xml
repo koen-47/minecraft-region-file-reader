@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="nbt.tag.DoubleTagTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-04-10T21:50:11" hostname="LAPTOP-0SVKOBM1" time="0.001">
-  <properties/>
-  <testcase name="testDoubleTagToByteArray()" classname="nbt.tag.DoubleTagTest" time="0.001"/>
-  <system-out><![CDATA[[6, 0, 13, 116, 101, 115, 116, 68, 111, 117, 98, 108, 101, 84, 97, 103, -65, -15, -99, -68, -87, 105, 26, 118]
-[6, 0, 0, -65, -15, -99, -68, -87, 105, 26, 118]
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

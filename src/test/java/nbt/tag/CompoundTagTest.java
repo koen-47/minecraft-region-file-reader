@@ -158,6 +158,18 @@ public class CompoundTagTest {
     }
 
     @Test
+    public void testCompoundTagFind4() {
+        CompoundTag ct = new CompoundTag("ct",
+                                                new IntTag("testIntTag", 1),
+                                                new ByteTag("testByteTag", (byte) 2),
+                                                new StringTag("testStringTag", "decoy"),
+                                                new StringTag("FINDME", "the real one"));
+
+        StringTag stringTagFindMe = (StringTag) ct.find(StringTag.class, tag -> ((StringTag) tag).getPayload().equals("the real one"));
+        System.out.println(stringTagFindMe.toString());
+    }
+
+    @Test
     public void testCompoundTagGetParent() {
         CompoundTag testCompoundTag = new CompoundTag("testCompoundTag",
                                                         new IntTag("testIntTag1", 1),

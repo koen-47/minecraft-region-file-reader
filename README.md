@@ -40,7 +40,7 @@ have a name. Below is an example using the ``IntTag`` and ``StringTag`` classes:
 IntTag testIntTag1 = new IntTag(1);
 StringTag testStringTag1 = new StringTag("test123");
 
-//Named
+// Named
 IntTag testIntTag2 = new IntTag("testIntTag2", 1);
 StringTag testStringTag2 = new StringTag("testStringTag2", "test123");
 ```
@@ -61,7 +61,7 @@ The second version uses variable arguments to produce the same result:
 ```
 CompoundTag testCompoundTag2 = new CompoundTag("testCompoundTag2",
                                                 new IntTag("testIntTag", 1),
-                                                new StringTag("testStringTag, "abc));
+                                                new StringTag("testStringTag", "abc"));
 ```
 
 #### List tags
@@ -74,3 +74,25 @@ ListTag<IntTag> testListTagInteger = new ListTag<IntTag>("testListTagIntTag",
 ```
 Be aware that in cases where a ``ListTag`` object does not contain tags of the 
 same type, an``IllegalArgumentException`` is thrown.
+
+#### Tag searching
+Let's say we want to search for an instance of a ``StringTag`` object that has the name
+``FINDME``. Below is an example of how to complete such an operation using the ``find``
+method:
+```
+// Compound tag to be searched in
+CompoundTag ct = new CompoundTag("ct",
+                                    new IntTag("testIntTag", 1),
+                                    new ByteTag("testByteTag", (byte) 2),
+                                    new StringTag("testStringTag", "decoy"),
+                                    new StringTag("FINDME", "the real one"));
+
+StringTag stringTagFindMe = (StringTag) ct.find(StringTag.class, tag -> tag.getName().equals("FINDME"));
+```
+Now let's say we want to search for that same tag, but based on it's payload (which 
+in this case would be ``the real one``). The query in this case would be:
+```
+StringTag stringTagFindMe = (StringTag) ct.find(StringTag.class, tag -> ((StringTag) tag).getPayload().equals("the real one"));
+```
+The same also applies to the methods found in the ``ListTag`` class. More information
+can be found in the documentation (in the /docs folder).
