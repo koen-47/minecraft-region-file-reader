@@ -32,7 +32,7 @@ At this moment in time, the currently supported search methods are:
     * ``contains`` - returns true if this tag contains the target tag
 
 ## Installation
-TBD
+TBA
 
 ## Examples
 ### Reading .mca and .dat files
@@ -124,3 +124,6 @@ StringTag stringTagFindMe = (StringTag) ct.find(StringTag.class, tag -> tag.getN
 These examples apply to the other search methods as well (`findAll`, `findAllParents`, `contains`).
 The same also applies to the methods found in the ``ListTag`` class. More information
 can be found in the documentation (in the /docs folder).
+
+#### Printing tags
+TBA
