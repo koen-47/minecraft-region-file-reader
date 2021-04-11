@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="nbt.tag.CompoundTagTest" tests="18" skipped="0" failures="0" errors="0" timestamp="2021-04-11T14:09:44" hostname="LAPTOP-0SVKOBM1" time="0.109">
+<testsuite name="nbt.tag.CompoundTagTest" tests="18" skipped="0" failures="0" errors="0" timestamp="2021-04-11T14:44:03" hostname="LAPTOP-0SVKOBM1" time="0.084">
   <properties/>
-  <testcase name="testCompoundTagFind1()" classname="nbt.tag.CompoundTagTest" time="0.007"/>
-  <testcase name="testCompoundTagFind2()" classname="nbt.tag.CompoundTagTest" time="0.016"/>
-  <testcase name="testCompoundTagFind3()" classname="nbt.tag.CompoundTagTest" time="0.003"/>
-  <testcase name="testCompoundTagFind4()" classname="nbt.tag.CompoundTagTest" time="0.001"/>
+  <testcase name="testCompoundTagFind1()" classname="nbt.tag.CompoundTagTest" time="0.005"/>
+  <testcase name="testCompoundTagFind2()" classname="nbt.tag.CompoundTagTest" time="0.008"/>
+  <testcase name="testCompoundTagFind3()" classname="nbt.tag.CompoundTagTest" time="0.002"/>
+  <testcase name="testCompoundTagFind4()" classname="nbt.tag.CompoundTagTest" time="0.002"/>
   <testcase name="testCompoundTagIteratorGeneric()" classname="nbt.tag.CompoundTagTest" time="0.001"/>
   <testcase name="testCompoundTagAppend()" classname="nbt.tag.CompoundTagTest" time="0.0"/>
-  <testcase name="testCompoundTagEquals()" classname="nbt.tag.CompoundTagTest" time="0.001"/>
-  <testcase name="testCompoundTagIteratorListTag()" classname="nbt.tag.CompoundTagTest" time="0.003"/>
-  <testcase name="testCompoundTagIteratorNested()" classname="nbt.tag.CompoundTagTest" time="0.014"/>
+  <testcase name="testCompoundTagEquals()" classname="nbt.tag.CompoundTagTest" time="0.0"/>
+  <testcase name="testCompoundTagIteratorListTag()" classname="nbt.tag.CompoundTagTest" time="0.002"/>
+  <testcase name="testCompoundTagIteratorNested()" classname="nbt.tag.CompoundTagTest" time="0.011"/>
   <testcase name="testCompoundTagEqualsBasic()" classname="nbt.tag.CompoundTagTest" time="0.001"/>
-  <testcase name="testCompoundTagToByteArray1()" classname="nbt.tag.CompoundTagTest" time="0.001"/>
+  <testcase name="testCompoundTagToByteArray1()" classname="nbt.tag.CompoundTagTest" time="0.0"/>
   <testcase name="testCompoundTagToByteArray2()" classname="nbt.tag.CompoundTagTest" time="0.001"/>
-  <testcase name="testCompoundTagIteratorEmptyListTag()" classname="nbt.tag.CompoundTagTest" time="0.003"/>
-  <testcase name="testCompoundTagConstructors()" classname="nbt.tag.CompoundTagTest" time="0.001"/>
+  <testcase name="testCompoundTagIteratorEmptyListTag()" classname="nbt.tag.CompoundTagTest" time="0.002"/>
+  <testcase name="testCompoundTagConstructors()" classname="nbt.tag.CompoundTagTest" time="0.0"/>
   <testcase name="testCompoundTagEqualsNested()" classname="nbt.tag.CompoundTagTest" time="0.001"/>
   <testcase name="testCompoundTagGetParent()" classname="nbt.tag.CompoundTagTest" time="0.001"/>
-  <testcase name="testCompoundTagEqualsBig()" classname="nbt.tag.CompoundTagTest" time="0.032"/>
+  <testcase name="testCompoundTagEqualsBig()" classname="nbt.tag.CompoundTagTest" time="0.031"/>
   <testcase name="testCompoundTagIterator()" classname="nbt.tag.CompoundTagTest" time="0.002"/>
   <system-out><![CDATA[TAG_String('testStringTag1'): 'test1'
 

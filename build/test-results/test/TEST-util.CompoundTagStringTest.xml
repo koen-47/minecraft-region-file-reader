@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="util.CompoundTagStringTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-04-11T14:09:44" hostname="LAPTOP-0SVKOBM1" time="0.078">
+<testsuite name="util.CompoundTagStringTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-04-11T14:44:03" hostname="LAPTOP-0SVKOBM1" time="0.057">
   <properties/>
-  <testcase name="testNestedCompoundTagString()" classname="util.CompoundTagStringTest" time="0.028"/>
+  <testcase name="testNestedCompoundTagString()" classname="util.CompoundTagStringTest" time="0.024"/>
   <testcase name="testBasicCompoundTagString()" classname="util.CompoundTagStringTest" time="0.001"/>
-  <testcase name="testRandomCompoundTagString()" classname="util.CompoundTagStringTest" time="0.04"/>
-  <testcase name="testDoubleCompoundTagString()" classname="util.CompoundTagStringTest" time="0.002"/>
-  <testcase name="testCompoundTagWithListTag()" classname="util.CompoundTagStringTest" time="0.002"/>
+  <testcase name="testRandomCompoundTagString()" classname="util.CompoundTagStringTest" time="0.028"/>
+  <testcase name="testDoubleCompoundTagString()" classname="util.CompoundTagStringTest" time="0.001"/>
+  <testcase name="testCompoundTagWithListTag()" classname="util.CompoundTagStringTest" time="0.001"/>
   <system-out><![CDATA[TAG_Compound('testCompoundTagOuter'): 3 entries
 {
     TAG_Int('testIntTagOuter1'): 3
@@ -30,69 +30,59 @@ TAG_Compound('testCompoundTag10'): 1 entry
         {
             TAG_Int(''): 1
         }
-        TAG_Int('testIntTag'): 15
+        TAG_Int('testIntTag'): 81
         TAG_List('testListTag'): 1 entry
         {
             TAG_Int(''): 1
         }
-        TAG_Int('testIntTag'): 42
+        TAG_Int('testIntTag'): 32
         TAG_List('testListTag'): 1 entry
         {
             TAG_Int(''): 1
         }
-        TAG_Int('testIntTag'): 19
+        TAG_Int('testIntTag'): 51
         TAG_List('testListTag'): 1 entry
         {
             TAG_Int(''): 1
         }
-        TAG_Int('testIntTag'): 59
+        TAG_Int('testIntTag'): 29
         TAG_List('testListTag'): 1 entry
         {
             TAG_Int(''): 1
         }
-        TAG_Int('testIntTag'): 7
+        TAG_Int('testIntTag'): 83
         TAG_List('testListTag'): 1 entry
         {
             TAG_Int(''): 1
         }
-        TAG_Int('testIntTag'): 13
+        TAG_Int('testIntTag'): 4
         TAG_List('testListTag'): 1 entry
         {
             TAG_Int(''): 1
         }
-        TAG_Int('testIntTag'): 52
+        TAG_Int('testIntTag'): 46
         TAG_List('testListTag'): 1 entry
         {
             TAG_Int(''): 1
         }
-        TAG_Int('testIntTag'): 100
+        TAG_Int('testIntTag'): 23
         TAG_List('testListTag'): 1 entry
         {
             TAG_Int(''): 1
         }
-        TAG_Int('testIntTag'): 3
+        TAG_Int('testIntTag'): 37
         TAG_List('testListTag'): 1 entry
         {
             TAG_Int(''): 1
         }
-        TAG_Int('testIntTag'): 50
+        TAG_Int('testIntTag'): 27
         TAG_Compound('testCompoundTag8'): 21 entries
         {
             TAG_List('testListTag'): 1 entry
             {
                 TAG_Int(''): 1
             }
-            TAG_Int('testIntTag'): 34
-            TAG_List('testListTag'): 1 entry
-            {
-                TAG_Int(''): 1
-            }
-            TAG_Int('testIntTag'): 1
-            TAG_List('testListTag'): 1 entry
-            {
-                TAG_Int(''): 1
-            }
-            TAG_Int('testIntTag'): 95
+            TAG_Int('testIntTag'): 98
             TAG_List('testListTag'): 1 entry
             {
                 TAG_Int(''): 1
@@ -107,54 +97,69 @@ TAG_Compound('testCompoundTag10'): 1 entry
             {
                 TAG_Int(''): 1
             }
-            TAG_Int('testIntTag'): 80
+            TAG_Int('testIntTag'): 98
             TAG_List('testListTag'): 1 entry
             {
                 TAG_Int(''): 1
             }
-            TAG_Int('testIntTag'): 7
+            TAG_Int('testIntTag'): 52
             TAG_List('testListTag'): 1 entry
             {
                 TAG_Int(''): 1
             }
-            TAG_Int('testIntTag'): 43
+            TAG_Int('testIntTag'): 77
             TAG_List('testListTag'): 1 entry
             {
                 TAG_Int(''): 1
             }
-            TAG_Int('testIntTag'): 84
+            TAG_Int('testIntTag'): 2
             TAG_List('testListTag'): 1 entry
             {
                 TAG_Int(''): 1
             }
-            TAG_Int('testIntTag'): 96
+            TAG_Int('testIntTag'): 8
+            TAG_List('testListTag'): 1 entry
+            {
+                TAG_Int(''): 1
+            }
+            TAG_Int('testIntTag'): 38
+            TAG_List('testListTag'): 1 entry
+            {
+                TAG_Int(''): 1
+            }
+            TAG_Int('testIntTag'): 78
             TAG_Compound('testCompoundTag7'): 21 entries
             {
                 TAG_List('testListTag'): 1 entry
                 {
                     TAG_Int(''): 1
                 }
-                TAG_Int('testIntTag'): 66
+                TAG_Int('testIntTag'): 15
                 TAG_List('testListTag'): 1 entry
                 {
                     TAG_Int(''): 1
                 }
-                TAG_Int('testIntTag'): 8
+                TAG_Int('testIntTag'): 50
                 TAG_List('testListTag'): 1 entry
                 {
                     TAG_Int(''): 1
                 }
-                TAG_Int('testIntTag'): 28
+                TAG_Int('testIntTag'): 35
                 TAG_List('testListTag'): 1 entry
                 {
                     TAG_Int(''): 1
                 }
-                TAG_Int('testIntTag'): 77
+                TAG_Int('testIntTag'): 32
                 TAG_List('testListTag'): 1 entry
                 {
                     TAG_Int(''): 1
                 }
-                TAG_Int('testIntTag'): 22
+                TAG_Int('testIntTag'): 63
+                TAG_List('testListTag'): 1 entry
+                {
+                    TAG_Int(''): 1
+                }
+                TAG_Int('testIntTag'): 33
                 TAG_List('testListTag'): 1 entry
                 {
                     TAG_Int(''): 1
@@ -164,121 +169,116 @@ TAG_Compound('testCompoundTag10'): 1 entry
                 {
                     TAG_Int(''): 1
                 }
-                TAG_Int('testIntTag'): 36
+                TAG_Int('testIntTag'): 78
                 TAG_List('testListTag'): 1 entry
                 {
                     TAG_Int(''): 1
                 }
-                TAG_Int('testIntTag'): 43
+                TAG_Int('testIntTag'): 25
                 TAG_List('testListTag'): 1 entry
                 {
                     TAG_Int(''): 1
                 }
-                TAG_Int('testIntTag'): 91
-                TAG_List('testListTag'): 1 entry
-                {
-                    TAG_Int(''): 1
-                }
-                TAG_Int('testIntTag'): 19
+                TAG_Int('testIntTag'): 47
                 TAG_Compound('testCompoundTag6'): 21 entries
                 {
                     TAG_List('testListTag'): 1 entry
                     {
                         TAG_Int(''): 1
                     }
-                    TAG_Int('testIntTag'): 6
+                    TAG_Int('testIntTag'): 73
                     TAG_List('testListTag'): 1 entry
                     {
                         TAG_Int(''): 1
                     }
-                    TAG_Int('testIntTag'): 59
+                    TAG_Int('testIntTag'): 80
                     TAG_List('testListTag'): 1 entry
                     {
                         TAG_Int(''): 1
                     }
-                    TAG_Int('testIntTag'): 21
+                    TAG_Int('testIntTag'): 66
                     TAG_List('testListTag'): 1 entry
                     {
                         TAG_Int(''): 1
                     }
-                    TAG_Int('testIntTag'): 61
+                    TAG_Int('testIntTag'): 30
                     TAG_List('testListTag'): 1 entry
                     {
                         TAG_Int(''): 1
                     }
-                    TAG_Int('testIntTag'): 19
+                    TAG_Int('testIntTag'): 11
                     TAG_List('testListTag'): 1 entry
                     {
                         TAG_Int(''): 1
                     }
-                    TAG_Int('testIntTag'): 85
+                    TAG_Int('testIntTag'): 41
                     TAG_List('testListTag'): 1 entry
                     {
                         TAG_Int(''): 1
                     }
-                    TAG_Int('testIntTag'): 75
+                    TAG_Int('testIntTag'): 23
                     TAG_List('testListTag'): 1 entry
                     {
                         TAG_Int(''): 1
                     }
-                    TAG_Int('testIntTag'): 8
+                    TAG_Int('testIntTag'): 20
                     TAG_List('testListTag'): 1 entry
                     {
                         TAG_Int(''): 1
                     }
-                    TAG_Int('testIntTag'): 78
+                    TAG_Int('testIntTag'): 99
                     TAG_List('testListTag'): 1 entry
                     {
                         TAG_Int(''): 1
                     }
-                    TAG_Int('testIntTag'): 37
+                    TAG_Int('testIntTag'): 43
                     TAG_Compound('testCompoundTag5'): 21 entries
                     {
                         TAG_List('testListTag'): 1 entry
                         {
                             TAG_Int(''): 1
                         }
-                        TAG_Int('testIntTag'): 87
+                        TAG_Int('testIntTag'): 5
                         TAG_List('testListTag'): 1 entry
                         {
                             TAG_Int(''): 1
                         }
-                        TAG_Int('testIntTag'): 53
+                        TAG_Int('testIntTag'): 84
                         TAG_List('testListTag'): 1 entry
                         {
                             TAG_Int(''): 1
                         }
-                        TAG_Int('testIntTag'): 47
+                        TAG_Int('testIntTag'): 92
                         TAG_List('testListTag'): 1 entry
                         {
                             TAG_Int(''): 1
                         }
-                        TAG_Int('testIntTag'): 81
+                        TAG_Int('testIntTag'): 4
                         TAG_List('testListTag'): 1 entry
                         {
                             TAG_Int(''): 1
                         }
-                        TAG_Int('testIntTag'): 97
+                        TAG_Int('testIntTag'): 61
                         TAG_List('testListTag'): 1 entry
                         {
                             TAG_Int(''): 1
                         }
-                        TAG_Int('testIntTag'): 96
+                        TAG_Int('testIntTag'): 12
                         TAG_List('testListTag'): 1 entry
                         {
                             TAG_Int(''): 1
                         }
-                        TAG_Int('testIntTag'): 48
+                        TAG_Int('testIntTag'): 22
                         TAG_List('testListTag'): 1 entry
                         {
                             TAG_Int(''): 1
                         }
-                        TAG_Int('testIntTag'): 63
+                        TAG_Int('testIntTag'): 24
                         TAG_List('testListTag'): 1 entry
                         {
                             TAG_Int(''): 1
                         }
-                        TAG_Int('testIntTag'): 57
+                        TAG_Int('testIntTag'): 68
                         TAG_List('testListTag'): 1 entry
                         {
                             TAG_Int(''): 1
@@ -290,64 +290,69 @@ TAG_Compound('testCompoundTag10'): 1 entry
                             {
                                 TAG_Int(''): 1
                             }
-                            TAG_Int('testIntTag'): 41
+                            TAG_Int('testIntTag'): 79
                             TAG_List('testListTag'): 1 entry
                             {
                                 TAG_Int(''): 1
                             }
-                            TAG_Int('testIntTag'): 96
+                            TAG_Int('testIntTag'): 3
                             TAG_List('testListTag'): 1 entry
                             {
                                 TAG_Int(''): 1
                             }
-                            TAG_Int('testIntTag'): 9
+                            TAG_Int('testIntTag'): 39
                             TAG_List('testListTag'): 1 entry
                             {
                                 TAG_Int(''): 1
                             }
-                            TAG_Int('testIntTag'): 23
+                            TAG_Int('testIntTag'): 8
                             TAG_List('testListTag'): 1 entry
                             {
                                 TAG_Int(''): 1
                             }
-                            TAG_Int('testIntTag'): 1
+                            TAG_Int('testIntTag'): 4
                             TAG_List('testListTag'): 1 entry
                             {
                                 TAG_Int(''): 1
                             }
-                            TAG_Int('testIntTag'): 61
+                            TAG_Int('testIntTag'): 11
                             TAG_List('testListTag'): 1 entry
                             {
                                 TAG_Int(''): 1
                             }
-                            TAG_Int('testIntTag'): 27
+                            TAG_Int('testIntTag'): 56
                             TAG_List('testListTag'): 1 entry
                             {
                                 TAG_Int(''): 1
                             }
-                            TAG_Int('testIntTag'): 94
+                            TAG_Int('testIntTag'): 52
                             TAG_List('testListTag'): 1 entry
                             {
                                 TAG_Int(''): 1
                             }
-                            TAG_Int('testIntTag'): 34
+                            TAG_Int('testIntTag'): 65
                             TAG_List('testListTag'): 1 entry
                             {
                                 TAG_Int(''): 1
                             }
-                            TAG_Int('testIntTag'): 38
+                            TAG_Int('testIntTag'): 45
                             TAG_Compound('testCompoundTag3'): 21 entries
                             {
                                 TAG_List('testListTag'): 1 entry
                                 {
                                     TAG_Int(''): 1
                                 }
-                                TAG_Int('testIntTag'): 93
+                                TAG_Int('testIntTag'): 24
                                 TAG_List('testListTag'): 1 entry
                                 {
                                     TAG_Int(''): 1
                                 }
-                                TAG_Int('testIntTag'): 91
+                                TAG_Int('testIntTag'): 83
+                                TAG_List('testListTag'): 1 entry
+                                {
+                                    TAG_Int(''): 1
+                                }
+                                TAG_Int('testIntTag'): 45
                                 TAG_List('testListTag'): 1 entry
                                 {
                                     TAG_Int(''): 1
@@ -357,101 +362,86 @@ TAG_Compound('testCompoundTag10'): 1 entry
                                 {
                                     TAG_Int(''): 1
                                 }
-                                TAG_Int('testIntTag'): 49
+                                TAG_Int('testIntTag'): 55
                                 TAG_List('testListTag'): 1 entry
                                 {
                                     TAG_Int(''): 1
                                 }
-                                TAG_Int('testIntTag'): 90
+                                TAG_Int('testIntTag'): 48
                                 TAG_List('testListTag'): 1 entry
                                 {
                                     TAG_Int(''): 1
                                 }
-                                TAG_Int('testIntTag'): 63
+                                TAG_Int('testIntTag'): 69
                                 TAG_List('testListTag'): 1 entry
                                 {
                                     TAG_Int(''): 1
                                 }
-                                TAG_Int('testIntTag'): 1
+                                TAG_Int('testIntTag'): 94
                                 TAG_List('testListTag'): 1 entry
                                 {
                                     TAG_Int(''): 1
                                 }
-                                TAG_Int('testIntTag'): 77
+                                TAG_Int('testIntTag'): 100
                                 TAG_List('testListTag'): 1 entry
                                 {
                                     TAG_Int(''): 1
                                 }
-                                TAG_Int('testIntTag'): 4
-                                TAG_List('testListTag'): 1 entry
-                                {
-                                    TAG_Int(''): 1
-                                }
-                                TAG_Int('testIntTag'): 37
+                                TAG_Int('testIntTag'): 98
                                 TAG_Compound('testCompoundTag2'): 21 entries
                                 {
                                     TAG_List('testListTag'): 1 entry
                                     {
                                         TAG_Int(''): 1
                                     }
-                                    TAG_Int('testIntTag'): 97
+                                    TAG_Int('testIntTag'): 33
                                     TAG_List('testListTag'): 1 entry
                                     {
                                         TAG_Int(''): 1
                                     }
-                                    TAG_Int('testIntTag'): 100
+                                    TAG_Int('testIntTag'): 19
                                     TAG_List('testListTag'): 1 entry
                                     {
                                         TAG_Int(''): 1
                                     }
-                                    TAG_Int('testIntTag'): 99
+                                    TAG_Int('testIntTag'): 58
                                     TAG_List('testListTag'): 1 entry
                                     {
                                         TAG_Int(''): 1
                                     }
-                                    TAG_Int('testIntTag'): 18
+                                    TAG_Int('testIntTag'): 8
                                     TAG_List('testListTag'): 1 entry
                                     {
                                         TAG_Int(''): 1
                                     }
-                                    TAG_Int('testIntTag'): 26
+                                    TAG_Int('testIntTag'): 85
                                     TAG_List('testListTag'): 1 entry
                                     {
                                         TAG_Int(''): 1
                                     }
-                                    TAG_Int('testIntTag'): 35
+                                    TAG_Int('testIntTag'): 24
                                     TAG_List('testListTag'): 1 entry
                                     {
                                         TAG_Int(''): 1
                                     }
-                                    TAG_Int('testIntTag'): 26
+                                    TAG_Int('testIntTag'): 95
                                     TAG_List('testListTag'): 1 entry
                                     {
                                         TAG_Int(''): 1
                                     }
-                                    TAG_Int('testIntTag'): 22
+                                    TAG_Int('testIntTag'): 16
                                     TAG_List('testListTag'): 1 entry
                                     {
                                         TAG_Int(''): 1
                                     }
-                                    TAG_Int('testIntTag'): 42
+                                    TAG_Int('testIntTag'): 36
                                     TAG_List('testListTag'): 1 entry
                                     {
                                         TAG_Int(''): 1
                                     }
-                                    TAG_Int('testIntTag'): 10
+                                    TAG_Int('testIntTag'): 6
                                     TAG_Compound('testCompoundTag1'): 21 entries
                                     {
-                                        TAG_List('testListTag'): 1 entry
-                                        {
-                                            TAG_Int(''): 1
-                                        }
-                                        TAG_Int('testIntTag'): 3
-                                        TAG_List('testListTag'): 1 entry
-                                        {
-                                            TAG_Int(''): 1
-                                        }
-                                        TAG_Int('testIntTag'): 54
                                         TAG_List('testListTag'): 1 entry
                                         {
                                             TAG_Int(''): 1
@@ -461,59 +451,49 @@ TAG_Compound('testCompoundTag10'): 1 entry
                                         {
                                             TAG_Int(''): 1
                                         }
-                                        TAG_Int('testIntTag'): 71
+                                        TAG_Int('testIntTag'): 44
                                         TAG_List('testListTag'): 1 entry
                                         {
                                             TAG_Int(''): 1
                                         }
-                                        TAG_Int('testIntTag'): 79
+                                        TAG_Int('testIntTag'): 3
                                         TAG_List('testListTag'): 1 entry
                                         {
                                             TAG_Int(''): 1
                                         }
-                                        TAG_Int('testIntTag'): 29
+                                        TAG_Int('testIntTag'): 28
                                         TAG_List('testListTag'): 1 entry
                                         {
                                             TAG_Int(''): 1
                                         }
-                                        TAG_Int('testIntTag'): 21
+                                        TAG_Int('testIntTag'): 80
                                         TAG_List('testListTag'): 1 entry
                                         {
                                             TAG_Int(''): 1
                                         }
-                                        TAG_Int('testIntTag'): 66
+                                        TAG_Int('testIntTag'): 52
                                         TAG_List('testListTag'): 1 entry
                                         {
                                             TAG_Int(''): 1
                                         }
-                                        TAG_Int('testIntTag'): 16
+                                        TAG_Int('testIntTag'): 86
                                         TAG_List('testListTag'): 1 entry
                                         {
                                             TAG_Int(''): 1
                                         }
-                                        TAG_Int('testIntTag'): 100
+                                        TAG_Int('testIntTag'): 43
+                                        TAG_List('testListTag'): 1 entry
+                                        {
+                                            TAG_Int(''): 1
+                                        }
+                                        TAG_Int('testIntTag'): 70
+                                        TAG_List('testListTag'): 1 entry
+                                        {
+                                            TAG_Int(''): 1
+                                        }
+                                        TAG_Int('testIntTag'): 41
                                         TAG_Compound('testCompoundTag0'): 21 entries
                                         {
-                                            TAG_List('testListTag'): 1 entry
-                                            {
-                                                TAG_Int(''): 1
-                                            }
-                                            TAG_Int('testIntTag'): 21
-                                            TAG_List('testListTag'): 1 entry
-                                            {
-                                                TAG_Int(''): 1
-                                            }
-                                            TAG_Int('testIntTag'): 87
-                                            TAG_List('testListTag'): 1 entry
-                                            {
-                                                TAG_Int(''): 1
-                                            }
-                                            TAG_Int('testIntTag'): 81
-                                            TAG_List('testListTag'): 1 entry
-                                            {
-                                                TAG_Int(''): 1
-                                            }
-                                            TAG_Int('testIntTag'): 12
                                             TAG_List('testListTag'): 1 entry
                                             {
                                                 TAG_Int(''): 1
@@ -523,44 +503,49 @@ TAG_Compound('testCompoundTag10'): 1 entry
                                             {
                                                 TAG_Int(''): 1
                                             }
-                                            TAG_Int('testIntTag'): 6
-                                            TAG_List('testListTag'): 1 entry
-                                            {
-                                                TAG_Int(''): 1
-                                            }
-                                            TAG_Int('testIntTag'): 82
-                                            TAG_List('testListTag'): 1 entry
-                                            {
-                                                TAG_Int(''): 1
-                                            }
-                                            TAG_Int('testIntTag'): 11
-                                            TAG_List('testListTag'): 1 entry
-                                            {
-                                                TAG_Int(''): 1
-                                            }
                                             TAG_Int('testIntTag'): 45
                                             TAG_List('testListTag'): 1 entry
                                             {
                                                 TAG_Int(''): 1
                                             }
-                                            TAG_Int('testIntTag'): 32
+                                            TAG_Int('testIntTag'): 89
+                                            TAG_List('testListTag'): 1 entry
+                                            {
+                                                TAG_Int(''): 1
+                                            }
+                                            TAG_Int('testIntTag'): 90
+                                            TAG_List('testListTag'): 1 entry
+                                            {
+                                                TAG_Int(''): 1
+                                            }
+                                            TAG_Int('testIntTag'): 13
+                                            TAG_List('testListTag'): 1 entry
+                                            {
+                                                TAG_Int(''): 1
+                                            }
+                                            TAG_Int('testIntTag'): 13
+                                            TAG_List('testListTag'): 1 entry
+                                            {
+                                                TAG_Int(''): 1
+                                            }
+                                            TAG_Int('testIntTag'): 36
+                                            TAG_List('testListTag'): 1 entry
+                                            {
+                                                TAG_Int(''): 1
+                                            }
+                                            TAG_Int('testIntTag'): 56
+                                            TAG_List('testListTag'): 1 entry
+                                            {
+                                                TAG_Int(''): 1
+                                            }
+                                            TAG_Int('testIntTag'): 17
+                                            TAG_List('testListTag'): 1 entry
+                                            {
+                                                TAG_Int(''): 1
+                                            }
+                                            TAG_Int('testIntTag'): 35
                                             TAG_Compound('testCompoundTag'): 20 entries
                                             {
-                                                TAG_List('testListTag'): 1 entry
-                                                {
-                                                    TAG_Int(''): 1
-                                                }
-                                                TAG_Int('testIntTag'): 27
-                                                TAG_List('testListTag'): 1 entry
-                                                {
-                                                    TAG_Int(''): 1
-                                                }
-                                                TAG_Int('testIntTag'): 93
-                                                TAG_List('testListTag'): 1 entry
-                                                {
-                                                    TAG_Int(''): 1
-                                                }
-                                                TAG_Int('testIntTag'): 38
                                                 TAG_List('testListTag'): 1 entry
                                                 {
                                                     TAG_Int(''): 1
@@ -570,32 +555,47 @@ TAG_Compound('testCompoundTag10'): 1 entry
                                                 {
                                                     TAG_Int(''): 1
                                                 }
-                                                TAG_Int('testIntTag'): 32
+                                                TAG_Int('testIntTag'): 13
                                                 TAG_List('testListTag'): 1 entry
                                                 {
                                                     TAG_Int(''): 1
                                                 }
-                                                TAG_Int('testIntTag'): 71
+                                                TAG_Int('testIntTag'): 39
                                                 TAG_List('testListTag'): 1 entry
                                                 {
                                                     TAG_Int(''): 1
                                                 }
-                                                TAG_Int('testIntTag'): 32
+                                                TAG_Int('testIntTag'): 44
                                                 TAG_List('testListTag'): 1 entry
                                                 {
                                                     TAG_Int(''): 1
                                                 }
-                                                TAG_Int('testIntTag'): 98
+                                                TAG_Int('testIntTag'): 19
                                                 TAG_List('testListTag'): 1 entry
                                                 {
                                                     TAG_Int(''): 1
                                                 }
-                                                TAG_Int('testIntTag'): 92
+                                                TAG_Int('testIntTag'): 59
                                                 TAG_List('testListTag'): 1 entry
                                                 {
                                                     TAG_Int(''): 1
                                                 }
-                                                TAG_Int('testIntTag'): 76
+                                                TAG_Int('testIntTag'): 48
+                                                TAG_List('testListTag'): 1 entry
+                                                {
+                                                    TAG_Int(''): 1
+                                                }
+                                                TAG_Int('testIntTag'): 48
+                                                TAG_List('testListTag'): 1 entry
+                                                {
+                                                    TAG_Int(''): 1
+                                                }
+                                                TAG_Int('testIntTag'): 73
+                                                TAG_List('testListTag'): 1 entry
+                                                {
+                                                    TAG_Int(''): 1
+                                                }
+                                                TAG_Int('testIntTag'): 74
                                             }
                                         }
                                     }
