@@ -5,4 +5,5 @@
       <map />
     </option>
   </component>
+  <component name="ExternalSystem" externalSystem="GRADLE" externalSystemModuleGroup="com.github.killerkoen" externalSystemModuleType="sourceSet" externalSystemModuleVersion="0.1.0" linkedProjectId="MinecraftFileReader:main" linkedProjectPath="$MODULE_DIR$/../.." rootProjectPath="$MODULE_DIR$/../.." />
 </module>
