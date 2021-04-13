@@ -4,19 +4,19 @@ import nbt.io.NBTFileInputStream;
 import nbt.tag.CompoundTag;
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.util.zip.GZIPInputStream;
 
 /**
- * Class that contains all the methods used to navigate the data related to the .dat file.
+ * An {@code DATFile} contains all the methods that can be used to navigate all the data related to a .dat file.
  * @author Killerkoen
  */
 public class DATFile {
     /**
-     * URL of the file.
+     * An instance of a File object that contains the .dat file
      */
-    private URL fileName;
+    private File file;
 
     /**
      * Arrays of bytes containing the data of the .dat file.
@@ -24,13 +24,13 @@ public class DATFile {
     private byte[] datFileBytes;
 
     /**
-     * Constructor for the DATFile class.
-     * @param fileName - the URL of the file
+     * Constructs an instance of an MCAFile object with the specified File object and array of .dat file bytes.
+     * @param file - the instance of the File object that contains the .dat file
      * @param datFileBytes - arrays of bytes containing the data of the .dat file
      * @throws IOException - exception for when an error occurs during IO operations
      */
-    public DATFile(URL fileName, byte[] datFileBytes) throws IOException {
-        this.fileName = fileName;
+    public DATFile(File file, byte[] datFileBytes) throws IOException {
+        this.file = file;
         this.datFileBytes = this.decompress(datFileBytes);
     }
 
@@ -51,7 +51,7 @@ public class DATFile {
      * @return Root compound tag for this.dat file
      * @throws IOException - exception for when an error occurs during IO operations
      */
-    public CompoundTag getData() throws IOException {
+    public CompoundTag toCompoundTag() throws IOException {
         ByteArrayInputStream chunkData = new ByteArrayInputStream(this.datFileBytes);
         NBTFileInputStream nbtParser = new NBTFileInputStream(chunkData);
         return (CompoundTag) nbtParser.readNamedTag();

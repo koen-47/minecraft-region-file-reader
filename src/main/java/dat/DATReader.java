@@ -1,20 +1,21 @@
 package dat;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 
 /**
- * Class that handles reading .dat files.
+ * An {@code DATReader} handles all the byte reading operations and is able to construct an instance of a
+ * {@code DATFile} object from that data.
  * @author Killerkoen
  */
 public class DATReader {
     /**
-     * URL of the .dat file.
+     * An instance of a File object that contains the .dat file
      */
-    private URL fileName;
+    private File file;
 
     /**
      * Input stream of the file which is used for reading.
@@ -27,8 +28,8 @@ public class DATReader {
      * @throws FileNotFoundException - exception for when the URL of the file cannot be found
      */
     public DATReader(String fileName) throws FileNotFoundException {
-        this.fileName = this.getClass().getResource(fileName);
-        this.reader = new FileInputStream(this.fileName.getFile());
+        this.file = new File(fileName);
+        this.reader = new FileInputStream(this.file);
     }
 
     /**
@@ -38,6 +39,6 @@ public class DATReader {
      */
     public DATFile readDATFile() throws IOException {
         byte[] datFileBytes = this.reader.readAllBytes();
-        return new DATFile(this.fileName, datFileBytes);
+        return new DATFile(this.file, datFileBytes);
     }
 }

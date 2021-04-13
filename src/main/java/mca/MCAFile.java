@@ -12,13 +12,15 @@ import nbt.tag.CompoundTag;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 
 /**
- * Class that contains all the methods used to navigate the data related to the .mca file.
+ * An {@code MCAFile} contains all the methods that can be used to navigate all the data related to a .mca file.
  * @author Killerkoen
  */
 public class MCAFile {
+    /**
+     * An instance of a File object that contains the .mca file
+     */
     private File file;
 
     /**
@@ -31,6 +33,13 @@ public class MCAFile {
      */
     private ChunkTimestampTable chunkTimestampTable;
 
+    /**
+     * Constructs an instance of an MCAFile object with the specified File object, chunk location table and
+     * chunk timestamp table.
+     * @param file the instance of the File object that contains the .mca file
+     * @param chunkLocationTable the chunk location table that holds the references to all chunk locations
+     * @param chunkTimestampTable the chunk timestamp table that holds the references to all chunk timestamps
+     */
     public MCAFile(File file, ChunkLocationTable chunkLocationTable, ChunkTimestampTable chunkTimestampTable) {
         this.file = file;
         this.chunkLocationTable = chunkLocationTable;
@@ -55,10 +64,10 @@ public class MCAFile {
 
     /**
      * Returns an instance of the Chunk class based on the given coordinates.
-     * @param chunkNumberX - coordinate x (in chunk coordinates)
-     * @param chunkNumberZ - coordinate z (in chunk coordinates)
+     * @param chunkNumberX coordinate x (in chunk coordinates)
+     * @param chunkNumberZ coordinate z (in chunk coordinates)
      * @return An instance of the Chunk class
-     * @throws IOException - exception for when an error occurs during IO operations
+     * @throws IOException exception for when an error occurs during IO operations
      */
     public Chunk getChunk(int chunkNumberX, int chunkNumberZ) throws IOException {
         int chunkNumber = (chunkNumberZ * 32) + chunkNumberX;

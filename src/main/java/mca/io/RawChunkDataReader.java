@@ -1,13 +1,20 @@
 package mca.io;
 
-import java.io.*;
-import java.net.URL;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
- * Class that reads the raw chunk data.
+ * An {@code RawChunkDataReader} handles all the byte reading operations and is able to construct an instance of a
+ * {@code RawChunkData} object from that data.
  * @author Killerkoen
  */
 public class RawChunkDataReader {
+    /**
+     * An instance of a File object that contains the raw chunk data.
+     */
     private File file;
 
     /**
@@ -16,8 +23,8 @@ public class RawChunkDataReader {
     private InputStream reader;
 
     /**
-     * Constructor for the RawChunkDataReader class.
-     *
+     * Constructs an instance of an {@code RawChunkDataReader} object that reads the given file.
+     * @param file the file that is to be read from
      * @throws FileNotFoundException - exception for when the URL of the file cannot be found
      */
     public RawChunkDataReader(File file) throws FileNotFoundException {

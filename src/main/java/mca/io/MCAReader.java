@@ -2,16 +2,21 @@ package mca.io;
 
 import mca.MCAFile;
 
-import java.io.*;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
- * Class that reads .mca files.
+ * An {@code MCAReader} handles all the byte reading operations and is able to construct an instance of a
+ * {@code MCAFile} object from that data.
  * @author Killerkoen
  */
 public class MCAReader {
-
+    /**
+     * An instance of a File object that contains the .mca file
+     */
     private File file;
 
     /**
@@ -20,8 +25,8 @@ public class MCAReader {
     private InputStream reader;
 
     /**
-     * Constructor for the MCAReader class.
-     * @param fileName location of the .mca file
+     * Constructs an instance of an {@code MCAReader} object that reads the given file location.
+     * @param fileName location of the .mca file in the form of a string
      * @throws FileNotFoundException exception for when the URL of the file cannot be found
      */
     public MCAReader(String fileName) throws FileNotFoundException {
@@ -31,8 +36,8 @@ public class MCAReader {
 
     /**
      * Reads all bytes of the .mca file.
-     * @return - an instance of a DATFile class containing the compressed bytes that were read
-     * @throws IOException - exception for when an error occurs during IO operation
+     * @return -An instance of a DATFile class containing the compressed bytes that were read
+     * @throws IOException exception for when an error occurs during IO operation
      */
     public MCAFile readMCAFile() throws IOException {
         byte[] locationBytes = this.readChunkLocations();
@@ -47,7 +52,7 @@ public class MCAReader {
     /**
      * Reads the raw data of all chunk locations.
      * @return Array of bytes containing the raw data of all chunk locations
-     * @throws IOException - exception for when an error occurs during IO operation
+     * @throws IOException exception for when an error occurs during IO operation
      */
     private byte[] readChunkLocations() throws IOException {
         byte[] chunkLocations = new byte[4096];
@@ -58,7 +63,7 @@ public class MCAReader {
     /**
      * Reads the raw data of all chunk timestamps.
      * @return Array of bytes containing the raw data of all chunk timestamps
-     * @throws IOException - exception for when an error occurs during IO operation
+     * @throws IOException exception for when an error occurs during IO operation
      */
     private byte[] readChunkTimestamps() throws IOException {
         byte[] chunkTimestamps = new byte[4096];
