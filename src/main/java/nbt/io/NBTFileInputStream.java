@@ -283,7 +283,7 @@ public class NBTFileInputStream {
         }
 
         return containedTags;
-    }
+    }   
 
     /**
      * Reads an array of ints from the data input stream that is used as a payload for an instance of a IntArrayTag

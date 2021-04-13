@@ -9,32 +9,541 @@
     }
 }
 
-TAG_Int('testIntTag'): 1
+)TAG_Compound('testCompoundTag'): 1 entry
+{
+    TAG_Int('testIntTag'): 1
+}
 
-,TAG_List('testCompoundTagOuter'): 2 entries
++TAG_Compound('testCompoundTag10'): 1 entry
 {
-    TAG_Int(''): 1
-    TAG_Int(''): 2
-    TAG_Int(''): 3
+1    TAG_Compound('testCompoundTag9'): 21 entries
+    {
++        TAG_List('testListTag'): 0 entries
+
+        {
+
+        }
+"        TAG_Int('testIntTag'): 91
++        TAG_List('testListTag'): 0 entries
+
+        {
+
+        }
+"        TAG_Int('testIntTag'): 80
++        TAG_List('testListTag'): 0 entries
+
+        {
+
+        }
+"        TAG_Int('testIntTag'): 26
++        TAG_List('testListTag'): 0 entries
+
+        {
+
+        }
+"        TAG_Int('testIntTag'): 49
++        TAG_List('testListTag'): 0 entries
+
+        {
+
+        }
+"        TAG_Int('testIntTag'): 21
++        TAG_List('testListTag'): 0 entries
+
+        {
+
+        }
+"        TAG_Int('testIntTag'): 23
++        TAG_List('testListTag'): 0 entries
+
+        {
+
+        }
+"        TAG_Int('testIntTag'): 86
++        TAG_List('testListTag'): 0 entries
+
+        {
+
+        }
+"        TAG_Int('testIntTag'): 68
++        TAG_List('testListTag'): 0 entries
+
+        {
+
+        }
+"        TAG_Int('testIntTag'): 36
++        TAG_List('testListTag'): 0 entries
+
+        {
+
+        }
+"        TAG_Int('testIntTag'): 37
+5        TAG_Compound('testCompoundTag8'): 21 entries
+
+        {
+/            TAG_List('testListTag'): 0 entries
+            {
+            }
+&            TAG_Int('testIntTag'): 70
+/            TAG_List('testListTag'): 0 entries
+            {
+            }
+&            TAG_Int('testIntTag'): 74
+/            TAG_List('testListTag'): 0 entries
+            {
+            }
+&            TAG_Int('testIntTag'): 19
+/            TAG_List('testListTag'): 0 entries
+            {
+            }
+%            TAG_Int('testIntTag'): 4
+/            TAG_List('testListTag'): 0 entries
+            {
+            }
+&            TAG_Int('testIntTag'): 82
+/            TAG_List('testListTag'): 0 entries
+            {
+            }
+&            TAG_Int('testIntTag'): 57
+/            TAG_List('testListTag'): 0 entries
+            {
+            }
+&            TAG_Int('testIntTag'): 12
+/            TAG_List('testListTag'): 0 entries
+            {
+            }
+&            TAG_Int('testIntTag'): 67
+/            TAG_List('testListTag'): 0 entries
+            {
+            }
+&            TAG_Int('testIntTag'): 23
+/            TAG_List('testListTag'): 0 entries
+            {
+            }
+&            TAG_Int('testIntTag'): 19
+9            TAG_Compound('testCompoundTag7'): 21 entries
+            {
+3                TAG_List('testListTag'): 0 entries
+                {
+                }
+*                TAG_Int('testIntTag'): 38
+3                TAG_List('testListTag'): 0 entries
+                {
+                }
+*                TAG_Int('testIntTag'): 97
+3                TAG_List('testListTag'): 0 entries
+                {
+                }
+*                TAG_Int('testIntTag'): 13
+3                TAG_List('testListTag'): 0 entries
+                {
+                }
+*                TAG_Int('testIntTag'): 46
+3                TAG_List('testListTag'): 0 entries
+                {
+                }
+*                TAG_Int('testIntTag'): 20
+3                TAG_List('testListTag'): 0 entries
+                {
+                }
+*                TAG_Int('testIntTag'): 48
+3                TAG_List('testListTag'): 0 entries
+                {
+                }
+*                TAG_Int('testIntTag'): 81
+3                TAG_List('testListTag'): 0 entries
+                {
+                }
+*                TAG_Int('testIntTag'): 71
+3                TAG_List('testListTag'): 0 entries
+                {
+                }
+*                TAG_Int('testIntTag'): 90
+3                TAG_List('testListTag'): 0 entries
+                {
+                }
+*                TAG_Int('testIntTag'): 12
+=                TAG_Compound('testCompoundTag6'): 21 entries
+                {
+7                    TAG_List('testListTag'): 0 entries
+                    {
+                    }
+.                    TAG_Int('testIntTag'): 61
+7                    TAG_List('testListTag'): 0 entries
+                    {
+                    }
+.                    TAG_Int('testIntTag'): 25
+7                    TAG_List('testListTag'): 0 entries
+                    {
+                    }
+.                    TAG_Int('testIntTag'): 14
+7                    TAG_List('testListTag'): 0 entries
+                    {
+                    }
+.                    TAG_Int('testIntTag'): 26
+7                    TAG_List('testListTag'): 0 entries
+                    {
+                    }
+.                    TAG_Int('testIntTag'): 70
+7                    TAG_List('testListTag'): 0 entries
+                    {
+                    }
+.                    TAG_Int('testIntTag'): 19
+7                    TAG_List('testListTag'): 0 entries
+                    {
+                    }
+.                    TAG_Int('testIntTag'): 95
+7                    TAG_List('testListTag'): 0 entries
+                    {
+                    }
+.                    TAG_Int('testIntTag'): 48
+7                    TAG_List('testListTag'): 0 entries
+                    {
+                    }
+.                    TAG_Int('testIntTag'): 59
+7                    TAG_List('testListTag'): 0 entries
+                    {
+                    }
+.                    TAG_Int('testIntTag'): 89
+A                    TAG_Compound('testCompoundTag5'): 21 entries
+                    {
+;                        TAG_List('testListTag'): 0 entries
+                        {
+                        }
+2                        TAG_Int('testIntTag'): 50
+;                        TAG_List('testListTag'): 0 entries
+                        {
+                        }
+2                        TAG_Int('testIntTag'): 69
+;                        TAG_List('testListTag'): 0 entries
+                        {
+                        }
+1                        TAG_Int('testIntTag'): 7
+;                        TAG_List('testListTag'): 0 entries
+                        {
+                        }
+2                        TAG_Int('testIntTag'): 79
+;                        TAG_List('testListTag'): 0 entries
+                        {
+                        }
+2                        TAG_Int('testIntTag'): 40
+;                        TAG_List('testListTag'): 0 entries
+                        {
+                        }
+2                        TAG_Int('testIntTag'): 41
+;                        TAG_List('testListTag'): 0 entries
+                        {
+                        }
+1                        TAG_Int('testIntTag'): 3
+;                        TAG_List('testListTag'): 0 entries
+                        {
+                        }
+2                        TAG_Int('testIntTag'): 32
+;                        TAG_List('testListTag'): 0 entries
+                        {
+                        }
+1                        TAG_Int('testIntTag'): 6
+;                        TAG_List('testListTag'): 0 entries
+                        {
+                        }
+2                        TAG_Int('testIntTag'): 10
+E                        TAG_Compound('testCompoundTag4'): 21 entries
+                        {
+?                            TAG_List('testListTag'): 0 entries
+                            {
+                            }
+6                            TAG_Int('testIntTag'): 27
+?                            TAG_List('testListTag'): 0 entries
+                            {
+                            }
+6                            TAG_Int('testIntTag'): 86
+?                            TAG_List('testListTag'): 0 entries
+                            {
+                            }
+6                            TAG_Int('testIntTag'): 42
+?                            TAG_List('testListTag'): 0 entries
+                            {
+                            }
+6                            TAG_Int('testIntTag'): 39
+?                            TAG_List('testListTag'): 0 entries
+                            {
+                            }
+5                            TAG_Int('testIntTag'): 6
+?                            TAG_List('testListTag'): 0 entries
+                            {
+                            }
+6                            TAG_Int('testIntTag'): 72
+?                            TAG_List('testListTag'): 0 entries
+                            {
+                            }
+6                            TAG_Int('testIntTag'): 87
+?                            TAG_List('testListTag'): 0 entries
+                            {
+                            }
+6                            TAG_Int('testIntTag'): 76
+?                            TAG_List('testListTag'): 0 entries
+                            {
+                            }
+6                            TAG_Int('testIntTag'): 47
+?                            TAG_List('testListTag'): 0 entries
+                            {
+                            }
+6                            TAG_Int('testIntTag'): 90
+I                            TAG_Compound('testCompoundTag3'): 21 entries
+                            {
+C                                TAG_List('testListTag'): 0 entries
+"                                {
+"                                }
+9                                TAG_Int('testIntTag'): 3
+C                                TAG_List('testListTag'): 0 entries
+"                                {
+"                                }
+:                                TAG_Int('testIntTag'): 24
+C                                TAG_List('testListTag'): 0 entries
+"                                {
+"                                }
+:                                TAG_Int('testIntTag'): 96
+C                                TAG_List('testListTag'): 0 entries
+"                                {
+"                                }
+9                                TAG_Int('testIntTag'): 8
+C                                TAG_List('testListTag'): 0 entries
+"                                {
+"                                }
+:                                TAG_Int('testIntTag'): 18
+C                                TAG_List('testListTag'): 0 entries
+"                                {
+"                                }
+:                                TAG_Int('testIntTag'): 73
+C                                TAG_List('testListTag'): 0 entries
+"                                {
+"                                }
+9                                TAG_Int('testIntTag'): 2
+C                                TAG_List('testListTag'): 0 entries
+"                                {
+"                                }
+:                                TAG_Int('testIntTag'): 51
+C                                TAG_List('testListTag'): 0 entries
+"                                {
+"                                }
+:                                TAG_Int('testIntTag'): 39
+C                                TAG_List('testListTag'): 0 entries
+"                                {
+"                                }
+:                                TAG_Int('testIntTag'): 98
+M                                TAG_Compound('testCompoundTag2'): 21 entries
+"                                {
+G                                    TAG_List('testListTag'): 0 entries
+&                                    {
+&                                    }
+>                                    TAG_Int('testIntTag'): 61
+G                                    TAG_List('testListTag'): 0 entries
+&                                    {
+&                                    }
+>                                    TAG_Int('testIntTag'): 97
+G                                    TAG_List('testListTag'): 0 entries
+&                                    {
+&                                    }
+>                                    TAG_Int('testIntTag'): 10
+G                                    TAG_List('testListTag'): 0 entries
+&                                    {
+&                                    }
+=                                    TAG_Int('testIntTag'): 6
+G                                    TAG_List('testListTag'): 0 entries
+&                                    {
+&                                    }
+>                                    TAG_Int('testIntTag'): 29
+G                                    TAG_List('testListTag'): 0 entries
+&                                    {
+&                                    }
+>                                    TAG_Int('testIntTag'): 85
+G                                    TAG_List('testListTag'): 0 entries
+&                                    {
+&                                    }
+>                                    TAG_Int('testIntTag'): 80
+G                                    TAG_List('testListTag'): 0 entries
+&                                    {
+&                                    }
+>                                    TAG_Int('testIntTag'): 44
+G                                    TAG_List('testListTag'): 0 entries
+&                                    {
+&                                    }
+>                                    TAG_Int('testIntTag'): 22
+G                                    TAG_List('testListTag'): 0 entries
+&                                    {
+&                                    }
+>                                    TAG_Int('testIntTag'): 55
+Q                                    TAG_Compound('testCompoundTag1'): 21 entries
+&                                    {
+K                                        TAG_List('testListTag'): 0 entries
+*                                        {
+*                                        }
+B                                        TAG_Int('testIntTag'): 80
+K                                        TAG_List('testListTag'): 0 entries
+*                                        {
+*                                        }
+B                                        TAG_Int('testIntTag'): 36
+K                                        TAG_List('testListTag'): 0 entries
+*                                        {
+*                                        }
+B                                        TAG_Int('testIntTag'): 71
+K                                        TAG_List('testListTag'): 0 entries
+*                                        {
+*                                        }
+B                                        TAG_Int('testIntTag'): 36
+K                                        TAG_List('testListTag'): 0 entries
+*                                        {
+*                                        }
+B                                        TAG_Int('testIntTag'): 22
+K                                        TAG_List('testListTag'): 0 entries
+*                                        {
+*                                        }
+B                                        TAG_Int('testIntTag'): 88
+K                                        TAG_List('testListTag'): 0 entries
+*                                        {
+*                                        }
+B                                        TAG_Int('testIntTag'): 29
+K                                        TAG_List('testListTag'): 0 entries
+*                                        {
+*                                        }
+B                                        TAG_Int('testIntTag'): 85
+K                                        TAG_List('testListTag'): 0 entries
+*                                        {
+*                                        }
+B                                        TAG_Int('testIntTag'): 26
+K                                        TAG_List('testListTag'): 0 entries
+*                                        {
+*                                        }
+B                                        TAG_Int('testIntTag'): 81
+U                                        TAG_Compound('testCompoundTag0'): 21 entries
+*                                        {
+O                                            TAG_List('testListTag'): 0 entries
+.                                            {
+.                                            }
+F                                            TAG_Int('testIntTag'): 98
+O                                            TAG_List('testListTag'): 0 entries
+.                                            {
+.                                            }
+E                                            TAG_Int('testIntTag'): 1
+O                                            TAG_List('testListTag'): 0 entries
+.                                            {
+.                                            }
+F                                            TAG_Int('testIntTag'): 77
+O                                            TAG_List('testListTag'): 0 entries
+.                                            {
+.                                            }
+F                                            TAG_Int('testIntTag'): 37
+O                                            TAG_List('testListTag'): 0 entries
+.                                            {
+.                                            }
+F                                            TAG_Int('testIntTag'): 19
+O                                            TAG_List('testListTag'): 0 entries
+.                                            {
+.                                            }
+F                                            TAG_Int('testIntTag'): 69
+O                                            TAG_List('testListTag'): 0 entries
+.                                            {
+.                                            }
+F                                            TAG_Int('testIntTag'): 57
+O                                            TAG_List('testListTag'): 0 entries
+.                                            {
+.                                            }
+F                                            TAG_Int('testIntTag'): 28
+O                                            TAG_List('testListTag'): 0 entries
+.                                            {
+.                                            }
+F                                            TAG_Int('testIntTag'): 33
+O                                            TAG_List('testListTag'): 0 entries
+.                                            {
+.                                            }
+F                                            TAG_Int('testIntTag'): 26
+X                                            TAG_Compound('testCompoundTag'): 20 entries
+.                                            {
+S                                                TAG_List('testListTag'): 0 entries
+2                                                {
+2                                                }
+J                                                TAG_Int('testIntTag'): 95
+S                                                TAG_List('testListTag'): 0 entries
+2                                                {
+2                                                }
+J                                                TAG_Int('testIntTag'): 36
+S                                                TAG_List('testListTag'): 0 entries
+2                                                {
+2                                                }
+J                                                TAG_Int('testIntTag'): 65
+S                                                TAG_List('testListTag'): 0 entries
+2                                                {
+2                                                }
+J                                                TAG_Int('testIntTag'): 45
+S                                                TAG_List('testListTag'): 0 entries
+2                                                {
+2                                                }
+J                                                TAG_Int('testIntTag'): 87
+S                                                TAG_List('testListTag'): 0 entries
+2                                                {
+2                                                }
+J                                                TAG_Int('testIntTag'): 72
+S                                                TAG_List('testListTag'): 0 entries
+2                                                {
+2                                                }
+J                                                TAG_Int('testIntTag'): 33
+S                                                TAG_List('testListTag'): 0 entries
+2                                                {
+2                                                }
+J                                                TAG_Int('testIntTag'): 21
+S                                                TAG_List('testListTag'): 0 entries
+2                                                {
+2                                                }
+J                                                TAG_Int('testIntTag'): 45
+S                                                TAG_List('testListTag'): 0 entries
+2                                                {
+2                                                }
+J                                                TAG_Int('testIntTag'): 36
+.                                            }
+*                                        }
+&                                    }
+"                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
 
-0TAG_Compound('testCompoundTagOuter'): 4 entries
+0TAG_Compound('testCompoundTagOuter'): 3 entries
 {
-#    TAG_Int('testIntTagOuter1'): 3
-,    TAG_String('testStringTagOuter2'): 's1'
-5    TAG_Compound('testCompoundTagInner1'): 2 entries
+#    TAG_Int('testIntTagOuter1'): 4
+#    TAG_Int('testIntTagOuter2'): 5
+4    TAG_Compound('testCompoundTagInner'): 3 entries
     {
-'        TAG_Int('testIntTagInner1'): 1
-'        TAG_Int('testIntTagInner2'): 2
-    }
-5    TAG_Compound('testCompoundTagInner2'): 2 entries
-    {
-'        TAG_Int('testIntTagInner1'): 1
-'        TAG_Int('testIntTagInner2'): 2
+'        TAG_Int('testIntTagInner1'): 2
+'        TAG_Int('testIntTagInner2'): 3
+>        TAG_Compound('testCompoundTagDoubleInner'): 2 entries
+
+        {
+1            TAG_Int('testIntTagDoubleInner1'): 0
+1            TAG_Int('testIntTagDoubleInner2'): 1
+
+        }
     }
 }
 
-)TAG_Compound('testCompoundTag'): 1 entry
++TAG_Compound('testCompoundTag'): 2 entries
 {
-    TAG_Int('testIntTag'): 1
+    TAG_Int('testIntTag1'): 1
+0    TAG_Compound('testCompoundTag2'): 2 entries
+    {
+"        TAG_Int('testIntTag2'): 2
++        TAG_List('testListTag'): 2 entries
+
+        {
+            TAG_Int(''): 3
+            TAG_Int(''): 3
+
+        }
+    }
 }
 

@@ -1,6 +1,7 @@
 package nbt.tag;
 
 import util.ByteArrayBuilder;
+import util.TagString;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -250,9 +251,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * @return A string representation of this CompoundTag object.
      */
     public String toString() {
-        int numberOfEntries = this.containedTags.size() - 1;
-        String pluralOfEntry = (numberOfEntries == 1) ? "entry" : "entries";
-        return "TAG_Compound('" + this.name + "'): " + numberOfEntries + " " + pluralOfEntry + "\n";
+        return new TagString(this).getString();
     }
 
     /**

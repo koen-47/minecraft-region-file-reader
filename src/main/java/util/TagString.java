@@ -24,7 +24,7 @@ public class TagString {
      */
     public TagString(Tag currentTag) {
         this.currentTag = currentTag;
-        this.completeTagString = this.stringify(this.currentTag, "", 0);
+        this.completeTagString = this.stringify(this.currentTag, 0);
     }
 
     /**
@@ -35,7 +35,21 @@ public class TagString {
         return this.completeTagString;
     }
 
-    private String stringify(Tag currentTag, String finalString, int depth) {
+    private String stringify(Tag currentTag, int depth) {
+        String finalString = this.getTagHeaderStringBasedOnDepth(currentTag, depth);
+        if (currentTag instanceof CompoundTag || currentTag instanceof ListTag) {
+            int numberOfEntries = (currentTag instanceof ListTag) ? ((ListTag) currentTag).getPayload().length :
+                                                                    ((CompoundTag) currentTag).getPayload().size() - 1;
+
+            for (int i = 0; i < numberOfEntries; i++) {
+                Tag nextTag = (currentTag instanceof ListTag) ? ((ListTag) currentTag).getPayload()[i] :
+                                                                ((CompoundTag) currentTag).getPayload().get(i);
+                finalString += this.stringify(nextTag, depth + 1);
+            }
+
+            finalString += this.getWhitespacesBasedOnDepth(depth) + "}\n";
+        }
+
         return finalString;
     }
 
@@ -58,7 +72,7 @@ public class TagString {
         String whitespaces = this.getWhitespacesBasedOnDepth(depth);
         if ((tag instanceof CompoundTag) || (tag instanceof ListTag)) {
             int numberOfEntries = (tag instanceof CompoundTag) ? ((CompoundTag) tag).getPayload().size() - 1 :
-                                                                 ((ListTag) tag).getPayload().length - 1;
+                                                                 ((ListTag) tag).getPayload().length;
             String pluralOfEntry = (numberOfEntries == 1) ? "entry" : "entries";
             String tagType = (tag instanceof CompoundTag) ? "TAG_Compound" : "TAG_List";
             return whitespaces + tagType + "('" + tag.getName() + "'): " + numberOfEntries + " " + pluralOfEntry +
@@ -66,17 +80,6 @@ public class TagString {
         }
 
         return whitespaces + tag.toString();
-    }
-
-    private Iterator<Tag> getIteratorType(Tag tag) {
-        Iterator<Tag> it = null;
-        if (tag instanceof CompoundTag) {
-            it = ((CompoundTag) tag).iterator();
-        } else if (tag instanceof ListTag) {
-            it = ((ListTag) tag).iterator();
-        }
-
-        return it;
     }
 
 }

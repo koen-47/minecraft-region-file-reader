@@ -1,6 +1,7 @@
 package nbt.tag;
 
 import util.ByteArrayBuilder;
+import util.TagString;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -262,9 +263,7 @@ public class ListTag<T extends Tag> extends Tag implements Iterable<Tag> {
      * @return A string representation of this ListTag object.
      */
     public String toString() {
-        int numberOfEntries = this.containedTags.length;
-        String pluralOfEntry = (numberOfEntries == 1) ? "entry" : "entries";
-        return "TAG_List('" + this.name + "'): " + numberOfEntries + " " + pluralOfEntry + "\n";
+        return new TagString(this).getString();
     }
 
     /**

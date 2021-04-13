@@ -1,17 +1,19 @@
 nbt/tag/IntArrayTagTest.java
  nbt.tag.IntArrayTagTest
-nbt/tag/StringTagTest.java
- nbt.tag.StringTagTest
+nbt/io/CompoundTagParsingTest.java
+ nbt.io.CompoundTagParsingTest
 nbt/io/IntTagParsingTest.java
  nbt.io.IntTagParsingTest
+util/TagStringTest.java
+ util.TagStringTest
 nbt/tag/ListTagTest.java
  nbt.tag.ListTagTest
 nbt/tag/DoubleTagTest.java
  nbt.tag.DoubleTagTest
 nbt/tag/IntTagTest.java
  nbt.tag.IntTagTest
-nbt/io/ListTagParsingTest.java
- nbt.io.ListTagParsingTest
+util/CompoundTagStringTest.java
+ util.CompoundTagStringTest
 nbt/tag/CompoundTagTest.java
  nbt.tag.CompoundTagTest
 util/CompoundTagRandomizer.java
@@ -20,9 +22,7 @@ util/ByteArrayBuilderTest.java
  util.ByteArrayBuilderTest
 nbt/io/IntArrayTagParsingTest.java
  nbt.io.IntArrayTagParsingTest
-nbt/io/CompoundTagParsingTest.java
- nbt.io.CompoundTagParsingTest
-util/TagStringTest.java
- util.TagStringTest
-util/CompoundTagStringTest.java
- util.CompoundTagStringTest
+nbt/tag/StringTagTest.java
+ nbt.tag.StringTagTest
+nbt/io/ListTagParsingTest.java
+ nbt.io.ListTagParsingTest

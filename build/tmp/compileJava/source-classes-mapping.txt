@@ -14,8 +14,8 @@ mca/io/ChunkLocationTable.java
  mca.io.ChunkLocationTable
 mca/io/ChunkTimestampTable.java
  mca.io.ChunkTimestampTable
-util/ListTagString.java
- util.ListTagString
+Main.java
+ Main
 mca/io/MCAReader.java
  mca.io.MCAReader
 nbt/tag/DoubleTag.java
@@ -56,13 +56,13 @@ mca/MCAFilePrinter.java
  mca.MCAFilePrinter
 mca/io/RawChunkData.java
  mca.io.RawChunkData
-nbt/tag/StringTag.java
- nbt.tag.StringTag
+util/TagString.java
+ util.TagString
 mca/io/ChunkTimestamp.java
  mca.io.ChunkTimestamp
 nbt/io/NBTFileInputStream.java
  nbt.io.NBTFileInputStream
-Main.java
- Main
-util/TagString.java
- util.TagString
+nbt/tag/StringTag.java
+ nbt.tag.StringTag
+util/ListTagString.java
+ util.ListTagString
