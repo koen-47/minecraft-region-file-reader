@@ -38,21 +38,17 @@ public class CompoundTagStringTest {
 
     @Test
     public void testDoubleCompoundTagString() {
-        CompoundTag testCompoundTagDoubleInner = new CompoundTag("testCompoundTagDoubleInner",
-                                                                 new IntTag("testIntTagDoubleInner1", 0),
-                                                                 new IntTag("testIntTagDoubleInner2", 1));
-
-        CompoundTag testCompoundTagInner = new CompoundTag("testCompoundTagInner",
-                                                            new IntTag("testIntTagInner1", 2),
-                                                            new IntTag("testIntTagInner2", 3),
-                                                            testCompoundTagDoubleInner);
-
         CompoundTag testCompoundTagOuter = new CompoundTag("testCompoundTagOuter",
                                                             new IntTag("testIntTagOuter1", 4),
                                                             new IntTag("testIntTagOuter2", 5),
-                                                            testCompoundTagInner);
+                                                            new CompoundTag("testCompoundTagInner",
+                                                                    new IntTag("testIntTagInner1", 2),
+                                                                    new IntTag("testIntTagInner2", 3),
+                                                                    new CompoundTag("testCompoundTagDoubleInner",
+                                                                            new IntTag("testIntTagDoubleInner1", 0),
+                                                                            new IntTag("testIntTagDoubleInner2", 1))));
 
-        CompoundTagString compoundTagString = new CompoundTagString(testCompoundTagOuter);
+        TagString compoundTagString = new TagString(testCompoundTagOuter);
         System.out.println(compoundTagString.getString());
     }
     
@@ -63,7 +59,7 @@ public class CompoundTagStringTest {
         CompoundTag testCompleteCompoundTag = new CompoundTagRandomizer(MAX_NUMBER_OF_NESTED_COMPOUND_TAGS,
                                                                         MAX_NUMBER_OF_TAGS_IN_COMPOUND_TAG).generate();
 
-        System.out.println(new CompoundTagString(testCompleteCompoundTag).getString());
+        System.out.println(new TagString(testCompleteCompoundTag).getString());
     }
 
     @Test

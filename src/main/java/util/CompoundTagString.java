@@ -42,23 +42,7 @@ public class CompoundTagString {
      * @return the completely stringified compound tag
      */
     private String stringify() {
-        int depth = 1;
-        String whitespaces = this.getWhitespacesBasedOnDepth(depth);
-        String finalString = this.compoundTag.toString() + this.getWhitespacesBasedOnDepth(depth - 1) + "{\n";
-
-        for (Tag currentTag : this.compoundTag.getPayload()) {
-            if (currentTag instanceof CompoundTag) {
-                finalString += this.stringifyCompoundTag((CompoundTag) currentTag, depth + 1);
-            } else if (currentTag instanceof EndTag) {
-                finalString += this.getWhitespacesBasedOnDepth(depth - 1) + "}\n";
-            } else if (currentTag instanceof ListTag) {
-                finalString += this.stringifyListTag((ListTag) currentTag, depth + 1);
-            } else {
-                finalString += whitespaces + currentTag.toString();
-            }
-        }
-
-        return finalString;
+        return this.stringifyCompoundTag(this.compoundTag, 1);
     }
 
     /**
