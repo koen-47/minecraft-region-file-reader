@@ -24,7 +24,7 @@ public class TagString {
      */
     public TagString(Tag currentTag) {
         this.currentTag = currentTag;
-        this.completeTagString = this.stringify(this.currentTag);
+        this.completeTagString = this.stringify(this.currentTag, "", 0);
     }
 
     /**
@@ -35,28 +35,7 @@ public class TagString {
         return this.completeTagString;
     }
 
-    private String stringify(Tag currentTag) {
-        Iterator<Tag> it = this.getIteratorType(currentTag);
-        String finalString = this.getTagHeaderStringBasedOnDepth(currentTag, 0);
-        int depth = 1;
-
-        if (it != null) {
-            while (it.hasNext()) {
-                Tag nextTag = it.next();
-                if (nextTag instanceof CompoundTag) {
-                    finalString += this.getTagHeaderStringBasedOnDepth(nextTag, depth);
-                    depth += 1;
-                } else if (nextTag instanceof EndTag) {
-                    finalString += this.getWhitespacesBasedOnDepth(depth - 1) + "}\n";
-                    depth -= 1;
-                } else if (nextTag instanceof ListTag) {
-
-                } else {
-                    finalString += this.getTagHeaderStringBasedOnDepth(nextTag, depth);
-                }
-            }
-        }
-
+    private String stringify(Tag currentTag, String finalString, int depth) {
         return finalString;
     }
 
