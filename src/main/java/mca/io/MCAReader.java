@@ -2,10 +2,8 @@ package mca.io;
 
 import mca.MCAFile;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
@@ -13,10 +11,8 @@ import java.net.URL;
  * @author Killerkoen
  */
 public class MCAReader {
-    /**
-     * URL of the .dat file.
-     */
-    private URL fileName;
+
+    private File file;
 
     /**
      * Input stream of the file which is used for reading.
@@ -25,12 +21,12 @@ public class MCAReader {
 
     /**
      * Constructor for the MCAReader class.
-     * @param fileName - URL of the .mca file
-     * @throws FileNotFoundException - exception for when the URL of the file cannot be found
+     * @param fileName location of the .mca file
+     * @throws FileNotFoundException exception for when the URL of the file cannot be found
      */
     public MCAReader(String fileName) throws FileNotFoundException {
-        this.fileName = this.getClass().getResource(fileName);
-        this.reader = new FileInputStream(this.fileName.getFile());
+        this.file = new File(fileName);
+        this.reader = new FileInputStream(this.file);
     }
 
     /**
@@ -45,7 +41,7 @@ public class MCAReader {
         byte[] timestampBytes = this.readChunkTimestamps();
         ChunkTimestampTable chunkTimestampTable = new ChunkTimestampTable(timestampBytes);
 
-        return new MCAFile(this.fileName, chunkLocationTable, chunkTimestampTable);
+        return new MCAFile(this.file, chunkLocationTable, chunkTimestampTable);
     }
 
     /**

@@ -75,6 +75,6 @@ public class MCAFilePrinter {
      * @return String of the root compound tag of the assigned .mca file
      */
     public String getChunkString(Chunk chunk) {
-        return new CompoundTagString(chunk.toNBTTag()).getString();
+        return new CompoundTagString(chunk.toCompoundTag()).getString();
     }
 }

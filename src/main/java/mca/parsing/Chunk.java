@@ -30,7 +30,7 @@ public class Chunk {
      * Get the root compound tag of this chunk.
      * @return The root compound tag of this chunk
      */
-    public CompoundTag toNBTTag() {
+    public CompoundTag toCompoundTag() {
         return this.chunkData;
     }
 

@@ -10,6 +10,7 @@ import nbt.io.NBTFileInputStream;
 import nbt.tag.CompoundTag;
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
@@ -18,10 +19,7 @@ import java.net.URL;
  * @author Killerkoen
  */
 public class MCAFile {
-    /**
-     * URL of the file.
-     */
-    private URL fileName;
+    private File file;
 
     /**
      * Chunk location table that holds all chunk locations in the .mca file.
@@ -33,14 +31,8 @@ public class MCAFile {
      */
     private ChunkTimestampTable chunkTimestampTable;
 
-    /**
-     * Constructor for the MCAFile class.
-     * @param fileName - URL of the file
-     * @param chunkLocationTable - contains information about chunk locations
-     * @param chunkTimestampTable - contains information about when chunks were last modified
-     */
-    public MCAFile(URL fileName, ChunkLocationTable chunkLocationTable, ChunkTimestampTable chunkTimestampTable) {
-        this.fileName = fileName;
+    public MCAFile(File file, ChunkLocationTable chunkLocationTable, ChunkTimestampTable chunkTimestampTable) {
+        this.file = file;
         this.chunkLocationTable = chunkLocationTable;
         this.chunkTimestampTable = chunkTimestampTable;
     }
@@ -71,7 +63,7 @@ public class MCAFile {
     public Chunk getChunk(int chunkNumberX, int chunkNumberZ) throws IOException {
         int chunkNumber = (chunkNumberZ * 32) + chunkNumberX;
         ChunkLocation location = this.chunkLocationTable.getChunkLocationAtIndex(chunkNumber);
-        RawChunkData rawChunkData = new RawChunkDataReader(this.fileName).readChunkData(location);
+        RawChunkData rawChunkData = new RawChunkDataReader(this.file).readChunkData(location);
         return new Chunk(this.processRawChunkData(rawChunkData));
     }
 
@@ -85,10 +77,6 @@ public class MCAFile {
         ByteArrayInputStream rawChunkBytes = new ByteArrayInputStream(rawChunkData.getUncompressedData());
         NBTFileInputStream nbtParser = new NBTFileInputStream(rawChunkBytes);
         return (CompoundTag) nbtParser.readNamedTag();
-    }
-
-    public URL getFileName() {
-        return this.fileName;
     }
 
 }

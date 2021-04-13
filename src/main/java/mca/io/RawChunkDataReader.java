@@ -1,9 +1,6 @@
 package mca.io;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.URL;
 
 /**
@@ -11,10 +8,7 @@ import java.net.URL;
  * @author Killerkoen
  */
 public class RawChunkDataReader {
-    /**
-     * URL of the file.
-     */
-    private URL fileName;
+    private File file;
 
     /**
      * Input stream that reads the chunk data.
@@ -23,12 +17,12 @@ public class RawChunkDataReader {
 
     /**
      * Constructor for the RawChunkDataReader class.
-     * @param fileName - URL of the file
+     *
      * @throws FileNotFoundException - exception for when the URL of the file cannot be found
      */
-    public RawChunkDataReader(URL fileName) throws FileNotFoundException {
-        this.fileName = fileName;
-        this.reader = new FileInputStream(this.fileName.getFile());
+    public RawChunkDataReader(File file) throws FileNotFoundException {
+        this.file = file;
+        this.reader = new FileInputStream(this.file);
     }
 
     /**
