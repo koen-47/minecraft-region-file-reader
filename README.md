@@ -46,7 +46,7 @@ Add these tags to `pom.xml` for repositories and dependencies respectively:
 <dependency>
     <groupId>com.github.Killerkoen</groupId>
     <artifactId>mc-region-file-reader</artifactId>
-    <version>1.0.0</version>
+    <version>v1.0.0</version>
 </dependency>
 ```
 
@@ -62,7 +62,7 @@ allprojects {
 ```
 ```
 dependencies {
-        implementation 'com.github.Killerkoen:mc-region-file-reader:1.0.0'
+    implementation 'com.github.Killerkoen:mc-region-file-reader:v1.0.0'
 }
 ```
 
