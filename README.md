@@ -51,7 +51,7 @@ DATFile datFile = datReader.readDATFile();
 
 CompoundTag root = datFile.toCompoundTag();
 ```
-It is important to note that the `MCAReader` and `DATReader` class read the file 
+It is important to note that the `MCAReader` and `DATReader` classes read the file 
 locations relative to the root project. For example, in the case of this repository's
 file structure if you have a .mca in the /java folder, the specified file location
 for these classes would have to be `src/main/java/r.0.0.mca`.
@@ -140,7 +140,8 @@ CompoundTag testCompoundTag = new CompoundTag("testCompoundTag",
 
 System.out.println(testCompoundTag.toString());
 
-/* This would print
+/* 
+   This would print:
    TAG_Compound('testCompoundTag'): 3 entries
    {
        TAG_Int('testIntTag'): 1
