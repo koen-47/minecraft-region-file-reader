@@ -32,7 +32,26 @@ At this moment in time, the currently supported search methods are:
     * ``contains`` - returns true if this tag contains the target tag
 
 ## Installation
-TBA
+<details>
+  <summary>Maven</summary>
+  <p>
+    Add these tags to <code>pom.xml</code>:
+    ```java
+      <repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+	  </repositories>
+
+      <dependency>
+	    <groupId>com.github.Killerkoen</groupId>
+	    <artifactId>mc-region-file-reader</artifactId>
+	    <version>0.1.3</version>
+	  </dependency>
+    ```
+  </p>
+</details>
 
 ## Examples
 ### Reading .mca and .dat files
