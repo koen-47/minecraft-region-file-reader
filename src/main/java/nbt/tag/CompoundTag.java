@@ -9,7 +9,7 @@ import java.util.Iterator;
 
 /**
  * A tag that contains an unspecified number of tags that are guaranteed to contain a name and a payload corresponding
- * to the type of that tag. It follows the specification laid out by the ByteArrayTag in the NBT format.
+ * to the type of that tag. It follows the specification laid out by the CompoundTag in the NBT format.
  * @author Killerkoen
  */
 public class CompoundTag extends Tag implements Iterable<Tag> {
@@ -29,7 +29,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     private final byte tagID = 10;
 
     /**
-     * Constructs an unnamed instance of a CompoundTag object.
+     * Constructs an unnamed instance of a CompoundTag object from the given payload.
      * @param containedTags an instance of an ArrayList object that contains the named tags that
      *                      are used as a payload for this tag.
      */
@@ -43,7 +43,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
 
     /**
-     * Constructs an unnamed instance of a CompoundTag object.
+     * Constructs an unnamed instance of a CompoundTag object from the given name and payload.
      * @param tags a variable arguments parameter that contains an array of different tag types that are used as a
      *             payload for this tag
      */
@@ -58,7 +58,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
 
     /**
-     * Constructs a named instance of a CompoundTag object.
+     * Constructs a named instance of a CompoundTag object from the given payload.
      * @param name the name of this tag
      * @param containedTags an instance of an ArrayList object that contains the named tags that
      *                      are used as a payload for this tag.
@@ -73,7 +73,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
 
     /**
-     * Constructs a named instance of a CompoundTag object.
+     * Constructs a named instance of a CompoundTag object from the given name and payload.
      * @param name the name of this tag
      * @param tags a variable arguments parameter that contains an array of different tag types that are used as a
      *             payload for this tag
@@ -210,7 +210,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * Returns true of this compound tag contains the specified element.
      * @param targetTagClass the class type of the tag that is to be found
      * @param operation the conditions that the target tag must fulfill
-     * @return {@code true} if this list contains the specified element; {@code false if otherwise}
+     * @return {@code true} if this compound tag contains the specified element; {@code false if otherwise}
      */
     public boolean contains(Class<? extends Tag> targetTagClass, TagOperation operation) {
         return this.find(targetTagClass, operation) != null;
@@ -219,7 +219,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Compares this instance of a CompoundTag object to that of another to see if contain equal values.
      * @param other the other instance of a CompoundTag object to compare to
-     * @return {@code true} if this list contains the specified element; {@code false} if otherwise
+     * @return {@code true} if this compound tag equals the specified parameter tag; {@code false} if otherwise
      */
     public boolean equals(Tag other) {
         if (!(other instanceof CompoundTag)) {
@@ -244,10 +244,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
 
     /**
-     * Returns a string representation of this CompoundTag object. <br> <br>
-     * This method does not return a string representation of all the other tags contained within this compound
-     * tag. Instead it returns this tag's name and the number of entries within it. In order to generate such a
-     * string representation, the CompoundTagString class must be used instead.
+     * Returns a string representation of this CompoundTag object.
      * @return A string representation of this CompoundTag object.
      */
     public String toString() {

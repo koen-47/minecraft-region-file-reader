@@ -3,7 +3,7 @@ package mca.io;
 import java.util.Arrays;
 
 /**
- * Class the contains the timestamps of all chunks.
+ * A {@code ChunkLocationTable} holds the references to all ChunkTimestamp objects.
  * @author Killerkoen
  */
 public class ChunkTimestampTable {
@@ -13,8 +13,9 @@ public class ChunkTimestampTable {
     private final ChunkTimestamp[] chunkTimestamps;
 
     /**
-     * Constructor for the ChunkTimestamp class.
-     * @param bytes - array of bytes to convert to chunk timestamps
+     * Constructs an instance of a {@code ChunkTimestampTable} object from the given array of bytes that holds the data
+     * of all chunk timestamps.
+     * @param bytes an array of bytes to convert to chunk timestamps
      */
     public ChunkTimestampTable(byte[] bytes) {
         final int numberOfTimestamps = 1024;
@@ -37,7 +38,7 @@ public class ChunkTimestampTable {
 
     /**
      * Get a chunk timestamp at the given index.
-     * @param i - index of the target chunk timestamp
+     * @param i index of the target chunk timestamp
      * @return The chunk timestamp that was found at the given index
      */
     public ChunkTimestamp getChunkTimestampAtIndex(int i) {

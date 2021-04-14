@@ -1,12 +1,13 @@
 package util;
 
 import nbt.tag.CompoundTag;
-import nbt.tag.EndTag;
 import nbt.tag.ListTag;
 import nbt.tag.Tag;
 
-import java.util.Iterator;
-
+/**
+ * A utility class that designed to stringify an instance of a Tag object in a human readable format.
+ * @author Killerkoen
+ */
 public class TagString {
     /**
      * The Tag object to stringify.
@@ -35,6 +36,12 @@ public class TagString {
         return this.completeTagString;
     }
 
+    /**
+     * Returns a complete string representation of the specified tag.
+     * @param currentTag the tag to stringify
+     * @param depth the depth of the tag inside of a compound or list tag
+     * @return A stringified representation of the specified tag
+     */
     private String stringify(Tag currentTag, int depth) {
         String finalString = this.getTagHeaderStringBasedOnDepth(currentTag, depth);
         if (currentTag instanceof CompoundTag || currentTag instanceof ListTag) {
@@ -56,7 +63,7 @@ public class TagString {
 
     /**
      * Returns a string of whitespaces based on the specified depth parameter.
-     * @param depth the depth of the tag in this compound or list tag
+     * @param depth the depth of the tag in a compound or list tag
      * @return A string of whitespaces
      */
     private String getWhitespacesBasedOnDepth(int depth) {
@@ -68,6 +75,13 @@ public class TagString {
         return whitespaces;
     }
 
+    /**
+     * Returns a string header of the specified tag with the number of whitespaces this string contains being based on
+     * the given depth.
+     * @param tag the tag to get it's string header
+     * @param depth the depth of the tag inside of a compound or list tag
+     * @return A stringified representation of the header of the specified tag
+     */
     private String getTagHeaderStringBasedOnDepth(Tag tag, int depth) {
         String whitespaces = this.getWhitespacesBasedOnDepth(depth);
         if ((tag instanceof CompoundTag) || (tag instanceof ListTag)) {

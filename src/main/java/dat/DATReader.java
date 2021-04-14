@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * An {@code DATReader} handles all the byte reading operations and is able to construct an instance of a
+ * A {@code DATReader} handles all the byte reading operations and is able to construct an instance of a
  * {@code DATFile} object from that data.
  * @author Killerkoen
  */
@@ -23,9 +23,9 @@ public class DATReader {
     private InputStream reader;
 
     /**
-     * Constructor for the DATReader class.
-     * @param fileName - URL of the .dat file
-     * @throws FileNotFoundException - exception for when the URL of the file cannot be found
+     * Constructs an instance of a {@code DATReader} object that reads the given file location.
+     * @param fileName location of the .dat file in the form of a string
+     * @throws FileNotFoundException exception for when the URL of the file cannot be found
      */
     public DATReader(String fileName) throws FileNotFoundException {
         this.file = new File(fileName);
@@ -34,8 +34,8 @@ public class DATReader {
 
     /**
      * Reads all bytes of the .dat file.
-     * @return - an instance of a DATFile class containing the compressed bytes that were read
-     * @throws IOException - exception for when an error occurs during IO operation
+     * @return An instance of a DATFile class containing the compressed bytes that were read
+     * @throws IOException exception for when an error occurs during IO operation
      */
     public DATFile readDATFile() throws IOException {
         byte[] datFileBytes = this.reader.readAllBytes();

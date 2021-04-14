@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.zip.GZIPInputStream;
 
 /**
- * An {@code DATFile} contains all the methods that can be used to navigate all the data related to a .dat file.
+ * A {@code DATFile} contains all the methods that can be used to navigate all the data related to a .dat file.
  * @author Killerkoen
  */
 public class DATFile {

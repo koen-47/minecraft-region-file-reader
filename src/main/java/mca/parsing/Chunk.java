@@ -19,8 +19,8 @@ public class Chunk {
     private CompoundTag chunkData;
 
     /**
-     * Constructor for the Chunk class.
-     * @param chunkData - the root compound tag of this chunk
+     * Constructs an instance of a {@code Chunk} object from the given root compound tag.
+     * @param chunkData the root compound tag of this chunk
      */
     public Chunk(CompoundTag chunkData) {
         this.chunkData = chunkData;

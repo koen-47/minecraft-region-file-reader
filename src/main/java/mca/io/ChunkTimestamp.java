@@ -3,7 +3,7 @@ package mca.io;
 import java.util.Date;
 
 /**
- * Class that contains information about when a chunk was last modified.
+ * A class that contains information about when a chunk was last modified.
  * @author Killerkoen
  */
 public class ChunkTimestamp {
@@ -13,8 +13,8 @@ public class ChunkTimestamp {
     private Date timestamp;
 
     /**
-     * Constructor for the ChunkTimestamp class.
-     * @param timestampBytes - array of bytes to read from
+     * Constructs an instance of a {@code ChunkTimestamp} from the specified array of bytes.
+     * @param timestampBytes an array of bytes to read from
      */
     public ChunkTimestamp(byte[] timestampBytes) {
         long secondsSinceEpoch = (timestampBytes[3] & 0xff) | ((timestampBytes[2] & 0xff) << 8) |
@@ -23,8 +23,8 @@ public class ChunkTimestamp {
     }
 
     /**
-     * Get the timestamp.
-     * @return The timestamp
+     * Get the date of when when this chunk was last modified.
+     * @return The data of when this chunk was last modified
      */
     public Date getTimestamp() {
         return this.timestamp;

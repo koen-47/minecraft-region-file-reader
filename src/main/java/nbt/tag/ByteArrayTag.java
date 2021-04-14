@@ -24,7 +24,7 @@ public class ByteArrayTag extends Tag<byte[]> {
     private final byte tagID = 7;
 
     /**
-     * Constructs an unnamed instance of a ByteArrayTag object.
+     * Constructs an unnamed instance of a ByteArrayTag object from the given payload.
      * @param payload an array of bytes that defines the payload of this tag.
      */
     public ByteArrayTag(byte[] payload) {
@@ -33,7 +33,7 @@ public class ByteArrayTag extends Tag<byte[]> {
     }
 
     /**
-     * Constructs a named instance of a ByteArrayTag object.
+     * Constructs a named instance of a ByteArrayTag object from the given name and payload.
      * @param name the name of this tag
      * @param payload an array of bytes that defines the payload of this tag
      */

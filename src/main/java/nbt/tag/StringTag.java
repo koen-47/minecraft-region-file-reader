@@ -24,7 +24,7 @@ public class StringTag extends Tag {
     private final byte tagID = 8;
 
     /**
-     * Constructs an unnamed instance of a StringTag object.
+     * Constructs an unnamed instance of a StringTag object from the given payload.
      * @param payload a single string that defines the payload of this tag
      */
     public StringTag(String payload) {
@@ -33,7 +33,7 @@ public class StringTag extends Tag {
     }
 
     /**
-     * Constructs a named instance of a StringTag object.
+     * Constructs a named instance of a StringTag object from the given name and payload.
      * @param name the name of this tag
      * @param payload a single string that defines the payload of this tag
      */

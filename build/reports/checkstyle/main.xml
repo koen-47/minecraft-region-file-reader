@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="7.8.1">
 <file name="D:\Documents\mc-region-file-reader\src\main\java\Main.java">
-<error line="9" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
-<error line="9" severity="error" message="Type Javadoc comment is missing an null tag." source="com.puppycrawl.tools.checkstyle.checks.javadoc.WriteTagCheck"/>
-<error line="10" column="5" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
-<error line="15" severity="error" message="Line matches the illegal pattern &apos;System\.out\.println&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="19" severity="error" message="Line matches the illegal pattern &apos;System\.out\.println&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
+<error line="6" column="8" severity="error" message="Unused import - util.CompoundTagString." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="12" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+<error line="12" severity="error" message="Type Javadoc comment is missing an null tag." source="com.puppycrawl.tools.checkstyle.checks.javadoc.WriteTagCheck"/>
+<error line="13" column="5" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
+<error line="18" severity="error" message="Line matches the illegal pattern &apos;System\.out\.println&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
+<error line="23" severity="error" message="Line matches the illegal pattern &apos;System\.out\.println&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
+<error line="26" severity="error" message="Line matches the illegal pattern &apos;System\.out\.println&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
 </file>
 <file name="D:\Documents\mc-region-file-reader\src\main\java\dat\DATFile.java">
 </file>
 <file name="D:\Documents\mc-region-file-reader\src\main\java\dat\DATReader.java">
+</file>
+<file name="D:\Documents\mc-region-file-reader\src\main\java\level.dat">
+<error line="0" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+<error line="1" column="74" severity="error" message="File contains tab characters (this is the first instance)." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
 </file>
 <file name="D:\Documents\mc-region-file-reader\src\main\java\mca\MCAFile.java">
 </file>
@@ -75,5 +81,7 @@
 <file name="D:\Documents\mc-region-file-reader\src\main\java\util\CompoundTagString.java">
 </file>
 <file name="D:\Documents\mc-region-file-reader\src\main\java\util\ListTagString.java">
+</file>
+<file name="D:\Documents\mc-region-file-reader\src\main\java\util\TagString.java">
 </file>
 </checkstyle>

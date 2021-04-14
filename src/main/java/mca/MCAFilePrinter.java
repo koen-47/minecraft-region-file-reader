@@ -4,8 +4,6 @@ import mca.io.ChunkLocation;
 import mca.io.ChunkLocationTable;
 import mca.io.ChunkTimestamp;
 import mca.io.ChunkTimestampTable;
-import mca.parsing.Chunk;
-import util.CompoundTagString;
 
 /**
  * Class that prints or returns a string of specific parts of a .mca file.
@@ -67,14 +65,5 @@ public class MCAFilePrinter {
             String[] row = stringTable[i];
             System.out.format("%-15s%-15s\n", i, row[0]);
         }
-    }
-
-    /**
-     * Gets a string of the root compound tag of the assigned .mca file.
-     * @param chunk - the chunk to convert to a string
-     * @return String of the root compound tag of the assigned .mca file
-     */
-    public String getChunkString(Chunk chunk) {
-        return new CompoundTagString(chunk.toCompoundTag()).getString();
     }
 }

@@ -8,7 +8,7 @@ import java.util.Iterator;
 
 /**
  * A tag is designed to a hold a fixed number of tag payloads with a specific tag type. It follows the specification
- * laid out by the ByteArrayTag in the NBT format.
+ * laid out by the ListTag in the NBT format.
  * @author Killerkoen
  * @param <T> the tag type of the tags contained within this list tag.
  */
@@ -52,7 +52,7 @@ public class ListTag<T extends Tag> extends Tag implements Iterable<Tag> {
 
     /**
      * Constructs an unnamed instance of a ListTag object containing the array of tags given by the variable arguments
-     * parameter.
+     * parameter and the tag type of that array from the given tag ID parameter.
      * @param containedTagID the ID of the tags that are to be contained with this ListTag object
      * @param tags a variable arguments parameter that contains the array of tags that are used as a payload for this
      *             tag
@@ -69,8 +69,8 @@ public class ListTag<T extends Tag> extends Tag implements Iterable<Tag> {
     }
 
     /**
-     * Constructs a named instance of a ListTag object containing the array of tags given by the variable arguments
-     * parameter.
+     * Constructs a named instance of a ListTag object containing a name an an array of tags given by the variable
+     * arguments parameter.
      * @param name the name of this tag
      * @param tags a variable arguments parameter that contains the array of tags that are used as a payload for this
      *             tag
@@ -87,8 +87,8 @@ public class ListTag<T extends Tag> extends Tag implements Iterable<Tag> {
     }
 
     /**
-     * Constructs a named instance of a ListTag object containing the array of tags given by the variable arguments
-     * parameter.
+     * Constructs a named instance of a ListTag object containing a name, an array of tags given by the variable
+     * arguments parameter and the tag type of that array from the given tag ID parameter.
      * @param name the name of this tag
      * @param containedTagID the ID of the tags that are to be contained with this ListTag object
      * @param tags a variable arguments parameter that contains the array of tags that are used as a payload for this
@@ -228,9 +228,19 @@ public class ListTag<T extends Tag> extends Tag implements Iterable<Tag> {
     }
 
     /**
+     * Returns true of this list tag contains the specified element.
+     * @param targetTagClass the class type of the tag that is to be found
+     * @param operation the conditions that the target tag must fulfill
+     * @return {@code true} if this list tag contains the specified parameter tag; {@code false if otherwise}
+     */
+    public boolean contains(Class<? extends Tag> targetTagClass, TagOperation operation) {
+        return this.find(targetTagClass, operation) != null;
+    }
+
+    /**
      * Compares this instance of a ListTag object to that of another to see if contain equal values.
      * @param other the other instance of a ListTag object to compare to
-     * @return {@code true} if this list contains the specified element; {@code false} if otherwise
+     * @return {@code true} if this tag equals the specified parameter tag; {@code false} if otherwise
      */
     @Override
     public boolean equals(Tag other) {
@@ -256,10 +266,7 @@ public class ListTag<T extends Tag> extends Tag implements Iterable<Tag> {
     }
 
     /**
-     * Returns a string representation of this ListTag object. <br> <br>
-     * This method does not return a string representation of all the other tags contained within this compound
-     * tag. Instead it returns this tag's name and the number of entries within it. In order to generate such a
-     * string representation, the ListTagString class must be used instead.
+     * Returns a string representation of this ListTag object.
      * @return A string representation of this ListTag object.
      */
     public String toString() {

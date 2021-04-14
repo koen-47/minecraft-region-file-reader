@@ -24,7 +24,7 @@ public class DoubleTag extends Tag<Double> {
     private final byte tagID = 6;
 
     /**
-     * Constructs an unnamed instance of a DoubleTag object.
+     * Constructs an unnamed instance of a DoubleTag object from the given payload.
      * @param payload a single double that defines the payload of this tag
      */
     public DoubleTag(double payload) {
@@ -33,7 +33,7 @@ public class DoubleTag extends Tag<Double> {
     }
 
     /**
-     * Constructs a named instance of a DoubleTag object.
+     * Constructs a named instance of a DoubleTag object from the given name and payload.
      * @param name the name of this tag
      * @param payload a single double that defines the payload of this tag
      */

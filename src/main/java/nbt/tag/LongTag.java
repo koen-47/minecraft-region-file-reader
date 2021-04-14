@@ -24,7 +24,7 @@ public class LongTag extends Tag<Long> {
     private final byte tagID =  4;
 
     /**
-     * Constructs an unnamed instance of a LongTag object.
+     * Constructs an unnamed instance of a LongTag object from the given payload.
      * @param payload a single long that defines the payload of this tag
      */
     public LongTag(long payload) {
@@ -33,7 +33,7 @@ public class LongTag extends Tag<Long> {
     }
 
     /**
-     * Constructs a named instance of a LongTag object.
+     * Constructs a named instance of a LongTag object from the given name and payload.
      * @param name the name of this tag
      * @param payload a single long that defines the payload of this tag
      */

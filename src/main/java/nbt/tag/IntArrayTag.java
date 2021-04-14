@@ -33,7 +33,7 @@ public class IntArrayTag extends Tag {
     }
 
     /**
-     * Constructs a named instance of an IntArrayTag object using a variable arguments array
+     * Constructs a named instance of an IntArrayTag object using a name and a variable arguments array
      * of ints.
      * @param name the name of this tag
      * @param tags an array of ints that defines the payload of this tag

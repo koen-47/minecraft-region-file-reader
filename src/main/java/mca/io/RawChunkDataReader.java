@@ -25,7 +25,7 @@ public class RawChunkDataReader {
     /**
      * Constructs an instance of an {@code RawChunkDataReader} object that reads the given file.
      * @param file the file that is to be read from
-     * @throws FileNotFoundException - exception for when the URL of the file cannot be found
+     * @throws FileNotFoundException exception for when the URL of the file cannot be found
      */
     public RawChunkDataReader(File file) throws FileNotFoundException {
         this.file = file;
@@ -34,9 +34,9 @@ public class RawChunkDataReader {
 
     /**
      * Reads the raw chunk data based on the given chunk location.
-     * @param location - given chunk location
+     * @param location given chunk location
      * @return An instance of the RawChunkData class containing the data that was read
-     * @throws IOException - exception for when an error occurs during IO operations
+     * @throws IOException exception for when an error occurs during IO operations
      */
     public RawChunkData readChunkData(ChunkLocation location) throws IOException {
         if (location.getOffset() == 0 && location.getSectorCount() == 0) {

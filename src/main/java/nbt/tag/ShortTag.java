@@ -24,7 +24,7 @@ public class ShortTag extends Tag<Short> {
     private final byte tagID = 2;
 
     /**
-     * Constructs an unnamed instance of a ShortTag object.
+     * Constructs an unnamed instance of a ShortTag object from the given payload.
      * @param payload a single short that defines the payload of this tag
      */
     public ShortTag(short payload) {
@@ -33,7 +33,7 @@ public class ShortTag extends Tag<Short> {
     }
 
     /**
-     * Constructs a named instance of a ShortTag object.
+     * Constructs a named instance of a ShortTag object from the given name and payload.
      * @param name the name of this tag
      * @param payload a single short that defines the payload of this tag
      */

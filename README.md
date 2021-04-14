@@ -1,5 +1,5 @@
 # Minecraft Region File Reader
-A basic implementation of the NBT file format used by Minecraft to store information about 
+A basic implementation of the NBT file format used by Minecraft to retrieve information about 
 the state of a generated world. It is currently only capable of reading such files,
 rather than write to them. Additionally, this library does not yet support the 
 conversion from NBT to SNBT and vice versa. These features may be implemented at a 
@@ -39,20 +39,22 @@ TBA
 Below is an example of how to read .mca and .dat files.
 ```java
 // .mca files
-MCAReader mcaReader = new MCAReader("/r.0.0.mca");
+MCAReader mcaReader = new MCAReader("r.0.0.mca");
 MCAFile mcaFile = mcaReader.readMCAFile();
 
 Chunk chunk00 = mcaFile.getChunk(0, 0);
-CompoundTag root = chunk00.toNBTTag();
+CompoundTag root = chunk00.toCompoundTag();
 
 // .dat files
-DATReader datReader = new DATReader("/level.dat");
+DATReader datReader = new DATReader("level.dat");
 DATFile datFile = datReader.readDATFile();
 
-CompoundTag root = datFile.getData();
+CompoundTag root = datFile.toCompoundTag();
 ```
-It is important to note that the `MCAReader` and `DATReader` class requires that
-.mca and .dat files must be placed in the /resources folder in order to find them.
+It is important to note that the `MCAReader` and `DATReader` class read the file 
+locations relative to the root project. For example, in the case of this repository's
+file structure if you have a .mca in the /java folder, the specified file location
+for these classes would have to be `src/main/java/r.0.0.mca`.
 
 ### NBT tags
 All tags must have a payload corresponding to the tag type and may optionally
@@ -126,4 +128,37 @@ The same also applies to the methods found in the ``ListTag`` class. More inform
 can be found in the documentation (in the /docs folder).
 
 #### Printing tags
-TBA
+One way to print any tag is simply by calling the `toString()` method that 
+is contained within each tag class:
+```java
+CompoundTag testCompoundTag = new CompoundTag("testCompoundTag",
+                                                new IntTag("testIntTag", 1),
+                                                new LongTag("testLongTag", 2L),
+                                                new ListTag("testListTag",
+                                                    new StringTag("test1"),
+                                                    new StringTag("test2")));
+
+System.out.println(testCompoundTag.toString());
+
+/* This would print
+   TAG_Compound('testCompoundTag'): 3 entries
+   {
+       TAG_Int('testIntTag'): 1
+       TAG_Long('testLongTag'): 2
+       TAG_List('testListTag'): 2 entries
+       {
+           TAG_String(''): 'test1'
+           TAG_String(''): 'test2'
+       }
+   }       
+*/
+```
+Alternatively, you can also print a tag using the `TagString` class:
+```java
+TagString tagString = new TagString(testCompoundTag);
+System.out.println(tagString.getString());
+```
+#### Note about tests
+The test classes in this library can be ignored as they were mainly used 
+in testing the output of the different tags and tag parsers. Most of them only
+contain print statements and no asserts.

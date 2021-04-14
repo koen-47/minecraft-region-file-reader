@@ -4,7 +4,7 @@ import util.ByteArrayBuilder;
 
 /**
  * A tag that is designed to hold an array of longs and may have a name associated with it. It follows the specification
- * laid out by the IntArrayTag in the NBT format.
+ * laid out by the LongArrayTag in the NBT format.
  * @author Killerkoen
  */
 public class LongArrayTag extends Tag<long[]> {

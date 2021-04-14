@@ -4,7 +4,7 @@ import util.ByteArrayBuilder;
 
 /**
  * A tag that is designed to hold a single byte and a name that may be associated with it. It follows the specification
- * laid out by the ByteArrayTag in the NBT format.
+ * laid out by the ByteTag in the NBT format.
  * @author Killerkoen
  */
 public class ByteTag extends Tag<Byte> {
@@ -24,7 +24,7 @@ public class ByteTag extends Tag<Byte> {
     private final byte tagID = 1;
 
     /**
-     * Constructs an unnamed instance of a ByteTag object.
+     * Constructs an unnamed instance of a ByteTag object from the given payload.
      * @param payload a single byte that defines the payload of this tag
      */
     public ByteTag(byte payload) {
@@ -33,7 +33,7 @@ public class ByteTag extends Tag<Byte> {
     }
 
     /**
-     * Constructs a named instance of a ByteTag object.
+     * Constructs a named instance of a ByteTag object from the given name and payload.
      * @param name the name of this tag
      * @param payload a single byte that defines the payload of this tag
      */

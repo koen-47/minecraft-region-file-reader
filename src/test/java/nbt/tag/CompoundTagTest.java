@@ -2,12 +2,9 @@ package nbt.tag;
 
 import org.junit.jupiter.api.Test;
 import util.CompoundTagRandomizer;
-import util.CompoundTagString;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 

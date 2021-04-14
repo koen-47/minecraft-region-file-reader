@@ -24,7 +24,7 @@ public class IntTag extends Tag<Integer> {
     private final byte tagID = 3;
 
     /**
-     * Constructs an unnamed instance of a IntTag object.
+     * Constructs an unnamed instance of a IntTag object from the given payload.
      * @param payload a single int that defines the payload of this tag
      */
     public IntTag(int payload) {
@@ -33,7 +33,7 @@ public class IntTag extends Tag<Integer> {
     }
 
     /**
-     * Constructs a named instance of a IntTag object.
+     * Constructs a named instance of a IntTag object from the given name and payload.
      * @param name the name of this tag
      * @param payload a single int that defines the payload of this tag
      */

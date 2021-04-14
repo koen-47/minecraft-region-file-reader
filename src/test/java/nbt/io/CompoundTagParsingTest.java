@@ -4,7 +4,6 @@ import nbt.tag.CompoundTag;
 import nbt.tag.IntTag;
 import nbt.tag.Tag;
 import org.junit.jupiter.api.Test;
-import util.CompoundTagString;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

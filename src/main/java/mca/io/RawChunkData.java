@@ -5,7 +5,8 @@ import java.io.IOException;
 import java.util.zip.InflaterInputStream;
 
 /**
- * Class that contains the raw chunk data.
+ * A class that contains the raw byte data of a chunk and contains methods to navigate or decompress that data in order
+ * to prepare it for the conversion to an NBT tag.
  * @author Killerkoen
  */
 public class RawChunkData {
@@ -25,10 +26,10 @@ public class RawChunkData {
     private final byte[] uncompressedData;
 
     /**
-     * Constructor for the RawChunkData class.
-     * @param chunkHeaderBytes - array of bytes containing the header bytes
-     * @param chunkDataBytes - array of bytes containing the compressed data bytes
-     * @throws IOException - exception for when an error occurs during IO operations
+     * Constructs an instance of a {@code RawChunkData} object from the given header and data bytes.
+     * @param chunkHeaderBytes array of bytes containing the header bytes
+     * @param chunkDataBytes array of bytes containing the compressed data bytes
+     * @throws IOException exception for when an error occurs during IO operations
      */
     public RawChunkData(byte[] chunkHeaderBytes, byte[] chunkDataBytes) throws IOException {
         this.length = (chunkHeaderBytes[3] & 0xff) | ((chunkHeaderBytes[2] & 0xff) << 8) |
@@ -39,7 +40,7 @@ public class RawChunkData {
 
     /**
      * Decompress the given array of bytes using ZLIB.
-     * @param compressedChunkDataBytes - array of compressed chunk data bytes
+     * @param compressedChunkDataBytes array of compressed chunk data bytes
      * @return Array of decompressed chunk data bytes
      * @throws IOException - exception for when an error occurs during IO operations
      */

@@ -25,7 +25,7 @@ public class FloatTag extends Tag<Float> {
     private final byte tagID = 5;
 
     /**
-     * Constructs an unnamed instance of a FloatTag object.
+     * Constructs an unnamed instance of a FloatTag object from the given payload.
      * @param payload a single float that defines the payload of this tag
      */
     public FloatTag(float payload) {
@@ -34,7 +34,7 @@ public class FloatTag extends Tag<Float> {
     }
 
     /**
-     * Constructs a named instance of a FloatTag object.
+     * Constructs a named instance of a FloatTag object from the given name and payload.
      * @param name the name of this tag
      * @param payload a single float that defines the payload of this tag
      */
