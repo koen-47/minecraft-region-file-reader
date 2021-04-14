@@ -32,26 +32,39 @@ At this moment in time, the currently supported search methods are:
     * ``contains`` - returns true if this tag contains the target tag
 
 ## Installation
-<details>
-  <summary>Maven</summary>
-  <p>
-    Add these tags to <code>pom.xml</code>:
-    ```java
-      <repositories>
-		<repository>
-		    <id>jitpack.io</id>
-		    <url>https://jitpack.io</url>
-		</repository>
-	  </repositories>
+### Maven
+Add these tags to `pom.xml` for repositories and dependencies respectively:
+```
+<repositories>
+  <repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+  </repository>
+</repositories>
+```
+```
+<dependency>
+    <groupId>com.github.Killerkoen</groupId>
+    <artifactId>mc-region-file-reader</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
 
-      <dependency>
-	    <groupId>com.github.Killerkoen</groupId>
-	    <artifactId>mc-region-file-reader</artifactId>
-	    <version>0.1.3</version>
-	  </dependency>
-    ```
-  </p>
-</details>
+### Gradle
+Add these tags to `build.gradle` for repositories and dependencies respectively:
+```
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+```
+dependencies {
+        implementation 'com.github.Killerkoen:mc-region-file-reader:1.0.0'
+}
+```
 
 ## Examples
 ### Reading .mca and .dat files
