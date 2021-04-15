@@ -1,5 +1,5 @@
 # Minecraft Region File Reader
-A basic implementation of the NBT file format used by Minecraft to retrieve information about 
+A basic Java implementation of the NBT file format used by Minecraft to retrieve information about 
 the state of a generated world. It is currently only capable of reading such files,
 rather than write to them. Additionally, this library does not yet support the 
 conversion from NBT to SNBT and vice versa. These features may be implemented at a 
@@ -13,7 +13,7 @@ data types from Java. <a href="https://minecraft.fandom.com/wiki/NBT_format#:~:t
 link provides some helpful pointers to how this format is implemented and used in
 Minecraft.
 
-#### My modfications to these rules
+#### My additions to these rules
 Below is a list of modifications that deviate from the protocols above in an effort to
 provide deeper functionality in how these tags can be used:
 * Each tag contains a reference to it's parent tag which is any tag that is capable of
@@ -46,7 +46,7 @@ Add these tags to `pom.xml` for repositories and dependencies respectively:
 <dependency>
     <groupId>com.github.Killerkoen</groupId>
     <artifactId>mc-region-file-reader</artifactId>
-    <version>v1.0.0</version>
+    <version>v1.0.1</version>
 </dependency>
 ```
 
@@ -62,7 +62,7 @@ allprojects {
 ```
 ```
 dependencies {
-    implementation 'com.github.Killerkoen:mc-region-file-reader:v1.0.0'
+    implementation 'com.github.Killerkoen:mc-region-file-reader:v1.0.1'
 }
 ```
 
@@ -88,7 +88,7 @@ locations relative to the root project. For example, in the case of this reposit
 file structure if you have a .mca in the /java folder, the specified file location
 for these classes would have to be `src/main/java/r.0.0.mca`.
 
-### NBT tags
+### NBT format
 All tags must have a payload corresponding to the tag type and may optionally
 have a name. Below is an example using the ``IntTag`` and ``StringTag`` classes:
 ```java
