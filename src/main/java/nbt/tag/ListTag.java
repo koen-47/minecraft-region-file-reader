@@ -109,9 +109,13 @@ public class ListTag<T extends Tag> extends Tag implements Iterable<Tag> {
      * Loops over the tags within this list tag to verify that each tag is of the same type.
      */
     private void verifyTagTypes() {
-        for (int i = 0; i < this.containedTags.length; i++) {
-            if (this.containedTags[i].getTagID() != this.containedTagID) {
-                throw new IllegalArgumentException("All tags in a ListTag must all be of the same type...");
+        for (T containedTag : this.containedTags) {
+            if (containedTag.getTagID() != this.containedTagID) {
+                throw new IllegalArgumentException("All tags in a ListTag must all be of the same type.");
+            }
+
+            if (!containedTag.getName().equals("")) {
+                throw new IllegalArgumentException("All tags in a ListTag must be unnamed.");
             }
         }
     }

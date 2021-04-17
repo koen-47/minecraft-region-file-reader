@@ -30,13 +30,24 @@ public class ListTagTest {
     }
 
     @Test
-    public void testIllegalListTag() {
+    public void testIllegalListTag1() {
         try {
             ListTag<?> testIllegalListTag = new ListTag("testIllegalListTag",
-                                                            new IntTag(1),
-                                                            new StringTag("test"));
+                                                                new IntTag(1),
+                                                                new StringTag("test"));
         } catch (IllegalArgumentException e) {
-            assertEquals(e.getMessage(), "All tags in a ListTag must all be of the same type...");
+            assertEquals(e.getMessage(), "All tags in a ListTag must all be of the same type.");
+        }
+    }
+
+    @Test
+    public void testIllegalListTag2() {
+        try {
+            ListTag<?> testIllegalListTag = new ListTag("testIllegalListTag",
+                                                                new StringTag("test"),
+                                                                new StringTag("illegal", "name"));
+        } catch (IllegalArgumentException e) {
+            assertEquals(e.getMessage(), "All tags in a ListTag must be unnamed.");
         }
     }
 
@@ -57,14 +68,14 @@ public class ListTagTest {
     @Test
     public void testListTagFind3() {
         ListTag testCompoundTag = new ListTag("testCompoundTag1",
-                                                        new ListTag("testCompoundTag2",
+                                                        new ListTag(
                                                                 new IntTag(1),
                                                                 new IntTag(2)),
-                                                        new ListTag("testCompoundTag3",
-                                                                new ListTag("testCompoundTag4",
+                                                        new ListTag(
+                                                                new ListTag(
                                                                         new IntTag(5),
                                                                         new IntTag(6)),
-                                                                new ListTag("testCompoundTag5",
+                                                                new ListTag(
                                                                         new IntTag(7),
                                                                         new IntTag(8))));
 

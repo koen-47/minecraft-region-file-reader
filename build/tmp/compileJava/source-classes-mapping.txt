@@ -1,64 +1,62 @@
 nbt/tag/Tag.java
  nbt.tag.Tag
-util/ByteArrayBuilder.java
- util.ByteArrayBuilder
-mca/MCAFilePrinter.java
- mca.MCAFilePrinter
-nbt/tag/IntTag.java
- nbt.tag.IntTag
-nbt/tag/DoubleTag.java
- nbt.tag.DoubleTag
-mca/io/ChunkTimestampTable.java
- mca.io.ChunkTimestampTable
-nbt/tag/TagOperation.java
- nbt.tag.TagOperation
-mca/io/MCAReader.java
- mca.io.MCAReader
-nbt/tag/ByteArrayTag.java
- nbt.tag.ByteArrayTag
-nbt/tag/IntArrayTag.java
- nbt.tag.IntArrayTag
-nbt/tag/ByteTag.java
- nbt.tag.ByteTag
-mca/io/ChunkTimestamp.java
- mca.io.ChunkTimestamp
-mca/io/ChunkLocationTable.java
- mca.io.ChunkLocationTable
+nbt/tag/CompoundTag.java
+ nbt.tag.CompoundTag
+dat/DATReader.java
+ dat.DATReader
 nbt/tag/FloatTag.java
  nbt.tag.FloatTag
-mca/io/ChunkLocation.java
- mca.io.ChunkLocation
 mca/io/RawChunkDataReader.java
  mca.io.RawChunkDataReader
-mca/io/RawChunkData.java
- mca.io.RawChunkData
+mca/io/ChunkLocationTable.java
+ mca.io.ChunkLocationTable
+mca/io/ChunkTimestampTable.java
+ mca.io.ChunkTimestampTable
+mca/io/MCAReader.java
+ mca.io.MCAReader
+nbt/tag/DoubleTag.java
+ nbt.tag.DoubleTag
+nbt/tag/TagOperation.java
+ nbt.tag.TagOperation
+dat/DATFile.java
+ dat.DATFile
+nbt/tag/LongTag.java
+ nbt.tag.LongTag
+nbt/tag/IntTag.java
+ nbt.tag.IntTag
+util/ByteArrayBuilder.java
+ util.ByteArrayBuilder
+nbt/tag/ByteTag.java
+ nbt.tag.ByteTag
+nbt/tag/IntArrayTag.java
+ nbt.tag.IntArrayTag
+nbt/tag/ByteArrayTag.java
+ nbt.tag.ByteArrayTag
 nbt/tag/ListTag.java
  nbt.tag.ListTag
 nbt/tag/TagIterator.java
  nbt.tag.TagIterator
 nbt/tag/ShortTag.java
  nbt.tag.ShortTag
-nbt/tag/CompoundTag.java
- nbt.tag.CompoundTag
 nbt/tag/LongArrayTag.java
  nbt.tag.LongArrayTag
-dat/DATReader.java
- dat.DATReader
+mca/io/ChunkLocation.java
+ mca.io.ChunkLocation
 mca/parsing/Chunk.java
  mca.parsing.Chunk
 nbt/tag/EndTag.java
  nbt.tag.EndTag
 mca/MCAFile.java
  mca.MCAFile
-nbt/tag/StringTag.java
- nbt.tag.StringTag
-dat/DATFile.java
- dat.DATFile
-nbt/tag/LongTag.java
- nbt.tag.LongTag
+mca/MCAFilePrinter.java
+ mca.MCAFilePrinter
+mca/io/RawChunkData.java
+ mca.io.RawChunkData
 util/TagString.java
  util.TagString
+mca/io/ChunkTimestamp.java
+ mca.io.ChunkTimestamp
 nbt/io/NBTFileInputStream.java
  nbt.io.NBTFileInputStream
-Main.java
- Main
+nbt/tag/StringTag.java
+ nbt.tag.StringTag

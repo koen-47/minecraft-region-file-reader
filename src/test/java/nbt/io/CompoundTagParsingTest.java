@@ -4,6 +4,7 @@ import nbt.tag.CompoundTag;
 import nbt.tag.IntTag;
 import nbt.tag.Tag;
 import org.junit.jupiter.api.Test;
+import util.TagString;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -44,7 +45,7 @@ public class CompoundTagParsingTest {
         NBTFileInputStream nbtReader = new NBTFileInputStream(testByteStream);
 
         CompoundTag testTag = (CompoundTag) nbtReader.readNamedTag();
-        System.out.println(new CompoundTagString(testTag).getString());
+        System.out.println(new TagString(testTag).getString());
     }
 
     @Test

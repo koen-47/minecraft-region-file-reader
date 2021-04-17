@@ -12,8 +12,6 @@ nbt/tag/DoubleTagTest.java
  nbt.tag.DoubleTagTest
 nbt/tag/IntTagTest.java
  nbt.tag.IntTagTest
-util/CompoundTagStringTest.java
- util.CompoundTagStringTest
 nbt/tag/CompoundTagTest.java
  nbt.tag.CompoundTagTest
 util/CompoundTagRandomizer.java
