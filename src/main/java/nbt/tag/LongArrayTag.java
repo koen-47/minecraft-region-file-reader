@@ -24,22 +24,22 @@ public class LongArrayTag extends Tag<long[]> {
     private final byte tagID = 12;
 
     /**
-     * Constructs an unnamed instance of an LongArrayTag object containing the array of longs from the specified
-     * parameter.
-     * @param payload an array of ints that defines the payload of this tag
+     * Constructs an unnamed instance of an LongArrayTag object using a variable arguments array
+     * of longs.
+     * @param payload an array of longs that defines the payload of this tag
      */
-    public LongArrayTag(long[] payload) {
+    public LongArrayTag(long ...payload) {
         this.name = "";
         this.payload = payload;
     }
 
     /**
-     * Constructs a named instance of an LongArrayTag object containing the array of longs from the specified
-     * parameter.
+     * Constructs a named instance of an LongArrayTag object using a name and a variable arguments array
+     * of longs.
      * @param name the name of this tag
-     * @param payload an array of ints that defines the payload of this tag
+     * @param payload an array of longs that defines the payload of this tag
      */
-    public LongArrayTag(String name, long[] payload) {
+    public LongArrayTag(String name, long ...payload) {
         this.name = name;
         this.payload = payload;
     }

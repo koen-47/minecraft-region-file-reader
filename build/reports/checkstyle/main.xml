@@ -1,87 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="7.8.1">
-<file name="D:\Documents\mc-region-file-reader\src\main\java\Main.java">
-<error line="6" column="8" severity="error" message="Unused import - util.CompoundTagString." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
-<error line="12" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
-<error line="12" severity="error" message="Type Javadoc comment is missing an null tag." source="com.puppycrawl.tools.checkstyle.checks.javadoc.WriteTagCheck"/>
-<error line="13" column="5" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
-<error line="18" severity="error" message="Line matches the illegal pattern &apos;System\.out\.println&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="23" severity="error" message="Line matches the illegal pattern &apos;System\.out\.println&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
-<error line="26" severity="error" message="Line matches the illegal pattern &apos;System\.out\.println&apos;." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck"/>
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\dat\DATFile.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\dat\DATFile.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\dat\DATReader.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\dat\DATReader.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\mca\MCAFile.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\level.dat">
-<error line="0" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
-<error line="1" column="74" severity="error" message="File contains tab characters (this is the first instance)." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\mca\MCAFilePrinter.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\mca\MCAFile.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\mca\io\ChunkLocation.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\mca\MCAFilePrinter.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\mca\io\ChunkLocationTable.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\mca\io\ChunkLocation.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\mca\io\ChunkTimestamp.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\mca\io\ChunkLocationTable.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\mca\io\ChunkTimestampTable.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\mca\io\ChunkTimestamp.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\mca\io\MCAReader.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\mca\io\ChunkTimestampTable.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\mca\io\RawChunkData.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\mca\io\MCAReader.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\mca\io\RawChunkDataReader.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\mca\io\RawChunkData.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\mca\parsing\Chunk.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\mca\io\RawChunkDataReader.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\nbt\io\NBTFileInputStream.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\mca\parsing\Chunk.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\nbt\tag\ByteArrayTag.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\nbt\io\NBTFileInputStream.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\nbt\tag\ByteTag.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\nbt\tag\ByteArrayTag.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\nbt\tag\CompoundTag.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\nbt\tag\ByteTag.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\nbt\tag\DoubleTag.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\nbt\tag\CompoundTag.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\nbt\tag\EndTag.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\nbt\tag\DoubleTag.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\nbt\tag\FloatTag.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\nbt\tag\EndTag.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\nbt\tag\IntArrayTag.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\nbt\tag\FloatTag.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\nbt\tag\IntTag.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\nbt\tag\IntArrayTag.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\nbt\tag\ListTag.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\nbt\tag\IntTag.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\nbt\tag\LongArrayTag.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\nbt\tag\ListTag.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\nbt\tag\LongTag.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\nbt\tag\LongArrayTag.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\nbt\tag\ShortTag.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\nbt\tag\LongTag.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\nbt\tag\StringTag.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\nbt\tag\ShortTag.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\nbt\tag\Tag.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\nbt\tag\StringTag.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\nbt\tag\TagIterator.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\nbt\tag\Tag.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\nbt\tag\TagOperation.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\nbt\tag\TagIterator.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\util\ByteArrayBuilder.java">
 </file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\nbt\tag\TagOperation.java">
-</file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\r.0.1.mca">
-<error line="0" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
-<error line="1" severity="warning" message="File length is 26,164 lines (max allowed is 3,000)." source="com.puppycrawl.tools.checkstyle.checks.sizes.FileLengthCheck"/>
-<error line="3" column="48" severity="error" message="File contains tab characters (this is the first instance)." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
-</file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\util\ByteArrayBuilder.java">
-</file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\util\CompoundTagString.java">
-</file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\util\ListTagString.java">
-</file>
-<file name="D:\Documents\mc-region-file-reader\src\main\java\util\TagString.java">
+<file name="D:\Documents\minecraft-region-file-reader\src\main\java\util\TagString.java">
 </file>
 </checkstyle>

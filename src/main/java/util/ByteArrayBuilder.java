@@ -1,7 +1,9 @@
 package util;
 
+import nbt.tag.ListTag;
 import nbt.tag.Tag;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -141,9 +143,74 @@ public class ByteArrayBuilder {
      * @param other the string to append
      */
     public void append(String other) {
-        this.append(other.length());
+        this.append((byte) ((other.length() >> 8) & 0xff));
+        this.append((byte) (other.length() & 0xff));
         this.append(other.getBytes());
     }
+
+    /**
+     * Appends the specified ArrayList of tags to this array of bytes.
+     * @param other the ArrayList of tags to append
+     */
+    public void append(ArrayList<Tag> other) {
+        for (Tag tag : other) {
+            this.appendTagHeader(tag);
+            this.appendTagPayload(tag);
+        }
+    }
+
+    /**
+     * Appends the payload of the specified ListTag object parameter to this array of bytes.
+     * @param other the ListTag object to append
+     */
+    public void append(ListTag other) {
+        this.append(other.getContainedTagID());
+        this.append(other.getPayload().length);
+        for (Tag tag : other.getPayload()) {
+            this.appendTagPayload(tag);
+        }
+    }
+
+    /**
+     * Appends the specified array of ints to this array of bytes.
+     * @param other the array of ints to append
+     */
+    public void append(int[] other) {
+        byte[] byteArray = new byte[other.length * 4];
+        for (int i = 0; i < other.length; i++) {
+            int n = other[i];
+            byteArray[(i * 4)] = (byte) ((n >> 24) & 0xff);
+            byteArray[(i * 4) + 1] = (byte) ((n >> 16) & 0xff);
+            byteArray[(i * 4) + 2] = (byte) ((n >> 8) & 0xff);
+            byteArray[(i * 4) + 3] = (byte) (n & 0xff);
+        }
+
+        this.append(other.length);
+        this.append(byteArray);
+    }
+
+    /**
+     * Appends the specified array of longs to this array of bytes.
+     * @param other the array of longs to append
+     */
+    public void append(long[] other) {
+        byte[] byteArray = new byte[other.length * 8];
+        for (int i = 0; i < other.length; i++) {
+            long n = other[i];
+            byteArray[(i * 8)] = (byte) ((n >> 56) & 0xff);
+            byteArray[(i * 8) + 1] = (byte) ((n >> 48) & 0xff);
+            byteArray[(i * 8) + 2] = (byte) ((n >> 40) & 0xff);
+            byteArray[(i * 8) + 3] = (byte) ((n >> 32) & 0xff);
+            byteArray[(i * 8) + 4] = (byte) ((n >> 24) & 0xff);
+            byteArray[(i * 8) + 5] = (byte) ((n >> 16) & 0xff);
+            byteArray[(i * 8) + 6] = (byte) ((n >> 8) & 0xff);
+            byteArray[(i * 8) + 7] = (byte) (n & 0xff);
+        }
+
+        this.append(other.length);
+        this.append(byteArray);
+    }
+
 
     /**
      * Appends a tag header to this array of bytes. The tag header is the ordered sequence of it's ID and then name.
@@ -162,12 +229,52 @@ public class ByteArrayBuilder {
      */
     public void appendTagPayload(Tag other) {
         switch (other.getTagID()) {
+            case 1:
+                this.append((byte) other.getPayload());
+                break;
+
+            case 2:
+                this.append((short) other.getPayload());
+                break;
+
             case 3:
                 this.append((int) other.getPayload());
                 break;
 
+            case 4:
+                this.append((long) other.getPayload());
+                break;
+
+            case 5:
+                this.append((float) other.getPayload());
+                break;
+
+            case 6:
+                this.append((double) other.getPayload());
+                break;
+
+            case 7:
+                this.append((byte[]) other.getPayload());
+                break;
+
             case 8:
                 this.append((String) other.getPayload());
+                break;
+
+            case 9:
+                this.append((ListTag) other);
+                break;
+
+            case 10:
+                this.append((ArrayList<Tag>) other.getPayload());
+                break;
+
+            case 11:
+                this.append((int[]) other.getPayload());
+                break;
+
+            case 12:
+                this.append((long[]) other.getPayload());
                 break;
         }
     }

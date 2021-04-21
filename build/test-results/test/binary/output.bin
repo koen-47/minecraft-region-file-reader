@@ -1,187 +1,71 @@
-TAG_Int(''): 1
+#TAG_List('testListTag'): 3 entries
+{
+     TAG_Int_Array(''): [1 ints]
+     TAG_Int_Array(''): [2 ints]
+     TAG_Int_Array(''): [3 ints]
+}
 
-TAG_Int(''): 2
-
-TAG_List(''): 2 entries
+‘[9, 0, 11, 116, 101, 115, 116, 76, 105, 115, 116, 84, 97, 103, 8, 0, 0, 0, 3, 0, 1, 49, 0, 4, 50, 44, 32, 51, 0, 7, 52, 44, 32, 53, 44, 32, 54]
+#TAG_List('testListTag'): 3 entries
 {
-    TAG_Int(''): 1
-    TAG_Int(''): 2
+    TAG_String(''): '1'
+    TAG_String(''): '2, 3'
+    TAG_String(''): '4, 5, 6'
 }
 
-TAG_Int(''): 1
-
-TAG_Int(''): 2
-
-TAG_List(''): 2 entries
-{
-    TAG_Int(''): 3
-    TAG_Int(''): 4
-}
-
-TAG_Int(''): 3
-
-TAG_Int(''): 4
-
-TAG_Compound(''): 5 entries
+#TAG_List('testListTag'): 2 entries
 {
-    TAG_Int('testIntTag1'): 1
-    TAG_Int('testIntTag2'): 2
-,    TAG_List('testEmptyListTag'): 0 entries
+    TAG_List(''): 2 entries
     {
+        TAG_Int(''): 1
+        TAG_Int(''): 2
     }
-    TAG_String('id'): 'abc'
-4    TAG_Compound('testEmptyCompoundTag'): 0 entries
+    TAG_List(''): 2 entries
     {
+        TAG_Long(''): 3
+        TAG_Long(''): 4
     }
 }
 
-TAG_Int('testIntTag1'): 1
-
-TAG_Int('testIntTag2'): 2
-
-(TAG_List('testEmptyListTag'): 0 entries
+µ[9, 0, 11, 116, 101, 115, 116, 76, 105, 115, 116, 84, 97, 103, 9, 0, 0, 0, 2, 3, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0, 2, 4, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 4]
+#TAG_List('testListTag'): 2 entries
 {
-}
-
-TAG_String('id'): 'abc'
-
-0TAG_Compound('testEmptyCompoundTag'): 0 entries
-{
-}
-
-"TAG_End() of testEmptyCompoundTag
-
-TAG_End() of 
-
-TAG_Compound(''): 6 entries
-{
-    TAG_Int('testIntTag1'): 1
-    TAG_Int('testIntTag2'): 2
-,    TAG_List('testEmptyListTag'): 0 entries
+    TAG_List(''): 2 entries
     {
+        TAG_Int(''): 1
+        TAG_Int(''): 2
     }
-    TAG_String('id'): 'abc'
-4    TAG_Compound('testEmptyCompoundTag'): 0 entries
+    TAG_List(''): 2 entries
     {
-    }
-*    TAG_List('testIntTagList'): 5 entries
-    {
-        TAG_Int(''): 10
-        TAG_Int(''): 11
-        TAG_Int(''): 12
-        TAG_Int(''): 13
-        TAG_Int(''): 14
+        TAG_Long(''): 3
+        TAG_Long(''): 4
     }
 }
 
-TAG_Int('testIntTag1'): 1
-
-TAG_Int('testIntTag2'): 2
-
-(TAG_List('testEmptyListTag'): 0 entries
-{
-}
-
-TAG_String('id'): 'abc'
-
-0TAG_Compound('testEmptyCompoundTag'): 0 entries
-{
-}
-
-"TAG_End() of testEmptyCompoundTag
-
-&TAG_List('testIntTagList'): 5 entries
-{
-    TAG_Int(''): 10
-    TAG_Int(''): 11
-    TAG_Int(''): 12
-    TAG_Int(''): 13
-    TAG_Int(''): 14
-}
-
-TAG_Int(''): 10
-
-TAG_Int(''): 11
-
-TAG_Int(''): 12
-
-TAG_Int(''): 13
-
-TAG_Int(''): 14
-
-TAG_End() of 
-
-TAG_Compound(''): 1 entry
-{
-    TAG_Int('testIntTag1'): 1
-}
-
-TAG_Int('testIntTag1'): 1
-
-TAG_End() of 
-
-TAG_Compound(''): 5 entries
+#TAG_List('testListTag'): 2 entries
 {
-    TAG_Int('testIntTag1'): 1
-    TAG_Int('testIntTag2'): 2
-,    TAG_List('testEmptyListTag'): 0 entries
+     TAG_Compound(''): 2 entries
     {
+"        TAG_Int('testIntTag1'): 1
+"        TAG_Int('testIntTag2'): 2
     }
-    TAG_String('id'): 'abc'
-4    TAG_Compound('testEmptyCompoundTag'): 0 entries
+     TAG_Compound(''): 2 entries
+    {
+0        TAG_String('testStringTag1'): 'test123'
+0        TAG_String('testStringTag2'): 'test123'
+    }
+}
+
+Ø[9, 0, 11, 116, 101, 115, 116, 76, 105, 115, 116, 84, 97, 103, 10, 0, 0, 0, 2, 3, 0, 11, 116, 101, 115, 116, 73, 110, 116, 84, 97, 103, 49, 0, 0, 0, 1, 3, 0, 11, 116, 101, 115, 116, 73, 110, 116, 84, 97, 103, 50, 0, 0, 0, 2, 0, 0, 0, 8, 0, 14, 116, 101, 115, 116, 83, 116, 114, 105, 110, 103, 84, 97, 103, 49, 0, 7, 116, 101, 115, 116, 49, 50, 51, 8, 0, 14, 116, 101, 115, 116, 83, 116, 114, 105, 110, 103, 84, 97, 103, 50, 0, 7, 116, 101, 115, 116, 49, 50, 51, 0, 0, 0]
+#TAG_List('testListTag'): 2 entries
+{
+     TAG_Compound(''): 2 entries
+    {
+"        TAG_Int('testIntTag1'): 1
+"        TAG_Int('testIntTag2'): 2
+    }
+     TAG_Compound(''): 0 entries
     {
     }
 }
 
-TAG_Int('testIntTag1'): 1
-
-TAG_Int('testIntTag2'): 2
-
-(TAG_List('testEmptyListTag'): 0 entries
-{
-}
-
-TAG_String('id'): 'abc'
-
-0TAG_Compound('testEmptyCompoundTag'): 0 entries
-{
-}
-
-"TAG_End() of testEmptyCompoundTag
-
-TAG_End() of 
-
-TAG_Compound(''): 3 entries
-{
-    TAG_Byte('Slot'): 0
-,    TAG_String('id'): 'minecraft:lapis_ore'
-    TAG_Byte('Count'): 8
-}
-
-TAG_Byte('Slot'): 0
-
-(TAG_String('id'): 'minecraft:lapis_ore'
-
-TAG_Byte('Count'): 8
-
-TAG_End() of 
-
-TAG_Compound(''): 3 entries
-{
-    TAG_Byte('Slot'): 0
-,    TAG_String('id'): 'minecraft:lapis_ore'
-    TAG_Byte('Count'): 8
-}
-
-TAG_Byte('Slot'): 0
-
-(TAG_String('id'): 'minecraft:lapis_ore'
-
-TAG_Byte('Count'): 8
-
-TAG_End() of 
-
-TAG_Int('testIntTag3'): 3
-
-TAG_Int(''): 8
-

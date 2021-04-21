@@ -23,5 +23,4 @@ public class IntArrayTagTest {
         IntArrayTag testIntArrayTag2 = new IntArrayTag("testIntArrayTag", 1, 2, 3, 4, 5);
         assertTrue(testIntArrayTag1.equals(testIntArrayTag2));
     }
-
 }

@@ -29,6 +29,7 @@ public class IntArrayTag extends Tag {
      * @param tags an array of ints that defines the payload of this tag
      */
     public IntArrayTag(int ...tags) {
+        this.name = "";
         this.payload = tags;
     }
 

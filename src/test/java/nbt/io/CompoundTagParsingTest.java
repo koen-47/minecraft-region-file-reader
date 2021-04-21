@@ -1,8 +1,6 @@
 package nbt.io;
 
-import nbt.tag.CompoundTag;
-import nbt.tag.IntTag;
-import nbt.tag.Tag;
+import nbt.tag.*;
 import org.junit.jupiter.api.Test;
 import util.TagString;
 
@@ -16,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class CompoundTagParsingTest {
 
     @Test
-    public void testCompoundTagByteArray() throws IOException {
+    public void testCompoundTagByteArray1() throws IOException {
         ArrayList<Tag> containedTagsOuter = new ArrayList<Tag>();
         containedTagsOuter.add(new IntTag("testIntTag1", 1));
         containedTagsOuter.add(new IntTag("testIntTag2", 2));
@@ -30,6 +28,26 @@ public class CompoundTagParsingTest {
         byte[] testByteArray = new CompoundTag("testCompoundTag", containedTagsOuter).toByteArray();
 
         ByteArrayInputStream testByteStream = new ByteArrayInputStream(testByteArray);
+        NBTFileInputStream nbtReader = new NBTFileInputStream(testByteStream);
+
+        CompoundTag testTag = (CompoundTag) nbtReader.readNamedTag();
+        System.out.println(testTag.toString());
+    }
+
+    @Test
+    public void testCompoundTagByteArray2() throws IOException {
+        CompoundTag testCompoundTag = new CompoundTag("testCompoundTag",
+                                                        new CompoundTag("testInnerCompoundTag1",
+                                                                new IntTag("testIntTag1", 1),
+                                                                new IntTag("testIntTag2", 2)),
+                                                        new CompoundTag("testInnerCompoundTag2",
+                                                                new StringTag("testStringTag", "test123"),
+                                                                new ListTag("testListTag",
+                                                                        new ByteTag((byte) 1),
+                                                                        new ByteTag((byte) 2))),
+                                                                new LongArrayTag("testLongArrayTag", 1L, 2L, 3L));
+
+        ByteArrayInputStream testByteStream = new ByteArrayInputStream(testCompoundTag.toByteArray());
         NBTFileInputStream nbtReader = new NBTFileInputStream(testByteStream);
 
         CompoundTag testTag = (CompoundTag) nbtReader.readNamedTag();
