@@ -145,8 +145,8 @@ public class CompoundTagTest {
                                                                 new IntTag(1),
                                                                 new IntTag(2)),
                                                         new ListTag("testListTag2",
-                                                                new ListTag("testListTag3", (byte) 3),
-                                                                new ListTag("testListTag4",
+                                                                new ListTag((byte) 3),
+                                                                new ListTag(
                                                                         new IntTag(7),
                                                                         new IntTag(8))));
 

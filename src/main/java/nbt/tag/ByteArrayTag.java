@@ -24,20 +24,22 @@ public class ByteArrayTag extends Tag<byte[]> {
     private final byte tagID = 7;
 
     /**
-     * Constructs an unnamed instance of a ByteArrayTag object from the given payload.
-     * @param payload an array of bytes that defines the payload of this tag.
+     * Constructs an unnamed instance of an ByteArrayTag object using a variable arguments array
+     * of bytes.
+     * @param payload an array of bytes that defines the payload of this tag
      */
-    public ByteArrayTag(byte[] payload) {
+    public ByteArrayTag(byte ...payload) {
         this.name = "";
         this.payload = payload;
     }
 
     /**
-     * Constructs a named instance of a ByteArrayTag object from the given name and payload.
+     * Constructs a named instance of an ByteArrayTag object using a name and a variable arguments array
+     * of bytes.
      * @param name the name of this tag
      * @param payload an array of bytes that defines the payload of this tag
      */
-    public ByteArrayTag(String name, byte[] payload) {
+    public ByteArrayTag(String name, byte ...payload) {
         this.name = name;
         this.payload = payload;
     }

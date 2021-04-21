@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="util.TagStringTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-04-21T15:14:00" hostname="KOEN-PC" time="0.013">
+  <properties/>
+  <testcase name="testTagStringNestedCompoundTag()" classname="util.TagStringTest" time="0.001"/>
+  <testcase name="testTagStringBasic()" classname="util.TagStringTest" time="0.0"/>
+  <testcase name="testTagStringListTag()" classname="util.TagStringTest" time="0.004"/>
+  <testcase name="testTagStringNestedCompoundTag2()" classname="util.TagStringTest" time="0.001"/>
+  <testcase name="testTagStringCompoundTag()" classname="util.TagStringTest" time="0.001"/>
+  <system-out><![CDATA[TAG_Compound('testCompoundTagOuter'): 3 entries
+{
+    TAG_Int('testIntTagOuter1'): 3
+    TAG_String('testStringTagOuter2'): 's1'
+    TAG_Compound('testCompoundTagInner'): 2 entries
+    {
+        TAG_Int('testIntTagInner1'): 1
+        TAG_Int('testIntTagInner2'): 2
+    }
+}
+
+TAG_Int('testIntTag'): 1
+
+TAG_List('testCompoundTagOuter'): 3 entries
+{
+    TAG_Int(''): 1
+    TAG_Int(''): 2
+    TAG_Int(''): 3
+}
+
+TAG_Compound('testCompoundTagOuter'): 4 entries
+{
+    TAG_Int('testIntTagOuter1'): 3
+    TAG_String('testStringTagOuter2'): 's1'
+    TAG_Compound('testCompoundTagInner1'): 2 entries
+    {
+        TAG_Int('testIntTagInner1'): 1
+        TAG_Int('testIntTagInner2'): 2
+    }
+    TAG_Compound('testCompoundTagInner2'): 2 entries
+    {
+        TAG_Int('testIntTagInner1'): 1
+        TAG_Int('testIntTagInner2'): 2
+    }
+}
+
+TAG_Compound('testCompoundTag'): 1 entry
+{
+    TAG_Int('testIntTag'): 1
+}
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

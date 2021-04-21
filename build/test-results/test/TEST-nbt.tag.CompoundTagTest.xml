@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="nbt.tag.CompoundTagTest" tests="18" skipped="0" failures="0" errors="0" timestamp="2021-04-21T15:14:00" hostname="KOEN-PC" time="0.138">
+  <properties/>
+  <testcase name="testCompoundTagFind1()" classname="nbt.tag.CompoundTagTest" time="0.016"/>
+  <testcase name="testCompoundTagFind2()" classname="nbt.tag.CompoundTagTest" time="0.017"/>
+  <testcase name="testCompoundTagFind3()" classname="nbt.tag.CompoundTagTest" time="0.008"/>
+  <testcase name="testCompoundTagFind4()" classname="nbt.tag.CompoundTagTest" time="0.002"/>
+  <testcase name="testCompoundTagIteratorGeneric()" classname="nbt.tag.CompoundTagTest" time="0.001"/>
+  <testcase name="testCompoundTagAppend()" classname="nbt.tag.CompoundTagTest" time="0.0"/>
+  <testcase name="testCompoundTagEquals()" classname="nbt.tag.CompoundTagTest" time="0.0"/>
+  <testcase name="testCompoundTagIteratorListTag()" classname="nbt.tag.CompoundTagTest" time="0.037"/>
+  <testcase name="testCompoundTagIteratorNested()" classname="nbt.tag.CompoundTagTest" time="0.014"/>
+  <testcase name="testCompoundTagEqualsBasic()" classname="nbt.tag.CompoundTagTest" time="0.0"/>
+  <testcase name="testCompoundTagToByteArray1()" classname="nbt.tag.CompoundTagTest" time="0.002"/>
+  <testcase name="testCompoundTagToByteArray2()" classname="nbt.tag.CompoundTagTest" time="0.0"/>
+  <testcase name="testCompoundTagIteratorEmptyListTag()" classname="nbt.tag.CompoundTagTest" time="0.002"/>
+  <testcase name="testCompoundTagConstructors()" classname="nbt.tag.CompoundTagTest" time="0.0"/>
+  <testcase name="testCompoundTagEqualsNested()" classname="nbt.tag.CompoundTagTest" time="0.002"/>
+  <testcase name="testCompoundTagGetParent()" classname="nbt.tag.CompoundTagTest" time="0.0"/>
+  <testcase name="testCompoundTagEqualsBig()" classname="nbt.tag.CompoundTagTest" time="0.024"/>
+  <testcase name="testCompoundTagIterator()" classname="nbt.tag.CompoundTagTest" time="0.001"/>
+  <system-out><![CDATA[TAG_String('testStringTag1'): 'test1'
+
+TAG_Int(''): 8
+
+TAG_String('FINDME'): 'the real one'
+
+TAG_Int('testIntTag1'): 1
+
+TAG_String('testStringTag1'): 'test123'
+
+TAG_Int('testIntTag1'): 1
+
+TAG_String('testStringTag1'): 'test123'
+
+TAG_List('testListTag'): 2 entries
+{
+    TAG_Int(''): 2
+    TAG_Int(''): 3
+}
+
+TAG_Int(''): 2
+
+TAG_Int(''): 3
+
+TAG_Int('testIntTag1'): 1
+
+TAG_Compound('testCompoundTag2'): 2 entries
+{
+    TAG_Int('testIntTag2'): 2
+    TAG_Compound('testCompoundTag3'): 3 entries
+    {
+        TAG_Int('testIntTag3'): 3
+        TAG_Compound('testCompoundTag4'): 2 entries
+        {
+            TAG_Int('testIntTag4'): 4
+            TAG_Compound('testCompoundTag5'): 1 entry
+            {
+                TAG_Int('testIntTag5'): 5
+            }
+        }
+        TAG_Compound('testCompoundTag6'): 2 entries
+        {
+            TAG_Int('testIntTag6'): 6
+            TAG_Int('testIntTag7'): 7
+        }
+    }
+}
+
+TAG_Int('testIntTag2'): 2
+
+TAG_Compound('testCompoundTag3'): 3 entries
+{
+    TAG_Int('testIntTag3'): 3
+    TAG_Compound('testCompoundTag4'): 2 entries
+    {
+        TAG_Int('testIntTag4'): 4
+        TAG_Compound('testCompoundTag5'): 1 entry
+        {
+            TAG_Int('testIntTag5'): 5
+        }
+    }
+    TAG_Compound('testCompoundTag6'): 2 entries
+    {
+        TAG_Int('testIntTag6'): 6
+        TAG_Int('testIntTag7'): 7
+    }
+}
+
+TAG_Int('testIntTag3'): 3
+
+TAG_Compound('testCompoundTag4'): 2 entries
+{
+    TAG_Int('testIntTag4'): 4
+    TAG_Compound('testCompoundTag5'): 1 entry
+    {
+        TAG_Int('testIntTag5'): 5
+    }
+}
+
+TAG_Int('testIntTag4'): 4
+
+TAG_Compound('testCompoundTag5'): 1 entry
+{
+    TAG_Int('testIntTag5'): 5
+}
+
+TAG_Int('testIntTag5'): 5
+
+TAG_End() of testCompoundTag5
+
+TAG_End() of testCompoundTag4
+
+TAG_Compound('testCompoundTag6'): 2 entries
+{
+    TAG_Int('testIntTag6'): 6
+    TAG_Int('testIntTag7'): 7
+}
+
+TAG_Int('testIntTag6'): 6
+
+TAG_Int('testIntTag7'): 7
+
+TAG_End() of testCompoundTag6
+
+TAG_End() of testCompoundTag3
+
+TAG_End() of testCompoundTag2
+
+TAG_Compound('testCompoundTag7'): 1 entry
+{
+    TAG_Int('testIntTag8'): 8
+}
+
+TAG_Int('testIntTag8'): 8
+
+TAG_End() of testCompoundTag7
+
+TAG_End() of testCompoundTag
+
+TAG_Int('testIntTag1'): 1
+
+TAG_String('testStringTag1'): 'test123'
+
+TAG_List('testEmptyListTag'): 0 entries
+{
+}
+
+TAG_String('id'): 'abc'
+
+TAG_Compound('testEmptyCompoundTag'): 0 entries
+{
+}
+
+TAG_End() of testEmptyCompoundTag
+
+TAG_End() of testCompoundTag
+
+TAG_Int('testIntTag1'): 1
+
+TAG_String('testStringTag1'): 'test123'
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

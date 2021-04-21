@@ -26,22 +26,22 @@ public class IntArrayTag extends Tag {
     /**
      * Constructs an unnamed instance of an IntArrayTag object using a variable arguments array
      * of ints.
-     * @param tags an array of ints that defines the payload of this tag
+     * @param payload an array of ints that defines the payload of this tag
      */
-    public IntArrayTag(int ...tags) {
+    public IntArrayTag(int ...payload) {
         this.name = "";
-        this.payload = tags;
+        this.payload = payload;
     }
 
     /**
      * Constructs a named instance of an IntArrayTag object using a name and a variable arguments array
      * of ints.
      * @param name the name of this tag
-     * @param tags an array of ints that defines the payload of this tag
+     * @param payload an array of ints that defines the payload of this tag
      */
-    public IntArrayTag(String name, int ...tags) {
+    public IntArrayTag(String name, int ...payload) {
         this.name = name;
-        this.payload = tags;
+        this.payload = payload;
     }
 
     /**

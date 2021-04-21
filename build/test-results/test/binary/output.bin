@@ -1,71 +1,586 @@
-#TAG_List('testListTag'): 3 entries
-{
-     TAG_Int_Array(''): [1 ints]
-     TAG_Int_Array(''): [2 ints]
-     TAG_Int_Array(''): [3 ints]
-}
-
-‘[9, 0, 11, 116, 101, 115, 116, 76, 105, 115, 116, 84, 97, 103, 8, 0, 0, 0, 3, 0, 1, 49, 0, 4, 50, 44, 32, 51, 0, 7, 52, 44, 32, 53, 44, 32, 54]
-#TAG_List('testListTag'): 3 entries
-{
-    TAG_String(''): '1'
-    TAG_String(''): '2, 3'
-    TAG_String(''): '4, 5, 6'
-}
+&TAG_String('testStringTag1'): 'test1'
 
-#TAG_List('testListTag'): 2 entries
-{
-    TAG_List(''): 2 entries
-    {
-        TAG_Int(''): 1
-        TAG_Int(''): 2
-    }
-    TAG_List(''): 2 entries
-    {
-        TAG_Long(''): 3
-        TAG_Long(''): 4
-    }
-}
+TAG_Int(''): 8
 
-µ[9, 0, 11, 116, 101, 115, 116, 76, 105, 115, 116, 84, 97, 103, 9, 0, 0, 0, 2, 3, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0, 2, 4, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 4]
-#TAG_List('testListTag'): 2 entries
-{
-    TAG_List(''): 2 entries
-    {
-        TAG_Int(''): 1
-        TAG_Int(''): 2
-    }
-    TAG_List(''): 2 entries
-    {
-        TAG_Long(''): 3
-        TAG_Long(''): 4
-    }
-}
-
-#TAG_List('testListTag'): 2 entries
-{
-     TAG_Compound(''): 2 entries
-    {
-"        TAG_Int('testIntTag1'): 1
-"        TAG_Int('testIntTag2'): 2
-    }
-     TAG_Compound(''): 2 entries
-    {
-0        TAG_String('testStringTag1'): 'test123'
-0        TAG_String('testStringTag2'): 'test123'
-    }
-}
+%TAG_String('FINDME'): 'the real one'
 
-Ø[9, 0, 11, 116, 101, 115, 116, 76, 105, 115, 116, 84, 97, 103, 10, 0, 0, 0, 2, 3, 0, 11, 116, 101, 115, 116, 73, 110, 116, 84, 97, 103, 49, 0, 0, 0, 1, 3, 0, 11, 116, 101, 115, 116, 73, 110, 116, 84, 97, 103, 50, 0, 0, 0, 2, 0, 0, 0, 8, 0, 14, 116, 101, 115, 116, 83, 116, 114, 105, 110, 103, 84, 97, 103, 49, 0, 7, 116, 101, 115, 116, 49, 50, 51, 8, 0, 14, 116, 101, 115, 116, 83, 116, 114, 105, 110, 103, 84, 97, 103, 50, 0, 7, 116, 101, 115, 116, 49, 50, 51, 0, 0, 0]
-#TAG_List('testListTag'): 2 entries
-{
-     TAG_Compound(''): 2 entries
-    {
-"        TAG_Int('testIntTag1'): 1
-"        TAG_Int('testIntTag2'): 2
-    }
-     TAG_Compound(''): 0 entries
-    {
-    }
-}
-
+TAG_Int('testIntTag1'): 1
+
+(TAG_String('testStringTag1'): 'test123'
+
+	TAG_Int('testIntTag1'): 1
+	
+	(TAG_String('testStringTag1'): 'test123'
+	
+	#TAG_List('testListTag'): 2 entries
+	{
+	    TAG_Int(''): 2
+	    TAG_Int(''): 3
+	}
+	
+	TAG_Int(''): 2
+	
+	TAG_Int(''): 3
+	
+
+TAG_Int('testIntTag1'): 1
+
+
+
+,TAG_Compound('testCompoundTag2'): 2 entries
+
+{
+
+    TAG_Int('testIntTag2'): 2
+
+0    TAG_Compound('testCompoundTag3'): 3 entries
+
+    {
+
+"        TAG_Int('testIntTag3'): 3
+
+4        TAG_Compound('testCompoundTag4'): 2 entries
+
+
+        {
+
+&            TAG_Int('testIntTag4'): 4
+
+6            TAG_Compound('testCompoundTag5'): 1 entry
+
+            {
+
+*                TAG_Int('testIntTag5'): 5
+
+            }
+
+
+        }
+
+4        TAG_Compound('testCompoundTag6'): 2 entries
+
+
+        {
+
+&            TAG_Int('testIntTag6'): 6
+
+&            TAG_Int('testIntTag7'): 7
+
+
+        }
+
+    }
+
+}
+
+
+
+TAG_Int('testIntTag2'): 2
+
+
+
+,TAG_Compound('testCompoundTag3'): 3 entries
+
+{
+
+    TAG_Int('testIntTag3'): 3
+
+0    TAG_Compound('testCompoundTag4'): 2 entries
+
+    {
+
+"        TAG_Int('testIntTag4'): 4
+
+2        TAG_Compound('testCompoundTag5'): 1 entry
+
+
+        {
+
+&            TAG_Int('testIntTag5'): 5
+
+
+        }
+
+    }
+
+0    TAG_Compound('testCompoundTag6'): 2 entries
+
+    {
+
+"        TAG_Int('testIntTag6'): 6
+
+"        TAG_Int('testIntTag7'): 7
+
+    }
+
+}
+
+
+
+TAG_Int('testIntTag3'): 3
+
+
+
+,TAG_Compound('testCompoundTag4'): 2 entries
+
+{
+
+    TAG_Int('testIntTag4'): 4
+
+.    TAG_Compound('testCompoundTag5'): 1 entry
+
+    {
+
+"        TAG_Int('testIntTag5'): 5
+
+    }
+
+}
+
+
+
+TAG_Int('testIntTag4'): 4
+
+
+
+*TAG_Compound('testCompoundTag5'): 1 entry
+
+{
+
+    TAG_Int('testIntTag5'): 5
+
+}
+
+
+
+TAG_Int('testIntTag5'): 5
+
+
+
+TAG_End() of testCompoundTag5
+
+
+
+TAG_End() of testCompoundTag4
+
+
+
+,TAG_Compound('testCompoundTag6'): 2 entries
+
+{
+
+    TAG_Int('testIntTag6'): 6
+
+    TAG_Int('testIntTag7'): 7
+
+}
+
+
+
+TAG_Int('testIntTag6'): 6
+
+
+
+TAG_Int('testIntTag7'): 7
+
+
+
+TAG_End() of testCompoundTag6
+
+
+
+TAG_End() of testCompoundTag3
+
+
+
+TAG_End() of testCompoundTag2
+
+
+
+*TAG_Compound('testCompoundTag7'): 1 entry
+
+{
+
+    TAG_Int('testIntTag8'): 8
+
+}
+
+
+
+TAG_Int('testIntTag8'): 8
+
+
+
+TAG_End() of testCompoundTag7
+
+
+
+TAG_End() of testCompoundTag
+
+
+TAG_Int('testIntTag1'): 1
+
+(TAG_String('testStringTag1'): 'test123'
+
+(TAG_List('testEmptyListTag'): 0 entries
+{
+}
+
+TAG_String('id'): 'abc'
+
+0TAG_Compound('testEmptyCompoundTag'): 0 entries
+{
+}
+
+"TAG_End() of testEmptyCompoundTag
+
+TAG_End() of testCompoundTag
+
+TAG_Int('testIntTag1'): 1
+
+(TAG_String('testStringTag1'): 'test123'
+
++TAG_Compound('testCompoundTag'): 3 entries
+{
+    TAG_Int('testIntTag1'): 1
+    TAG_Int('testIntTag2'): 2
+5    TAG_Compound('testNestedCompoundTag'): 2 entries
+    {
+(        TAG_Int('testNestedIntTag1'): 3
+(        TAG_Int('testNestedIntTag2'): 4
+    }
+}
+
++TAG_Compound('testCompoundTag'): 3 entries
+{
+5    TAG_Compound('testInnerCompoundTag1'): 2 entries
+    {
+"        TAG_Int('testIntTag1'): 1
+"        TAG_Int('testIntTag2'): 2
+    }
+5    TAG_Compound('testInnerCompoundTag2'): 2 entries
+    {
+/        TAG_String('testStringTag'): 'test123'
++        TAG_List('testListTag'): 2 entries
+
+        {
+            TAG_Byte(''): 1
+            TAG_Byte(''): 2
+
+        }
+    }
+2    TAG_Long_Array('testLongArrayTag'): [3 longs]
+}
+
+&TAG_Compound('testCompound'): 1 entry
+{
+    TAG_Int('testInt'): 10
+}
+
++TAG_Int_Array('testIntArrayTag'): [5 ints]
+
+›[11, 0, 15, 116, 101, 115, 116, 73, 110, 116, 65, 114, 114, 97, 121, 84, 97, 103, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 3, 0, 0, 0, 4, 0, 0, 0, 5]
++TAG_Int_Array('testIntArrayTag'): [5 ints]
+
+›[11, 0, 15, 116, 101, 115, 116, 73, 110, 116, 65, 114, 114, 97, 121, 84, 97, 103, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 3, 0, 0, 0, 4, 0, 0, 0, 5]
+ #TAG_List('testListTag'): 3 entries
+ {
+      TAG_Int_Array(''): [1 ints]
+      TAG_Int_Array(''): [2 ints]
+      TAG_Int_Array(''): [3 ints]
+ }
+ 
+ !‘[9, 0, 11, 116, 101, 115, 116, 76, 105, 115, 116, 84, 97, 103, 8, 0, 0, 0, 3, 0, 1, 49, 0, 4, 50, 44, 32, 51, 0, 7, 52, 44, 32, 53, 44, 32, 54]
+ !#TAG_List('testListTag'): 3 entries
+ !{
+ !    TAG_String(''): '1'
+ !    TAG_String(''): '2, 3'
+ !    TAG_String(''): '4, 5, 6'
+ !}
+ !
+ "#TAG_List('testListTag'): 2 entries
+ "{
+ "    TAG_List(''): 2 entries
+ "    {
+ "        TAG_Int(''): 1
+ "        TAG_Int(''): 2
+ "    }
+ "    TAG_List(''): 2 entries
+ "    {
+ "        TAG_Long(''): 3
+ "        TAG_Long(''): 4
+ "    }
+ "}
+ "
+ "µ[9, 0, 11, 116, 101, 115, 116, 76, 105, 115, 116, 84, 97, 103, 9, 0, 0, 0, 2, 3, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0, 2, 4, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 4]
+ "#TAG_List('testListTag'): 2 entries
+ "{
+ "    TAG_List(''): 2 entries
+ "    {
+ "        TAG_Int(''): 1
+ "        TAG_Int(''): 2
+ "    }
+ "    TAG_List(''): 2 entries
+ "    {
+ "        TAG_Long(''): 3
+ "        TAG_Long(''): 4
+ "    }
+ "}
+ "
+ ##TAG_List('testListTag'): 2 entries
+ #{
+ #     TAG_Compound(''): 2 entries
+ #    {
+ #"        TAG_Int('testIntTag1'): 1
+ #"        TAG_Int('testIntTag2'): 2
+ #    }
+ #     TAG_Compound(''): 2 entries
+ #    {
+ #0        TAG_String('testStringTag1'): 'test123'
+ #0        TAG_String('testStringTag2'): 'test123'
+ #    }
+ #}
+ #
+ #Ø[9, 0, 11, 116, 101, 115, 116, 76, 105, 115, 116, 84, 97, 103, 10, 0, 0, 0, 2, 3, 0, 11, 116, 101, 115, 116, 73, 110, 116, 84, 97, 103, 49, 0, 0, 0, 1, 3, 0, 11, 116, 101, 115, 116, 73, 110, 116, 84, 97, 103, 50, 0, 0, 0, 2, 0, 0, 0, 8, 0, 14, 116, 101, 115, 116, 83, 116, 114, 105, 110, 103, 84, 97, 103, 49, 0, 7, 116, 101, 115, 116, 49, 50, 51, 8, 0, 14, 116, 101, 115, 116, 83, 116, 114, 105, 110, 103, 84, 97, 103, 50, 0, 7, 116, 101, 115, 116, 49, 50, 51, 0, 0, 0]
+ ##TAG_List('testListTag'): 2 entries
+ #{
+ #     TAG_Compound(''): 2 entries
+ #    {
+ #"        TAG_Int('testIntTag1'): 1
+ #"        TAG_Int('testIntTag2'): 2
+ #    }
+ #     TAG_Compound(''): 0 entries
+ #    {
+ #    }
+ #}
+ #
+&%p[6, 0, 13, 116, 101, 115, 116, 68, 111, 117, 98, 108, 101, 84, 97, 103, -65, -15, -99, -68, -87, 105, 26, 118]
+&%2[6, 0, 0, -65, -15, -99, -68, -87, 105, 26, 118]
+-,TAG_Int(''): 1
+-,
+-,TAG_Int(''): 2
+-,
+-.TAG_List(''): 2 entries
+-.{
+-.    TAG_Int(''): 1
+-.    TAG_Int(''): 2
+-.}
+-.
+-.TAG_Int(''): 1
+-.
+-.TAG_Int(''): 2
+-.
+-.TAG_List(''): 2 entries
+-.{
+-.    TAG_Int(''): 3
+-.    TAG_Int(''): 4
+-.}
+-.
+-.TAG_Int(''): 3
+-.
+-.TAG_Int(''): 4
+-.
+-/TAG_Compound(''): 5 entries
+-/{
+-/    TAG_Int('testIntTag1'): 1
+-/    TAG_Int('testIntTag2'): 2
+-/,    TAG_List('testEmptyListTag'): 0 entries
+-/    {
+-/    }
+-/    TAG_String('id'): 'abc'
+-/4    TAG_Compound('testEmptyCompoundTag'): 0 entries
+-/    {
+-/    }
+-/}
+-/
+-/TAG_Int('testIntTag1'): 1
+-/
+-/TAG_Int('testIntTag2'): 2
+-/
+-/(TAG_List('testEmptyListTag'): 0 entries
+-/{
+-/}
+-/
+-/TAG_String('id'): 'abc'
+-/
+-/0TAG_Compound('testEmptyCompoundTag'): 0 entries
+-/{
+-/}
+-/
+-/"TAG_End() of testEmptyCompoundTag
+-/
+-/TAG_End() of 
+-/
+-/TAG_Compound(''): 6 entries
+-/{
+-/    TAG_Int('testIntTag1'): 1
+-/    TAG_Int('testIntTag2'): 2
+-/,    TAG_List('testEmptyListTag'): 0 entries
+-/    {
+-/    }
+-/    TAG_String('id'): 'abc'
+-/4    TAG_Compound('testEmptyCompoundTag'): 0 entries
+-/    {
+-/    }
+-/*    TAG_List('testIntTagList'): 5 entries
+-/    {
+-/        TAG_Int(''): 10
+-/        TAG_Int(''): 11
+-/        TAG_Int(''): 12
+-/        TAG_Int(''): 13
+-/        TAG_Int(''): 14
+-/    }
+-/}
+-/
+-/TAG_Int('testIntTag1'): 1
+-/
+-/TAG_Int('testIntTag2'): 2
+-/
+-/(TAG_List('testEmptyListTag'): 0 entries
+-/{
+-/}
+-/
+-/TAG_String('id'): 'abc'
+-/
+-/0TAG_Compound('testEmptyCompoundTag'): 0 entries
+-/{
+-/}
+-/
+-/"TAG_End() of testEmptyCompoundTag
+-/
+-/&TAG_List('testIntTagList'): 5 entries
+-/{
+-/    TAG_Int(''): 10
+-/    TAG_Int(''): 11
+-/    TAG_Int(''): 12
+-/    TAG_Int(''): 13
+-/    TAG_Int(''): 14
+-/}
+-/
+-/TAG_Int(''): 10
+-/
+-/TAG_Int(''): 11
+-/
+-/TAG_Int(''): 12
+-/
+-/TAG_Int(''): 13
+-/
+-/TAG_Int(''): 14
+-/
+-/TAG_End() of 
+-/
+-/TAG_Compound(''): 1 entry
+-/{
+-/    TAG_Int('testIntTag1'): 1
+-/}
+-/
+-/TAG_Int('testIntTag1'): 1
+-/
+-/TAG_End() of 
+-/
+-0TAG_Compound(''): 5 entries
+-0{
+-0    TAG_Int('testIntTag1'): 1
+-0    TAG_Int('testIntTag2'): 2
+-0,    TAG_List('testEmptyListTag'): 0 entries
+-0    {
+-0    }
+-0    TAG_String('id'): 'abc'
+-04    TAG_Compound('testEmptyCompoundTag'): 0 entries
+-0    {
+-0    }
+-0}
+-0
+-0TAG_Int('testIntTag1'): 1
+-0
+-0TAG_Int('testIntTag2'): 2
+-0
+-0(TAG_List('testEmptyListTag'): 0 entries
+-0{
+-0}
+-0
+-0TAG_String('id'): 'abc'
+-0
+-00TAG_Compound('testEmptyCompoundTag'): 0 entries
+-0{
+-0}
+-0
+-0"TAG_End() of testEmptyCompoundTag
+-0
+-0TAG_End() of 
+-0
+-1TAG_Compound(''): 3 entries
+-1{
+-1    TAG_Byte('Slot'): 0
+-1,    TAG_String('id'): 'minecraft:lapis_ore'
+-1    TAG_Byte('Count'): 8
+-1}
+-1
+-1TAG_Byte('Slot'): 0
+-1
+-1(TAG_String('id'): 'minecraft:lapis_ore'
+-1
+-1TAG_Byte('Count'): 8
+-1
+-1TAG_End() of 
+-1
+-1TAG_Compound(''): 3 entries
+-1{
+-1    TAG_Byte('Slot'): 0
+-1,    TAG_String('id'): 'minecraft:lapis_ore'
+-1    TAG_Byte('Count'): 8
+-1}
+-1
+-1TAG_Byte('Slot'): 0
+-1
+-1(TAG_String('id'): 'minecraft:lapis_ore'
+-1
+-1TAG_Byte('Count'): 8
+-1
+-1TAG_End() of 
+-1
+-6TAG_Int('testIntTag3'): 3
+-6
+-7TAG_Int(''): 8
+-7
+A@0TAG_Compound('testCompoundTagOuter'): 3 entries
+A@{
+A@#    TAG_Int('testIntTagOuter1'): 3
+A@,    TAG_String('testStringTagOuter2'): 's1'
+A@4    TAG_Compound('testCompoundTagInner'): 2 entries
+A@    {
+A@'        TAG_Int('testIntTagInner1'): 1
+A@'        TAG_Int('testIntTagInner2'): 2
+A@    }
+A@}
+A@
+ABTAG_Int('testIntTag'): 1
+AB
+AC,TAG_List('testCompoundTagOuter'): 3 entries
+AC{
+AC    TAG_Int(''): 1
+AC    TAG_Int(''): 2
+AC    TAG_Int(''): 3
+AC}
+AC
+AD0TAG_Compound('testCompoundTagOuter'): 4 entries
+AD{
+AD#    TAG_Int('testIntTagOuter1'): 3
+AD,    TAG_String('testStringTagOuter2'): 's1'
+AD5    TAG_Compound('testCompoundTagInner1'): 2 entries
+AD    {
+AD'        TAG_Int('testIntTagInner1'): 1
+AD'        TAG_Int('testIntTagInner2'): 2
+AD    }
+AD5    TAG_Compound('testCompoundTagInner2'): 2 entries
+AD    {
+AD'        TAG_Int('testIntTagInner1'): 1
+AD'        TAG_Int('testIntTagInner2'): 2
+AD    }
+AD}
+AD
+AE)TAG_Compound('testCompoundTag'): 1 entry
+AE{
+AE    TAG_Int('testIntTag'): 1
+AE}
+AE

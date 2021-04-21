@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="nbt.io.ListTagParsingTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-04-21T15:06:38" hostname="KOEN-PC" time="0.09">
+<testsuite name="nbt.io.ListTagParsingTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-04-21T15:14:00" hostname="KOEN-PC" time="0.018">
   <properties/>
-  <testcase name="testListTagToByteArray1()" classname="nbt.io.ListTagParsingTest" time="0.066"/>
-  <testcase name="testListTagToByteArray2()" classname="nbt.io.ListTagParsingTest" time="0.006"/>
-  <testcase name="testListTagToByteArray3()" classname="nbt.io.ListTagParsingTest" time="0.008"/>
+  <testcase name="testListTagToByteArray1()" classname="nbt.io.ListTagParsingTest" time="0.001"/>
+  <testcase name="testListTagToByteArray2()" classname="nbt.io.ListTagParsingTest" time="0.001"/>
+  <testcase name="testListTagToByteArray3()" classname="nbt.io.ListTagParsingTest" time="0.011"/>
   <testcase name="testListTagToByteArray4()" classname="nbt.io.ListTagParsingTest" time="0.002"/>
-  <testcase name="testBasicListTag1()" classname="nbt.io.ListTagParsingTest" time="0.005"/>
+  <testcase name="testBasicListTag1()" classname="nbt.io.ListTagParsingTest" time="0.001"/>
   <system-out><![CDATA[TAG_List('testListTag'): 3 entries
 {
     TAG_Int_Array(''): [1 ints]
